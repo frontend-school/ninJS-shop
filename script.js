@@ -89,8 +89,9 @@ function killDiv (idTArget) {
 function checkTopValue () {
     for (var k=1; k<i; ++k) {
         divHolder['div' + k].innerHTML = divHolder['div' + k].offsetTop;
-        if (divHolder['div' + k].innerHTML == 800 && divHolder['div' + k].innerHTML != 'game over') {
-            divHolder['div' + k].innerHTML = 'game over';
+        console.log(document.getElementById('main').offsetHeight);
+        console.log(divHolder['div' + k].offsetHeight + divHolder['div' + k].offsetTop);
+        if (document.getElementById('main').offsetHeight < (divHolder['div' + k].offsetHeight + divHolder['div' + k].offsetTop)) {
             document.getElementById('alert').style.visibility = 'visible';
         }
     }

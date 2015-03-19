@@ -66,10 +66,10 @@ table {
     -webkit-animation-duration: 5s;
     -webkit-animation-name: slide;
     -webkit-animation-fill-mode: both;
-    */
+
     animation-duration: 5s;
     animation-name: slide;
-    animation-fill-mode: both;
+    animation-fill-mode: both;*/
 }
 
 @-webkit-keyframes slide {
