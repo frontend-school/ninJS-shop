@@ -1,0 +1,107 @@
+/* reset css */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+
+
+#main {
+    width: 1000px;
+    height: 800px;
+    background-color: aliceblue;
+    -webkit-user-select: none;
+}
+
+.generatedDiv {
+    position: absolute;
+    top: -100px;
+    /*
+    -webkit-animation-duration: 5s;
+    -webkit-animation-name: slide;
+    -webkit-animation-fill-mode: both;
+    */
+    animation-duration: 5s;
+    animation-name: slide;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes slide {
+    100% { top: 800px }
+}
+
+.rectangle {
+    position: absolute;
+    top: -100px;
+    background-color: indianred;
+}
+
+.triangle {
+    width: 0px;
+    height: 0px;
+
+    position: absolute;
+    top: -100px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 150px; /* has to be half of value int Math.random() */
+    background-color: deepskyblue;
+}
+
+
+#alert {
+    width: 400px;
+    height: 300px;
+    border: 1px solid mediumvioletred;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    visibility: hidden;
+
+}
