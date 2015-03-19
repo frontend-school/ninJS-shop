@@ -52,8 +52,11 @@ table {
 #main {
     width: 1000px;
     height: 800px;
+    position: relative;
     background-color: aliceblue;
     -webkit-user-select: none;
+    border: 1px solid red;
+    margin: 0px 0px 0px 50px;
 }
 
 .generatedDiv {
