@@ -59,6 +59,7 @@ table {
     overflow: hidden;
     background: url('bg.jpg') no-repeat;
     background-size: cover;
+    resize: both;
 }
 
 .generatedDiv {

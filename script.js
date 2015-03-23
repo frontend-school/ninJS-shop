@@ -1,8 +1,17 @@
-var divHolder = {}; // or var divHolder = new Object;
+var mainDiv = {};
+
+function start () {
+    mainDiv.width = document.getElementById('main').clientWidth; // measures main div width
+    if (play == true) setTimeout(start, 1000);
+}
+window.onload = start;
+
+var divHolder = {};
 divHolder.count = 0;
 divHolder.killedCount = 0;
 var i = 0;
 var play = true;
+
 
 function createDiv () {
     if (play) {
@@ -33,7 +42,7 @@ function createDiv () {
     };
 
     var randLeftFunc = function () {
-        divHolder['div' + i].style.left = (Math.round(Math.random() * (1000 - randWidth))) ; // generate random number from 0 to 1000 subtracting random width of generated div
+        divHolder['div' + i].style.left = (Math.round(Math.random() * (mainDiv.width - randWidth))) ; // generate random number from 0 to 1000 subtracting random width of generated div
     };
 
     switch (randClassName) {
@@ -78,7 +87,6 @@ function killDiv (idTArget) {
 
 function checkTopValue () {
     if (divHolder.count != 0 && play == true) {
-
         for (var k=1; k <= i; k++) {
             //divHolder['div' + k].innerHTML = divHolder['div' + k].offsetTop; // input
             var mainDivHeight = document.getElementById('main').offsetHeight; // assigns main div height
@@ -110,13 +118,4 @@ function checkTopValue () {
 }
 
 
-
 setTimeout(checkTopValue, 100);
-
-/*
- var a = screen
- for (i in a) {
- document.write(i + "<br />")
- document.write(a[i] + "<br /><hr />")
- }
- */
