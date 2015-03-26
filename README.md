@@ -1,0 +1,2 @@
+# ninJS-shop
+Shop application
