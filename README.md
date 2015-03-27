@@ -3,4 +3,4 @@ Shop application
 
 Gusar
 
-Nice try
+Nice try) Merging done
