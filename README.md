@@ -1,3 +1,3 @@
 # ninJS-shop
 Shop application
-Evsegneev
+Merge me, merge me, merge me.
