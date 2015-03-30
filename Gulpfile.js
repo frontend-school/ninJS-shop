@@ -17,4 +17,30 @@ gulp.task('bower', function() {
         .pipe(gulp.dest('./dist/vendor'));
 });
 
-gulp.task('default', ['serve']);
+gulp.task('watch', function(){
+    gulp.watch('./src/index.html', ['html']);
+    gulp.watch('./src/css/*', ['css']);
+    gulp.watch('./src/js/*', ['js']);
+    gulp.watch(['./dist/index.html','./dist/js/*','./dist/css/*'])
+        .on('change', function (file) {
+            console.log(file.path, 'has changed');
+            browserSync.reload();
+        });
+});
+
+gulp.task('html', function() {
+    gulp.src('./src/index.html')
+        .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('css', function() {
+    gulp.src('./src/css/*')
+        .pipe(gulp.dest('./dist/css'));
+});
+
+gulp.task('js', function() {
+    gulp.src('./src/js/*')
+        .pipe(gulp.dest('./dist/js'));
+});
+
+gulp.task('default', ['serve', 'watch']);
