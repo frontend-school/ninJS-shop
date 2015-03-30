@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/frontend-school/ninJS-shop",
   "devDependencies": {
-    "gulp": "^3.8.11"
+    "browser-sync": "^2.5.0",
+    "gulp": "^3.8.11",
+    "gulp-watch": "^4.2.2"
   }
 }
