@@ -1,0 +1,24 @@
+{
+  "name": "ninJS-shop",
+  "version": "0.0.1",
+  "homepage": "https://github.com/frontend-school/ninJS-shop",
+  "authors": [
+    "Front-End Inc"
+  ],
+  "description": "Amazon killer",
+  "main": "app.js",
+  "keywords": [
+    "image",
+    "cat",
+    "many"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

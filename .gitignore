@@ -1,0 +1,12 @@
+## Directory-based project format:
+.idea/
+
+# Dependency directory
+bower_components/
+node_modules/
+
+# Logs
+npm-debug.log
+
+# Production
+dist/
