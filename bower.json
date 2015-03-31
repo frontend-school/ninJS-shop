@@ -1,0 +1,19 @@
+{
+  "name": "ninJS-shop",
+  "version": "0.0.0",
+  "homepage": "https://github.com/frontend-school/ninJS-shop",
+  "authors": [
+    "Daria Kachailo <Darya.kachailo@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.3"
+  }
+}
