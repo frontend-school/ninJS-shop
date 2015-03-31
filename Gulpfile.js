@@ -10,11 +10,11 @@ gulp.task('server', function() {
     });
 });
 
-
 gulp.task('copy', function () {
     gulp.src('./src/**')
         .pipe(gulp.dest('./dist/'))
         .pipe(reload({stream: true}));
+
 });
 
 gulp.task('bower', function () {
@@ -22,17 +22,11 @@ gulp.task('bower', function () {
         .pipe(gulp.dest('./dist/vendor/'));
 });
 
-
 gulp.task('watch', function () {
-    gulp.watch(['./src/**'], ['copy']);
+    var watcher = gulp.watch(['./src/**'], ['copy']);
+    watcher.on('change', function (event) {
+        console.log(event.path + ' has ' + event.type)
+    });
 });
 
-
-
 gulp.task('default', ['server', 'watch']);
-
-
-
-//gulp.task('default', function() {
- //   // place code for your default task here
-//});
