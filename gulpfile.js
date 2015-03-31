@@ -2,6 +2,10 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 
 
+
+// default task
+gulp.task('default', ['browser-sync']);
+
 // Browser reload
 gulp.task('browser-sync',['watch'], function() {
     browserSync.init(['./dist/index.html'], {
