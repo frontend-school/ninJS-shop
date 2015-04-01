@@ -1,2 +1,2 @@
-ninJS-shop
+# ninJS-shop
 Shop application
