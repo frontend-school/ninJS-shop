@@ -38,10 +38,11 @@ gulp.task('watch', function () {
     gulp.watch('./src/index.html', ['html']);
     gulp.watch('./src/css/*', ['css']);
     gulp.watch('./src/js/*', ['js']);
-    gulp.watch(['./dist/**']).on('change', function (event) {
+    gulp.watch('./bower_components/**', ['bower']);
+    gulp.watch(['./dist/index.html','./dist/js/*','./dist/css/*']).on('change', function (event) {
         console.log(event.path + ' has ' + event.type);
         browserSync.reload();
     });
 });
 
-gulp.task('default', ['server', 'build', 'watch']);
+gulp.task('default', ['server', 'bower', 'build', 'watch']);
