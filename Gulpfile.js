@@ -43,4 +43,4 @@ gulp.task('js', function() {
         .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('default', ['serve', 'watch']);
+gulp.task('default', ['build','bower','serve', 'watch']);
