@@ -1,0 +1,99 @@
+/* view */
+
+$red = #d13f34
+
+.view
+  position: relative
+  padding-top: 40px
+  width: 275px
+  height: 245px
+  margin: 0 auto
+
+.big
+  width: 560px
+  height: 520px
+
+.view__image
+  float: left
+
+  &_centric
+    text-align: center
+    clear: both
+    padding-top: 100px
+
+.view__price
+  font-size: 0.8em
+
+  &_centric
+    padding-left: 180px
+
+.view__price_sale
+  font-size: 1.2em
+  color: $red
+
+  &_centric
+    padding-left: 180px
+
+.view__title_centric
+  padding-left: 180px
+  width: 200px
+
+.view__button
+  position: absolute
+  display: block
+  width: 150px
+  height: 30px
+  left: 0
+  right: 0
+  bottom: 50px
+  padding-left: 40px
+  padding-right: 40px
+  margin: 0 auto
+  border: 1px solid
+  line-height: 30px
+  &:hover
+    background: $red
+    color: #fff
+    border-color: #fff
+    .arrow
+      color: #fff
+
+.arrow
+  float: right
+  color: $red
+  font-weight: bold
+
+.view__more
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 20px
+  display: block
+  text-align: center
+  font-size: 0.8em
+  line-height: 30px
+  &:hover
+    color: $red
+
+.line-through
+  text-decoration: line-through
+
+.x-neighbour
+  float: left
+  padding-left: 5px
+  &:after
+    content: ""
+    position: absolute
+    top: 20px
+    bottom: 20px
+    left: 280px
+    border-left: 1px solid #ccc
+
+
+.y-neighbour:after
+  content: ""
+  position: absolute
+  left: 20px
+  right: 20px
+  top: 280px
+  border-top: 1px solid #ccc
