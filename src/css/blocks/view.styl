@@ -23,16 +23,18 @@ $red = #d13f34
     &_centric
       padding-left: 180px
 
-  &__price_sale
-    font-size: 1.2em
-    color: $red
+    &_sale
+      font-size: 1.2em
+      color: $red
+
+      &_centric
+        padding-left: 180px
+
+  &__title
 
     &_centric
       padding-left: 180px
-
-  &__title_centric
-    padding-left: 180px
-    width: 200px
+      width: 200px
 
   &__button
     position: absolute
@@ -84,6 +86,7 @@ $red = #d13f34
 .x-neighbour
   float: left
   padding-left: 5px
+
   &:after
     content: ""
     position: absolute
@@ -92,10 +95,12 @@ $red = #d13f34
     left: 280px
     border-left: 1px solid #ccc
 
-.y-neighbour:after
-  content: ""
-  position: absolute
-  left: 20px
-  right: 20px
-  top: 280px
-  border-top: 1px solid #ccc
+.y-neighbour
+
+  &:after
+    content: ""
+    position: absolute
+    left: 20px
+    right: 20px
+    top: 280px
+    border-top: 1px solid #ccc
