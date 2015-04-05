@@ -1,0 +1,27 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<div id='main'>
+
+    <input type='button' value='Create new div' onclick='createDiv()' />
+    <input type='button' value='Start Generation' onclick='setInterval(createDiv, 500)' />
+
+    <div>
+        Div generator count: <span id="generatedCount"></span>
+
+    </div>
+
+    <div>
+        Punished blocks reward: <span id="punished"></span>
+
+    </div>
+
+    <div id="alert" onclick='location.reload();'>
+    </div>
+
+</div>
+</body>
+</html>
