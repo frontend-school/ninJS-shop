@@ -1,0 +1,628 @@
+body {
+	background-color:white;
+}
+
+.container-1, .container-2 {
+	display: block;
+	position: relative;
+	width: 1158px;
+	margin: 0 auto;
+}
+
+.container-1 {
+	height: 857px;
+}
+
+.container-2 {
+	height: 600px;
+}
+
+/****************************
+Container-1__item-1
+****************************/
+.container-1__two-line {
+	float: left;
+	width: 554px;
+	height: 272px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.container-1__two-line:hover .container-1__two-line_visible {
+	display: none;
+}
+
+.container-1__two-line:hover .container-1__two-line_hover {
+	display: block;
+}
+
+.container-1__two-line_hover {
+	display: none;
+	width: 554px;
+	height: 272px;
+} 
+
+.item-1__image {
+	text-align: right;
+	display: inline-block;
+	width: 270px;
+}
+
+.item-1__description {
+	display: inline-block;
+	width: 270px;
+}
+
+.item-1__button_Add-to-chart {
+	text-align: center;
+	position: relative;
+}
+
+.item-1__button_Add-to-chart_style {
+	color: #000;
+	font-size: 15px;
+	background: #fff;
+	padding: 10px 20px 10px 20px;
+	border: solid #000 1px;
+	text-decoration: none;
+}
+
+.item-1__see-more {
+	text-align: center;
+	text-decoration: none;
+	position: relative;	
+}
+
+.item-1__description_sale {
+	color: red;
+}
+
+/****************************
+Container-1__item-2
+****************************/
+
+.container-1__one-center {
+	float: left;
+	width: 272px;
+	height: 272px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;	
+}
+
+.container-1__one-center:hover .container-1__one-center_visible {
+	display: none;
+}
+
+.container-1__one-center:hover .container-1__one-center_hover {
+	display: block;
+}
+
+.container-1__one-center_hover {
+	display: none;
+	width: 272px;
+	height: 272px;
+} 
+
+.item-2__image {
+	display: inline-block;
+	width: 270px;
+}
+
+.item-2__description {
+	display: inline-block;
+	width: 270px;
+}
+
+.item-2__button_Add-to-chart {
+	text-align: center;
+	position: relative;
+}
+
+.item-2__button_Add-to-chart_style {
+	color: #000;
+	font-size: 15px;
+	background: #fff;
+	padding: 10px 20px 10px 20px;
+	border: solid #000 1px;
+	text-decoration: none;
+}
+
+.item-2__see-more {
+	text-align: center;
+	text-decoration: none;
+	position: relative;	
+}
+
+.item-2__description_sale {
+	color: red;
+}
+
+/****************************
+Container-1__item-3
+****************************/
+
+.container-1__two-down {
+	float: right;
+	width: 272px;
+	height: 554px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;	
+}
+
+.container-1__two-down:hover .container-1__two-down_visible {
+	display: none;
+}
+
+.container-1__two-down:hover .container-1__two-down_hover {
+	display: block;
+}
+
+.container-1__two-down_hover {
+	display: none;
+	width: 272px;
+	height: 554px;
+} 
+
+.item-3__image {
+	display: inline-block;
+	width: 270px;
+}
+
+.item-3__description {
+	display: inline-block;
+	width: 270px;
+}
+
+.item-3__button_Add-to-chart {
+	text-align: center;
+	position: relative;
+}
+
+.item-3__button_Add-to-chart_style {
+	color: #000;
+	font-size: 15px;
+	background: #fff;
+	padding: 10px 20px 10px 20px;
+	border: solid #000 1px;
+	text-decoration: none;
+}
+
+.item-3__see-more {
+	text-align: center;
+	text-decoration: none;
+	position: relative;	
+}
+
+.item-3__description_sale {
+	color: red;
+}
+
+/****************************
+Container-1__item-4
+****************************/
+
+.container-1__one-left-top {
+	float: left;
+	width: 272px;
+	height: 272px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;		
+}
+
+.container-1__one-left-top:hover .container-1__one-left-top_visible {
+	display: none;
+}
+
+.container-1__one-left-top:hover .container-1__one-left-top_hover {
+	display: block;
+}
+
+.container-1__one-left-top_hover {
+	display: none;
+	width: 272px;
+	height: 272px;
+} 
+
+.item-4__image {
+	display: inline-block;
+	width: 270px;
+}
+
+.item-4__description {
+	display: inline-block;
+	width: 270px;
+}
+
+.item-4__button_Add-to-chart {
+	text-align: center;
+	position: relative;
+}
+
+.item-4__button_Add-to-chart_style {
+	color: #000;
+	font-size: 15px;
+	background: #fff;
+	padding: 10px 20px 10px 20px;
+	border: solid #000 1px;
+	text-decoration: none;
+}
+
+.item-4__see-more {
+	text-align: center;
+	text-decoration: none;
+	position: relative;	
+}
+
+.item-4__description_sale {
+	color: red;
+}
+
+/****************************
+Container-1__item-5
+****************************/
+
+.container-1__one-left-bottom {
+	width: 272px;
+	height: 272px;
+	margin-top: 574px;
+	margin-left: 10px;
+	margin-right: 10px;
+	position: absolute;
+}
+
+.container-1__one-left-bottom:hover .container-1__one-left-bottom_visible {
+	display: none;
+}
+
+.container-1__one-left-bottom:hover .container-1__one-left-bottom_hover {
+	display: block;
+}
+
+.container-1__one-left-bottom_hover {
+	display: none;
+	width: 270px;
+	height: 270px;
+} 
+
+.item-5__image {
+	display: inline-block;
+	width: 270px;
+}
+
+.item-5__description {
+	display: inline-block;
+	width: 270px;
+}
+
+.item-5__button_Add-to-chart {
+	text-align: center;
+	position: relative;
+}
+
+.item-5__button_Add-to-chart_style {
+	color: #000;
+	font-size: 15px;
+	background: #fff;
+	padding: 10px 20px 10px 20px;
+	border: solid #000 1px;
+	text-decoration: none;
+}
+
+.item-5__see-more {
+	text-align: center;
+	text-decoration: none;
+	position: relative;	
+}
+
+.item-5__description_sale {
+	color: red;
+}
+
+/****************************
+Container-1__item-6
+****************************/
+
+.container-1__four {
+	float: left;
+	width: 554px;
+	height: 554px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;		
+}
+
+.container-1__four:hover .container-1__four_visible {
+	display: none;
+}
+
+.container-1__four:hover .container-1__four_hover {
+	display: block;
+}
+
+.container-1__four_hover {
+	display: none;
+	width: 554px;
+	height: 554px;
+} 
+
+.item-6__image {
+	display: inline-block;
+	width: 270px;
+}
+
+.item-6__description {
+	display: inline-block;
+	width: 270px;
+}
+
+.item-6__button_Add-to-chart {
+	text-align: center;
+	position: relative;
+}
+
+.item-6__button_Add-to-chart_style {
+	color: #000;
+	font-size: 15px;
+	background: #fff;
+	padding: 10px 20px 10px 20px;
+	border: solid #000 1px;
+	text-decoration: none;
+}
+
+.item-6__see-more {
+	text-align: center;
+	text-decoration: none;
+	position: relative;	
+}
+
+.item-6__description_sale {
+	color: red;
+}
+
+/****************************
+Container-1__item-7
+****************************/
+
+.container-1__one-right-bottom {
+	float: right;
+	width: 272px;
+	height: 272px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;	
+}
+
+.container-1__one-right-bottom:hover .container-1__one-right-bottom_visible {
+	display: none;
+}
+
+.container-1__one-right-bottom:hover .container-1__one-right-bottom_hover {
+	display: block;
+}
+
+.container-1__one-right-bottom_hover {
+	display: none;
+	width: 272px;
+	height: 272px;
+}
+
+.item__image {
+	display: inline-block;
+	width: 270px;
+}
+
+.item__description {
+	display: inline-block;
+	width: 270px;
+}
+
+.item__button_Add-to-chart {
+	text-align: center;
+	position: relative;
+}
+
+.item__button_Add-to-chart_style {
+	color: #000;
+	font-size: 15px;
+	background: #fff;
+	padding: 10px 20px 10px 20px;
+	border: solid #000 1px;
+	text-decoration: none;
+}
+
+.item__see-more {
+	text-align: center;
+	text-decoration: none;
+	position: relative;	
+}
+
+.item__description_sale {
+	color: red;
+}
+
+/****************************
+Container-2__item-8
+****************************/
+.container-2__two-line-top {
+	float: left;
+	width: 554px;
+	height: 272px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;		
+}
+
+.container-2__two-line-top:hover .container-2__two-line-top_visible {
+	display: none;
+}
+
+.container-2__two-line-top:hover .container-2__two-line-top_hover {
+	display: block;
+}
+
+.container-2__two-line-top_hover {
+	display: none;
+	width: 554px;
+	height: 272px;
+}
+
+.item__image {
+	display: inline-block;
+	width: 270px;
+}
+
+.item__description {
+	display: inline-block;
+	width: 270px;
+}
+
+.item__button_Add-to-chart {
+	text-align: center;
+	position: relative;
+}
+
+.item__button_Add-to-chart_style {
+	color: #000;
+	font-size: 15px;
+	background: #fff;
+	padding: 10px 20px 10px 20px;
+	border: solid #000 1px;
+	text-decoration: none;
+}
+
+.item__see-more {
+	text-align: center;
+	text-decoration: none;
+	position: relative;	
+}
+
+.item__description_sale {
+	color: red;
+}
+/****************************
+Container-1__item-9
+****************************/
+
+.container-2__two-line-botom {
+	width: 554px;
+	height: 272px;
+	margin-top: 291px;
+	margin-left: 10px;
+	margin-right: 10px;
+	position: absolute;
+}
+
+.container-2__two-line-botom:hover .container-2__two-line-botom_visible {
+	display: none;
+}
+
+.container-2__two-line-botom:hover .container-2__two-line-botom_hover {
+	display: block;
+}
+
+.container-2__two-line-botom_hover {
+	display: none;
+	width: 554px;
+	height: 272px;
+}
+
+.item__image {
+	display: inline-block;
+	width: 270px;
+}
+
+.item__description {
+	display: inline-block;
+	width: 270px;
+}
+
+.item__button_Add-to-chart {
+	text-align: center;
+	position: relative;
+}
+
+.item__button_Add-to-chart_style {
+	color: #000;
+	font-size: 15px;
+	background: #fff;
+	padding: 10px 20px 10px 20px;
+	border: solid #000 1px;
+	text-decoration: none;
+}
+
+.item__see-more {
+	text-align: center;
+	text-decoration: none;
+	position: relative;	
+}
+
+.item__description_sale {
+	color: red;
+}
+
+/****************************
+Container-1__item-10
+****************************/
+
+.container-2__four {
+	float: right;
+	width: 554px;
+	height: 554px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;		
+}
+
+.container-2__four:hover .container-2__four_visible {
+	display: none;
+}
+
+.container-2__four:hover .container-2__four_hover {
+	display: block;
+}
+
+.container-2__four_hover {
+	display: none;
+	width: 554px;
+	height: 554px;
+}
+
+.item__image {
+	display: inline-block;
+	width: 270px;
+}
+
+.item__description {
+	display: inline-block;
+	width: 270px;
+}
+
+.item__button_Add-to-chart {
+	text-align: center;
+	position: relative;
+}
+
+.item__button_Add-to-chart_style {
+	color: #000;
+	font-size: 15px;
+	background: #fff;
+	padding: 10px 20px 10px 20px;
+	border: solid #000 1px;
+	text-decoration: none;
+}
+
+.item__see-more {
+	text-align: center;
+	text-decoration: none;
+	position: relative;	
+}
+
+.item__description_sale {
+	color: red;
+}
+
+
