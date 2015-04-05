@@ -1,0 +1,29 @@
+{
+  "name": "ninJS-shop",
+  "version": "1.0.0",
+  "description": "shop app",
+  "main": "index.html",
+  "dependencies": {
+    "gulp": "^3.8.11"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.5.0",
+    "gulp": "^3.8.11"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frontend-school/ninJS-shop"
+  },
+  "keywords": [
+    "shop"
+  ],
+  "author": "ninJS team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frontend-school/ninJS-shop/issues"
+  },
+  "homepage": "https://github.com/frontend-school/ninJS-shop"
+}
