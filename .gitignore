@@ -2,7 +2,3 @@
 dist
 bower_components
 node_modules
-bower.json
-Gulpfile.js
-package.json
-project.psd

@@ -8,7 +8,9 @@
   },
   "devDependencies": {
     "browser-sync": "^2.5.0",
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "gulp-stylus": "^2.0.1",
+    "stylus": "^0.50.0"
   },
   "scripts": {
     "test": "test"

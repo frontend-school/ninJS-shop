@@ -1,5 +1,6 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
+var gulp = require('gulp'),
+    browserSync = require('browser-sync'),
+    stylus = require('gulp-stylus');
 
 gulp.task('server', function() {
     browserSync({
@@ -20,7 +21,8 @@ gulp.task('html', function () {
 });
 
 gulp.task('css', function () {
-    gulp.src('src/css/*')
+    gulp.src('src/css/*.styl')
+        .pipe(stylus())
         .pipe(gulp.dest('dist/css'));
 });
 
