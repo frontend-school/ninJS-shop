@@ -24,8 +24,8 @@ p { margin: 0; }
     width: 1128px;
     padding: 10px;
     margin: 0 auto;
-    box-shadow: 0 0 0 1px red;
-    opacity: 10.5;
+    /*box-shadow: 0 0 0 1px red;
+    opacity: 10.5;*/
 }
 
 
@@ -109,13 +109,13 @@ p { margin: 0; }
     left: 0;
     width: 100%;
     background: white;
-    opacity: 10; /* show/hide item content for testing*/
+    opacity: 0; /* show/hide item content for testing*/
     transition: 400ms ease;
 
 }
 
 .item-undercover:hover {
-    opacity: 100;
+    opacity: 1;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
 }
 
