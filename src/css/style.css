@@ -110,6 +110,7 @@ p { margin: 0; }
     width: 100%;
     background: white;
     opacity: 0; /* show/hide item content for testing*/
+    filter: alpha(opacity=0);
     transition: 400ms ease;
 
 }
@@ -117,6 +118,7 @@ p { margin: 0; }
 .item-undercover:hover {
     opacity: 1;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+    filter: alpha(opacity=100);
 }
 
 .item-content {
