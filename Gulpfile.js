@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     stylus = require('gulp-stylus'),
     del = require('del');
 
-gulp.task('default', ['clean','build','serve', 'watch']);
+gulp.task('default', ['build','serve', 'watch']);
 
 gulp.task('serve', function() {
     browserSync({
@@ -38,7 +38,7 @@ gulp.task('html', function() {
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('css', function() {
+gulp.task('css', ['clean'], function() {
     gulp.src('./src/css/blocks/*.styl')
         .pipe(stylus())
         .pipe(concat('styles.css'))
