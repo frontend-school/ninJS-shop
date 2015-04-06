@@ -14,17 +14,17 @@ p
   width 1150px
   height 1435px
   position absolute
-  background url('../img/project.jpg') no-repeat
+  background url('../img/project_hovered.jpg') no-repeat
   opacity 0.5
   margin 0 100px
-  /*display none*/
+  display none
 
 .item-gallery
   width 1128px
   padding 10px
   margin 0 auto
   /*box-shadow 0 0 0 1px red*/
-  opacity 0.5
+  opacity 10.5
 
 [class*='column-']
   float left
@@ -111,26 +111,32 @@ p
     left 0
     width 100%
     background white
-    opacity 0
+    opacity 10
     transition 400ms ease
     &:hover
-      opacity 100
+      opacity 1
       box-shadow 0 0 5px 1px rgba(0, 0, 0, 0.3)
 
   &-content
     position relative
     float left
-    width 272px
+    width 100%
     height 272px
 
-    &_x2y1
+    &-left
+      margin-top: 43px
+      width 50%
+      float left
+
+    &-right
+      margin-top: 43px
+      width 50%
+      float right
+
+    &_x2
       width 554px
 
-    &_x1y2
-      height 554px
-
-    &_x2y2
-      width 554px
+    &_y2
       height 554px
 
     &_bottom
@@ -152,71 +158,68 @@ p
         height 50%
         border-left 1px solid #cccccc
 
-    &-info
-      width 90%
-      margin 48px auto 0
+    &_narrow
+      width 300px
+      margin 0 auto
 
-      &_narrow
-        width 300px
-        margin 0 auto
+    &_wide
+      width 65%
+      margin 43px auto 0
 
-      &_wide
-        width 65%
-        margin 43px auto 0
+    &__image
+      float right
+      padding-right 10px
 
-      &__image
-        float left
-        margin 5px 13% 0 0
+      &_position_center
+        float none
+        margin 150px auto 0
+        display block
 
-        &_position_center
-          float none
-          margin 150px auto 0
-          display block
+    &__price
+      font-size 12px
+      letter-spacing 0.4px
 
-      &__price
-        font-size 12px
-        letter-spacing 0.4px
+    &__sale
+      color #c91000
+      font-size 18px
 
-      &__sale
+    &__name
+      max-width: 175px;
+      font-size 16px
+      text-overflow ellipsis
+      letter-spacing 0.1px
+
+    &-button-holder
+      position absolute
+      bottom 28px
+      width 100%
+
+    &__button
+      margin 0 auto
+      width 180px
+      height 30px
+      display block
+      border 1px solid #999999
+      padding 0 0 0 45px
+      line-height 32px
+      letter-spacing 0.4px
+      text-decoration none
+      color #000000
+      background url('../img/button-arrow.png') no-repeat 181px 12px
+      transition background-position 250ms ease
+      &:hover
+        background-position 191px 12px
+
+    &__link
+      margin 7px auto 0
+      width 55px
+      display block
+      font-size 10px
+      text-transform uppercase
+      text-decoration none
+      color #000000
+      cursor pointer
+      letter-spacing 0.8px
+      transition color 200ms ease
+      &:hover
         color #c91000
-        font-size 18px
-
-      &__name
-        font-size 16px
-        text-overflow ellipsis
-        letter-spacing 0.1px
-
-      &-button-holder
-        position absolute
-        bottom 28px
-        width 100%
-
-      &__button
-        margin 0 auto
-        width 180px
-        height 30px
-        display block
-        border 1px solid #999999
-        padding 0 0 0 45px
-        line-height 32px
-        letter-spacing 0.4px
-        text-decoration none
-        color #000000
-        background url('../img/button-arrow.png') no-repeat 181px 12px
-        transition background-position 250ms ease
-        &:hover
-          background-position 191px 12px
-
-      &__link
-        margin 7px auto 0
-        width 55px
-        display block
-        font-size 10px
-        text-transform uppercase
-        text-decoration none
-        color #000000
-        cursor pointer
-        letter-spacing 0.8px
-        transition color 200ms ease
-        &:hover
-          color #c91000
