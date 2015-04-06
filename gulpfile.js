@@ -16,9 +16,9 @@ var gulp = require('gulp'),
 			.pipe(gulp.dest('dist/js'));
 	});
 	
-	gulp.task('html-watch',['html'],browserSync.reload);
-	gulp.task('css-watch',['css'],browserSync.reload);
-	gulp.task('js-watch',['js'],browserSync.reload);
+	gulp.task('html-watch',['html'],browserSync.reload());
+	gulp.task('css-watch',['css'],browserSync.reload());
+	gulp.task('js-watch',['js'],browserSync.reload());
 	
 	gulp.task('initialCopy', function(){
 		gulp.src(['src/**'])
