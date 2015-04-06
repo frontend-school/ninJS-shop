@@ -1,0 +1,33 @@
+/*Grid Generation file*/
+
+
+@column_num: 12;  // current number of column
+
+// Grid Generation function
+// @column_num: number of columns
+.generate-columns(@column_num: 12, @i: 1) when (@i =< @column_num) {
+  .column-@{i} {
+    width: ((@i * 100%)/ @column_num);
+  }
+  .generate-columns(@column_num, (@i + 1));
+}
+
+.generate-columns(@column_num);
+
+.columns {
+  position: relative;
+/*  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;*/
+/*  padding-left: 4px;
+  padding-right: 4px;*/
+
+  float: left; }
+
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  max-width: 62.5rem;
+}

@@ -1,10 +1,13 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
+var gulp = require('gulp'),
+    browserSync = require('browser-sync'),
+    less = require('gulp-less'),
+    concat = require('gulp-concat'),
+    del = require('del');
 
 
 
 // default task
-gulp.task('default', ['browser-sync']);
+gulp.task('default', ['build','browser-sync']);
 
 // Browser reload
 gulp.task('browser-sync',['watch'], function() {
@@ -18,7 +21,7 @@ gulp.task('browser-sync',['watch'], function() {
 /*------Watchers ------*/
 
 // General watchers
-gulp.task('watch',['watchIndex','watchCSS','watchJS']);
+gulp.task('watch',['watchIndex','watchCSS','watchJS','watchLess']);
 
 // Watch index.html
 gulp.task('watchIndex',function(){
@@ -31,7 +34,16 @@ gulp.task('watchIndex',function(){
 
 // Watch CSS
 gulp.task('watchCSS',function(){
-    var watcher = gulp.watch('./src/css/*.css', ['buildcss']);
+    var watcher = gulp.watch('./src/css/**/*.css', ['buildcss']);
+    watcher.on('change', function (event) {
+        console.log(event.path + ' has ' + event.type); // added, changed, or deleted
+
+    });
+});
+
+// Watch LESS
+gulp.task('watchLess',function(){
+    var watcher = gulp.watch('./src/css/**/*.less', ['buildLess']);
     watcher.on('change', function (event) {
         console.log(event.path + ' has ' + event.type); // added, changed, or deleted
 
@@ -49,7 +61,7 @@ gulp.task('watchJS',function(){
 
 /*------Building ------*/
 //Build project
-gulp.task('build',['buildjs','buildhtml','buildcss','buildimage']);
+gulp.task('build',['buildhtml','buildjs','buildimage','buildvendor','buildLess']);
 
 //Build vendor libs
 gulp.task('buildvendor',function(){
@@ -83,21 +95,35 @@ gulp.task('buildhtml', function() {
 //build css file
 //Now it just copy
 gulp.task('buildcss', function(){
-    var cssSrc = './src/css/*.css',
+    var cssSrc = './src/css/**/*.css',
         cssDst = './dist/css/';
-    gulp.src('./src/css/*.css')
-        .pipe(gulp.dest('./dist/css/'))
+    gulp.src(cssSrc)
+        .pipe(concat('styles.css'))
+        .pipe(gulp.dest(cssDst))
 });
 
 //build image file
 //Now it just copy
 gulp.task('buildimage', function() {
-    var imgSrc = './src/img/*',
-        imgDst = './dist/img/*';
+    var imgSrc = './src/img/**/*.png',
+        imgDst = './dist/img/';
 
     gulp.src(imgSrc)
         .pipe(gulp.dest(imgDst));
 });
 
+//build LESS file
+gulp.task('buildLess', function() {
+    var lessSrc = './src/css/**/*.less',
+        lessDst = './dist/css/';
+    gulp.src(lessSrc)
+        .pipe(less())
+        .pipe(concat('styles.css'))
+        .pipe(gulp.dest(lessDst));
+});
 
+// clean distribution source
+gulp.task('clean', function (cb) {
+    del(['./dist/**'], cb);
+});
 

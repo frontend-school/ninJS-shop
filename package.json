@@ -1,31 +1,29 @@
 {
-  "name": "ninJS-shop",
+  "name": "ninJS-shop-bucket",
   "version": "0.0.1",
-  "description": "Amazon killer",
+  "description": "\"Amazon killer\"",
   "main": "app.js",
   "scripts": {
     "test": "make test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/frontend-school/ninJS-shop.git"
+    "url": "https://shengofer@bitbucket.org/shengofer/ninjs-shop.git"
   },
   "keywords": [
     "shop",
     "cheap",
     "cool",
-    "lovely",
-    "cat"
+    "lovely"
   ],
   "author": "Front-End Inc",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/frontend-school/ninJS-shop/issues"
-  },
-  "homepage": "https://github.com/frontend-school/ninJS-shop",
   "devDependencies": {
-    "browser-sync": "^2.5.0",
+    "browser-sync": "^2.5.2",
+    "del": "^1.1.1",
     "gulp": "^3.8.11",
-    "gulp-watch": "^4.2.2"
+    "gulp-concat": "^2.5.2",
+    "gulp-less": "^3.0.2",
+    "less": "^2.5.0"
   }
 }
