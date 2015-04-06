@@ -1,5 +1,5 @@
-@import url("http://fonts.googleapis.com/css?family=Roboto");
-@import url("normalize.css");
+@import url("http://fonts.googleapis.com/css?family=Roboto")
+@import url("normalize.css")
 
 body
   font-family 'Roboto', sans-serif
@@ -50,6 +50,12 @@ p
 
 .top
   margin-top -277px
+
+.y1
+  height: 272px
+
+.y2
+  height: 554px
 
 .item
   &-cover
@@ -111,7 +117,7 @@ p
     left 0
     width 100%
     background white
-    opacity 0
+    opacity 10
     transition 400ms ease
     &:hover
       opacity 1
@@ -143,6 +149,9 @@ p
     &_width_x2
       width 554px
 
+    &_height_y1
+      height 272px
+
     &_height_y2
       height 554px
 
@@ -166,8 +175,9 @@ p
         border-left 1px solid #cccccc
 
     &_narrow
-      width 300px
+      width 90%
       margin 0 auto
+
 
     &_wide
       width 65%
@@ -191,9 +201,8 @@ p
       font-size 18px
 
     &__name
-      max-width: 175px;
+      max-width: 175px
       font-size 16px
-      text-overflow ellipsis
       letter-spacing 0.1px
 
     &-button-holder
@@ -230,3 +239,32 @@ p
       transition color 200ms ease
       &:hover
         color #c91000
+
+.ellipsis
+  height 40px
+  overflow hidden
+  &:before
+    content ""
+    float left
+    width 5px
+    height 40px
+  &:after
+    content "\02026"
+    float right
+    position relative
+    top -21px
+    left 96%
+    width 20px
+    margin-left -20px
+    padding-right 5px
+    text-align right
+    background linear-gradient(to right, rgba(255,255,255,0.5), white 10%, white)
+
+  &-text
+    float right
+    width 100%
+    margin-left -5px
+
+
+
+
