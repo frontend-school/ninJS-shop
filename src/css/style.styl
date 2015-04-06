@@ -17,7 +17,7 @@ p
   background url('../img/project_hovered.jpg') no-repeat
   opacity 0.5
   margin 0 100px
-  display none
+  /*display none*/
 
 .item-gallery
   width 1128px
@@ -111,7 +111,7 @@ p
     left 0
     width 100%
     background white
-    opacity 10
+    opacity 0
     transition 400ms ease
     &:hover
       opacity 1
@@ -123,20 +123,27 @@ p
     width 100%
     height 272px
 
-    &-left
+    &_left-side
       margin-top: 43px
       width 50%
       float left
 
-    &-right
+    &_right-side
       margin-top: 43px
       width 50%
       float right
 
-    &_x2
+    &_center
+      width 40%
+      margin 0 auto
+
+    &_width_x1
+      width 272px
+
+    &_width_x2
       width 554px
 
-    &_y2
+    &_height_y2
       height 554px
 
     &_bottom
@@ -154,7 +161,7 @@ p
         content ""
         position absolute
         top 25%
-        left 5px
+        left 0
         height 50%
         border-left 1px solid #cccccc
 
