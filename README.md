@@ -1,4 +1,4 @@
 # ninJS-shop
 Shop application
 
-Gusar
+[Demo](http://antongusar.github.io/shop/)
