@@ -14,17 +14,17 @@ p
   width 1150px
   height 1435px
   position absolute
-  background url('../img/project_hovered.jpg') no-repeat
+  background url('../img/project.jpg') no-repeat
   opacity 0.5
   margin 0 100px
-  display none
+  /*display none*/
 
 .item-gallery
   width 1128px
   padding 10px
   margin 0 auto
   /*box-shadow 0 0 0 1px red*/
-  opacity 10.5
+  opacity 0.5
 
 [class*='column-']
   float left
@@ -66,24 +66,44 @@ p
       height 72px
       background rgba(0, 0, 0, 0.5)
 
+      &-container
+        float left
+        width 250px
+        margin 10px 0 0 20px
+        text-align center
+
+        &_left
+          text-align left
+          margin-left 30px
+
+        &_right
+          float right
+          margin-right 30px
+          text-align right
+
+
       &__name
-        padding 9px 0 0 30px
-        font-size 12px
+        font-size 14px
+        line-height 1.0
         font-style italic
         color white
 
+        &_text-align_centered
+          text-align center
+
+        &_float_right
+          float right
+
       &__price
-        padding 0 0 0 28px
         color white
-        font-size 14px
+        font-size 12px
         font-weight bold
 
-        &_align-right
-          padding 0 30px 0 0
-          color white
-          text-align right
-          font-size 14px
-          font-weight bold
+        &_line-through
+          text-decoration line-through
+          font-style italic
+          font-weight normal
+
 
   &-undercover
     position absolute
