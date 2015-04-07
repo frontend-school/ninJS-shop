@@ -1,19 +1,25 @@
 body {
   background-color: #fff;
 }
+
+hr {
+  width: 80px;
+  text-align: center;  
+}
+
 .container-1, .container-2 {
   display: block;
   position: relative;
-  width: 1158px;
+  width: 1148px;
   margin: 0 auto;
 }
 
 .container-1 {
-  height: 857px;
+  height: 861px;
 }
 
 .container-2 {
-  height: 600px;
+  height: 574px;
 }
 
 /* item 1 */
@@ -23,7 +29,7 @@ body {
   height: 272px;
   margin-top: 10px;
   margin-left: 10px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .container-1__1:hover .container-1__1_cover {
   display: none;
@@ -45,7 +51,6 @@ body {
   height: 272px;
   margin-top: 10px;
   margin-left: 10px;
-  margin-right: 10px;
 }
 .container-1__2:hover .container-1__2_cover {
   display: none;
@@ -66,7 +71,6 @@ body {
   width: 272px;
   height: 554px;
   margin-top: 10px;
-  margin-left: 10px;
   margin-right: 10px;
 }
 .container-1__3:hover .container-1__3_cover {
@@ -89,7 +93,7 @@ body {
   height: 272px;
   margin-top: 10px;
   margin-left: 10px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .container-1__4:hover .container-1__4_cover {
   display: none;
@@ -111,7 +115,7 @@ body {
   height: 554px;
   margin-top: 10px;
   margin-left: 10px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .container-1__5:hover .container-1__5_cover {
   display: none;
@@ -132,7 +136,6 @@ body {
   width: 272px;
   height: 272px;
   margin-top: 10px;
-  margin-left: 10px;
   margin-right: 10px;
 }
 .container-1__6:hover .container-1__6_cover {
@@ -154,7 +157,7 @@ body {
   height: 272px;
   margin-top: 574px;
   margin-left: 10px;
-  margin-right: 10px;
+  margin-right: 5px;
   position: absolute;
 }
 .container-1__7:hover .container-1__7_cover {
@@ -174,10 +177,8 @@ body {
 .container-2__8 {
   float: left;
   width: 554px;
-  height: 272px;
-  margin-top: 10px;
+  height: 272px;;
   margin-left: 10px;
-  margin-right: 10px;
 }
 .container-2__8:hover .container-2__8_cover {
   display: none;
@@ -197,8 +198,6 @@ body {
   float: right;
   width: 554px;
   height: 554px;
-  margin-top: 10px;
-  margin-left: 10px;
   margin-right: 10px;
 }
 .container-2__9:hover .container-2__9_cover {
@@ -218,9 +217,8 @@ body {
 .container-2__10 {
   width: 554px;
   height: 272px;
-  margin-top: 291px;
+  margin-top: 284px;
   margin-left: 10px;
-  margin-right: 10px;
   position: absolute;
 }
 .container-2__10:hover .container-2__10_cover {
@@ -237,31 +235,59 @@ body {
 }
 
 /* div hover */
+.item {
+	width: 270px;
+	height: 270px;
+	position: relative;
+	margin: 0 auto;
+}
+
 .item__image {
-  display: inline-block;
-  width: 270px;
+	float: left;	
+	width: 48%;
+	height: 160px;
 }
 .item__description {
-  display: inline-block;
+	float: right;
+	width: 48%;
+	height: 160px;
 }
+
 .item__description_sale {
-  color: #f00;
+	color: #f00;
 }
 .item__button-add {
-  text-align: center;
-  position: relative;
+	text-align: center;
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 .item__see-more {
-  text-align: center;
-  text-decoration: none;
-  position: relative;
-  text-decoration: none;
+  	text-align: center;
+  	text-decoration: none;
+  	position: relative;
 }
+
 .button_style {
-  color: #000;
-  font-size: 15px;
-  background: #fff;
-  padding: 10px 20px 10px 20px;
-  border: solid #000 1px;
+ 	color: #000;
+ 	font-size: 15px;
+ 	background: #fff;
+  	padding: 10px 20px 10px 20px;
+  	border: solid #000 1px;
 }
+
+/* special div hover item 5,9 */
+
+.item_9 {
+	top: 30%;
+}
+
+.item__image_5, .item__image_9, .item__image_10 {
+	margin-left: -50px;
+}
+
+.item__button-add_9, .item__see-more_9 {
+	top: 30px;
+}
+
 
