@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     stylus = require('gulp-stylus'),
     concat = require('gulp-concat');
+    jpg = require('gulp-imagemin');
 
 gulp.task('server', function() {
     browserSync({
@@ -19,7 +20,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('css', function () {
-    gulp.src(['src/css/blocks/main.styl', 'src/css/blocks/*.styl'])
+    gulp.src(['src/css/blocks/main.styl', 'src/css/blocks/grid.styl', 'src/css/blocks/product-container.styl', 'src/css/blocks/*.styl'])
         .pipe(stylus())
         .pipe(concat('style.css'))
         .pipe(gulp.dest('dist/css'));
@@ -32,6 +33,7 @@ gulp.task('js', function () {
 
 gulp.task('img', function () {
     gulp.src('src/img/*')
+        .pipe(jpg({progressive: true}))
         .pipe(gulp.dest('dist/img/'));
 });
 
@@ -52,4 +54,4 @@ gulp.task('watch', function () {
     });
 });
 
-gulp.task('default', ['server', 'build', 'watch']);
+gulp.task('default', ['build', 'server', 'watch']);

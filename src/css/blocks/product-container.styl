@@ -1,0 +1,31 @@
+.product-container
+  position relative
+  float left
+  width 272px
+  height 272px
+
+  &_wide
+    width 554px
+
+  &_high
+    height: 554px;
+
+  &_bottom
+    padding-top: 10px;
+    &:before
+      content ""
+      position absolute
+      top 5px
+      left 12%
+      width 76%
+      border-bottom 1px solid #cccccc
+
+  &_left
+    padding-left: 10px;
+    &:before
+      content ""
+      position absolute
+      top 25%
+      left 5px
+      height 50%
+      border-left 1px solid #cccccc
