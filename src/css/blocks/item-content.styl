@@ -1,0 +1,139 @@
+.product
+  position relative
+  float left
+  width 272px
+  height 272px
+
+  &_wide
+    width 554px
+
+  &_high
+    height: 554px;
+
+  &_bottom
+    padding-top: 10px;
+    &:before
+      content ""
+      position absolute
+      top 5px
+      left 12%
+      width 76%
+      border-bottom 1px solid #cccccc
+
+  &_left
+    padding-left: 10px;
+    &:before
+      content ""
+      position absolute
+      top 25%
+      left 5px
+      height 50%
+      border-left 1px solid #cccccc
+
+  &-content
+
+    &_left-side
+      margin-top: 43px
+      width 50%
+      float left
+
+    &_right-side
+      margin-top: 43px
+      width 50%
+      float right
+
+    &_center
+      width 40%
+      margin 0 auto
+
+    &_narrow
+      width 90%
+      margin 0 auto
+
+
+    &_wide
+      width 65%
+      margin 43px auto 0
+
+    &__image
+      float right
+      padding-right 10px
+
+      &_position_center
+        float none
+        margin 150px auto 0
+        display block
+
+    &__price
+      font-size 12px
+      letter-spacing 0.4px
+
+    &__sale
+      color #c91000
+      font-size 18px
+
+    &__name
+      max-width: 175px
+      font-size 16px
+      letter-spacing 0.1px
+
+    &-button-holder
+      position absolute
+      bottom 28px
+      width 100%
+
+    &__button
+      margin 0 auto
+      width 180px
+      height 30px
+      display block
+      border 1px solid #999999
+      padding 0 0 0 45px
+      line-height 32px
+      letter-spacing 0.4px
+      text-decoration none
+      color #000000
+      background url('../img/button-arrow.png') no-repeat 181px 12px
+      transition background-position 250ms ease
+      &:hover
+        background-position 191px 12px
+
+    &__link
+      margin 7px auto 0
+      width 55px
+      display block
+      font-size 10px
+      text-transform uppercase
+      text-decoration none
+      color #000000
+      cursor pointer
+      letter-spacing 0.8px
+      transition color 200ms ease
+      &:hover
+        color #c91000
+
+    &-ellipsis
+      width 120px
+      height 40px
+      overflow hidden
+      &:before
+        content ""
+        float left
+        width 5px
+        height 40px
+      &:after
+        content "\02026"
+        float right
+        position relative
+        top -21px
+        left 96%
+        width 30px
+        margin-left -30px
+        padding-right 5px
+        text-align right
+        background linear-gradient(to right, rgba(255,255,255,0.5), white 25%, white)
+
+      &-text
+        float right
+        width 100%
+        margin-left -5px
