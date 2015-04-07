@@ -41,6 +41,10 @@ $block-size: 272px;
   color: #000000;
 }
 
+.old-price {
+  text-decoration: line-through;
+}
+
 body {
   width: 4*$block-size + 60;
   margin: 0 auto;

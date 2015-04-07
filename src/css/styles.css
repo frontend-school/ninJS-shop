@@ -1,3 +1,6 @@
+.old-price {
+  text-decoration: line-through; }
+
 body {
   width: 1148px;
   margin: 0 auto; }
