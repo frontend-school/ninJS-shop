@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     browserSync = require('browser-sync'),
-    stylus = require('gulp-stylus');
+    stylus = require('gulp-stylus'),
+    concat = require('gulp-concat');
 
 gulp.task('server', function() {
     browserSync({
@@ -18,8 +19,9 @@ gulp.task('html', function () {
 });
 
 gulp.task('css', function () {
-    gulp.src('src/css/*.styl')
+    gulp.src(['src/css/blocks/main.styl', 'src/css/blocks/*.styl'])
         .pipe(stylus())
+        .pipe(concat('style.css'))
         .pipe(gulp.dest('dist/css'));
 });
 
@@ -40,7 +42,7 @@ gulp.task('bower', function () {
 
 gulp.task('watch', function () {
     gulp.watch('src/index.html', ['html']);
-    gulp.watch('src/css/*', ['css']);
+    gulp.watch('src/css/**', ['css']);
     gulp.watch('src/js/*', ['js']);
     gulp.watch('src/img/*', ['img']);
     gulp.watch('bower_components/**', ['bower']);
