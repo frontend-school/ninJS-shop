@@ -10,29 +10,12 @@ $red = #d13f34
   &__image
     float: left
 
-    &_centric
-      margin-top: 100px
-      margin-left: 200px
-      float: none
-
   &__price
     font-size: 0.8em
-
-    &_centric
-      padding-left: 180px
 
     &_sale
       font-size: 1.2em
       color: $red
-
-      &_centric
-        padding-left: 180px
-
-  &__title
-
-    &_centric
-      padding-left: 180px
-      width: 200px
 
   &__button
     position: absolute
@@ -69,10 +52,6 @@ $red = #d13f34
     &:hover
       color: $red
 
-  &_big
-    width: 560px
-    height: 520px
-
   &_sibling_horizontal
     float: left
     padding-left: 5px
@@ -94,3 +73,17 @@ $red = #d13f34
       right: 20px
       top: 280px
       border-top: 1px solid #ccc
+
+  &_big_yes
+    height: 520px
+
+    .b-product-back-instance__image
+      float: none
+      margin-top: 100px
+      margin-left: 50px
+
+    .b-product-back-instance__price
+      margin-left: 30px
+
+    .b-product-back-instance__title
+      margin-left: 30px
