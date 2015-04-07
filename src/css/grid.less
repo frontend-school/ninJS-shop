@@ -1,4 +1,4 @@
-/*Grid Generation file*/
+// Grid Generation CSS
 
 
 @column_num: 12;  // current number of column
@@ -7,12 +7,18 @@
 // @column_num: number of columns
 .generate-columns(@column_num: 12, @i: 1) when (@i =< @column_num) {
   .column-@{i} {
+    //width: (@i * 1088px/ @column_num);
     width: ((@i * 100%)/ @column_num);
+
+   // margin: 5px 5px 5px 5px;
+/*    margin-left: 5px;
+    margin-bottom: 5px;*/
   }
   .generate-columns(@column_num, (@i + 1));
 }
 
 .generate-columns(@column_num);
+
 
 .columns {
   position: relative;

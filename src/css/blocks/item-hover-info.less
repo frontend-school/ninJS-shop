@@ -1,0 +1,88 @@
+/* Hover Item description style */
+
+.hover-info {
+  text-align: center;
+  visibility: hidden;
+  position: absolute;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.1s;
+  top: 0;
+  left: 0;
+  right: 5px;
+  bottom: 10px;
+  vertical-align: middle;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+
+  &__precart {
+    width:272px;
+    height: 272px;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+
+    &_image {
+      position: relative;
+      float: left;
+      top: 50px;
+    }
+
+    &__item-info {
+      position: relative;
+      padding-top: 30px;
+      padding-right: 20px;
+      margin: 0 auto;
+
+      &_title {
+        font-size: 0.8em;
+        margin-left: 130px;
+        line-height: 100%;
+        max-width: 130px;
+      }
+
+      &_price {
+        font-size: 0.8em;
+      }
+
+      &_new-price {
+        font-size: 1.1em;
+        color: #ff0000;
+      }
+    }
+
+    &_card-add {
+      position: absolute;
+      display: block;
+      width: 150px;
+      height: 30px;
+      margin-left: 32px;
+      bottom: 50px;
+      padding-left: 40px;
+      border: 1px solid;
+      line-height: 30px;
+      color: #000000;
+      &:hover {
+        background: #ff0000;
+        color: #fff;
+        border-color: #fff;
+        .arrow {
+          color: #fff
+        }
+      }
+    }
+
+    &_addition-info {
+      position: absolute;
+      bottom: 20px;
+      display: block;
+      font-size: 0.8em;
+      line-height: 30px;
+      width: 100px;
+      padding-left: 86px;
+      color: #000000;
+      &:hover{
+        color: #d12f1a;
+      }
+    }
+  }
+}

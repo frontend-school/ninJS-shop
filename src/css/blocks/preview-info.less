@@ -1,0 +1,91 @@
+.preview {
+  //width: 100%;
+  margin-right:5px;
+  margin-left:5px;
+  margin-bottom: 5px;
+  &_image-default {
+    border: 0;
+  }
+
+  &__item-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    height: 72px;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 0.75em;
+    line-height: 100%;
+    display: inline-block;
+    margin: 5px;
+    &__decription-left {
+      color: white;
+      font-style: italic;
+      text-align: left;
+      padding-left: 10px;
+      padding-right: 20px;
+      &_title {
+        margin-top: 10px;
+        padding-left: 10px;
+        font-style: italic;
+      }
+      &_price {
+        display: inline-block;
+        padding-left: 10px;
+        font-style: italic;
+        //  float: left;
+      }
+
+      &_old-price {
+        display: inline-block;
+        text-decoration: line-through;
+        float: left;
+
+      }
+    }
+    &__decription-center {
+      width: 270px;
+      float: left;
+      text-align: center;
+      padding-left: 0;
+      &_title {
+        margin-top: 10px;
+        padding-left: 10px;
+        font-style: italic;
+      }
+      &_price {
+        display: inline-block;
+        padding-left: 10px;
+        font-style: italic;
+
+      }
+
+      &_old-price {
+        display: inline-block;
+        text-decoration: line-through;
+      }
+    }
+    &__decription-right {
+      text-align: right;
+      padding-right: 20px;
+      &_title {
+        margin-top: 10px;
+        padding-left: 10px;
+        font-style: italic;
+      }
+      &_price {
+        display: inline-block;
+        padding-left: 10px;
+        font-style: italic;
+      }
+
+      &_old-price {
+        display: inline-block;
+        text-decoration: line-through;
+        float: left;
+      }
+    }
+  }
+
+}
