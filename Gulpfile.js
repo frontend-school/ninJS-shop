@@ -7,7 +7,7 @@ var gulp = require('gulp'),
     data = require('gulp-data');
 
 gulp.task('default', ['build','serve', 'watch']);
-gulp.task('build', ['bower','html','css','img']);
+gulp.task('build', ['bower','jade','styl','img']);
 
 gulp.task('serve', function() {
     browserSync({
@@ -31,7 +31,7 @@ gulp.task('watch', function(){
         });
 });
 
-gulp.task('html', function() {
+gulp.task('jade', function() {
     gulp.src('./src/*.jade')
         .pipe(data(function(file) {
             return require('./src/products.json');
@@ -40,7 +40,7 @@ gulp.task('html', function() {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('css', function() {
+gulp.task('styl', function() {
     gulp.src('./src/styl/import.styl')
         .pipe(stylus())
         .pipe(concat('styles.css'))
