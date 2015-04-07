@@ -1,8 +1,6 @@
-/* view */
-
 $red = #d13f34
 
-.view
+.b-product-back-instance
   position: relative
   padding-top: 40px
   width: 275px
@@ -13,9 +11,9 @@ $red = #d13f34
     float: left
 
     &_centric
-      text-align: center
-      clear: both
-      padding-top: 100px
+      margin-top: 100px
+      margin-left: 200px
+      float: none
 
   &__price
     font-size: 0.8em
@@ -55,7 +53,7 @@ $red = #d13f34
       color: #fff
       border-color: #fff
 
-      .arrow
+      .b-arrow
         color: #fff
 
   &__more
@@ -71,36 +69,28 @@ $red = #d13f34
     &:hover
       color: $red
 
-.big
-  width: 560px
-  height: 520px
+  &_big
+    width: 560px
+    height: 520px
 
-.arrow
-  float: right
-  color: $red
-  font-weight: bold
+  &_sibling_horizontal
+    float: left
+    padding-left: 5px
 
-.line-through
-  text-decoration: line-through
+    &:after
+      content: ""
+      position: absolute
+      top: 20px
+      bottom: 20px
+      left: 280px
+      border-left: 1px solid #ccc
 
-.x-neighbour
-  float: left
-  padding-left: 5px
+  &_sibling_vertical
 
-  &:after
-    content: ""
-    position: absolute
-    top: 20px
-    bottom: 20px
-    left: 280px
-    border-left: 1px solid #ccc
-
-.y-neighbour
-
-  &:after
-    content: ""
-    position: absolute
-    left: 20px
-    right: 20px
-    top: 280px
-    border-top: 1px solid #ccc
+    &:after
+      content: ""
+      position: absolute
+      left: 20px
+      right: 20px
+      top: 280px
+      border-top: 1px solid #ccc
