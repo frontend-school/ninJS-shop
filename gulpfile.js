@@ -1,11 +1,17 @@
 var gulp = require('gulp'),
-	browserSync = require('browser-sync');
+	browserSync = require('browser-sync'),
+	sass = require('gulp-sass');
 	
 	gulp.task('html', function(){
 		gulp.src(['src/*.html'])
 			.pipe(gulp.dest('dist'));
 	});
 	
+	/*gulp.task('css', function(){
+		gulp.src(['src/css/*.scss'])
+			.pipe(sass())
+			.pipe(gulp.dest('dist/css'));
+	});*/
 	gulp.task('css', function(){
 		gulp.src(['src/css/*.css'])
 			.pipe(gulp.dest('dist/css'));
