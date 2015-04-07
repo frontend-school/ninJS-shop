@@ -10,10 +10,7 @@ gulp.task('server', function() {
     });
 });
 
-gulp.task('build', function () {
-    gulp.src('src/**')
-        .pipe(gulp.dest('dist/'));
-});
+gulp.task('build', ['html', 'css', 'js', 'img', 'bower']);
 
 gulp.task('html', function () {
     gulp.src('src/index.html')
@@ -53,4 +50,4 @@ gulp.task('watch', function () {
     });
 });
 
-gulp.task('default', ['server', 'bower', 'build', 'watch']);
+gulp.task('default', ['server', 'build', 'watch']);
