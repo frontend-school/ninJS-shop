@@ -1,69 +1,72 @@
-.cell
-  &-cover
-    position relative
+.cell-cover {
+  position: relative;
 
-    &-image
-      display block
+  &__image {
+    display: block;
+  }
 
-    &-info
-      width 100%
-      position absolute
-      left 0
-      bottom 0
-      height 72px
-      background rgba(0, 0, 0, 0.5)
+  &-info__outer {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 72px;
+    background: rgba(0, 0, 0, 0.5);
+  }
 
-      &-container
-        float left
-        width 230px
-        margin 10px 0 0 20px
+  &-info {
+    float: left;
+    width: 230px;
+    margin: 10px 0 0 20px;
+  }
 
-        &_left
-          text-align left
-          margin-left 30px
+  &-info_left {
+    text-align: left;
+    margin-left: 30px;
+  }
 
-        &_right
-          float right
-          margin-right 30px
-          text-align right
+  &-info_right {
+    float: right;
+    margin-right: 30px;
+    text-align: right;
+  }
 
-        &_center
-          text-align center
+  &-info_center {
+    text-align: center;
+  }
 
+  &-info__name {
+    font-size: 14px;
+    line-height: 1;
+    font-style: italic;
+    color: #fff;
+  }
 
-      &__name
-        font-size 14px
-        line-height 1.0
-        font-style italic
-        color white
+  &-info__price {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+  }
 
-        &_text-align_centered
-          text-align center
+  &-info__price_old {
+    text-decoration: line-through;
+    font-style: italic;
+    font-weight: normal;
+  }
+}
 
-        &_float_right
-          float right
+.cell-undercover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  opacity: 0;
+  box-shadow: 0 0 3px 1px #ccc;
+  transition: 400ms ease;
 
-      &__price
-        color white
-        font-size 12px
-        font-weight bold
-
-        &_old
-          text-decoration line-through
-          font-style italic
-          font-weight normal
-
-
-  &-undercover
-    position absolute
-    top 0
-    left 0
-    width 100%
-    background white
-    overflow: hidden;
-    opacity 10
-    box-shadow: 0 0 3px 1px #ccc;
-    transition 400ms ease
-    &:hover
-      opacity 1
-      box-shadow 0 0 5px 1px rgba(0, 0, 0, 0.3)
+  &:hover {
+    opacity: 1;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  }
+}
