@@ -2,31 +2,31 @@ mixin product-block(obj)
     .b-product-container(class=['b-product-container_width_'+obj.width, 'b-product-container_height_'+obj.height,
         'b-product-container_float_'+obj.float, 'b-product-container_neg-margin_'+obj.negmargin])
 
-        .product-front
-            img.b-product-front__image(src=obj.front__image.src)
-            .b-product-front-details
+        .product-container-front
+            img.b-product-container-front__image(src=obj.front__image.src)
+            .b-product-container-front-details
                 each product in obj.product
-                    .b-product-front-details-text(class='b-product-front-details-text_align_'+product.detailsalign)
-                        .b-product-front-details-text__title= product.title
-                        .b-product-front-details-text__price= product.price
+                    .b-product-container-front-details-text(class='b-product-container-front-details-text_align_'+product.detailsalign)
+                        .b-product-container-front-details-text__title= product.title
+                        .b-product-container-front-details-text__price= product.price
                         if product.oldprice
                             .b-old-price= product.oldprice
 
-        .b-product-back-container
+        .b-product-container-back
             each product in obj.product
-                .b-product-back-instance(class=['b-product-back-instance_sibling_'+obj.sibling,
-                    'b-product-back-instance_big_'+obj.big])
-                    img.b-product-back-instance__image(src=product.back__image)
+                .b-product-container-back-instance(class=['b-product-container-back-instance_sibling_'+obj.sibling,
+                    'b-product-container-back-instance_big_'+obj.big])
+                    img.b-product-container-back-instance__image(src=product.back__image)
                     if product.oldprice
-                        .b-product-back-instance__price= 'REG'+product.oldprice
-                        .b-product-back-instance__price(class='b-product-back-instance__price_sale')
+                        .b-product-container-back-instance__price= 'REG'+product.oldprice
+                        .b-product-container-back-instance__price(class='b-product-container-back-instance__price_sale')
                             span= 'SALE:'
                             br
                             span= product.price
                     else
-                        .b-product-back-instance__price= 'REG'+product.price
-                    .b-product-back-instance__title= product.title
-                    a.b-product-back-instance__button
+                        .b-product-container-back-instance__price= 'REG'+product.price
+                    .b-product-container-back-instance__title= product.title
+                    a.b-product-container-back-instance__button
                         span='Add To Cart'
                         .b-arrow= '>'
-                    a.b-product-back-instance__more= 'SEE MORE'
+                    a.b-product-container-back-instance__more= 'SEE MORE'

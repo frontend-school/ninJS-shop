@@ -1,10 +1,32 @@
-
 .b-product-container
-  position: relative
-  cursor: pointer
+  position relative
+  cursor pointer
+  margin 5px
+  background #000
+
+  &_height
+    &_one
+      height $base-size
+    &two
+      height $base-size*2+10px
+
+  &_width
+    &_one
+      width $base-size
+    &_two
+      width $base-size*2+10px
+
+  &_float
+    &_left
+      float left
+    &_right
+      float right
+
+  &_neg-margin_one
+    @media screen and (min-width 768px)
+      margin-top -5px - $base-size
 
   &:hover
-    .b-product-back-container
-      visibility: visible
-      opacity: 1
-
+    .b-product-container-back
+      visibility visible
+      opacity 1

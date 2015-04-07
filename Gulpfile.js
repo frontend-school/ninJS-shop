@@ -7,7 +7,7 @@ var gulp = require('gulp'),
     data = require('gulp-data');
 
 gulp.task('default', ['build','serve', 'watch']);
-gulp.task('build', ['html','css','img']);
+gulp.task('build', ['bower','html','css','img']);
 
 gulp.task('serve', function() {
     browserSync({
@@ -22,7 +22,7 @@ gulp.task('bower', function() {
 
 gulp.task('watch', function(){
     gulp.watch('./src/index.html', ['html']);
-    gulp.watch('./src/css/*', ['css']);
+    gulp.watch('./src/styl/*', ['css']);
     gulp.watch('./src/js/*', ['js']);
     gulp.watch(['./dist/index.html','./dist/js/*','./dist/css/*'])
         .on('change', function (file) {
@@ -41,12 +41,10 @@ gulp.task('html', function() {
 });
 
 gulp.task('css', function() {
-    gulp.src('./src/css/blocks/*.styl')
+    gulp.src('./src/styl/import.styl')
         .pipe(stylus())
         .pipe(concat('styles.css'))
         .pipe(gulp.dest('./dist/css'));
-    gulp.src('./src/css/*.css')
-            .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('js', function() {
