@@ -1,20 +1,23 @@
 var gulp = require('gulp'),
 	browserSync = require('browser-sync'),
-	sass = require('gulp-sass');
+	sass = require('gulp-sass'),
+	concat = require('gulp-concat');
 	
 	gulp.task('html', function(){
 		gulp.src(['src/*.html'])
 			.pipe(gulp.dest('dist'));
 	});
 	
-	/*gulp.task('css', function(){
-		gulp.src(['src/css/*.scss'])
+	gulp.task('scss', function(){
+		gulp.src(['src/scss/all.scss'])
 			.pipe(sass())
 			.pipe(gulp.dest('dist/css'));
-	});*/
-	gulp.task('css', function(){
-		gulp.src(['src/css/*.css'])
-			.pipe(gulp.dest('dist/css'));
+	});
+	
+	gulp.task('sass-concat', function() {
+		gulp.src(['src/scss/variables.scss','src/scss/mixins.scss', 'src/scss/styles.scss'])
+		.pipe(concat('all.scss'))
+		.pipe(gulp.dest('src/scss/'));
 	});
 	
 	gulp.task('js', function(){
@@ -23,7 +26,7 @@ var gulp = require('gulp'),
 	});
 	
 	gulp.task('html-watch',['html'],browserSync.reload());
-	gulp.task('css-watch',['css'],browserSync.reload());
+	gulp.task('scss-watch',['sass-concat'],browserSync.reload());
 	gulp.task('js-watch',['js'],browserSync.reload());
 	
 	gulp.task('initialCopy', function(){
@@ -47,8 +50,9 @@ var gulp = require('gulp'),
 		htmlWatcher.on('change', function(event) {
 			console.log('File ' + event.path + ' was ' + event.type)
 			});
-		var cssWatcher = gulp.watch('src/**/*.css',['css-watch']);
-		cssWatcher.on('change', function(event) {
+		var scssWatcher = gulp.watch('src/**/*.scss',['scss-watch']);
+		var AllscssWatcher = gulp.watch('src/scss/all.scss',['scss']);
+		scssWatcher.on('change', function(event) {
 			console.log('File ' + event.path + ' was ' + event.type)
 			});
 		var jsWatcher = gulp.watch('src/**/*.js',['js-watch']);
