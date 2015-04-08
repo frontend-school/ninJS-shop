@@ -1,15 +1,17 @@
+@import ("includes.styl");
+
 .product-container {
   position: relative;
   float: left;
-  width: 272px;
-  height: 272px;
+  width: $cell-size;
+  height: $cell-size;
 
   &_wide {
-    width: 554px;
+    width: $cell-size * 2 + $cell-side-margin * 2;
   }
 
   &_high {
-    height: 554px;
+    height: $cell-size * 2 + $cell-side-margin * 2;
   }
 
   &_bottom {
@@ -17,7 +19,7 @@
     &:before {
       content: "";
       position: absolute;
-      top: 5px;
+      top: $cell-side-margin;
       left: 12%;
       width: 76%;
       border-bottom: 1px solid #ccc;
@@ -31,7 +33,7 @@
       content: "";
       position: absolute;
       top: 25%;
-      left: 5px;
+      left: $cell-side-margin;
       height: 50%;
       border-left: 1px solid #ccc;
     }

@@ -1,5 +1,7 @@
+@import ("includes.styl");
+
 .grid {
-  width: 1128px;
+  width: ($cell-size * 4) + ($cell-side-margin * 2) * 4;
   padding: 10px;
   margin: 0 auto;
   /*box-shadow: 0 0 0 1px red;
@@ -8,31 +10,31 @@
 
 .cell {
   float: left;
-  margin: 5px;
+  margin: $cell-side-margin;
   position: relative;
 
   &_width_1-4 {
-    width: 272px;
+    width: $cell-size;
   }
 
   &_width_2-4 {
-    width: 554px;
+    width: $cell-size*2 + $cell-side-margin*2;
   }
 
   &_width_3-4 {
-    width: 846px;
+    width: $cell-size*3 + $cell-side-margin*3;
   }
 
   &_width_4-4 {
-    width: 1128px;
+    width: $cell-size*4 + $cell-side-margin*4;
   }
 
   &_height_1-2 {
-    height: 272px;
+    height: $cell-size;
   }
 
   &_height_2-2 {
-    height: 554px;
+    height: $cell-size*2 + $cell-side-margin*2;
   }
 
   &_right {
@@ -40,6 +42,6 @@
   }
 
   &_level-up {
-    margin-top: -277px;
+    margin-top: -($cell-size + $cell-side-margin);
   }
 }
