@@ -2,20 +2,19 @@ mixin product-block(obj)
     .b-product-container(class=['b-product-container_width_'+obj.width, 'b-product-container_height_'+obj.height,
         'b-product-container_float_'+obj.float, 'b-product-container_neg-margin_'+obj.negmargin])
 
-        .product-container-front
+        .b-product-container-front
             img.b-product-container-front__image(src=obj.front__image.src)
             .b-product-container-front-details
                 each product in obj.product
                     .b-product-container-front-details-text(class='b-product-container-front-details-text_align_'+product.detailsalign)
                         .b-product-container-front-details-text__title= product.title
-                        .b-product-container-front-details-text__price= product.price
+                        span.b-product-container-front-details-text__price= product.price
                         if product.oldprice
-                            .b-old-price= product.oldprice
+                            span.b-product-container-front-details-text__price_old= product.oldprice
 
-        .b-product-container-back
+        .b-product-container-back(class='b-product-container-back_sibling_'+obj.sibling)
             each product in obj.product
-                .b-product-container-back-instance(class=['b-product-container-back-instance_sibling_'+obj.sibling,
-                    'b-product-container-back-instance_big_'+obj.big])
+                .b-product-container-back-instance(class='b-product-container-back-instance_big_'+obj.big)
                     img.b-product-container-back-instance__image(src=product.back__image)
                     if product.oldprice
                         .b-product-container-back-instance__price= 'REG'+product.oldprice
@@ -26,7 +25,7 @@ mixin product-block(obj)
                     else
                         .b-product-container-back-instance__price= 'REG'+product.price
                     .b-product-container-back-instance__title= product.title
-                    a.b-product-container-back-instance__button
+                    a.b-product-container-back-instance-button
                         span='Add To Cart'
                         .b-arrow= '>'
                     a.b-product-container-back-instance__more= 'SEE MORE'

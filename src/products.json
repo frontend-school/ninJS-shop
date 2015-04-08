@@ -2,8 +2,8 @@
   "data": [
     {
       "id": 1,
-      "width":"two",
-      "height":"one",
+      "width":"2",
+      "height":"1",
       "float":"left",
       "negmargin": "no",
       "front__image": {
@@ -19,8 +19,8 @@
     },
     {
       "id": 2,
-      "width":"one",
-      "height":"one",
+      "width":"1",
+      "height":"1",
       "float":"left",
       "negmargin": "no",
       "front__image": {
@@ -36,8 +36,8 @@
     },
     {
       "id": 3,
-      "width":"one",
-      "height":"two",
+      "width":"1",
+      "height":"2",
       "float":"right",
       "negmargin": "no",
       "front__image": {
@@ -61,8 +61,8 @@
     },
     {
       "id": 4,
-      "width":"one",
-      "height":"one",
+      "width":"1",
+      "height":"1",
       "float":"left",
       "negmargin": "no",
       "front__image": {
@@ -78,8 +78,8 @@
     },
     {
       "id": 5,
-      "width":"two",
-      "height":"two",
+      "width":"2",
+      "height":"2",
       "float":"left",
       "negmargin": "no",
       "front__image": {
@@ -101,8 +101,8 @@
     },
     {
       "id": 6,
-      "width":"one",
-      "height":"one",
+      "width":"1",
+      "height":"1",
       "float":"left",
       "negmargin": "no",
       "front__image": {
@@ -118,10 +118,10 @@
     },
     {
       "id": 7,
-      "width":"one",
-      "height":"one",
+      "width":"1",
+      "height":"1",
       "float":"left",
-      "negmargin": "one",
+      "negmargin": "1",
       "front__image": {
         "src": "img/content/product-bg/i7.png"
       },
@@ -135,8 +135,8 @@
     },
     {
       "id": 8,
-      "width":"two",
-      "height":"one",
+      "width":"2",
+      "height":"1",
       "float":"left",
       "negmargin": "no",
       "front__image": {
@@ -160,8 +160,8 @@
     },
     {
       "id": 9,
-      "width":"two",
-      "height":"two",
+      "width":"2",
+      "height":"2",
       "float":"right",
       "negmargin": "no",
       "big": "yes",
@@ -178,8 +178,8 @@
     },
     {
       "id": 10,
-      "width":"two",
-      "height":"one",
+      "width":"2",
+      "height":"1",
       "float":"left",
       "negmargin": "no",
       "front__image": {
