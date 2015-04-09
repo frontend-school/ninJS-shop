@@ -32,6 +32,18 @@ module.exports = function(grunt) {
    			},
    		},
 
+      stylus: {
+          compile: {
+              options: {
+                  'compress': true,
+                  'paths': ['src/css/styl/']
+              },
+              files: {
+                  'src/css/styles.css': 'src/css/styles.styl'
+              }
+          }
+      },
+
 	    watch: {
 	    	options: {
 	    			livereload: true
@@ -58,7 +70,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default',['clean','copy','connect','watch']);
+	grunt.registerTask('default',['clean','copy','stylus','connect','watch']);
 };
