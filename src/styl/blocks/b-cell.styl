@@ -1,15 +1,15 @@
 for i in 1 2
   $_size = $base-size * i + 10px * i - 10px
-  .b-product-container_width_{i}
+  .b-cell_width_{i}
     width $_size
-  .b-product-container_height_{i}
+  .b-cell_height_{i}
     height $_size
 
 for i in left right
-  .b-product-container_float_{i}
+  .b-cell_float_{i}
     float i
 
-.b-product-container
+.b-cell
   position relative
   cursor pointer
   margin 5px
@@ -20,11 +20,11 @@ for i in left right
         margin-top -5px - $base-size
 
   &:hover
-    .b-product-container-back
+    .b-cell-rollover
       visibility visible
       opacity 1
 
-  &-front
+  &-cover
     &__image
       width 100%
       height 100%
@@ -58,10 +58,10 @@ for i in left right
           &_old
             text-decoration line-through
 
-  &-back
+  &-rollover
     visibility hidden
     absolute()
-    background white
+    background #fff
     box-shadow 1px 1px 5px rgba(0,0,0,0.2)
     opacity 0
     transition opacity 0.2s
@@ -75,15 +75,15 @@ for i in left right
         &:before
           content ""
           absolute(20px,auto,20px,280px)
-          border-left 1px solid #ccc
+          border-left 1px solid $colors-grey
 
       &_vertical
         &:before
           content ""
           absolute(280px,20px,auto,20px)
-          border-top 1px solid #ccc
+          border-top 1px solid $colors-grey
 
-    &-instance
+    &-item
       position relative
       padding-top 40px
       width 275px
@@ -132,13 +132,13 @@ for i in left right
       &_big_yes
         height 520px
 
-        .b-product-container-back-instance__image
+        .b-cell-rollover-item__image
           float none
           margin-top 100px
           margin-left 50px
 
-        .b-product-container-back-instance__price
+        .b-cell-rollover-item__price
           margin-left 30px
 
-        .b-product-container-back-instance__title
+        .b-cell-rollover-item__title
           margin-left 30px

@@ -1,31 +1,31 @@
-mixin product-block(obj)
-    .b-product-container(class=['b-product-container_width_'+obj.width, 'b-product-container_height_'+obj.height,
-        'b-product-container_float_'+obj.float, 'b-product-container_neg-margin_'+obj.negmargin])
+mixin product-block(cellData)
+    .b-cell(class=['b-cell_width_'+cellData.width, 'b-cell_height_'+cellData.height,
+        'b-cell_float_'+cellData.float, 'b-cell_neg-margin_'+cellData.negmargin])
 
-        .b-product-container-front
-            img.b-product-container-front__image(src=obj.front__image.src)
-            .b-product-container-front-details
-                each product in obj.product
-                    .b-product-container-front-details-text(class='b-product-container-front-details-text_align_'+product.detailsalign)
-                        .b-product-container-front-details-text__title= product.title
-                        span.b-product-container-front-details-text__price= product.price
+        .b-cell-cover
+            img.b-cell-cover__image(src=cellData.cover__image.src)
+            .b-cell-cover-details
+                each product in cellData.product
+                    .b-cell-cover-details-text(class='b-cell-cover-details-text_align_'+product.detailsalign)
+                        .b-cell-cover-details-text__title= product.title
+                        span.b-cell-cover-details-text__price= product.price
                         if product.oldprice
-                            span.b-product-container-front-details-text__price_old= product.oldprice
+                            span.b-cell-cover-details-text__price_old= product.oldprice
 
-        .b-product-container-back(class='b-product-container-back_sibling_'+obj.sibling)
-            each product in obj.product
-                .b-product-container-back-instance(class='b-product-container-back-instance_big_'+obj.big)
-                    img.b-product-container-back-instance__image(src=product.back__image)
+        .b-cell-rollover(class='b-cell-rollover_sibling_'+cellData.sibling)
+            each product in cellData.product
+                .b-cell-rollover-item(class='b-cell-rollover-item_big_'+cellData.big)
+                    img.b-cell-rollover-item__image(src=product.rollover__image)
                     if product.oldprice
-                        .b-product-container-back-instance__price= 'REG'+product.oldprice
-                        .b-product-container-back-instance__price(class='b-product-container-back-instance__price_sale')
+                        .b-cell-rollover-item__price= 'REG'+product.oldprice
+                        .b-cell-rollover-item__price(class='b-cell-rollover-item__price_sale')
                             span= 'SALE:'
                             br
                             span= product.price
                     else
-                        .b-product-container-back-instance__price= 'REG'+product.price
-                    .b-product-container-back-instance__title= product.title
-                    a.b-product-container-back-instance-button
+                        .b-cell-rollover-item__price= 'REG'+product.price
+                    .b-cell-rollover-item__title= product.title
+                    a.b-cell-rollover-item-button
                         span='Add To Cart'
                         .b-arrow= '>'
-                    a.b-product-container-back-instance__more= 'SEE MORE'
+                    a.b-cell-rollover-item__more= 'SEE MORE'

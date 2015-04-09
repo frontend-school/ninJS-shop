@@ -7,9 +7,9 @@ html(lang="en")
         link(href='css/styles.css' rel='stylesheet' media)
         link(href='vendor/normalize.css/normalize.css' rel='stylesheet')
     body.l-page
-        .b-product-wrapper
-            for product in data
-                +product-block(product)
+        .b-grid
+            for cellData in data
+                +product-block(cellData)
 
 
 
