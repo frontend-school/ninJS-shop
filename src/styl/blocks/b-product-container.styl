@@ -5,21 +5,19 @@ for i in 1 2
   .b-product-container_height_{i}
     height $_size
 
+for i in left right
+  .b-product-container_float_{i}
+    float i
+
 .b-product-container
   position relative
   cursor pointer
   margin 5px
-  background #000
 
-  &_float
-    &_left
-      float left
-    &_right
-      float right
-
-  &_neg-margin_1
-    @media screen and (min-width 768px)
-      margin-top -5px - $base-size
+  &_neg-margin
+    &_1
+      @media screen and (min-width 768px)
+        margin-top -5px - $base-size
 
   &:hover
     .b-product-container-back
@@ -45,15 +43,16 @@ for i in 1 2
         color white
         font-style italic
 
-        &_align_center
-          width 275px
-          float left
-          text-align center
-          padding-left 0
+        &_align
+          &_center
+            width 275px
+            float left
+            text-align center
+            padding-left 0
 
-        &_align_right
-          text-align right
-          padding-right 10px
+          &_right
+            text-align right
+            padding-right 10px
 
         &__price
           &_old
@@ -67,23 +66,22 @@ for i in 1 2
     opacity 0
     transition opacity 0.2s
 
-    &_sibling_horizontal
+    &_sibling
+      &_horizontal
+        >*
+          float left
+          padding-left 5px
 
-      >*
-        float left
-        padding-left 5px
+        &:before
+          content ""
+          absolute(20px,auto,20px,280px)
+          border-left 1px solid #ccc
 
-      &:before
-        content ""
-        absolute(20px,auto,20px,280px)
-        border-left 1px solid #ccc
-
-    &_sibling_vertical
-
-      &:before
-        content ""
-        absolute(280px,20px,auto,20px)
-        border-top 1px solid #ccc
+      &_vertical
+        &:before
+          content ""
+          absolute(280px,20px,auto,20px)
+          border-top 1px solid #ccc
 
     &-instance
       position relative
