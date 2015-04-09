@@ -21,9 +21,9 @@ module.exports = function(grunt) {
     	},
 
 
-        clean: ['dist/*'],
+      clean: ['dist/*'],
 
-        copy: {
+      copy: {
   			main: {
    				 files: [
    				 	{expand: true, src: ['src/**'], dest: 'dist/'},
@@ -35,11 +35,10 @@ module.exports = function(grunt) {
       stylus: {
           compile: {
               options: {
-                  'compress': true,
                   'paths': ['src/css/styl/']
               },
               files: {
-                  'src/css/styles.css': 'src/css/styles.styl'
+                  'src/css/styles.css': 'src/css/stylus/*.styl'
               }
           }
       },
