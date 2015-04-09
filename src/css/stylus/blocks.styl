@@ -1,8 +1,9 @@
+$block-size = $block-size;
 
 .block__1 
 	float: left;
-	width: 554px;
-	height: 272px;
+	width: $block-size * 2;
+	height: $block-size;
 	margin-top: 10px;
 	margin-left: 10px;
 	margin-right: 5px;
@@ -10,8 +11,8 @@
 	&_hover 
 		box-shadow: 2px 4px 18px 1px rgba(0,0,0,0.39);
 		display: none;
-		width: 554px;
-		height: 272px;
+		width: $block-size * 2;
+		height: $block-size;
 			
 .block__1:hover .block__1_cover 
 	display: none;
@@ -21,16 +22,16 @@
 
 .block__2 
 	float: left;
-	width: 272px;
-	height: 272px;
+	width: $block-size;
+	height: $block-size;
 	margin-top: 10px;
 	margin-left: 10px;
 	
 	&_hover 
 		box-shadow: 2px 4px 18px 1px rgba(0,0,0,0.39);
 		display: none;
-		width: 272px;
-		height: 272px;
+		width: $block-size;
+		height: $block-size;
 	
 .block__2:hover .block__2_cover 
 	display: none;
@@ -42,16 +43,16 @@
 
 .block__3 
 	float: right;
-	width: 272px;
-	height: 554px;
+	width: $block-size;
+	height: $block-size * 2;
 	margin-top: 10px;
 	margin-right: 10px;
 		
 	&_hover 
 		box-shadow: 2px 4px 18px 1px rgba(0,0,0,0.39);
 		display: none;
-		width: 272px;
-		height: 554px;
+		width: $block-size;
+		height: $block-size * 2;
 
 .block__3:hover .block__3_cover 
 	display: none;
@@ -62,8 +63,8 @@
 
 .block__4 
 	float: left;
-	width: 272px;
-	height: 272px;
+	width: $block-size;
+	height: $block-size;
 	margin-top: 10px;
 	margin-left: 10px;
 	margin-right: 5px;
@@ -71,8 +72,8 @@
 	&_hover 
 		box-shadow: 2px 4px 18px 1px rgba(0,0,0,0.39);
 		display: none;
-		width: 272px;
-		height: 272px;
+		width: $block-size;
+		height: $block-size;
 			
 .block__4:hover .block__4_cover 
 	display: none;
@@ -83,8 +84,8 @@
 
 .block__5 
 	float: left;
-	width: 554px;
-	height: 554px;
+	width: $block-size * 2;
+	height: $block-size * 2;
 	margin-top: 10px;
 	margin-left: 10px;
 	margin-right: 5px;
@@ -92,8 +93,8 @@
 	&_hover 
 		box-shadow: 2px 4px 18px 1px rgba(0,0,0,0.39);
 		display: none;
-		width: 554px;
-		height: 554px;
+		width: $block-size * 2;
+		height: $block-size * 2;
 		
 .block__5:hover .block__5_cover
 	display: none;
@@ -104,16 +105,16 @@
 
 .block__6 
 	float: right;
-	width: 272px;
-	height: 272px;
+	width: $block-size;
+	height: $block-size;
 	margin-top: 10px;
 	margin-right: 10px;
 		
 	&_hover 
 		box-shadow: 2px 4px 18px 1px rgba(0,0,0,0.39);
 		display: none;
-		width: 272px;
-		height: 272px;
+		width: $block-size;
+		height: $block-size;
 			
 .block__6:hover .block__6_cover
 	display: none;
@@ -122,8 +123,8 @@
 	display: block;
 
 .block__7 
-	width: 272px;
-	height: 272px;
+	width: $block-size;
+	height: $block-size;
 	margin-top: 574px;
 	margin-left: 10px;
 	margin-right: 5px;
@@ -132,8 +133,8 @@
 	&_hover 
 		box-shadow: 2px 4px 18px 1px rgba(0,0,0,0.39);
 		display: none;
-		width: 272px;
-		height: 272px;
+		width: $block-size;
+		height: $block-size;
 			
 .block__7:hover .block__7_cover
 	display: none;
@@ -144,15 +145,15 @@
 
 .block__8 
 	float: left;
-	width: 554px;
-	height: 272px;;
+	width: $block-size * 2;
+	height: $block-size;;
 	margin-left: 10px;
 		
 	&_hover 
 		box-shadow: 2px 4px 18px 1px rgba(0,0,0,0.39);
 		display: none;
-		width: 554px;
-		height: 272px;
+		width: $block-size * 2;
+		height: $block-size;
 			
 .block__8:hover .block__8_cover
 	display: none;
@@ -162,15 +163,15 @@
 
 .block__9 
 	float: right;
-	width: 554px;
-	height: 554px;
+	width: $block-size * 2;
+	height: $block-size * 2;
 	margin-right: 10px;
 		
 	&_hover 
 		box-shadow: 2px 4px 18px 1px rgba(0,0,0,0.39);
 		display: none;
-		width: 554px;
-		height: 554px;
+		width: $block-size * 2;
+		height: $block-size * 2;
 			
 .block__9:hover .block__9_cover 
 	display: none;
@@ -179,8 +180,8 @@
 	display: block;
 
 .block__10 
-	width: 554px;
-	height: 272px;
+	width: $block-size * 2;
+	height: $block-size;
 	margin-top: 284px;
 	margin-left: 10px;
 	position: absolute;
@@ -188,8 +189,8 @@
 	&_hover 
 		box-shadow: 2px 4px 18px 1px rgba(0,0,0,0.39);
 		display: none;
-		width: 554px;
-		height: 272px;
+		width: $block-size * 2;
+		height: $block-size;
 			
 .block__10:hover .block__10_cover
 	display: none;

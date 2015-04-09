@@ -48,13 +48,13 @@ module.exports = function(grunt) {
 	    			livereload: true
 	    	},   
 
-            scripts: { 
+          scripts: { 
         			files:['src/js/*.js'], 
         			tasks:['copy']
       		},
 
       		css: {
-      				files:['src/css/**/*.css'],
+      				files:['src/css/**/*.styl','src/css/**/*.css'],
       				tasks:['copy']
       		},		
 
