@@ -20,6 +20,11 @@
   float: left;
   margin: $cell-side-margin;
   position: relative;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 0 3px 1px #ccc;
+  }
 
   &_width_1-4 {
     width: $cell-size;
@@ -41,4 +46,3 @@
     margin-top: -($cell-size + $cell-side-margin);
   }
 }
-

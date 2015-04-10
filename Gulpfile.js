@@ -20,7 +20,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('css', function () {
-    gulp.src(['src/css/blocks/main.styl', 'src/css/blocks/grid.styl', 'src/css/blocks/product-container.styl', 'src/css/blocks/*.styl'])
+    gulp.src(['src/css/blocks/main.styl', 'src/css/blocks/grid.styl', 'src/css/blocks/product.styl', 'src/css/blocks/*.styl'])
         .pipe(stylus())
         .pipe(concat('style.css'))
         .pipe(gulp.dest('dist/css'));
