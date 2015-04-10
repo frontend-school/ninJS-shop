@@ -1,163 +1,124 @@
-@import ("variables.styl");
+@import "variables.styl";
 
-.product-container {
-  position: relative;
-  float: left;
-  width: $cell-size;
-  height: $cell-size;
-  background-color: #fff;
+.product {
 
-  &_wide {
-    width: $cell-size * 2 + $cell-side-margin * 2;
-  }
-
-  &_high {
-    height: $cell-size * 2 + $cell-side-margin * 2;
-  }
-
-  &_bottom {
-    padding-top: 10px;
-    &:before {
-      content: "";
-      position: absolute;
-      top: $cell-side-margin;
-      left: 12%;
-      width: 76%;
-      border-bottom: 1px solid #ccc;
-    }
-  }
-
-  &_left {
-    padding-left: 10px;
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: 25%;
-      left: $cell-side-margin;
-      height: 50%;
-      border-left: 1px solid #ccc;
-    }
-  }
-}
-
-.product-content {
-
-  &_left-side {
-    margin-top: 43px;
-    width: 50%;
+  &-container {
+    position: relative;
     float: left;
+    width: $cell-size;
+    height: $cell-size;
+    background-color: #fff;
+
+    &_wide {
+      width: $cell-size * 2 + $cell-side-margin * 2;
+    }
+
+    &_high {
+      height: $cell-size * 2 + $cell-side-margin * 2;
+    }
+
+    &_bottom {
+      padding-top: 10px;
+      &:before {
+        content: "";
+        position: absolute;
+        top: $cell-side-margin;
+        left: 12%;
+        width: 76%;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+
+    &_left {
+      padding-left: 10px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 25%;
+        left: $cell-side-margin;
+        height: 50%;
+        border-left: 1px solid #ccc;
+      }
+    }
   }
 
-  &_right-side {
-    margin-top: 43px;
-    width: 50%;
-    float: right;
-  }
+  &-content {
 
-  &_big-image {
-    width: 40%;
-    margin: 0 auto;
-  }
-
-  &__image {
-    float: right;
-    padding-right: 10px;
-  }
-
-  &__image_position_center {
-    float: none;
-    margin: 150px auto 0;
-    display: block;
-  }
-
-  &__price {
-    font-size: 12px;
-    letter-spacing: 0.4px;
-  }
-
-  &__sale {
-    color: #c91000;
-    font-size: 18px;
-  }
-
-  &__name {
-    max-width: 175px;
-    font-size: 16px;
-    letter-spacing: 0.1px;
-  }
-
-  &__button-outer {
-    position: absolute;
-    bottom: 28px;
-    width: 100%;
-  }
-
-  &__button {
-    margin: 0 auto;
-    width: 180px;
-    height: 30px;
-    display: block;
-    border: 1px solid #999;
-    padding: 0 0 0 45px;
-    line-height: 32px;
-    letter-spacing: 0.4px;
-    text-decoration: none;
-    color: #000;
-    background: url("../img/button-arrow.png") no-repeat 181px 12px;
-    transition: background-position 250ms ease;
-  }
-
-  &__button:hover {
-    background-position: 191px 12px;
-  }
-
-  &__more-link {
-    margin: 7px auto 0;
-    width: 55px;
-    display: block;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #000;
-    cursor: pointer;
-    letter-spacing: 0.8px;
-    transition: color 200ms ease;
-  }
-
-  &__more-link:hover {
-    color: #c91000;
-  }
-
-  &-ellipsis {
-    width: 120px;
-    height: 40px;
-    overflow: hidden;
-
-    &:before {
-      content: "";
+    &_left-side {
+      margin-top: 43px;
+      width: 50%;
       float: left;
-      width: 5px;
+    }
+
+    &_right-side {
+      margin-top: 43px;
+      width: 50%;
+      float: right;
+    }
+
+    &_big-image {
+      width: 40%;
+      margin: 0 auto;
+    }
+
+    &__image {
+      float: right;
+      padding-right: 10px;
+    }
+
+    &__image_position_center {
+      float: none;
+      margin: 150px auto 0;
+      display: block;
+    }
+
+    &__price {
+      font-size: 12px;
+      letter-spacing: 0.4px;
+    }
+
+    &__sale {
+      color: #c91000;
+      font-size: 18px;
+    }
+
+    &__name {
+      max-width: 175px;
+      font-size: 16px;
+      letter-spacing: 0.1px;
+    }
+
+    &-ellipsis {
+      width: 120px;
       height: 40px;
-    }
+      overflow: hidden;
 
-    &:after {
-      content: "\02026";
-      float: right;
-      position: relative;
-      top: -21px;
-      left: 96%;
-      width: 30px;
-      margin-left: -30px;
-      padding-right: 5px;
-      text-align: right;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0.5), #fff 25%, #fff);
-    }
+      &:before {
+        content: "";
+        float: left;
+        width: 5px;
+        height: 40px;
+      }
 
-    &-text {
-      float: right;
-      width: 100%;
-      margin-left: -5px;
+      &:after {
+        content: "\02026";
+        float: right;
+        position: relative;
+        top: -21px;
+        left: 96%;
+        width: 30px;
+        margin-left: -30px;
+        padding-right: 5px;
+        text-align: right;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.5), #fff 25%, #fff);
+      }
+
+      &-text {
+        float: right;
+        width: 100%;
+        margin-left: -5px;
+      }
     }
   }
 }
