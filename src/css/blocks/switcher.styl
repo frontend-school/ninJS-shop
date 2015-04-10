@@ -70,28 +70,27 @@
 
     &:hover {
       opacity: 1;
-      /*box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);*/
     }
   }
 
 }
 
 
-/* another way to make product-container appear - slider */
+/*
+  SLIDER MODIFIER for switcher block.
+  Another way to make product-container appear
+  Yes, we hate cascade, but didn't want to change upper css rules
+*/
 
-.switcher_slide .switcher-undercover {
+.switcher_slider .switcher-undercover { /* slider works only if _slide modifier is attached */
   position: absolute;
   top: 0;
   left: 0;
-  height: $cell-size * 2;
-  transition: top 200ms ease;
+  transition: padding-top 200ms ease;
   opacity: 1;
+  padding-top: $cell-size * 2 + $cell-side-margin * 2; /* multiple by 2 for high cells */
 
   &:hover {
-    top: -($cell-size);
-  }
-
-  & > div {
-    top: $cell-size;
+    padding-top: 0;
   }
 }
