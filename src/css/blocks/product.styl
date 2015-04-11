@@ -43,16 +43,43 @@
 
   &-content {
 
-    &_left-side {
+    &-visual {
       margin-top: 43px;
       width: 50%;
       float: left;
+
+      &__image {
+        float: right;
+        padding-right: 10px;
+      }
+
+      &__image_position_center {
+        float: none;
+        margin: 150px auto 0;
+        display: block;
+      }
     }
 
     &-text {
       margin-top: 43px;
       width: 50%;
       float: right;
+
+      &__price {
+        font-size: 12px;
+        letter-spacing: 0.4px;
+      }
+
+      &__sale {
+        color: $red;
+        font-size: 18px;
+      }
+
+      &__name {
+        max-width: 175px;
+        font-size: 16px;
+        letter-spacing: 0.1px;
+      }
     }
 
     &_big-image {
@@ -60,35 +87,8 @@
       margin: 0 auto;
     }
 
-    &__image {
-      float: right;
-      padding-right: 10px;
-    }
-
-    &__image_position_center {
-      float: none;
-      margin: 150px auto 0;
-      display: block;
-    }
-
-    &__price {
-      font-size: 12px;
-      letter-spacing: 0.4px;
-    }
-
-    &__sale {
-      color: $red;
-      font-size: 18px;
-    }
-
-    &__name {
-      max-width: 175px;
-      font-size: 16px;
-      letter-spacing: 0.1px;
-    }
-
     &-ellipsis {
-      width: 120px;
+      width: 140px;
       height: 40px;
       overflow: hidden;
 
