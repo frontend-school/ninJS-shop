@@ -1,62 +1,59 @@
-@import "variables.styl";
-
 .switcher {
   overflow: hidden;
 
   &-cover {
-    position: relative;
 
     &__image {
       display: block;
     }
 
-    &-info__outer {
+    &-info {
       width: 100%;
       position: absolute;
       left: 0;
       bottom: 0;
       height: 72px;
       background: rgba(0, 0, 0, 0.5);
-    }
 
-    &-info {
-      float: left;
-      width: 230px;
-      margin: 10px 0 0 20px;
-    }
+      &-text {
+        float: left;
+        width: 230px;
+        margin: 10px 0 0 20px;
 
-    &-info_left {
-      text-align: left;
-      margin-left: 30px;
-    }
+        &_left {
+          text-align: left;
+          margin-left: 30px;
+        }
 
-    &-info_right {
-      float: right;
-      margin-right: 30px;
-      text-align: right;
-    }
+        &_right {
+          float: right;
+          margin-right: 30px;
+          text-align: right;
+        }
 
-    &-info_center {
-      text-align: center;
-    }
+        &_center {
+          text-align: center;
+        }
 
-    &-info__name {
-      font-size: 14px;
-      line-height: 1;
-      font-style: italic;
-      color: #fff;
-    }
+        &__name {
+          font-size: 14px;
+          line-height: 1;
+          font-style: italic;
+          color: $white;
+        }
 
-    &-info__price {
-      color: #fff;
-      font-size: 12px;
-      font-weight: bold;
-    }
+        &__price {
+          color: $white;
+          font-size: 12px;
+          font-weight: bold;
+        }
 
-    &-info__price_old {
-      text-decoration: line-through;
-      font-style: italic;
-      font-weight: normal;
+        &__price_old {
+          text-decoration: line-through;
+          font-style: italic;
+          font-weight: normal;
+        }
+      }
     }
   }
 
@@ -82,13 +79,12 @@
   Yes, we hate cascade, but didn't want to change upper css rules.
 */
 
-.switcher_slider .switcher-undercover { /* slider works only if _slide modifier is attached */
+.switcher_slider .switcher-undercover { // slider works only if _slide modifier is attached
   position: absolute;
   top: 0;
   left: 0;
   transition: padding-top 200ms ease;
-  opacity: 1;
-  padding-top: $cell-size * 2 + $cell-side-margin * 2; /* multiple by 2 for high cells */
+  padding-top: $cell-size * 2 + $cell-side-margin * 2; // multiple by 2 for high cells
 
   &:hover {
     padding-top: 0;

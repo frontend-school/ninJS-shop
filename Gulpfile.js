@@ -1,7 +1,6 @@
 var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     stylus = require('gulp-stylus'),
-    concat = require('gulp-concat');
     jpg = require('gulp-imagemin');
 
 gulp.task('server', function() {
@@ -20,9 +19,8 @@ gulp.task('html', function () {
 });
 
 gulp.task('css', function () {
-    gulp.src(['src/css/blocks/main.styl', 'src/css/blocks/grid.styl', 'src/css/blocks/product.styl', 'src/css/blocks/*.styl'])
+    gulp.src('src/css/*.styl')
         .pipe(stylus())
-        .pipe(concat('style.css'))
         .pipe(gulp.dest('dist/css'));
 });
 

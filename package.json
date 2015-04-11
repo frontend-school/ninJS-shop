@@ -10,7 +10,6 @@
   "devDependencies": {
     "browser-sync": "^2.5.0",
     "gulp": "^3.8.11",
-    "gulp-concat": "^2.5.2",
     "gulp-imagemin": "^2.2.1",
     "gulp-stylus": "^2.0.1"
   },
