@@ -1,0 +1,26 @@
+.item-preview {
+  &-info {
+    @include default-preview-info();
+    &_position_left {
+      max-width: 34%;
+      text-align: center;
+      float: left;
+    }
+    &_position_right {
+      max-width: 34%;
+      text-align: center;
+      float: right;
+      right: 0;
+    }
+    &__price {
+      font-weight: bold;
+      margin: 0;
+    }
+    &__article {
+      margin: 0;
+    }
+    &_align_right {
+      text-align: right;
+    }
+  }
+}

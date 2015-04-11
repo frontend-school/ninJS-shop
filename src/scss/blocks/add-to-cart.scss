@@ -1,0 +1,35 @@
+.add-to-cart {
+  position: absolute;
+
+  &__button {
+    @include button();
+  }
+
+  &__additional {
+    @include additional-info();
+  }
+
+  &_position_top {
+    top: 40%;
+    right: 10%;
+    left: 10%;
+  }
+
+  &_position_bottom {
+    bottom: 12%;
+    right: 10%;
+    left: 10%;
+  }
+
+  &_position_left {
+    left: 5%;
+    right: 55%;
+    bottom: 12%;
+  }
+
+  &_position_right {
+    right: 5%;
+    left: 55%;
+    bottom: 12%;
+  }
+}

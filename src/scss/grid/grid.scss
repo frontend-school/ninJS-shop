@@ -1,0 +1,30 @@
+.grid {
+  &__cell {
+    position: relative;
+    margin:  8px;
+    display: inline-block;
+    //height modifiers
+    @for $i from 1 through 2 {
+      @for $j from 1 through 2 {
+        &_h#{$i}w#{$j} {
+          @if $j > 1 {width: #{$block-size*$j + 10};}
+          @else {width: #{$block-size*$j};}
+          @if $i > 1 {height: #{$block-size*$i + 10};}
+          @else {height: #{$block-size*$i};}
+        }
+      }
+    }
+    &_float_left {
+      float: left;
+    }
+    &_float_right {
+      float: right;
+    }
+    &_fixed {
+      margin: 0;
+      &:last-child {
+        margin-top: 6px;
+      }
+    }
+  }
+}

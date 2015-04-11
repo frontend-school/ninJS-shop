@@ -1,0 +1,13 @@
+.sale-price {
+  font-size: 18px;
+  color: #ff0000;
+}
+
+.old-price {
+  text-decoration: line-through;
+}
+
+body {
+  width: 4*$block-size + 60;
+  margin: 0 auto;
+}

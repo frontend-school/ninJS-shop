@@ -1,0 +1,44 @@
+.item-desc {
+  @include description-positioning();
+  -webkit-transition: opacity 0.3s ease;
+
+  &:hover {
+      opacity: 1;
+    }
+
+    &-info {
+      @include description-info-style();
+
+      &__price {
+        font-weight: bold;
+      }
+      &__article {}
+      &_position_top {
+        @include description-info-style();
+        top: 11%;
+      }
+      &_position_bottom {
+        @include description-info-style();
+        bottom: 30%;
+      }
+      &_position_left {
+        @include description-info-style();
+        max-width: 28%;
+        top: 18%;
+        left: 25%;
+      }
+      &_position_right {
+        @include description-info-style();
+        top: 18%;
+        left: 73%;
+      }
+      &_position_middle {
+        @include description-info-style();
+        top: 18%;
+        &-fixed {
+        top: 65%;
+        left: 38%;
+      }
+    }
+  }
+}
