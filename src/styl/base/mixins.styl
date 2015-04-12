@@ -1,4 +1,24 @@
-absolute(top=0,right=0,bottom=0,left=0)
+button(width = $button-width, height = $button-height, color=$button-color)
+  button-static()
+  width width
+  height height
+  line-height height
+  border-color #000
+
+  &:hover
+    background-color color
+    border-color #fff
+    color #fff
+
+button-static()
+  display block
+  border 1px solid
+  &:hover
+    cursor pointer
+
+
+
+position-absolute(top=0,right=0,bottom=0,left=0)
   position absolute
   top top
   right right

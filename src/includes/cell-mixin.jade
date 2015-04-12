@@ -1,6 +1,10 @@
-mixin product-block(cellData)
-    .b-cell(class=['b-cell_width_'+cellData.width, 'b-cell_height_'+cellData.height,
-        'b-cell_float_'+cellData.float, 'b-cell_neg-margin_'+cellData.negmargin])
+mixin cell(cellData)
+
+    - var cellModifiers ='width_'+cellData.width+' height_'+cellData.height+((cellData.float==='right')? ' right' : '')+((cellData.shiftTop)? ' shiftTop' : '')
+    if cellData.product.length === 2
+        - var rolloverModifiers= ((cellData.height === "2") ? ' items-wide' : ' items-narrow')
+
+    .b-cell(class=cellModifiers)
 
         .b-cell-cover
             img.b-cell-cover__image(src=cellData.cover__image.src)
@@ -12,9 +16,10 @@ mixin product-block(cellData)
                         if product.oldprice
                             span.b-cell-cover-details-text__price_old= product.oldprice
 
-        .b-cell-rollover(class='b-cell-rollover_sibling_'+cellData.sibling)
+
+        .b-cell-rollover(class=rolloverModifiers)
             each product in cellData.product
-                .b-cell-rollover-item(class='b-cell-rollover-item_big_'+cellData.big)
+                .b-cell-rollover-item
                     img.b-cell-rollover-item__image(src=product.rollover__image)
                     if product.oldprice
                         .b-cell-rollover-item__price= 'REG'+product.oldprice
@@ -25,7 +30,7 @@ mixin product-block(cellData)
                     else
                         .b-cell-rollover-item__price= 'REG'+product.price
                     .b-cell-rollover-item__title= product.title
-                    a.b-cell-rollover-item-button
+                    a.b-cell-rollover-item__button
                         span='Add To Cart'
-                        .b-arrow= '>'
+                        span.b-cell-rollover-item__arrow= '>'
                     a.b-cell-rollover-item__more= 'SEE MORE'

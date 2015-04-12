@@ -1,4 +1,4 @@
-include ./includes/product-block-mixin.jade
+include ./includes/cell-mixin.jade
 doctype html
 html(lang="en")
     head
@@ -6,10 +6,10 @@ html(lang="en")
         title= 'ninJS-shop'
         link(href='css/styles.css' rel='stylesheet' media)
         link(href='vendor/normalize.css/normalize.css' rel='stylesheet')
-    body.l-page
-        .b-grid
+    body
+        .l-grid
             for cellData in data
-                +product-block(cellData)
+                +cell(cellData)
 
 
 

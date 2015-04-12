@@ -1,0 +1,164 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic)
+
+.b-cell
+  position relative
+  cursor pointer
+  margin $cell-margin
+  float left
+  font-family: 'Lato', sans-serif
+
+  &:hover
+    .b-cell-rollover
+      visibility visible
+      opacity 1
+
+  &-cover
+    height 100%
+    overflow hidden
+
+    &__image
+      min-width 100%
+      min-height 100%
+      display block
+
+    &-details
+      position-absolute(auto)
+      height 70px
+      overflow: hidden
+      background rgba(0,0,0,0.2)
+
+      &-text
+        margin-top 10px
+        padding-left 10px
+        height 60px
+        color white
+        font-style italic
+
+        &_align
+          &_center
+            width 275px
+            float left
+            text-align center
+            padding-left 0
+
+          &_right
+            text-align right
+            padding-right 10px
+
+        &__price
+          &_old
+            text-decoration line-through
+
+  &-rollover
+    visibility hidden
+    position-absolute()
+    background #fff
+    box-shadow 1px 1px 5px rgba(0,0,0,0.2)
+    opacity 0
+    transition opacity 0.2s
+
+    &-item
+      position relative
+      padding-top 40px
+      width $cell-size
+      height $cell-size - 30px
+      margin 0 auto
+
+      &__image
+        float left
+
+      &__price
+        font-size 0.8em
+
+        &_sale
+          font-size 1.2em
+          color $colors-red
+
+      &__button
+        position-absolute(auto,0,50px,0)
+        button()
+        padding-left 40px
+        padding-right 40px
+        margin 0 auto
+
+        &__arrow
+          float right
+
+      &__more
+        position-absolute(auto,0,20px,0)
+        display block
+        text-align center
+        font-size 0.8em
+        line-height 30px
+
+        &:hover
+          color $colors-red
+
+
+// Modifiers
+// b-cell
+.right
+  float right
+
+.shiftTop
+  margin-top 0 - $cell-margin - $cell-size
+
+for i in 1 2
+  $_size = $cell-size * i + 2 * $cell-margin * (i - 1)
+  .width_{i}
+    width $_size
+  .height_{i}
+    height $_size
+
+
+// b-cell-rollover
+.items-narrow
+  >*
+    float left
+    padding-left $cell-margin
+
+  &:before
+    content ""
+    position-absolute(20px,auto,20px,$cell-size + $cell-margin)
+    border-left 1px solid $colors-grey
+
+
+.height_2
+  .b-cell-rollover
+    &:before
+      content ""
+      border none
+
+    .b-cell-rollover-item
+      height $cell-size * 2 - 30px
+
+      &__image
+        float none
+        margin-top 100px
+        margin-left 50px
+
+      &__price
+        margin-left 30px
+
+      &__title
+        margin-left 30px
+
+  .items-wide
+    &:before
+      content ""
+      position-absolute($cell-size + $cell-margin,20px,auto,20px)
+      border-top 1px solid $colors-grey
+
+    .b-cell-rollover-item
+      height $cell-size - 30px
+
+      &__image
+        float left
+        margin-top 0
+        margin-left 0
+
+      &__price
+        margin-left 0
+
+      &__title
+        margin-left 0
