@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     jade = require('gulp-jade'),
     data = require('gulp-data'),
     sourcemaps = require('gulp-sourcemaps'),
+    autoprefixer = require('gulp-autoprefixer'),
     paths = {
         src: {
             root: './src',
@@ -28,7 +29,7 @@ var gulp = require('gulp'),
     };
 
 gulp.task('default', ['build','serve', 'watch']);
-gulp.task('build', ['bower','jade','styl','img','js']);
+gulp.task('build', ['bower','jade','styl','autoprefix','img','js']);
 
 gulp.task('bower', ['clean'], function() {
     gulp.src(paths.src.bower)
@@ -51,6 +52,15 @@ gulp.task('styl',['clean'], function() {
         .pipe(concat('styles.css'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.dist.css));
+});
+
+gulp.task('autoprefix', ['styl'], function () {
+    return gulp.src('./dist/css/styles.css')
+        .pipe(autoprefixer({
+            browsers: ['> 0.5%'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('js',['clean'], function() {
