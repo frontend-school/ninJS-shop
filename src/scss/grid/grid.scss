@@ -3,7 +3,7 @@
     position: relative;
     margin:  8px;
     display: inline-block;
-    //height modifiers
+    //height-width modifiers
     @for $i from 1 through 2 {
       @for $j from 1 through 2 {
         &_h#{$i}w#{$j} {
