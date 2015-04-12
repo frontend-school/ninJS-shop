@@ -1,21 +1,39 @@
-button(width = $button-width, height = $button-height, color=$button-color)
+item(width,height,position,float,margin-top)
+  width width
+  height height
+  position position
+  &__image
+    float float
+    margin-top margin-top
+
+
+button(width = $buttonWidth, height = $buttonHeight, color=$buttonColor, padding=$buttonPadding)
   button-static()
   width width
   height height
+  padding-left padding
+  padding-right padding
   line-height height
   border-color #000
+  &:after
+    content ">"
+    color color
+    position-absolute(auto,padding,auto,auto)
 
   &:hover
     background-color color
     border-color #fff
     color #fff
+    &:after
+      color #fff
+
 
 button-static()
   display block
   border 1px solid
+
   &:hover
     cursor pointer
-
 
 
 position-absolute(top=0,right=0,bottom=0,left=0)

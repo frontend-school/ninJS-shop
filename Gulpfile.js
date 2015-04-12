@@ -53,7 +53,7 @@ gulp.task('watch', function(){
 
 gulp.task('jade', function() {
     gulp.src(paths.src.jade_main)
-        .pipe(data(function(file) {
+        .pipe(data(function() {
             return require(paths.src.json);
         }))
         .pipe(jade())

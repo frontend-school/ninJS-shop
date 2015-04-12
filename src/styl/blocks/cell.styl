@@ -3,7 +3,7 @@
 .b-cell
   position relative
   cursor pointer
-  margin $cell-margin
+  margin $cellMargin
   float left
   font-family: 'Lato', sans-serif
 
@@ -58,41 +58,32 @@
     transition opacity 0.2s
 
     &-item
-      position relative
+      item($cellSize,$cellSize - 30px,relative,left,0)
       padding-top 40px
-      width $cell-size
-      height $cell-size - 30px
       margin 0 auto
-
-      &__image
-        float left
 
       &__price
         font-size 0.8em
 
         &_sale
-          font-size 1.2em
-          color $colors-red
+          font-size $fontMedium
+          color $colorRed
 
-      &__button
+      &-button
         position-absolute(auto,0,50px,0)
         button()
-        padding-left 40px
-        padding-right 40px
         margin 0 auto
 
-        &__arrow
-          float right
 
       &__more
         position-absolute(auto,0,20px,0)
         display block
         text-align center
-        font-size 0.8em
+        font-size $fontSmall
         line-height 30px
 
         &:hover
-          color $colors-red
+          color $colorRed
 
 
 // Modifiers
@@ -101,10 +92,10 @@
   float right
 
 .shiftTop
-  margin-top 0 - $cell-margin - $cell-size
+  margin-top 0 - $cellMargin - $cellSize
 
 for i in 1 2
-  $_size = $cell-size * i + 2 * $cell-margin * (i - 1)
+  $_size = $cellSize * i + 2 * $cellMargin * (i - 1)
   .width_{i}
     width $_size
   .height_{i}
@@ -115,12 +106,12 @@ for i in 1 2
 .items-narrow
   >*
     float left
-    padding-left $cell-margin
+    padding-left $cellMargin
 
   &:before
     content ""
-    position-absolute(20px,auto,20px,$cell-size + $cell-margin)
-    border-left 1px solid $colors-grey
+    position-absolute(20px,auto,20px,$cellSize + $cellMargin)
+    border-left 1px solid $colorGrey
 
 
 .height_2
@@ -130,35 +121,13 @@ for i in 1 2
       border none
 
     .b-cell-rollover-item
-      height $cell-size * 2 - 30px
-
-      &__image
-        float none
-        margin-top 100px
-        margin-left 50px
-
-      &__price
-        margin-left 30px
-
-      &__title
-        margin-left 30px
+      item($cellSize * 0.55,$cellSize * 2 - 30px,initial,none,$cellSize * 0.35)
 
   .items-wide
     &:before
       content ""
-      position-absolute($cell-size + $cell-margin,20px,auto,20px)
-      border-top 1px solid $colors-grey
+      position-absolute($cellSize + $cellMargin,20px,auto,20px)
+      border-top 1px solid $colorGrey
 
     .b-cell-rollover-item
-      height $cell-size - 30px
-
-      &__image
-        float left
-        margin-top 0
-        margin-left 0
-
-      &__price
-        margin-left 0
-
-      &__title
-        margin-left 0
+      item($cellSize,$cellSize - 30px,relative,left,0)
