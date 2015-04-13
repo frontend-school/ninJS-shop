@@ -28,7 +28,7 @@ gulp.task('clean-up', function () {
   ]);
 });
 gulp.task('html-watch',['html'],browserSync.reload());
-gulp.task('scss-watch',['sass-concat'],browserSync.reload());
+gulp.task('scss-watch',browserSync.reload());
 gulp.task('js-watch',['js'],browserSync.reload());
 gulp.task('initialCopy', ['scss'], function(){
 	gulp.src(['src/**'])

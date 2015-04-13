@@ -3,7 +3,7 @@
 
 .sale-price {
   font-size: 18px;
-  color: #ff0000;
+  color: $sale-color;
 }
 
 .old-price {
@@ -13,4 +13,8 @@
 body {
   width: 4*$block-size + 60;
   margin: 0 auto;
+}
+
+.arrow {
+	float: right;
 }

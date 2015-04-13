@@ -1,5 +1,7 @@
+@import "../variables/variables.scss";
+
 @mixin default-preview-info() {
-  font-size: 15px;
+  font-size: $preview-font-size;
   font-style: oblique;
   color: white;
   position: absolute;
@@ -23,7 +25,7 @@
   padding: 4px 32px;
   border: 1px solid rgba(50,50,50,0.2);
   cursor: pointer;
-  width: 150px;
+  width: $button-width;
   margin: 0 auto;
 }
 
@@ -34,10 +36,10 @@
 }
 
 @mixin description-info-style {
-  font-size: 15px;
+  font-size: $desc-font-size;
   font-family: 'trebuchet ms', verdana, arial;
   position: absolute;
   max-width: 30%;
-  color: #000000;
+  color: $desc-text-color;
   left: 50%;
 }
