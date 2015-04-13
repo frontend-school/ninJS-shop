@@ -1,0 +1,216 @@
+{
+  "data": {
+    "grid": [
+      {
+        "id": 1,
+        "width": 2,
+        "height": 1
+      },
+      {
+        "id": 2,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 3,
+        "width": 1,
+        "height": 2,
+        "float": "right"
+      },
+      {
+        "id": 4,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 5,
+        "width": 2,
+        "height": 2
+      },
+      {
+        "id": 6,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 7,
+        "width": 1,
+        "height": 1,
+        "shiftTop": 1
+      },
+      {
+        "id": 8,
+        "width": 2,
+        "height": 1
+      },
+      {
+        "id": 9,
+        "width": 2,
+        "height": 2,
+        "float": "right"
+      },
+      {
+        "id": 10,
+        "width": 2,
+        "height": 1
+      }
+    ],
+
+
+    "cellData": [
+      {
+        "cover__image": {
+          "src": "img/content/product-bg/i1.png"
+        },
+        "items": [
+          {
+            "title": "Portland Collection Patio Armchair",
+            "price": "$150.00",
+            "detailsalign": "left",
+            "rollover__image": "img/content/product-min/i1min.jpg"
+          }
+        ]
+      },
+      {
+        "cover__image": {
+          "src": "img/content/product-bg/i2.png"
+        },
+        "items": [
+          {
+            "title": "Sari Delano Patio Toss Cushion",
+            "price": "$14.99",
+            "detailsalign": "left",
+            "rollover__image": "img/content/product-min/i2min.jpg"
+          }
+        ]
+      },
+      {
+        "cover__image": {
+          "src": "img/content/product-bg/i3.png"
+        },
+        "items": [
+          {
+            "title": "Devonwood Turf",
+            "oldprice": "$159.99",
+            "price": "$124.99",
+            "detailsalign": "left",
+            "rollover__image": "img/content/product-min/i3min-1.jpg"
+          },
+          {
+            "title": "Salina collection Armchair",
+            "oldprice": "$300.00",
+            "price": "$250.00",
+            "detailsalign": "left",
+            "rollover__image": "img/content/product-min/i3min-2.jpg"
+          }
+        ]
+      },
+      {
+        "cover__image": {
+          "src": "img/content/product-bg/i4.png"
+        },
+        "items": [
+          {
+            "title": "Teak Pation Dining Chair",
+            "price": "$150.00",
+            "detailsalign": "left",
+            "rollover__image": "img/content/product-min/i4min.jpg"
+          }
+        ]
+      },
+      {
+        "cover__image": {
+          "src": "img/content/product-bg/i5.png"
+        },
+        "items": [
+          {
+            "title": "Portland Collection Patio Loveseat",
+            "price": "$220.00",
+            "detailsalign": "center",
+            "rollover__image": "img/content/product-min/i5min-1.png"
+          },
+          {
+            "title": "Portland Collection Patio Armchair",
+            "price": "$150.00",
+            "detailsalign": "center",
+            "rollover__image": "img/content/product-min/i5min-2.png"
+          }
+        ]
+      },
+      {
+        "cover__image": {
+          "src": "img/content/product-bg/i6.png"
+        },
+        "items": [
+          {
+            "title": "NORMA PIR Path Light",
+            "price": "$29.99",
+            "detailsalign": "right",
+            "rollover__image": "img/content/product-min/i6min.png"
+          }
+        ]
+      },
+      {
+        "cover__image": {
+          "src": "img/content/product-bg/i7.png"
+        },
+        "items": [
+          {
+            "title": "Crane Statue Assorted",
+            "price": "$39.99",
+            "detailsalign": "left",
+            "rollover__image": "img/content/product-min/i7min.png"
+          }
+        ]
+      },
+      {
+        "cover__image": {
+          "src": "img/content/product-bg/i8.png"
+        },
+        "item-width": "wide",
+        "items": [
+          {
+            "title": "Salina Collection Sectional Patio Ottoman",
+            "oldprice": "$149.99",
+            "price": "$127.50",
+            "detailsalign": "center",
+            "rollover__image": "img/content/product-min/i8min-1.png"
+          },
+          {
+            "title": "Salina Collection Sectional Armless Patio Chair",
+            "oldprice": "$250.00",
+            "price": "$212.50",
+            "detailsalign": "center",
+            "rollover__image": "img/content/product-min/i8min-2.png"
+          }
+        ]
+      },
+      {
+        "cover__image": {
+          "src": "img/content/product-bg/i9.png"
+        },
+        "items": [
+          {
+            "title": "Black Lantern, 21-in",
+            "price": "$25.49",
+            "detailsalign": "left",
+            "rollover__image": "img/content/product-min/i9min.png"
+          }
+        ]
+      },
+      {
+        "cover__image": {
+          "src": "img/content/product-bg/i10.png"
+        },
+        "items": [
+          {
+            "title": "Vintage Edison String Light, 10-Ct",
+            "price": "$39.99",
+            "detailsalign": "left",
+            "rollover__image": "img/content/product-min/i10min.png"
+          }
+        ]
+      }
+    ]
+  }
+}

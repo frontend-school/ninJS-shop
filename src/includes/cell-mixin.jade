@@ -1,34 +1,31 @@
-mixin cell(cellData)
+mixin cellmixin(cell, index)
 
-    - var cellModifiers ='width_'+cellData.width+' height_'+cellData.height+((cellData.float==='right')? ' right' : '')+((cellData.shiftTop)? ' shiftTop' : '')
-    if cellData.product.length === 2
-        - var rolloverModifiers= ((cellData.height === "2") ? ' items-wide' : ' items-narrow')
+    - var cellModifiers ='width_'+cell.width+' height_'+cell.height+((cell.float==='right')? ' right' : '')+((cell.shiftTop) ? ' shiftTop' : '')
+    if data.cellData[index].items.length === 2
+        - var rolloverModifiers= ((cell.height === 2) ? ' items-wide' : ' items-narrow')
 
     .b-cell(class=cellModifiers)
-
         .b-cell-cover
-            img.b-cell-cover__image(src=cellData.cover__image.src)
+            img.b-cell-cover__image(src=data.cellData[index].cover__image.src)
             .b-cell-cover-details
-                each product in cellData.product
-                    .b-cell-cover-details-text(class='b-cell-cover-details-text_align_'+product.detailsalign)
+                each product in data.cellData[index].items
+                    .b-cell-cover-details-text(class='b-cell-cover-details-text_align_' + product.detailsalign)
                         .b-cell-cover-details-text__title= product.title
                         span.b-cell-cover-details-text__price= product.price
                         if product.oldprice
                             span.b-cell-cover-details-text__price_old= product.oldprice
-
-
         .b-cell-rollover(class=rolloverModifiers)
-            each product in cellData.product
+            each product in data.cellData[index].items
                 .b-cell-rollover-item
                     img.b-cell-rollover-item__image(src=product.rollover__image)
                     if product.oldprice
-                        .b-cell-rollover-item__price= 'REG'+product.oldprice
+                        .b-cell-rollover-item__price= 'REG' + product.oldprice
                         .b-cell-rollover-item__price(class='b-cell-rollover-item__price_sale')
                             span= 'SALE:'
                             br
                             span= product.price
                     else
-                        .b-cell-rollover-item__price= 'REG'+product.price
+                        .b-cell-rollover-item__price= 'REG' + product.price
                     .b-cell-rollover-item__title= product.title
                     a.b-cell-rollover-item-button
                         span='Add To Cart'

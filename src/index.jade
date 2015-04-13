@@ -8,8 +8,8 @@ html(lang="en")
         link(href='vendor/normalize.css/normalize.css' rel='stylesheet')
     body
         .l-grid
-            for cellData in data
-                +cell(cellData)
+            for cell, index in data.grid
+                +cellmixin(cell, index)
 
 
 
