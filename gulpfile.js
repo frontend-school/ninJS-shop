@@ -14,14 +14,9 @@ gulp.task('html', function(){
 		.pipe(gulp.dest('dist'));
 });
 gulp.task('scss', function(){
-	gulp.src(['src/scss/all.scss'])
+	gulp.src(['src/scss/main.scss'])
 		.pipe(sass())
 		.pipe(gulp.dest('dist/css'));
-});
-gulp.task('sass-concat', function() {
-	gulp.src(['src/scss/globals/**/variables.scss', 'src/scss/globals/globals.scss', 'src/scss/globals/**/mixins.scss','src/scss/grid/**/*.scss', 'src/scss/blocks/**/*.scss', '!src/scss/all.scss'])
-	.pipe(concat('all.scss'))
-	.pipe(gulp.dest('src/scss/'));
 });
 gulp.task('js', function(){
 	gulp.src(['src/js/*.js'])
@@ -29,14 +24,13 @@ gulp.task('js', function(){
 });
 gulp.task('clean-up', function () {
   del([
-  	'dist/**',
-  	'src/scss/all.scss'
+  	'dist/**'
   ]);
 });
 gulp.task('html-watch',['html'],browserSync.reload());
 gulp.task('scss-watch',['sass-concat'],browserSync.reload());
 gulp.task('js-watch',['js'],browserSync.reload());
-gulp.task('initialCopy', function(){
+gulp.task('initialCopy', ['scss'], function(){
 	gulp.src(['src/**'])
 		.pipe(gulp.dest('dist'));
 });
@@ -44,7 +38,7 @@ gulp.task('bowerToVendor', function(){
 	gulp.src(['bower_components/**'])
 		.pipe(gulp.dest('dist/vendor'));
 });
-gulp.task('serve',['sass-concat', 'scss', 'initialCopy'], function(){
+gulp.task('serve',['scss', 'initialCopy'], function(){
 	browserSync({
 		server: {
 			baseDir: "dist"
