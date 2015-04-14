@@ -75,7 +75,7 @@ gulp.task('img', function() {
 });
 
 gulp.task('serve', ['bower', 'jade', 'styl', 'img'], function() {
-    browserSync(['./build/**/**.**'],{
+    browserSync({
         server: paths.dist.root
     });
 });
