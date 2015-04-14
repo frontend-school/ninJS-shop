@@ -35,7 +35,7 @@ module.exports = function(grunt) {
       stylus: {
           compile: {
               options: {
-                  'paths': ['src/css/styl/']
+                  'paths': ['src/css/styl/**/*.styl']
               },
               files: {
                   'src/css/styles.css': 'src/css/stylus/**/*.styl'

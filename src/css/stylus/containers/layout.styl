@@ -1,0 +1,43 @@
+$block-size = 272px;
+$box-shadow = 2px 4px 18px 1px rgba(0,0,0,0.39);
+$margin = 5px;
+			
+.block 
+	float: left
+	position: relative
+	margin: 10px 5px 5px 10px
+	overflow: hidden 
+	
+	&__size-1-1
+		width: $block-size
+		height: $block-size
+	
+	&__size-1-2
+		width: $block-size
+		height: $block-size*2
+		
+	&__size-2-1
+		width: $block-size*2
+		height: $block-size		
+		
+	&__size-2-2
+		width: $block-size*2
+		height: $block-size*2
+		
+		// &_hover
+		// 	box-shadow: $box-shadow
+		// 	display: none
+			
+
+// modificators
+.right 
+	float:right
+	
+.top //extra top margin
+	margin-top: 574px
+	position: absolute
+
+.bottom 
+	bottom: 10px
+	
+
