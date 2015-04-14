@@ -38,7 +38,7 @@ module.exports = function(grunt) {
                   'paths': ['src/css/styl/']
               },
               files: {
-                  'src/css/styles.css': 'src/css/stylus/*.styl'
+                  'src/css/styles.css': 'src/css/stylus/**/*.styl'
               }
           }
       },
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
       		},
 
       		css: {
-      				files:['src/css/**/*.styl','src/css/**/*.css'],
+      				files:['src/css/**/*.styl'],
       				tasks:['copy']
       		},		
 
