@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     del = require('del'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
+    fileinclude = require('gulp-file-include'),
 
     paths = {
         src: {
@@ -34,7 +35,11 @@ gulp.task('bower', function() {
 });
 
 gulp.task('html', function() {
-    gulp.src(paths.src.html)
+    gulp.src([paths.src.html])
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
         .pipe(gulp.dest(paths.dist.root));
 });
 
