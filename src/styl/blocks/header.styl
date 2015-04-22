@@ -1,0 +1,39 @@
+.header {
+  background-color: $black;
+
+  &__logo {
+    width: 156px;
+    height: 20px;
+    float: left;
+    margin-top: 12px;
+    background: url("../img/header/logo.png") no-repeat;
+  }
+
+  &__search {
+    width: 14px;
+    height: 14px;
+    float: right;
+    margin: 15px 20px 0 0;
+    background: url("../img/header/search-icon.png") no-repeat;
+    cursor: pointer;
+  }
+
+  &-auth {
+    width: 140px;
+    float: right;
+    border-left: 1px solid $grey2;
+    border-right: 1px solid $grey2;
+    color: $grey2;
+    text-align: center;
+    line-height: 45px;
+
+    &__link {
+      color: $grey2;
+      text-decoration: none;
+
+      &:hover {
+        color: $grey;
+      }
+    }
+  }
+}

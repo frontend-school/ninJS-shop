@@ -1,15 +1,16 @@
 .specials
-  width 100% - $paddingLayout * 2
-  padding $paddingLayout
   background-color $colorDarkBackground
-  text-align center
 
   &-item
-    display inline-block
-    position: relative
-    width 350px
-    height 210px
-    margin 1.5%
+    display block
+    float left
+    position relative
+    width 300px
+    height 180px
+    margin-right 30px
+
+    &:nth-child(3n)
+      margin-right 0
 
     &__img
       position: absolute
