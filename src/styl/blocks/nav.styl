@@ -12,12 +12,19 @@
     }
 
     &__item {
-      display: inline-block;
+      display: block;
+      float: left;
       padding: 0 25px;
       border-left: 1px solid $grey;
       line-height: 60px;
       color: $black;
       cursor: pointer;
+
+      &:hover {
+        background-color: $green;
+        color: $white;
+        border-color: $white;
+      }
     }
 
     &__responsive {
