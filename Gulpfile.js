@@ -10,7 +10,8 @@ var gulp = require('gulp'),
     paths = {
         src: {
             root: './src',
-            html: './src/index.html',
+            html_index: './src/index.html',
+            html_blocks: './src/html/*.html',
             styl: './src/styl/**',
             styl_main: './src/styl/main.styl',
             js: './src/js/*.js',
@@ -35,7 +36,7 @@ gulp.task('bower', function() {
 });
 
 gulp.task('html', function() {
-    gulp.src([paths.src.html])
+    gulp.src([paths.src.html_index])
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
@@ -70,10 +71,12 @@ gulp.task('serve', ['bower', 'html', 'styl', 'img'], function() {
 });
 
 gulp.task('watch', function(){
-    gulp.watch(paths.src.html, ['html']);
+    gulp.watch(paths.src.html_blocks, ['html']);
+    gulp.watch(paths.src.html_index, ['html']);
     gulp.watch(paths.src.styl, ['styl']);
+    gulp.watch(paths.src.img, ['img']);
     gulp.watch(paths.src.js, ['js']);
-    gulp.watch([paths.src.html, paths.src.styl, paths.src.js])
+    gulp.watch([paths.src.html_blocks, paths.src.html_index, paths.src.img, paths.src.styl, paths.src.js])
         .on('change', function (file) {
             console.log(file.path, 'has changed');
             setTimeout(function(){
