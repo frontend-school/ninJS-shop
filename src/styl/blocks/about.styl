@@ -1,0 +1,105 @@
+/** About Block**/
+.about {
+  .grid-container{
+    border-top: 1px solid $grey;
+    padding: 15px;
+  }
+  background-color: $creamy;
+  font-size: 12px
+
+
+
+  &-sheeping {
+    width: 220px;
+    height: 195px;
+    margin: 0 10px 10px 0px;
+    position: relative;
+    float: left;
+    background-color: #DFDBD4;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
+  }
+
+  &-testimonials {
+    width: 220px;
+    height: 195px;
+    margin: 0 10px 10px 10px;
+    position: relative;
+    float: left;
+    background-color: #DFDBD4;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
+
+    &__title {
+      margin-bottom: 0px;
+    }
+    &__ellipsis {
+      overflow: hidden;
+      width: 95%;
+      height: 60%;
+    }
+
+    &__ellipsis:before {
+      content: "";
+      float: left;
+      width: 5px;
+      height: 118px
+    }
+
+    &__ellipsis > *:first-child {
+      float: right;
+      width: 100%;
+      margin-left: -5px;
+    }
+
+    &__ellipsis:after {
+      content: "\02026";
+
+      box-sizing: content-box;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+
+      float: right;
+      position: relative;
+      top: -25px;
+      left: 100%;
+      width: 30px;
+      margin-left: -30px;
+      padding-right: 5px;
+
+      text-align: right;
+
+    }
+  }
+
+
+  &-blognews {
+    width: 480px;
+    height: 195px;
+    margin: 0px 0px 0px 10px;
+    position: relative;
+    float: right;
+    background-color: #DFDBD4;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
+
+    &-item {
+
+      &__title {
+        font-size:12px;
+      }
+
+      &__date {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        float: left;
+        background-color: #57c5a0;
+        color: #fff;
+        margin-right: 10px;
+        padding:5px 5px 5px 5px;
+      }
+    }
+  }
+}
+
