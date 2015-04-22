@@ -1,0 +1,103 @@
+.footer {
+	position relative;
+	bottom 0;
+	width 100%;
+	background-color $colorDarkBackground;
+	&-widgets {
+		width 960px;
+		height 246px;
+		margin 0 auto;
+		padding-left 10px;
+		padding-top 52px;
+	}
+}
+
+.widget {
+	margin-left 40px;
+	width 260px;
+	float left;
+	color $footer-text-color;
+	text-align justify;
+	line-height 16px;
+	font-size 13px;
+	&__title {
+		color $footer-title-color;
+		text-transform uppercase;
+		font-size 14px;
+		margin-bottom 24px;
+	}
+	&-text{
+		&__content{
+		}
+	}
+	&-twitter {
+	}
+}
+
+.twitter {
+	&-content{}
+}
+
+.content {
+	&-article {
+	}
+}
+
+.article {
+	&__content{
+		margin-top 17px;
+		a {
+			text-decoration none;
+			color $twitter-widget-link-color;
+		}
+	}
+	&__creation{
+		margin-top 14px;
+		color #fff;
+	}
+}
+
+.social-panel {
+	width 960px;
+	height 117px;
+	margin 0 auto;
+	padding-left 10px;
+	padding-right 10px;
+	border-top 1px solid rgb(28,28,28);
+}
+
+.email-field {
+	width 251px;
+	height 36px;
+	margin-left 40px;
+	margin-top 38px;
+	&_float_left {
+		float left;
+	}
+	&-form {
+		&__input {
+			float left;
+			border none;
+			
+			width 200px;
+			height 36px;
+			background-color #2E2E2E;
+			color $footer-text-color;
+			padding 0 0 0 15px;
+		}
+		&__button {
+			padding 0;
+			border none;
+			background-color rgb(125,125,125);
+			background-position center;
+			width 36px;
+			height 36px;
+			background-image url('../img/footer/arrow-icon.png');
+			background-repeat no-repeat;
+			&:hover {
+				cursor pointer;
+			}
+		}
+	}
+}
+
