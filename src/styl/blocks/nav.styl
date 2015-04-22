@@ -1,0 +1,92 @@
+.navigation {
+  height: 60px
+  background-color: $white;
+
+  &-menu {
+    float: left;
+    margin: 0;
+    padding: 0;
+
+    & :last-child {
+      border-right: 1px solid $grey;
+    }
+
+    &__item {
+      display: inline-block;
+      padding: 0 25px;
+      border-left: 1px solid $grey;
+      line-height: 60px;
+      color: $black;
+      cursor: pointer;
+    }
+
+    &__responsive {
+      display: none;
+      float: left;
+      width: 32px;
+      height: 32px;
+      margin-top: 14px;
+      background: url("../img/nav/menu-icon.png") no-repeat;
+      cursor: pointer;
+    }
+  }
+
+  &-state {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    & :last-child {
+      border-right: 1px solid $grey;
+    }
+
+    &-item {
+      float: left;
+      width: 90px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      border-left: 1px solid $grey;
+
+      &__icon {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+
+        &_cart {
+          background-image: url('../img/nav/navigation-cart.png');
+        }
+
+        &_wishlist {
+          background-image: url('../img/nav/navigation-star.png');
+        }
+
+      }
+
+
+    }
+  }
+
+  &__counter {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 10px;
+    line-height: 20px;
+    text-align: center;
+    color: $white;
+    cursor: pointer;
+
+    &_grey {
+      background-color: $grey;
+    }
+
+    &_green {
+      background-color: $green;
+    }
+  }
+}

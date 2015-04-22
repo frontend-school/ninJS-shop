@@ -1,0 +1,107 @@
+.product-gallery {
+  background-color: $creamy;
+
+  &-header {
+    height: 80px;
+
+    &__title {
+      float: left;
+      font-size: 26px;
+      line-height: 80px;
+    }
+
+    &__action {
+      width: 100px;
+      float: right;
+      margin-top: 25px;
+      border: 1px solid darken($creamy, 20%);
+      line-height: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: darken($creamy, 20%);
+      cursor: pointer;
+    }
+  }
+
+}
+
+
+.product__price {
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  background-color: $green;
+  color: $white;
+
+  &_at-card {
+    position: relative;
+    bottom: 20px;
+    float: left;
+  }
+}
+
+.product-gallery-item {
+  width: 300px;
+  height: 270px;
+  margin: 0 30px 20px 0;
+  position: relative;
+  float: left;
+  text-align: center;
+  background-color: $white;
+
+
+
+  &-info {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid $grey;
+    background: $white;
+
+    &__name {
+      width: 70%;
+      float: left;
+      line-height: 50px;
+      font-size: 22px;
+      text-align: center;
+    }
+  }
+
+  &_sale {
+    &:after {
+      content: "ON SALE";
+      display: block;
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 0;
+      left: 220px;
+      line-height: 70px;
+      text-transform: uppercase;
+      color: $white;
+      background-color: $black;
+    }
+  }
+
+  &_out {
+    &:after {
+      content: "out of stock";
+      display: block;
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 0;
+      left: 220px;
+      text-transform: uppercase;
+      color: $white;
+      background-color: #f27e4b;
+      padding-top: 19px;
+      box-sizing: border-box;
+    }
+  }
+}
+div.product-gallery-item:nth-child(3n+1) {
+  margin-right: 0;
+}
