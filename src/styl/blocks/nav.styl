@@ -3,13 +3,16 @@
   background-color: $white;
 
   &-menu {
-    float: left;
     margin: 0;
     padding: 0;
+    list-style: none;
 
-    & :last-child {
+    li:last-child {
+      float: left;
       border-right: 1px solid $grey;
     }
+
+
 
     &__item {
       display: block;
@@ -18,7 +21,9 @@
       border-left: 1px solid $grey;
       line-height: 60px;
       color: $black;
-      cursor: pointer;
+      text-decoration: none;
+
+
 
       &:hover {
         background-color: $green;
@@ -97,3 +102,4 @@
     }
   }
 }
+
