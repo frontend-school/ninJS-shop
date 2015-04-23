@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
     fileinclude = require('gulp-file-include'),
+    jshint = require('gulp-jshint'),
 
     paths = {
         src: {
@@ -28,7 +29,8 @@ var gulp = require('gulp'),
     };
 
 gulp.task('default', ['build','serve', 'watch']);
-gulp.task('build', ['clean','bower','html','styl','img','js']);
+gulp.task('build', ['clean','bower','html','styl','img','js','hint']);
+
 
 gulp.task('bower', function() {
     gulp.src(paths.src.bower)
@@ -54,6 +56,12 @@ gulp.task('styl', function() {
         .pipe(gulp.dest(paths.dist.css));
 });
 
+gulp.task('hint', function() {
+    return gulp.src('./src/js/*.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'));
+});
+
 gulp.task('js', function() {
     gulp.src(paths.src.js)
         .pipe(gulp.dest(paths.dist.js));
@@ -64,7 +72,7 @@ gulp.task('img', function() {
         .pipe(gulp.dest(paths.dist.img));
 });
 
-gulp.task('serve', ['bower', 'html', 'styl', 'img'], function() {
+gulp.task('serve', ['bower', 'html', 'styl', 'js', 'hint', 'img'], function() {
     browserSync({
         server: paths.dist.root
     });
@@ -75,7 +83,7 @@ gulp.task('watch', function(){
     gulp.watch(paths.src.html_index, ['html']);
     gulp.watch(paths.src.styl, ['styl']);
     gulp.watch(paths.src.img, ['img']);
-    gulp.watch(paths.src.js, ['js']);
+    gulp.watch(paths.src.js, ['js', 'hint']);
     gulp.watch([paths.src.html_blocks, paths.src.html_index, paths.src.img, paths.src.styl, paths.src.js])
         .on('change', function (file) {
             console.log(file.path, 'has changed');
