@@ -7,8 +7,6 @@
   background-color: $creamy;
   font-size: 12px
 
-
-
   &-sheeping {
     width: 220px;
     height: 195px;
@@ -37,13 +35,14 @@
       overflow: hidden;
       width: 95%;
       height: 60%;
+      padding-bottom: 5px;
     }
 
     &__ellipsis:before {
       content: "";
       float: left;
       width: 5px;
-      height: 118px
+      height: 119px
     }
 
     &__ellipsis > *:first-child {
@@ -54,11 +53,9 @@
 
     &__ellipsis:after {
       content: "\02026";
-
       box-sizing: content-box;
       -webkit-box-sizing: content-box;
       -moz-box-sizing: content-box;
-
       float: right;
       position: relative;
       top: -25px;
@@ -66,9 +63,12 @@
       width: 30px;
       margin-left: -30px;
       padding-right: 5px;
-
       text-align: right;
+    }
 
+    &__description {
+      height: 120px;
+      overflow: hidden;
     }
   }
 
