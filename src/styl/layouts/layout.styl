@@ -1,3 +1,33 @@
+/* For more independent layout structure*/
+.section {
+
+  &__container {
+    width: 960px;
+    margin: 0 auto;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  &_black {
+    background-color: $black;
+  }
+
+  &_white {
+    background-color: $white;
+  }
+
+  &_creamy {
+    background-color: $creamy;
+  }
+}
+/* For more independent layout structure*/
+
+
+
 .grid-container {
   width: 960px;
   margin: 0 auto;
