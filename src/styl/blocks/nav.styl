@@ -1,5 +1,4 @@
 .navigation {
-  background-color: $white;
 
   &-menu {
     margin: 0;
@@ -21,9 +20,10 @@
       text-decoration: none;
 
       &:hover {
-        background-color: $green;
+        /*background-color: $green;
         color: $white;
-        border-color: $white;
+        border-color: $white;*/
+        box-shadow: inset 0 0 1px 1px $green;
       }
     }
 
@@ -39,12 +39,13 @@
   }
 
   &-state {
+    position: relative;
     float: right;
     margin: 0;
     padding: 0;
     list-style: none;
 
-    & :last-child {
+    &:last-child {
       border-right: 1px solid $grey;
     }
 
@@ -54,6 +55,11 @@
       line-height: 60px;
       text-align: center;
       border-left: 1px solid $grey;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: inset 0 0 1px 1px $green;
+      }
 
       &__icon {
         display: inline-block;
@@ -92,4 +98,9 @@
       background-color: $green;
     }
   }
+}
+
+.basket-toggle {
+  position: relative;
+  z-index: 10;
 }

@@ -1,27 +1,28 @@
-<div class="navigation">
-    <div class="grid-container">
-        <ul class="navigation-menu">
-            <li><a class="navigation-menu__item" href="#">Home</a></li>
-            <li><a class="navigation-menu__item" href="#">Products</a></li>
-            <li><a class="navigation-menu__item" href="#">About</a></li>
-            <li><a class="navigation-menu__item" href="#">Pages</a></li>
-            <li><a class="navigation-menu__item" href="#">Blog</a></li>
-            <li><a class="navigation-menu__item" href="#">Contact</a></li>
-        </ul>
-        <div class="navigation-menu__responsive">
+<div class="section_white">
+    <div class="section__container">
+        <div class="navigation">
+            <ul class="navigation-menu">
+                <li><a class="navigation-menu__item" href="#">Home</a></li>
+                <li><a class="navigation-menu__item" href="#">Products</a></li>
+                <li><a class="navigation-menu__item" href="#">About</a></li>
+                <li><a class="navigation-menu__item" href="#">Pages</a></li>
+                <li><a class="navigation-menu__item" href="#">Blog</a></li>
+                <li><a class="navigation-menu__item" href="#">Contact</a></li>
+            </ul>
 
+            <div class="navigation-menu__responsive"></div>
+
+            <ul class="navigation-state">
+                <li class="navigation-state-item">
+                    <span class="navigation-state-item__icon navigation-state-item__icon_wishlist"></span>
+                    <span class="navigation__counter navigation__counter_grey">30</span>
+                </li>
+                @@include('./basket.html')
+                <li class="navigation-state-item basket-toggle">
+                    <span class="navigation-state-item__icon navigation-state-item__icon_cart"></span>
+                    <span class="navigation__counter navigation__counter_green">4</span>
+                </li>
+            </ul>
         </div>
-
-        <ul class="navigation-state">
-            <li class="navigation-state-item">
-                <span class="navigation-state-item__icon navigation-state-item__icon_wishlist"></span>
-                <span class="navigation__counter navigation__counter_grey">30</span>
-            </li>
-            <li class="navigation-state-item">
-                <span class="navigation-state-item__icon navigation-state-item__icon_cart"></span>
-                <span class="navigation__counter navigation__counter_green">0</span>
-            </li>
-        </ul>
-
     </div>
 </div>
