@@ -1,0 +1,97 @@
+.basket
+  display block
+  width 300px
+  max-height 500px
+  position absolute
+  right 0
+  background: #ecece8
+  box-shadow 11px 9px 34px -15px rgba(0,0,0,0.75);
+  opacity 1
+  transition opacity 0.2s
+  z-index 10
+
+  &-header
+    background #fff
+    height 60px
+    border-left 1px solid $grey
+    line-height 60px
+    padding-left 10px
+
+  &-container
+    margin-right 5px
+    max-height 300px
+    border-left 1px solid $grey
+    overflow-x hidden
+    overflow-y auto
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 3px;
+      background: rgba(0,0,0,0.1);
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background: rgba(0,0,0,0.2);
+    }
+
+
+    &-item
+      position: relative
+      height 100px
+      margin 10px 5px 10px 10px
+      background #fff
+
+      &__image
+        width 70px
+        height 70px
+        padding 15px
+
+      &-details
+        position absolute
+        top 50%
+        transform translateY(-50%)
+        left 110px
+
+        &__quantity
+          width 32px
+          border none
+
+      &__remove
+        cursor pointer
+        position absolute
+        visibility hidden
+        top 0
+        right 5px
+
+    :hover
+      .basket-container-item__remove
+        visibility visible
+
+  &-footer
+    position: relative
+    height 60px
+    background: $colorDarkBackground
+    text-align center
+
+    &__checkout
+      center()
+      padding 10px
+      background-color $colorTheme
+      text-align: center
+      text-transform uppercase
+      text-decoration none
+      color white
+      transition background-color 0.2s, color 0.2s
+
+      &:hover
+        background-color #fff
+        color black
+
+.hide
+  display none
+  opacity 0
+  transition opacity 1s
