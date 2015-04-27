@@ -23,6 +23,7 @@
     "fs": "0.0.2",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",
+    "gulp-brfs": "^0.1.0",
     "gulp-concat": "^2.5.2",
     "gulp-file-include": "^0.9.0",
     "gulp-jshint": "^1.10.0",

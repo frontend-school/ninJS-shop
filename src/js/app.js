@@ -16,6 +16,8 @@ var App = function() {
     app.router.crossroads.addRoute('home', function() {
 
         require('./blognews/controller.js')();
+        var api = require('./API/API.js')();
+        console.log(api.getProducts());
 
         app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK);
 

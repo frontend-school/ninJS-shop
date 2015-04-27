@@ -21,24 +21,31 @@ var gulp = require('gulp'),
             js: './src/js/**',
             js_app: './src/js/app.js',
             img: './src/img/**',
-            bower: './bower_components/**'
+            bower: './bower_components/**',
+            data: './src/data/**'
         },
         dist: {
             root: './dist',
             css: './dist/css',
             js: './dist/js',
             img: './dist/img',
-            vendor: './dist/vendor'
+            vendor: './dist/vendor',
+            data: './dist/data'
         }
     };
 
 gulp.task('default', ['build','serve', 'watch']);
-gulp.task('build', ['clean','bower','html','styl','img','js','hint']);
+gulp.task('build', ['clean','bower','data','html','styl','img','js','hint']);
 
 
 gulp.task('bower', function() {
     gulp.src(paths.src.bower)
         .pipe(gulp.dest(paths.dist.vendor));
+});
+
+gulp.task('data', function() {
+    gulp.src(paths.src.data)
+        .pipe(gulp.dest(paths.dist.data));
 });
 
 gulp.task('html', function() {

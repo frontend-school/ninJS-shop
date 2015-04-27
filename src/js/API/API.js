@@ -1,16 +1,32 @@
-var PS = require
+var PS = require('../vendor/pubsub.js');
 
+var API = function () {
+    var api = {};
 
-function getProducts () {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'API/data/products.json', false);
-    xhr.send();
+    PS.extend(api);
 
-    if (xhr.status != 200) {
-        alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
-    } else {
-        console.log(xhr.responseText);
+    api.getProducts = function () {
+        return _ajaxGet('./data/products.json');
+    };
+
+    function _ajaxGet (path) {
+        var data;
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', path, false);
+        xhr.send();
+
+        if (xhr.status != 200) {
+            console.log('Error ' + xhr.status + ': ' + xhr.statusText);
+        } else {
+            data = JSON.parse(xhr.responseText);
+        }
+
+        return data;
     }
-}
 
-getProducts();
+    return api;
+};
+
+module.exports = API;
+
