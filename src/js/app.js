@@ -2,8 +2,10 @@ window.CONST = require('./constants.js');
 window.Handlebars = require('handlebars');
 window.fs = require('fs');
 
-var PS = require('./vendor/pubsub.js');
-var router = require('./router.js')();
+var PS = require('./vendor/pubsub.js'),
+    Router = require('./router.js'),
+    BlogNewsController = require('./blognews/controller.js'),
+    API = require('./API/API.js');
 
 var App = function() {
 
@@ -11,7 +13,7 @@ var App = function() {
 
     PS.extend(app);
 
-    app.router = router;
+    app.router = Router();
 
     app.router.crossroads.addRoute('home', function() {
 
@@ -20,9 +22,9 @@ var App = function() {
             app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK, news);
         });
 
-        //define modules
-        require('./blognews/controller.js')();
-        require('./API/API.js')();
+        //load modules
+        BlogNewsController();
+        API();
 
         //publish startup events
         app.publish(CONST.ACTIONS.GET_NEWS);

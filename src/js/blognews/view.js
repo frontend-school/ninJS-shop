@@ -1,5 +1,5 @@
-var source = fs.readFileSync(__dirname + '/src/js/blognews/templates/blognews.hbs', {encoding: 'utf-8'});
-var View = require('../base/base-view.js');
+var source = fs.readFileSync(__dirname + '/src/js/blognews/templates/blognews.hbs', {encoding: 'utf-8'}),
+    View = require('../base/base-view.js');
 
 function BlogNewsView() {
 

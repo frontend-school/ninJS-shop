@@ -1,5 +1,5 @@
-var PS = require('../vendor/pubsub.js');
-var _D = require('../vendor/_D.js');
+var PS = require('../vendor/pubsub.js'),
+    _D = require('../vendor/_D.js');
 
 function BaseView() {
     var view = {};

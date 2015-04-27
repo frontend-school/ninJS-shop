@@ -1,6 +1,6 @@
-var signals = require('signals');
-var crossroads = require('crossroads');
-var hasher =  require('hasher');
+var signals = require('signals'),
+    crossroads = require('crossroads'),
+    hasher =  require('hasher');
 
 var Router = function() {
 

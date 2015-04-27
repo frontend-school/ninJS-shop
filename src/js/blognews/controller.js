@@ -1,6 +1,6 @@
-var View = require('./view.js');
-var Model = require('./model.js');
-var PS = require('../vendor/pubsub.js');
+var View = require('./view.js'),
+    Model = require('./model.js'),
+    PS = require('../vendor/pubsub.js');
 
 function UsersController() {
 
