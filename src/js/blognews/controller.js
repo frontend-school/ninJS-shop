@@ -1,4 +1,5 @@
 var View = require('./view.js');
+var Model = require('./model.js');
 var PS = require('../vendor/pubsub.js');
 
 function UsersController() {
@@ -8,23 +9,12 @@ function UsersController() {
     PS.extend(controller);
 
     controller.view = View();
+    controller.model = Model();
 
-    // <Temporary - while API is not available>
-    controller.model = {
-        items: [{
-            date: 'APR 01',
-            title: 'Nice & Clean. The best for you blog!',
-            excerpt: 'Ne vim mutat doctus qualisque. At case aeterno eleifend usu, dolor malorum se'
-        },{
-            date: 'APR 01',
-            title: 'What an ecomerce theme ',
-            excerpt: 'Ne vim mutat doctus qualisque. At case aeterno eleifend usu, dolor malorum se'
-        }]
-    };
-    // </Temporary - while API is not available>
+    controller.subscribe(CONST.ACTIONS.RENDER_NEWS_BLOCK, function(news) {
+        controller.model.set(news);
 
-    controller.subscribe(CONST.ACTIONS.RENDER_NEWS_BLOCK, function() {
-        controller.view.append( controller.model );
+        controller.view.append( controller.model.getLast() );
     });
 
     return controller;

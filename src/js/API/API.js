@@ -5,8 +5,20 @@ var API = function () {
 
     PS.extend(api);
 
+    api.subscribe(CONST.ACTIONS.GET_NEWS, function() {
+        api.getNews();
+    });
+
     api.getProducts = function () {
-        return _ajaxGet('./data/products.json');
+        var products =  _ajaxGet('./data/products.json');
+
+        api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, products);
+    };
+
+    api.getNews = function () {
+        var news  = _ajaxGet('./data/news.json');
+
+        api.publish(CONST.ACTIONS.NEWS_RECEIVED, news);
     };
 
     function _ajaxGet (path) {

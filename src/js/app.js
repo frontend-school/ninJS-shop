@@ -15,20 +15,22 @@ var App = function() {
 
     app.router.crossroads.addRoute('home', function() {
 
+        //define subscriptions
+        app.subscribe(CONST.ACTIONS.NEWS_RECEIVED, function(news) {
+            app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK, news);
+        });
+
+        //define modules
         require('./blognews/controller.js')();
-        var api = require('./API/API.js')();
-        console.log(api.getProducts());
+        require('./API/API.js')();
 
-        app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK);
-
-        //load other modules
-
+        //publish startup events
+        app.publish(CONST.ACTIONS.GET_NEWS);
     });
 
     app.router.hasher.init();
 
     return app;
-
 };
 
 window.addEventListener('load', function() {
