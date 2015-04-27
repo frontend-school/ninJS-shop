@@ -7,6 +7,9 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     fileinclude = require('gulp-file-include'),
     jshint = require('gulp-jshint'),
+    browserify = require('browserify'),
+    source = require('vinyl-source-stream'),
+    brfs = require('gulp-brfs'),
 
     paths = {
         src: {
@@ -15,7 +18,8 @@ var gulp = require('gulp'),
             html_blocks: './src/html/*.html',
             styl: './src/styl/**',
             styl_main: './src/styl/main.styl',
-            js: './src/js/*.js',
+            js: './src/js/**',
+            js_app: './src/js/app.js',
             img: './src/img/**',
             bower: './bower_components/**'
         },
@@ -63,8 +67,11 @@ gulp.task('hint', function() {
 });
 
 gulp.task('js', function() {
-    gulp.src(paths.src.js)
-        .pipe(gulp.dest(paths.dist.js));
+    browserify(paths.src.js_app)
+        .bundle()
+        .pipe(source('app.js'))
+        .pipe(brfs())
+        .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('img', function() {

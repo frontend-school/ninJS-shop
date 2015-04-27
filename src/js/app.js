@@ -1,7 +1,17 @@
+window.CONST = require('./constants.js');
+var router = require('./router.js')();
+
 window.addEventListener('load', function() {
 
-    document.getElementsByClassName('basket-toggle')[0].addEventListener('click', function () {
-        document.getElementsByClassName('basket')[0].classList.toggle('hide');
+    router.crossroads.addRoute('home', function() {
+
+        console.log('yey!');
+
+        //load other modules
+
     });
 
+    router.hasher.init();
+
 });
+

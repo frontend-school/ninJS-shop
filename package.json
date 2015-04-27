@@ -15,8 +15,12 @@
     "url": "https://github.com/frontend-school/ninJS-shop/issues"
   },
   "devDependencies": {
+    "brfs": "^1.4.0",
     "browser-sync": "^2.5.0",
+    "browserify": "^9.0.8",
+    "crossroads": "^0.12.0",
     "del": "^1.1.1",
+    "fs": "0.0.2",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-concat": "^2.5.2",
@@ -24,6 +28,9 @@
     "gulp-jshint": "^1.10.0",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-stylus": "^2.0.1",
-    "jshint-stylish": "^1.0.1"
+    "hasher": "^1.2.0",
+    "jshint-stylish": "^1.0.1",
+    "signals": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
