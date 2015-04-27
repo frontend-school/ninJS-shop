@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Buffulo decolette",
+    "description": "Lorem ipsum",
+    "colors": ["black", "white", "brown"],
+    "price": 145.99,
+    "image": "buffulo_decolette.png",
+    "available": true,
+    "sale": false
+  },
+  {
+    "id": 2,
+    "name": "Buffulo decolette modern",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "buffulo_decolette_modern.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 3,
+    "name": "Buffulo decolette more modern",
+    "description": "Lorem ipsum",
+    "colors": ["red"],
+    "price": 299.99,
+    "image": "buffulo_decolette_more_modern.png",
+    "available": true,
+    "sale": false
+  }
+]
