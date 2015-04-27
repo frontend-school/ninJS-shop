@@ -1,17 +1,36 @@
 window.CONST = require('./constants.js');
+window.Handlebars = require('handlebars');
+window.fs = require('fs');
+
+var PS = require('./vendor/pubsub.js');
 var router = require('./router.js')();
 
-window.addEventListener('load', function() {
+var App = function() {
 
-    router.crossroads.addRoute('home', function() {
+    var app = {};
 
-        console.log('yey!');
+    PS.extend(app);
+
+    app.router = router;
+
+    app.router.crossroads.addRoute('home', function() {
+
+        require('./blognews/controller.js')();
+
+        app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK);
 
         //load other modules
 
     });
 
-    router.hasher.init();
+    app.router.hasher.init();
+
+    return app;
+
+};
+
+window.addEventListener('load', function() {
+
+    window.app = App();
 
 });
-
