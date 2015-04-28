@@ -25,10 +25,6 @@ var Router = function() {
         router.publish(CONST.ACTIONS.GET_NEWS);
     });
 
-    router.crossroads.addRoute('test', function() {
-        console.log('test passed!');
-    });
-
     if (hasher.getURL() === hasher.getBaseURL()) {
         hasher.setHash(CONST.HASHES.DEFAULT);
     }
