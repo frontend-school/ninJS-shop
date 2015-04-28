@@ -1,5 +1,4 @@
-var PS = require('../vendor/pubsub.js'),
-    _D = require('../vendor/_D.js');
+var PS = require('../vendor/pubsub.js');
 
 function BaseView() {
     var view = {};
@@ -7,15 +6,15 @@ function BaseView() {
     PS.extend(view);
 
     view.render =  function (model) {
-        _D(view.el).put(view.template(model));
+        $(view.el).html(view.template(model));
     };
 
     view.append = function(model) {
-        _D(view.parent).add(view.template(model));
+        $(view.parent).append(view.template(model));
     };
 
     view.remove = function() {
-        _D(view.el).del();
+        $(view.el).remove();
     };
 
     return view;

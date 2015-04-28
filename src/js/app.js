@@ -15,7 +15,7 @@ var App = function() {
 
     app.router = Router();
 
-    app.router.crossroads.addRoute('home', function() {
+    app.router.crossroads.addRoute(CONST.HASHES.DEFAULT, function() {
 
         //define subscriptions
         app.subscribe(CONST.ACTIONS.NEWS_RECEIVED, function(news) {
