@@ -2,8 +2,7 @@ var signals = require('signals'),
     crossroads = require('crossroads'),
     hasher =  require('hasher'),
     PS = require('./vendor/pubsub.js'),
-    BlogNewsController = require('./blognews/controller.js'),
-    API = require('./API/API.js');
+    BlogNewsController = require('./blognews/controller.js');
 
 var Router = function() {
 
@@ -19,7 +18,6 @@ var Router = function() {
 
         //load modules
         BlogNewsController();
-        API();
 
         //publish startup events
         router.publish(CONST.ACTIONS.GET_NEWS);

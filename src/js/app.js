@@ -3,6 +3,7 @@ window.Handlebars = require('handlebars');
 window.fs = require('fs');
 
 var PS = require('./vendor/pubsub.js'),
+    API = require('./API/API.js'),
     Router = require('./router.js');
 
 var App = function() {
@@ -17,6 +18,9 @@ var App = function() {
     app.subscribe(CONST.ACTIONS.NEWS_RECEIVED, function(news) {
         app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK, news);
     });
+
+    //load common modules
+    API();
 
     app.router.hasher.init();
 
