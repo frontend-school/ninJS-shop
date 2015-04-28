@@ -31,7 +31,7 @@ var PubSub = function () {
         return token;
     };
 
-    this.unsabscribe = function (token) {
+    this.unsubscribe = function (token) {
 
         for (var m in events) {
 

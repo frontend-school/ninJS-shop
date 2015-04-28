@@ -9,32 +9,36 @@ var API = function () {
         api.getNews();
     });
 
-    api.getProducts = function () {
-        var products =  _ajaxGet('./data/products.json');
+    api.subscribe(CONST.ACTIONS.GET_PRODUCTS, function () {
+        api.getProducts();
+    });
 
-        api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, products);
+    api.getProducts = function () {
+        _ajaxGet('./data/products.json', function (products) {
+            api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, products);
+        });
+    };
+
+    api.getProductById = function (productId) {
+        var products = _ajaxGet('./data/products.json');
+
+        var filteredProduct = products.filter(function (product) {
+            return product.id == productId;
+        });
+
+        api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, filteredProduct);
     };
 
     api.getNews = function () {
-        var news  = _ajaxGet('./data/news.json');
-
-        api.publish(CONST.ACTIONS.NEWS_RECEIVED, news);
+        _ajaxGet('./data/news.json', function (news) {
+            api.publish(CONST.ACTIONS.NEWS_RECEIVED, news);
+        });
     };
 
-    function _ajaxGet (path) {
-        var data;
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('GET', path, false);
-        xhr.send();
-
-        if (xhr.status != 200) {
-            console.log('Error ' + xhr.status + ': ' + xhr.statusText);
-        } else {
-            data = JSON.parse(xhr.responseText);
-        }
-
-        return data;
+    function _ajaxGet (path, callback) {
+        $.getJSON(path, function(data) {
+            callback(data); // data goes into callback function, that is passed as argument
+        });
     }
 
     return api;

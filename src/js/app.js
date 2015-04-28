@@ -22,12 +22,17 @@ var App = function() {
             app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK, news);
         });
 
+        app.subscribe(CONST.ACTIONS.PRODUCTS_RECEIVED, function(products) {
+            console.log(products);
+        });
+
         //load modules
         BlogNewsController();
         API();
 
         //publish startup events
         app.publish(CONST.ACTIONS.GET_NEWS);
+        app.publish(CONST.ACTIONS.GET_PRODUCTS);
     });
 
     app.router.hasher.init();
