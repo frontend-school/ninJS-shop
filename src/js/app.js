@@ -3,31 +3,19 @@ window.Handlebars = require('handlebars');
 window.fs = require('fs');
 
 var PS = require('./vendor/pubsub.js'),
-    Router = require('./router.js'),
-    BlogNewsController = require('./blognews/controller.js'),
-    API = require('./API/API.js');
+    Router = require('./router.js');
 
 var App = function() {
 
     var app = {};
 
-    PS.extend(app);
-
     app.router = Router();
 
-    app.router.crossroads.addRoute(CONST.HASHES.DEFAULT, function() {
+    PS.extend(app);
 
-        //define subscriptions
-        app.subscribe(CONST.ACTIONS.NEWS_RECEIVED, function(news) {
-            app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK, news);
-        });
-
-        //load modules
-        BlogNewsController();
-        API();
-
-        //publish startup events
-        app.publish(CONST.ACTIONS.GET_NEWS);
+    //define subscriptions
+    app.subscribe(CONST.ACTIONS.NEWS_RECEIVED, function(news) {
+        app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK, news);
     });
 
     app.router.hasher.init();
