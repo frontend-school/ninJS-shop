@@ -11,11 +11,13 @@ function UsersController() {
     controller.view = View();
     controller.model = Model();
 
-    controller.subscribe(CONST.ACTIONS.RENDER_NEWS_BLOCK, function(news) {
-        controller.model.set(news);
+    controller.init = function() {
+        controller.subscribe(CONST.ACTIONS.RENDER_NEWS_BLOCK, function(news) {
+            controller.model.set(news);
 
-        controller.view.append( controller.model.getLast() );
-    });
+            controller.view.append( controller.model.getLast() );
+        });
+    };
 
     return controller;
 }

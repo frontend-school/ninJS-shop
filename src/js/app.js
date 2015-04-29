@@ -4,31 +4,34 @@ window.fs = require('fs');
 
 var PS = require('./vendor/pubsub.js'),
     API = require('./API/API.js'),
-    Router = require('./router.js');
+    Router = require('./router.js'),
+    BlogNewsController = require('./blognews/controller.js');
 
 var App = function() {
 
     var app = {};
 
-    app.router = Router();
-
     PS.extend(app);
 
-    //define subscriptions
-    app.subscribe(CONST.ACTIONS.NEWS_RECEIVED, function(news) {
-        app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK, news);
-    });
+    app.router = Router();
+    app.api = API();
+    app.blognews = BlogNewsController();
 
-    //load common modules
-    API();
+    app.init = function() {
+        app.subscribe(CONST.ACTIONS.NEWS_RECEIVED, function(news) {
+            app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK, news);
+        });
 
-    app.router.hasher.init();
+        app.blognews.init();
+        app.api.init();
+        app.router.init();
+    };
 
     return app;
 };
 
 window.addEventListener('load', function() {
+    var app = App();
 
-    window.app = App();
-
+    app.init();
 });

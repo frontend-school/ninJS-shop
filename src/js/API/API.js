@@ -5,9 +5,11 @@ var API = function () {
 
     PS.extend(api);
 
-    api.subscribe(CONST.ACTIONS.GET_NEWS, function() {
-        api.getNews();
-    });
+    api.init = function() {
+        api.subscribe(CONST.ACTIONS.GET_NEWS, function() {
+            api.getNews();
+        });
+    };
 
     api.getProducts = function () {
         var products =  _ajaxGet('./data/products.json');
