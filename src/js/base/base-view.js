@@ -6,7 +6,7 @@ function BaseView() {
     PS.extend(view);
 
     view.render =  function (model) {
-        $(view.el).html(view.template(model));
+        $(view.parent).html(view.template(model));
     };
 
     view.append = function(model) {

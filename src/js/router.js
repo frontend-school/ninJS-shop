@@ -15,8 +15,13 @@ var Router = function() {
 
     router.crossroads.addRoute(CONST.ROUTES.DEFAULT, function() {
         //publish startup events
-        router.publish(CONST.ACTIONS.GET_NEWS);
-        router.publish(CONST.ACTIONS.GET_PRODUCTS);
+
+        router.publish(CONST.ACTIONS.SWITCH_TO_HOME);
+    });
+
+    router.crossroads.addRoute(CONST.ROUTES.PRODUCTS, function() {
+        //publish startup events
+        router.publish(CONST.ACTIONS.SWITCH_TO_PRODUCTS);
     });
 
     if (hasher.getURL() === hasher.getBaseURL()) {
