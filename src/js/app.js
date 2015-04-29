@@ -13,9 +13,9 @@ var App = function() {
 
     PS.extend(app);
 
-    app.router = Router();
-    app.api = API();
-    app.blognews = BlogNewsController();
+    app.router = new Router();
+    app.api = new API();
+    app.blognews = new BlogNewsController();
 
     app.init = function() {
         app.subscribe(CONST.ACTIONS.NEWS_RECEIVED, function(news) {
@@ -31,7 +31,7 @@ var App = function() {
 };
 
 window.addEventListener('load', function() {
-    var app = App();
+    var app = new App();
 
     app.init();
 });

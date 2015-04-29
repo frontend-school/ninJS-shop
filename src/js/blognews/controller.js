@@ -2,14 +2,14 @@ var View = require('./view.js'),
     Model = require('./model.js'),
     PS = require('../vendor/pubsub.js');
 
-function UsersController() {
+function BlogNewsController() {
 
     var controller = {};
 
     PS.extend(controller);
 
-    controller.view = View();
-    controller.model = Model();
+    controller.view = new View();
+    controller.model = new Model();
 
     controller.init = function() {
         controller.subscribe(CONST.ACTIONS.RENDER_NEWS_BLOCK, function(news) {
@@ -22,4 +22,4 @@ function UsersController() {
     return controller;
 }
 
-module.exports = UsersController;
+module.exports = BlogNewsController;

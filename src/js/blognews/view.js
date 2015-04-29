@@ -1,9 +1,9 @@
 var source = fs.readFileSync(__dirname + '/src/js/blognews/templates/blognews.hbs', {encoding: 'utf-8'}),
-    View = require('../base/base-view.js');
+    BaseView = require('../base/base-view.js');
 
 function BlogNewsView() {
 
-    var view = View();
+    var view = new BaseView();
 
     view.template = Handlebars.compile(source);
     view.parent = CONST.SELECTORS.BLOG_NEWS;
