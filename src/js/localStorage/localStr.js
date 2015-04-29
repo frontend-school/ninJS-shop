@@ -6,6 +6,7 @@
 module.exports = LocalStr;
 
 function LocalStr() {
+    'use strict';
     var localStr = {};
     localStr.setItem = function(key,value){
         localStorage.setItem(key,value);
@@ -32,7 +33,7 @@ function LocalStr() {
     };
 
     localStr.isKey = function(key){
-        return localStorage.getItem(key)===null?true:false;
+        return localStorage.getItem(key) !== null;
     };
 
     localStr.clear = function(){

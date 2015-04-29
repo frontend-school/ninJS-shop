@@ -1,5 +1,5 @@
 module.exports = {
-    HASHES: {
+    ROUTES: {
         DEFAULT: 'home'
     },
     SELECTORS: {

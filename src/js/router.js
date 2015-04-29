@@ -1,8 +1,7 @@
 var signals = require('signals'),
     crossroads = require('crossroads'),
     hasher =  require('hasher'),
-    PS = require('./vendor/pubsub.js'),
-    BlogNewsController = require('./blognews/controller.js');
+    PS = require('./vendor/pubsub.js');
 
 var Router = function() {
 
@@ -14,18 +13,14 @@ var Router = function() {
     router.crossroads = crossroads;
     router.hasher = hasher;
 
-    router.crossroads.addRoute(CONST.HASHES.DEFAULT, function() {
-
-        //load modules
-        BlogNewsController();
-
+    router.crossroads.addRoute(CONST.ROUTES.DEFAULT, function() {
         //publish startup events
         router.publish(CONST.ACTIONS.GET_NEWS);
         router.publish(CONST.ACTIONS.GET_PRODUCTS);
     });
 
     if (hasher.getURL() === hasher.getBaseURL()) {
-        hasher.setHash(CONST.HASHES.DEFAULT);
+        hasher.setHash(CONST.ROUTES.DEFAULT);
     }
 
     router.hasher.initialized.add(parseHash);
@@ -35,7 +30,7 @@ var Router = function() {
         router.crossroads.parse(newHash);
     }
 
-    return router;
+    return router.hasher;
 };
 
 module.exports = Router;

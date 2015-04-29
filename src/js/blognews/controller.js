@@ -2,22 +2,23 @@ var View = require('./view.js'),
     Model = require('./model.js'),
     PS = require('../vendor/pubsub.js');
 
-function UsersController() {
+function BlogNewsController() {
 
-    var controller = {};
+    var controller = {},
+        _view = new View(),
+        _model = new Model();
 
     PS.extend(controller);
 
-    controller.view = View();
-    controller.model = Model();
+    controller.init = function() {
+        controller.subscribe(CONST.ACTIONS.RENDER_NEWS_BLOCK, function(news) {
+            _model.set(news);
 
-    controller.subscribe(CONST.ACTIONS.RENDER_NEWS_BLOCK, function(news) {
-        controller.model.set(news);
-
-        controller.view.append( controller.model.getLast() );
-    });
+            _view.append( _model.getLast() );
+        });
+    };
 
     return controller;
 }
 
-module.exports = UsersController;
+module.exports = BlogNewsController;
