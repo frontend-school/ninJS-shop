@@ -33,7 +33,7 @@ function LocalStr() {
     };
 
     localStr.isKey = function(key){
-        return localStorage.getItem(key)===null;
+        return localStorage.getItem(key) !== null;
     };
 
     localStr.clear = function(){
