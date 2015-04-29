@@ -58,5 +58,965 @@
     "image": "img/products/product-item-06.png",
     "available": true,
     "sale": false
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
+  },
+  {
+    "id": 2,
+    "name": "Buffulo Black&Yellow",
+    "description": "Lorem ipsum",
+    "colors": ["black"],
+    "price": 174.99,
+    "image": "img/products/product-item-02.png",
+    "available": true,
+    "sale": true
   }
 ]

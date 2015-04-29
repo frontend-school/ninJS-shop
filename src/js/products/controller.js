@@ -14,7 +14,7 @@ function ProductsController() {
         controller.subscribe(CONST.ACTIONS.RENDER_PRODUCTS, function(products) {
             _model.set(products);
 
-            _view.append( _model.getLast() );
+            _view.append( _model.getLast(6) );
         });
     };
 
