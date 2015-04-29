@@ -9,22 +9,21 @@ var PS = require('./vendor/pubsub.js'),
 
 var App = function() {
 
-    var app = {};
+    var app = {},
+        _router = new Router(),
+        _api = new API(),
+        _blognews = new BlogNewsController();
 
     PS.extend(app);
-
-    app.router = new Router();
-    app.api = new API();
-    app.blognews = new BlogNewsController();
 
     app.init = function() {
         app.subscribe(CONST.ACTIONS.NEWS_RECEIVED, function(news) {
             app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK, news);
         });
 
-        app.blognews.init();
-        app.api.init();
-        app.router.init();
+        _blognews.init();
+        _api.init();
+        _router.init();
     };
 
     return app;
