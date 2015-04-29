@@ -37,6 +37,20 @@ var API = function () {
         });
     };
 
+    api.getHeroUnitProducts = function (slideId) {
+        var content =_ajaxGet('./data/slides.json');
+
+        var slideFilter = function () {
+            for(var i=0; i < content.length; i++) {
+                if (content[i].id == slideId) {
+                    return content[i];
+               }
+            }
+        };
+        
+        api.publish(CONST.ACTIONS.GET_SLIDE, slideFilter());
+    };
+
     function _ajaxGet (path, callback) {
         $.getJSON(path, function(data) {
             callback(data); // data goes into callback function, that is passed as argument
