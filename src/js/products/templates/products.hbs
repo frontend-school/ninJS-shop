@@ -1,5 +1,5 @@
 {{#each items}}
-<div class="product-item">
+    <div class="product-item {{#if sale}}product-item_on-sale {{/if}} {{#unless available}}product-item_out-of-stock{{/unless}}">
     <div class="action-buttons__outer">
         <ul class="action-buttons">
             <li class="action-buttons__item action-buttons__item_view"></li>

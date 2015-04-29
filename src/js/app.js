@@ -5,14 +5,16 @@ window.fs = require('fs');
 var PS = require('./vendor/pubsub.js'),
     API = require('./API/API.js'),
     Router = require('./router.js'),
-    BlogNewsController = require('./blognews/controller.js');
+    BlogNewsController = require('./blognews/controller.js'),
+    ProductsController = require('./products/controller.js');
 
 var App = function() {
 
     var app = {},
         _router = new Router(),
         _api = new API(),
-        _blognews = new BlogNewsController();
+        _blognews = new BlogNewsController(),
+        _products = new ProductsController();
 
     PS.extend(app);
 
@@ -21,15 +23,15 @@ var App = function() {
             app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK, news);
         });
 
+        app.subscribe(CONST.ACTIONS.PRODUCTS_RECEIVED, function(products) {
+            app.publish(CONST.ACTIONS.RENDER_PRODUCTS, products);
+        });
 
+        _products.init();
         _blognews.init();
         _api.init();
         _router.init();
     };
-
-    /*app.subscribe(CONST.ACTIONS.PRODUCTS_RECEIVED, function(products) {
-        console.log(products);
-    });*/
 
     return app;
 };

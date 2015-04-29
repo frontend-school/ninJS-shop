@@ -4,18 +4,19 @@ var View = require('./view.js'),
 
 function ProductsController() {
 
-    var controller = {};
+    var controller = {},
+        _view = new View(),
+        _model = new Model();
 
     PS.extend(controller);
 
-    controller.view = new View();
-    controller.model = new Model();
+    controller.init = function() {
+        controller.subscribe(CONST.ACTIONS.RENDER_PRODUCTS, function(products) {
+            _model.set(products);
 
-    controller.subscribe(CONST.ACTIONS.RENDER_PRODUCTS, function(products) {
-        controller.model.set(products);
-
-        controller.view.append( controller.model.getLast() );
-    });
+            _view.append( _model.getLast() );
+        });
+    };
 
     return controller;
 }
