@@ -19,7 +19,7 @@ var API = function () {
         });
     };
 
-    api.getProductById = function (productId) {
+    /*api.getProductById = function (productId) {
         var products = _ajaxGet('./data/products.json');
 
         var filteredProduct = products.filter(function (product) {
@@ -27,7 +27,7 @@ var API = function () {
         });
 
         api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, filteredProduct);
-    };
+    };*/
 
     api.getNews = function () {
         _ajaxGet('./data/news.json', function (news) {
