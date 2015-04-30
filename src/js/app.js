@@ -6,7 +6,8 @@ var PS = require('./vendor/pubsub.js'),
     API = require('./API/API.js'),
     Router = require('./router.js'),
     BlogNewsController = require('./blognews/controller.js'),
-    ProductsController = require('./products/controller.js');
+    ProductsController = require('./products/controller.js'),
+    TextWidgetController = require('./textWidget/controller.js');
 
 var App = function() {
 
@@ -14,7 +15,8 @@ var App = function() {
         _router = new Router(),
         _api = new API(),
         _blognews = new BlogNewsController(),
-        _products = new ProductsController();
+        _products = new ProductsController(),
+        _textWidget = new TextWidgetController();
 
     PS.extend(app);
 
@@ -27,8 +29,13 @@ var App = function() {
             app.publish(CONST.ACTIONS.RENDER_PRODUCTS, products);
         });
 
+        app.subscribe(CONST.ACTIONS.TEXT_WIDGET_RECEIVED, function(textWidget) {
+            app.publish(CONST.ACTIONS.RENDER_TEXT_WIDGET, textWidget);
+        });
+
         _products.init();
         _blognews.init();
+        _textWidget.init();
         _api.init();
         _router.init();
     };

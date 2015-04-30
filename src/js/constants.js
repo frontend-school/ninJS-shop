@@ -4,7 +4,8 @@ module.exports = {
     },
     SELECTORS: {
         BLOG_NEWS: '.about-blognews',
-        PRODUCTS: '.products-container'
+        PRODUCTS: '.products-container',
+        TEXT_WIDGET: '.widget-text'
     },
     ACTIONS: {
         GET_NEWS: 'app/get-news',
@@ -12,6 +13,9 @@ module.exports = {
         RENDER_NEWS_BLOCK: 'app/render-news-block',
         GET_PRODUCTS: 'app/get-products',
         PRODUCTS_RECEIVED: 'app/API:products-received',
-        RENDER_PRODUCTS: 'app/render-products-block'
+        RENDER_PRODUCTS: 'app/render-products-block',
+        GET_TEXT_WIDGET: 'app/get-text-widget',
+        TEXT_WIDGET_RECEIVED: 'app/API:text-widget-received',
+        RENDER_TEXT_WIDGET: 'app/render-text-widget'
     }
 };

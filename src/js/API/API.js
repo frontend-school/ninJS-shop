@@ -37,6 +37,12 @@ var API = function () {
         });
     };
 
+    api.getTextWidget = function () {
+        _ajaxGet('./data/textWidget.json', function (textWidget) {
+            api.publish(CONST.ACTIONS.TEXT_WIDGET_RECEIVED, textWidget);
+        });
+    };
+
     function _ajaxGet (path, callback) {
         $.getJSON(path, function(data) {
             callback(data); // data goes into callback function, that is passed as argument
