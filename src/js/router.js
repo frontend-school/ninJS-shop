@@ -17,6 +17,7 @@ var Router = function() {
         //publish startup events
         router.publish(CONST.ACTIONS.GET_NEWS);
         router.publish(CONST.ACTIONS.GET_PRODUCTS);
+        router.publish(CONST.ACTIONS.GET_TEXT_WIDGET);
     });
 
     if (hasher.getURL() === hasher.getBaseURL()) {
