@@ -1,4 +1,5 @@
-var PS = require('../vendor/pubsub.js');
+var PS = require('../vendor/pubsub.js'),
+    Q = require('q');
 
 var API = function () {
     var api = {};
@@ -16,7 +17,8 @@ var API = function () {
     });
 
     api.getProducts = function () {
-        _ajaxGet('./data/products.json', function (products) {
+        _ajaxGet('./data/products.json')
+            .then(function (products) {
             api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, products);
         });
     };
@@ -32,15 +34,20 @@ var API = function () {
     };*/
 
     api.getNews = function () {
-        _ajaxGet('./data/news.json', function (news) {
+        _ajaxGet('./data/news.json')
+            .then(function (news) {
             api.publish(CONST.ACTIONS.NEWS_RECEIVED, news);
         });
     };
 
-    function _ajaxGet (path, callback) {
+    function _ajaxGet (path) {
+        var deferred = new Q.defer();
+
         $.getJSON(path, function(data) {
-            callback(data); // data goes into callback function, that is passed as argument
+            deferred.resolve(data); // data goes into callback function, that is passed as argument
         });
+
+        return deferred.promise;
     }
 
     return api;
