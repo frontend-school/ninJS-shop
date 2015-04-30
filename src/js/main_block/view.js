@@ -1,6 +1,6 @@
 var sourceHome = fs.readFileSync(__dirname + '/src/js/main_block/templates/home.hbs', {encoding: 'utf-8'}),
     sourceProductsPage = fs.readFileSync(__dirname + '/src/js/main_block/templates/products_page.hbs', {encoding: 'utf-8'}),
-    View = require('../base/base-view.js');
+    View = require('../views/base.js');
 
 function ProductsView() {
 

@@ -1,5 +1,5 @@
 var source = fs.readFileSync(__dirname + '/src/js/products/templates/products.hbs', {encoding: 'utf-8'}),
-    View = require('../base/base-view.js');
+    View = require('../views/base.js');
 
 function ProductsView() {
 

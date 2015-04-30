@@ -5,12 +5,12 @@ function BaseView() {
 
     PS.extend(view);
 
-    view.render =  function (model) {
-        $(view.parent).html(view.template(model));
+    view.render =  function (template, model) {
+        $(view.parent).html( template(model) );
     };
 
-    view.append = function(model) {
-        $(view.parent).append(view.template(model));
+    view.append = function(template, model) {
+        $(view.parent).append( template(model) );
     };
 
     view.remove = function() {
