@@ -41,6 +41,7 @@ var API = function () {
         _ajaxGet('./data/textWidget.json', function (textWidget) {
             api.publish(CONST.ACTIONS.TEXT_WIDGET_RECEIVED, textWidget);
         });
+    };
 
     api.getHeroUnitProducts = function (slideId) {
         var content =_ajaxGet('./data/slides.json');

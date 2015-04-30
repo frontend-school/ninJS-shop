@@ -8,7 +8,7 @@ function textWidgetModel() {
 
     model.getLast = function() {
         return {
-            items: _model.slice(1,2)
+            items: _model.slice(0,1)
         };
     };
 
