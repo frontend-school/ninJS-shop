@@ -41,6 +41,18 @@ var API = function () {
         _ajaxGet('./data/textWidget.json', function (textWidget) {
             api.publish(CONST.ACTIONS.TEXT_WIDGET_RECEIVED, textWidget);
         });
+
+    api.getHeroUnitProducts = function (slideId) {
+        var content =_ajaxGet('./data/slides.json');
+
+        var slideFilter = function () {
+            for(var i=0; i < content.length; i++) {
+                if (content[i].id == slideId) {
+                    return content[i];
+               }
+            }
+        };
+        api.publish(CONST.ACTIONS.GET_SLIDE, slideFilter());
     };
 
     function _ajaxGet (path, callback) {
