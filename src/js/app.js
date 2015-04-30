@@ -31,6 +31,7 @@ var App = function() {
 
         app.subscribe(CONST.ACTIONS.TEXT_WIDGET_RECEIVED, function(textWidget) {
             app.publish(CONST.ACTIONS.RENDER_TEXT_WIDGET, textWidget);
+            console.log(textWidget);
         });
 
         _products.init();

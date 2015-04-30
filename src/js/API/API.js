@@ -15,6 +15,10 @@ var API = function () {
         api.getProducts();
     });
 
+    api.subscribe(CONST.ACTIONS.GET_TEXT_WIDGET, function () {
+        api.getTextWidget();
+    });
+
     api.getProducts = function () {
         _ajaxGet('./data/products.json', function (products) {
             api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, products);
