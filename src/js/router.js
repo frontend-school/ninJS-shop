@@ -15,7 +15,6 @@ var Router = function() {
 
     router.crossroads.addRoute(CONST.ROUTES.DEFAULT, function() {
         //publish startup events
-
         router.publish(CONST.ACTIONS.SWITCH_TO_HOME);
     });
 
