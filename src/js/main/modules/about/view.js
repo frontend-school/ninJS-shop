@@ -1,14 +1,11 @@
-var source = fs.readFileSync(__dirname + '/src/js/blognews/templates/blognews.hbs', {encoding: 'utf-8'}),
-    BaseView = require('../views/base.js');
+var source = fs.readFileSync(__dirname + '/src/js/main/modules/about/templates/about.hbs', {encoding: 'utf-8'});
+    var baseView = require('./../../../base/view.js');
 
-function BlogNewsView() {
 
-    var view = new BaseView();
+module.exports = baseView.extend({
 
-    view.template = Handlebars.compile(source);
-    view.parent = CONST.SELECTORS.BLOG_NEWS;
+    parent: CONST.SELECTORS.ABOUT,
 
-    return view;
-}
+    template: Handlebars.compile(source)
 
-module.exports = BlogNewsView;
+});

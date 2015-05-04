@@ -5,12 +5,13 @@ var router = require('./router.js'),
     main = require('./main/layout/controller.js'),
     products = require('./main/modules/products/controller.js'),
     filters = require('./main/modules/filters/controller.js'),
+    about = require('./main/modules/about/controller.js'),
     PS = require('./vendor/pubsub.js');
 
 var app,
     coreModules = [main, api, basket, router],
     pageModules = {
-        home: [products],
+        home: [products, about],
         products: [products, filters]
     },
     activePageModules = [],
@@ -43,6 +44,7 @@ function switchPage(route) {
         PS.publish(CONST.ACTIONS.SWITCH_LAYOUT, route.page);
         PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, query);
         PS.publish(CONST.ACTIONS.SHOW_FILTERS, query);
+        PS.publish(CONST.ACTIONS.SHOW_NEWS);
 
     } else {
 

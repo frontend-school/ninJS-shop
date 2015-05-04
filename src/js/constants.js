@@ -4,6 +4,7 @@ module.exports = {
     },
     SELECTORS: {
         MAIN: '.main',
+        ABOUT: '.about',
         BLOG_NEWS: '.about-blognews',
         PRODUCTS: '.products-container',
         PRODUCTS_HEADER: '.products-header',
@@ -30,6 +31,10 @@ module.exports = {
         ADD_TO_BASKET: 'app/products:add-to-basket',
 
         SHOW_FILTERS: 'app/show_filters',
-        FILTER_CHANGED: 'app/filters:filter-changed'
+        FILTER_CHANGED: 'app/filters:filter-changed',
+
+        SHOW_NEWS: 'app/show-news',
+        GET_NEWS: 'app/about:get-news',
+        NEWS_RECEIVED: 'app/API:news-received'
     }
 };

@@ -44,6 +44,11 @@ module.exports = {
     },
 
 
+    getLast: function(num) {
+        return this._collection.slice(0, num);
+    },
+
+
     get: function() {
         return this._collection;
     },

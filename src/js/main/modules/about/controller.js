@@ -1,24 +1,39 @@
-var View = require('./view.js'),
-    Model = require('./model.js'),
-    PS = require('../vendor/pubsub.js');
+var productsModule,
+    collection = require('./collection.js'),
+    view = require('./view.js'),
+    baseController = require('./../../../base/controller.js');
 
-function BlogNewsController() {
 
-    var controller = {},
-        _view = new View(),
-        _model = new Model();
+module.exports = productsModule = baseController.extend({
 
-    PS.extend(controller);
+    init: function() {
 
-    controller.init = function() {
-        controller.subscribe(CONST.ACTIONS.RENDER_NEWS_BLOCK, function(news) {
-            _model.set(news);
+        var self = this;
 
-            _view.append( _model.getLast() );
+        this._subscriptions = [];
+
+        this.subscribe(CONST.ACTIONS.SHOW_NEWS, function() {
+
+            self.publish(CONST.ACTIONS.GET_NEWS);
+
         });
-    };
 
-    return controller;
-}
+        this.subscribe(CONST.ACTIONS.NEWS_RECEIVED, function(news) {
 
-module.exports = BlogNewsController;
+            collection.populate(news);
+            view.render({
+                items: collection.getLast(2)
+            });
+
+        });
+
+    },
+
+    remove: function() {
+
+        this.unsubscribeThis();
+        view.remove();
+
+    }
+
+});
