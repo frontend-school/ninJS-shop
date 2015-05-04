@@ -10,7 +10,7 @@ module.exports = productsModule = baseController.extend({
 
         this._subscriptions = [];
         this.subscribe(CONST.ACTIONS.SHOW_PRODUCTS, queryUpdate);
-        this.subscribe(CONST.ACTIONS.HOME_DATA_RECEIVED, updateModule);
+        this.subscribe(CONST.ACTIONS.PRODUCTS_RECEIVED, updateModule);
 
     },
 
@@ -27,7 +27,7 @@ module.exports = productsModule = baseController.extend({
 function queryUpdate(query) {
 
     collection.setQuery(query);
-    productsModule.publish(CONST.ACTIONS.GET_HOME_DATA);
+    productsModule.publish(CONST.ACTIONS.GET_PRODUCTS);
 
 }
 
