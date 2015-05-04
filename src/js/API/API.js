@@ -11,25 +11,15 @@ var API = function () {
         });
     };
 
-    api.subscribe(CONST.ACTIONS.GET_PRODUCTS, function () {
+    api.subscribe(CONST.ACTIONS.GET_HOME_DATA, function () {
         api.getProducts();
     });
 
     api.getProducts = function () {
         _ajaxGet('./data/products.json', function (products) {
-            api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, products);
+            api.publish(CONST.ACTIONS.HOME_DATA_RECEIVED, products);
         });
     };
-
-    /*api.getProductById = function (productId) {
-        var products = _ajaxGet('./data/products.json');
-
-        var filteredProduct = products.filter(function (product) {
-            return product.id == productId;
-        });
-
-        api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, filteredProduct);
-    };*/
 
     api.getNews = function () {
         _ajaxGet('./data/news.json', function (news) {

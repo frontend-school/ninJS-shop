@@ -19,7 +19,7 @@ var gulp = require('gulp'),
             styl: './src/styl/**',
             styl_main: './src/styl/main.styl',
             js: './src/js/**',
-            js_app: './src/js/app.js',
+            js_app: './src/js/index.js',
             img: './src/img/**',
             bower: './bower_components/**',
             data: './src/data/**'

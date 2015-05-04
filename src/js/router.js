@@ -3,38 +3,65 @@ var signals = require('signals'),
     hasher =  require('hasher'),
     PS = require('./vendor/pubsub.js');
 
-var Router = function() {
+var router,
+    _activePage,
+    query;
 
-    var router = {};
+module.exports = router = PS.extend({
 
-    PS.extend(router);
+    init: function() {
 
-    router.signals = signals;
-    router.crossroads = crossroads;
-    router.hasher = hasher;
+        this.subscribe(CONST.ACTIONS.FILTER_CHANGED, switchHash);
 
-    router.crossroads.addRoute(CONST.ROUTES.DEFAULT, function() {
-        //publish startup events
-        router.publish(CONST.ACTIONS.SWITCH_TO_HOME);
-    });
+        crossroads.addRoute('/{page}/:?query:', handleRouteChange);
 
-    router.crossroads.addRoute(CONST.ROUTES.PRODUCTS, function() {
-        //publish startup events
-        router.publish(CONST.ACTIONS.SWITCH_TO_PRODUCTS);
-    });
+        //set default hash
+        if (hasher.getURL() === hasher.getBaseURL()) {
+            hasher.setHash(CONST.ROUTES.DEFAULT);
+        }
 
-    if (hasher.getURL() === hasher.getBaseURL()) {
-        hasher.setHash(CONST.ROUTES.DEFAULT);
+        hasher.initialized.add(parseHash);
+        hasher.changed.add(parseHash);
+
+        hasher.init();
+    }
+});
+
+
+function parseHash(newHash, oldHash){
+    crossroads.parse(newHash);
+}
+
+
+function switchHash(filter) {
+    query = '?';
+
+    for (var n in filter) {
+        if (filter.hasOwnProperty(n) && filter[n]) {
+            query += '&' + n;
+        }
     }
 
-    router.hasher.initialized.add(parseHash);
-    router.hasher.changed.add(parseHash);
+    hasher.setHash(_activePage + query);
+}
 
-    function parseHash(newHash, oldHash){
-        router.crossroads.parse(newHash);
+
+function handleRouteChange(page, query) {
+
+    if (page !== _activePage) {
+
+        router.publish(CONST.ACTIONS.SWITCH_PAGE, {
+            page: page,
+            query: query
+        });
+
+        _activePage = page;
+
+    } else {
+
+        router.publish(CONST.ACTIONS.NEW_QUERY, {
+            page: page,
+            query: query
+        });
     }
-
-    return router.hasher;
-};
-
-module.exports = Router;
+}
