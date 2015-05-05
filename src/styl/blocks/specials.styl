@@ -11,22 +11,34 @@
     margin-right 30px
     overflow hidden
 
-    &:nth-child(3n)
+    &_on-sale
+      background url('../img/specials/img1.png')
+      background-position: center
+
+    &_special-offers
+      background url('../img/specials/img2.png')
+      background-position: center
+
+    &_must-have
+      background url('../img/specials/img3.png')
+      background-position: center
       margin-right 0
 
-    &__img
-      center()
-
-    &__title
-      center()
-      min-width 180px
-      padding 15px
-      background-color rgba(0,0,0,0.6)
-      text-align: center
-      text-transform uppercase
+    &-link
+      position absolute
+      width 100%
+      height 100%
+      text-align center
+      line-height 180px
       text-decoration none
+      text-transform uppercase
       color white
-      transition background-color 0.2s
 
       &:hover
-        background-color $colorDarkBackground
+        .specials-item-title
+          background-color $colorDarkBackground
+
+    &-title
+      padding 15px
+      background-color rgba(0,0,0,0.6)
+      transition background-color 0.2s
