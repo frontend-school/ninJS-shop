@@ -102,48 +102,44 @@
 	}
 }
 
-.social-buttons {
+.social-button {
 	margin-top 38px;
 	margin-right 80px;
 	float right;
-}
-
-.buttons-list {
-	list-style-type none;
-	padding 0;
-	margin 0;
-	& li {
-		display inline-block;
-	}
-	&__button {
+	&-list {
 		padding 0;
-		border none;
-		background-color #2E2E2E;
-		background-position center;
-		background-repeat no-repeat;
-		width 36px;
-		height 36px;
-		&:hover {
-			cursor pointer;
+		margin 0;
+		&-item {
+			display inline-block;
+			&__button {
+				display block;
+				padding 0;
+				border none;
+				background-color #2E2E2E;
+				background-position center;
+				background-repeat no-repeat;
+				width 36px;
+				height 36px;
+				&_fb {
+					background-image url('../img/footer/fb-icon.png');
+				}
+				&_twitter {
+					background-image url('../img/footer/twitter-icon.png');
+				}
+				&_google {
+					background-image url('../img/footer/google-icon.png');
+				}
+				&_linkedin {
+					background-image url('../img/footer/linkedin-icon.png');
+				}
+				&_flickr {
+					background-image url('../img/footer/flickr-icon.png');
+				}
+				&:hover {
+					cursor pointer;
+				}
+			}
 		}
-	}
-}
-
-.button {
-	&_fb {
-		background-image url('../img/footer/fb-icon.png');
-	}
-	&_twitter {
-		background-image url('../img/footer/twitter-icon.png');
-	}
-	&_google {
-		background-image url('../img/footer/google-icon.png');
-	}
-	&_linkedin {
-		background-image url('../img/footer/linkedin-icon.png');
-	}
-	&_flickr {
-		background-image url('../img/footer/flickr-icon.png');
 	}
 }
 
