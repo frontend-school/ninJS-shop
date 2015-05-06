@@ -1,13 +1,12 @@
-.top__unit
-		&_cover 
+.top-unit
+		&__slider 
 			background-image: url('../img/top_unit/bg.png')
 			background-size: 100%
 			
-		&_menu
+		&__nav
 			background-color: #2e2e2e
 
 .cover
-	&__grid 
 		width: 960px
 		display: block
 		position: relative
@@ -16,20 +15,20 @@
 		font-family: sans-serif
 		font-color: #242424
 		
-		&_left-side
+		&__image
 			width: 50%
 			height: 100%
 			float: left
 				
-		&_right-side
+		&__right-side
 			width: 50%
 			height: 100%
 			float: right 
 			margin-right: -8%
 		
-	&__content
-		margin-right: 50%
-		margin-top: 7%
+			&_content
+				margin-right: 50%
+				margin-top: 7%
 		
 .price
 	width: 75px
@@ -38,21 +37,23 @@
 	&__background
 		background-color: #57c5a0
 		
-	&__title
+	&__value
 		color: white
 		text-align: center
 		padding-top: 30px
 		
 .action-menu
-	display: inline-block
-	position: relative
-	cursor: pointer
+	
+	margin-left: -19%
 	
 	&__icon
+		display: inline-block
+		position: relative
+		cursor: pointer
 		background-color: #faf9f9
 		width: 40px
 		height: 40px
-		margin-left: 1px
+		margin-left: 4px
 		
 		&:hover
 			box-shadow: 0 0 1px 1px #57c5a0
@@ -73,6 +74,8 @@
 	
 	&__item
 		margin-top: 0.3%
+		margin-left: -20px
+		margin-right: 20px
 		display: inline-block
 		position: relative
 		width: 188px
