@@ -1,4 +1,5 @@
-var PS = require('../vendor/pubsub.js');
+var PS = require('../vendor/pubsub.js'),
+    Q = require('q');
 
 var API = function () {
     var api = {};
@@ -15,25 +16,40 @@ var API = function () {
         api.getProducts();
     });
 
+    api.subscribe(CONST.ACTIONS.GET_TEXT_WIDGET, function () {
+        api.getTextWidget();
+    });
+
+
     api.getProducts = function () {
-        _ajaxGet('./data/products.json', function (products) {
+        _ajaxGet('./data/products.json')
+            .then(function (products) {
             api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, products);
         });
     };
 
-    /*api.getProductById = function (productId) {
-        var products = _ajaxGet('./data/products.json');
+    api.getProductById = function (productId) {
+        _ajaxGet('./data/products.json')
+            .then(function(products) {
+                var filteredProduct = products.filter(function (product) {
+                    return product.id == productId;
+                });
 
-        var filteredProduct = products.filter(function (product) {
-            return product.id == productId;
-        });
-
-        api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, filteredProduct);
-    };*/
+                api.publish(CONST.ACTIONS.PRODUCT_RECEIVED, filteredProduct);
+            });
+    };
 
     api.getNews = function () {
-        _ajaxGet('./data/news.json', function (news) {
+        _ajaxGet('./data/news.json')
+            .then(function (news) {
             api.publish(CONST.ACTIONS.NEWS_RECEIVED, news);
+        });
+    };
+
+    api.getTextWidget = function () {
+        _ajaxGet('./data/textWidget.json')
+            .then(function (textWidget) {
+            api.publish(CONST.ACTIONS.TEXT_WIDGET_RECEIVED, textWidget);
         });
     };
 
@@ -47,14 +63,18 @@ var API = function () {
                }
             }
         };
-        
         api.publish(CONST.ACTIONS.GET_SLIDE, slideFilter());
     };
 
-    function _ajaxGet (path, callback) {
+
+    function _ajaxGet (path) {
+        var deferred = new Q.defer();
+
         $.getJSON(path, function(data) {
-            callback(data); // data goes into callback function, that is passed as argument
+            deferred.resolve(data); // data goes into callback function, that is passed as argument
         });
+
+        return deferred.promise;
     }
 
     return api;

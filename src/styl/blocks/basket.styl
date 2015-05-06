@@ -18,11 +18,13 @@
     padding-left 10px
 
   &-container
+    padding 0
     margin-right 5px
     max-height 300px
     border-left 1px solid $grey
     overflow-x hidden
     overflow-y auto
+    list-style-type none
 
     &::-webkit-scrollbar {
       width: 8px;
@@ -41,7 +43,7 @@
 
     &-item
       position: relative
-      height 100px
+      min-height 100px
       margin 10px 5px 10px 10px
       background #fff
 
@@ -49,12 +51,11 @@
         width 70px
         height 70px
         padding 15px
+        float left
 
       &-details
-        position absolute
-        top 50%
-        transform translateY(-50%)
-        left 110px
+        padding 10px
+        margin-left 100px
 
         &__quantity
           width 32px
