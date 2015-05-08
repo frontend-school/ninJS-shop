@@ -1,6 +1,6 @@
 .section {
 
-  &__container {
+  &__wrapper {
     width: 960px;
     margin: 0 auto;
 
@@ -11,36 +11,41 @@
     }
   }
 
-  &_black {
+  &_header {
     background-color: $black;
   }
 
-  &_white {
+  &_navigation {
     background-color: $white;
   }
 
-  &_darkest-grey {
-    background-color: $darkest-grey;
+  &_slider {
+    background-image: url("../img/top_unit/bg.png");
+    background-size: 100% 100%;
   }
 
-  &_dark-grey {
+  &_slider-nav {
     background-color: $dark-grey;
   }
 
-  &_creamy {
+  &_specials {
+    background-color: $darkest-grey;
+  }
+
+  &_products {
+     background-color: $creamy;
+  }
+
+  &_about {
     background-color: $creamy;
   }
-}
 
-
-
-.grid-container {
-  width: 960px;
-  margin: 0 auto;
-
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
+  &_footer {
+    background-color: $darkest-grey;
   }
+
+  &_copyright {
+    background-color: $dark-grey;
+  }
+
 }

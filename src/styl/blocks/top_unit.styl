@@ -1,10 +1,10 @@
 .top-unit
-		&__slider 
-			background-image: url('../img/top_unit/bg.png')
-			background-size: 100%
-			
-		&__nav
-			background-color: #2e2e2e
+  &__slider
+    //background-image: url('../img/top_unit/bg.png')
+    //background-size: 100%
+
+  &__nav
+    //background-color: #2e2e2e
 
 .cover
 		width: 960px
@@ -14,38 +14,38 @@
 		margin: 0 auto
 		font-family: sans-serif
 		font-color: #242424
-		
+
 		&__image
 			width: 50%
 			height: 100%
 			float: left
-				
+
 		&__right-side
 			width: 50%
 			height: 100%
-			float: right 
+			float: right
 			margin-right: -8%
-		
+
 			&_content
 				margin-right: 50%
 				margin-top: 7%
-		
+
 .price
 	width: 75px
 	height: 75px
-	
+
 	&__background
 		background-color: #57c5a0
-		
+
 	&__value
 		color: white
 		text-align: center
 		padding-top: 30px
-		
+
 .action-menu
-	
+
 	margin-left: -19%
-	
+
 	&__icon
 		display: inline-block
 		position: relative
@@ -54,7 +54,7 @@
 		width: 40px
 		height: 40px
 		margin-left: 4px
-		
+
 		&:hover
 			box-shadow: 0 0 1px 1px #57c5a0
 
@@ -62,40 +62,38 @@
 	margin: 0 auto
 	width: 100%
 	background-color: #2e2e2e
-	display: flex
 	position: relative
-		
+
 
 .menu-block
-	width: 960px
-	height: 100%
-	margin: 0 auto
-	cursor: pointer
-	
-	&__item
-		margin-top: 0.3%
-		margin-left: -20px
-		margin-right: 20px
-		display: inline-block
-		position: relative
-		width: 188px
-		
-		&_top
-			height: 15%
-			margin-top: 2%
-			border: 6px solid #000
+  width: 960px
+  height: 100%
+  margin: 0 auto
+  padding: 0
+  cursor: pointer
 
-		&_bottom
-			color: #aaaaaa
-			text-align: center
-			font-size: 11px
-				
+  &__item
+    margin-top: 0.3%
+    display: inline-block
+    position: relative
+    width: 188px
+
+    &_top
+      height: 15%
+      margin-top: 2%
+      border: 6px solid #000
+
+    &_bottom
+      color: #aaaaaa
+      text-align: center
+      font-size: 11px
+
 .menu-block__item:hover > .menu-block__item_top
 	border: 5px solid #57c5a0
 
 .menu-block__item:hover > .menu-block__item_bottom
 	color: #ffffff
-	
+
 @media screen and (max-width: 800px) {
 	.cover__grid_right-side {
 		position:absolute
