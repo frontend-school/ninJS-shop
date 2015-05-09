@@ -1,4 +1,9 @@
 /** About Block**/
+
+$font-size = 12px
+$line-height = 1.4
+$lines-to-show = 3
+
 .about {
   border-top: 1px solid $grey;
   padding: 15px 0px 15px 0px;
@@ -13,6 +18,13 @@
     background-color: #DFDBD4;
     box-sizing: border-box;
     padding: 10px 10px 10px 10px;
+    overflow: hidden;
+
+    &__description{
+      ellipsys($font-size,$line-height,6)
+
+    }
+
   }
 
   &-testimonials {
@@ -26,7 +38,8 @@
     padding: 10px 10px 10px 10px;
 
     &__title {
-      margin-bottom: 0px;
+      margin-bottom: 15px;
+
     }
 
     &__author {
@@ -34,44 +47,12 @@
       padding-top:10px;
     }
 
-    &__ellipsis {
-      overflow: hidden;
-      width: 95%;
-      height: 60%;
-      padding-bottom: 5px;
-    }
 
-    &__ellipsis:before {
-      content: "";
-      float: left;
-      width: 5px;
-      height: 119px
-    }
-
-    &__ellipsis > *:first-child {
-      float: right;
-      width: 100%;
-      margin-left: -5px;
-    }
-
-    &__ellipsis:after {
-      content: "\02026";
-      box-sizing: content-box;
-      -webkit-box-sizing: content-box;
-      -moz-box-sizing: content-box;
-      float: right;
-      position: relative;
-      top: -25px;
-      left: 100%;
-      width: 30px;
-      margin-left: -30px;
-      padding-right: 5px;
-      text-align: right;
-    }
 
     &__description {
-      height: 120px;
-      overflow: hidden;
+      ellipsys($font-size,$line-height,6)
+     /* height: 120px;
+      overflow: hidden;*/
     }
   }
 
