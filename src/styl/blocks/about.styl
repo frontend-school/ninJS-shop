@@ -32,6 +32,12 @@
     &__title {
       margin-bottom: 0px;
     }
+
+    &__author {
+      font-style: italic;
+      padding-top:10px;
+    }
+
     &__ellipsis {
       overflow: hidden;
       width: 95%;
@@ -83,11 +89,17 @@
     background-color: #DFDBD4;
     box-sizing: border-box;
     padding: 10px 10px 10px 10px;
+    overflow: hidden;
+
 
     &-item {
-
+      display: inline-block;
+      margin-bottom:10px;
+      height: 50px;
+      overflow:hidden;
       &__title {
         font-size:12px;
+        margin:0 0 5px 0;
       }
 
       &__date {
