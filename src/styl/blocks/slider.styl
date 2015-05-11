@@ -1,46 +1,40 @@
-.slider 
-	background-color: #EDEBE6
-	background-size: 100%
-
 .cover
 	width: 960px
 	display: block
 	position: relative
 	height: 400px
 	margin: 0 auto
-	font-family: sans-serif
 	font-color: #242424
-		
 	&__image
 		width: 50%
 		height: 100%
 		float: left
-			
+
 	&__right-side
 		width: 50%
 		height: 100%
-		float: right 
+		float: right
 		margin-right: -8%
-	
+
 		&_content
 			margin-right: 50%
 			margin-top: 7%
-		
+
 .price
 	width: 75px
 	height: 75px
-	
+
 	&__background
 		background-color: #57c5a0
-		
+
 	&__value
 		color: white
 		text-align: center
 		padding-top: 30px
-		
+
 .action-menu
 	margin-left: -19%
-	
+
 	&__icon
 		display: inline-block
 		cursor: pointer
@@ -62,51 +56,9 @@
 		&:hover
 			box-shadow: 0 0 1px 1px #57c5a0
 			
-.nav
-	background-color: #2e2e2e
-	
-	&__position
-		margin: 0 auto
-		width: 100%
-		background-color: #2e2e2e
-		display: flex
-		position: relative
-		
-.menu-block__item_description::before
-		content: ''
-		border: 4px solid #000
-		width: auto
-.menu-block
-	width: 960px
-	height: 100%
-	margin: 0 auto
-	cursor: pointer
-	
-	&__item
-		margin-top: 0.3%
-		margin-left: -20px
-		margin-right: 20px
-		display: inline-block
-		position: relative
-		width: 188px
-
-		&_description
-			color: #aaaaaa
-			text-align: center
-			font-size: 10px
-				
-.menu-block__item_description:hover::before
-	border: 4px solid #57c5a0
-
-.menu-block__item:hover > .menu-block__item_description
-	color: #ffffff
-	
 @media screen and (max-width: 800px) {
 	.cover__right-side {
 		position:absolute
-		margin-left: 10%
-	}
-	.menu-block__item {
 		margin-left: 10%
 	}
 }
