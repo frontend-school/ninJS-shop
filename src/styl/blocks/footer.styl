@@ -8,6 +8,87 @@
 		padding 52px 10px 0 10px;
 		max-height 100%;
 	}
+	&-social-panel {
+		width 57.176%;
+		min-width 940px;
+		height 117px;
+		margin 0 auto;
+		padding-left 10px;
+		padding-right 10px;
+		&-email-field {
+			width 251px;
+			height 36px;
+			margin-left 40px;
+			margin-top 38px;
+			float left;
+			&-form {
+				&__input {
+					float left;
+					border none;
+					width 200px;
+					height 36px;
+					background-color #2E2E2E;
+					color $footer-text-color;
+					font-size 80%;
+					padding 0 0 0 15px;
+				}
+				&__button {
+					padding 0;
+					border none;
+					background-color rgb(125,125,125);
+					background-position center;
+					width 36px;
+					height 36px;
+					background-image url('../img/footer/arrow-icon.png');
+					background-repeat no-repeat;
+					&:hover {
+						cursor pointer;
+					}
+				}
+			}
+		}
+		&-social-button {
+			margin-top 38px;
+			margin-right 40px;
+			float right;
+			&-list {
+				padding 0;
+				margin 0;
+				&-item {
+					display inline-block;
+					margin-left 4px;
+					&__button {
+						display block;
+						padding 0;
+						border none;
+						background-color #2E2E2E;
+						background-position center;
+						background-repeat no-repeat;
+						width 36px;
+						height 36px;
+						&_fb {
+							background-image url('../img/footer/fb-icon.png');
+						}
+						&_twitter {
+							background-image url('../img/footer/twitter-icon.png');
+						}
+						&_google {
+							background-image url('../img/footer/google-icon.png');
+						}
+						&_linkedin {
+							background-image url('../img/footer/linkedin-icon.png');
+						}
+						&_flickr {
+							background-image url('../img/footer/flickr-icon.png');
+						}
+						&:hover {
+							cursor pointer;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 .widget {
@@ -52,121 +133,38 @@
 	}
 	&__creation{
 		margin-top 14px;
-		color #fff;
-	}
-}
-
-.social-panel {
-	width 57.176%;
-	min-width 940px;
-	height 117px;
-	margin 0 auto;
-	padding-left 10px;
-	padding-right 10px;
-	border-top 1px solid rgb(28,28,28);
-}
-
-.email-field {
-	width 251px;
-	height 36px;
-	margin-left 40px;
-	margin-top 38px;
-	float left;
-	&-form {
-		&__input {
-			float left;
-			border none;
-			width 200px;
-			height 36px;
-			background-color #2E2E2E;
-			color $footer-text-color;
-			padding 0 0 0 15px;
-		}
-		&__button {
-			padding 0;
-			border none;
-			background-color rgb(125,125,125);
-			background-position center;
-			width 36px;
-			height 36px;
-			background-image url('../img/footer/arrow-icon.png');
-			background-repeat no-repeat;
-			&:hover {
-				cursor pointer;
-			}
-		}
-	}
-}
-
-.social-button {
-	margin-top 38px;
-	margin-right 80px;
-	float right;
-	&-list {
-		padding 0;
-		margin 0;
-		&-item {
-			display inline-block;
-			&__button {
-				display block;
-				padding 0;
-				border none;
-				background-color #2E2E2E;
-				background-position center;
-				background-repeat no-repeat;
-				width 36px;
-				height 36px;
-				&_fb {
-					background-image url('../img/footer/fb-icon.png');
-				}
-				&_twitter {
-					background-image url('../img/footer/twitter-icon.png');
-				}
-				&_google {
-					background-image url('../img/footer/google-icon.png');
-				}
-				&_linkedin {
-					background-image url('../img/footer/linkedin-icon.png');
-				}
-				&_flickr {
-					background-image url('../img/footer/flickr-icon.png');
-				}
-				&:hover {
-					cursor pointer;
-				}
-			}
-		}
+		color $footer-text-color;
 	}
 }
 
 .copyright-panel {
 	height 90px;
-}
-
-.copyright {
-	margin-top 26px;
-	float left;
-	color $footer-text-color;
-	font-size 11px;
-	width 151px;
-	line-height 16px;
-}
-
-.footer-nav {
-	list-style-type none;
-	padding 0;
-	margin 26px 20px 0 0;
-	float right;
-	font-size 11px;
-	li {
-		display inline-block;
-		&:after {
-			content '/';
-			color $footer-text-color;
+	&__copyright {
+		margin-top 26px;
+		float left;
+		color $footer-text-color;
+		font-size 11px;
+		width 151px;
+		line-height 16px;
+	}
+	&-footer-nav {
+		list-style-type none;
+		padding 0;
+		margin 26px 20px 0 0;
+		float right;
+		font-size 11px;
+		li {
+			display inline-block;
+			a {
+				text-decoration none;
+				color $footer-text-color;
+			}
 		}
-		a {
-			text-decoration none;
-			color $footer-text-color;
+		li:not([class *= "_last"]) {
+			&:after {
+				content ' / ';
+				color $footer-text-color;
+			}
 		}
 	}
 }
