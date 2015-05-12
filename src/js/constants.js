@@ -5,7 +5,7 @@ module.exports = {
     SELECTORS: {
         BLOG_NEWS: '.about-blognews',
         PRODUCTS: '.products-container',
-        TEXT_WIDGET: '.widget-text'
+        TEXT_WIDGET: '.footer-widget-panel-widget-text'
     },
     ACTIONS: {
         GET_NEWS: 'app/get-news',

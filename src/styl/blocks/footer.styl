@@ -1,20 +1,60 @@
 .footer {
-
-	&-widget {
-		width 57.176%;
-		min-width 940px;
-		height 246px;
-		margin 0 auto;
-		padding 52px 10px 0 10px;
-		max-height 100%;
+	background-color: $darkest-grey;
+	&-widget-panel {
+		border-bottom 1px solid rgb(28,28,28);
+		&-wrapper {
+			width 940px;
+			height 246px;
+			margin 0 auto;
+			padding 52px 10px 0 10px;
+			max-height 100%;
+		}
+		&-widget {
+			margin-left 40px;
+			max-height 100%;
+			width 260px;
+			float left;
+			color $footer-text-color;
+			text-align justify;
+			line-height 16px;
+			font-size 13px;
+			&__title {
+				color $footer-title-color;
+				text-transform uppercase;
+				font-size 14px;
+				margin-bottom 24px;
+			}
+			&-text{
+				&__content{
+				}
+			}
+			&-twitter {
+				&-content{
+					&-article {
+						&__content{
+							margin-top 17px;
+							a {
+								text-decoration none;
+								color $twitter-widget-link-color;
+							}
+						}
+						&__creation{
+							margin-top 14px;
+							color $footer-text-color;
+						}
+					}
+				}
+			}
+		}
 	}
 	&-social-panel {
-		width 57.176%;
-		min-width 940px;
-		height 117px;
-		margin 0 auto;
-		padding-left 10px;
-		padding-right 10px;
+		&-wrapper {
+			width 940px;
+			height 117px;
+			margin 0 auto;
+			padding-left 10px;
+			padding-right 10px;
+		}
 		&-email-field {
 			width 251px;
 			height 36px;
@@ -28,7 +68,7 @@
 					width 200px;
 					height 36px;
 					background-color #2E2E2E;
-					color $footer-text-color;
+					color $footer-title-color;
 					font-size 80%;
 					padding 0 0 0 15px;
 				}
@@ -66,20 +106,21 @@
 						background-repeat no-repeat;
 						width 36px;
 						height 36px;
+						background-image url('../img/footer/social-button-sprite.png');
 						&_fb {
-							background-image url('../img/footer/fb-icon.png');
+							background-position 0 0;
 						}
 						&_twitter {
-							background-image url('../img/footer/twitter-icon.png');
+							background-position -36px 0;
 						}
 						&_google {
-							background-image url('../img/footer/google-icon.png');
+							background-position -72px 0;
 						}
 						&_linkedin {
-							background-image url('../img/footer/linkedin-icon.png');
+							background-position -108px 0;
 						}
 						&_flickr {
-							background-image url('../img/footer/flickr-icon.png');
+							background-position -142px 0;
 						}
 						&:hover {
 							cursor pointer;
@@ -89,81 +130,39 @@
 			}
 		}
 	}
-}
-
-.widget {
-	margin-left 40px;
-	max-height 100%;
-	width 260px;
-	float left;
-	color $footer-text-color;
-	text-align justify;
-	line-height 16px;
-	font-size 13px;
-	&__title {
-		color $footer-title-color;
-		text-transform uppercase;
-		font-size 14px;
-		margin-bottom 24px;
-	}
-	&-text{
-		&__content{
+	&-copyright-panel {
+		background-color $dark-grey;
+		&-wrapper {
+			width 940px;
+			height 90px;
+			margin 0 auto;
 		}
-	}
-	&-twitter {
-	}
-}
-
-.twitter {
-	&-content{}
-}
-
-.content {
-	&-article {
-	}
-}
-
-.article {
-	&__content{
-		margin-top 17px;
-		a {
-			text-decoration none;
-			color $twitter-widget-link-color;
+		&__copyright {
+			margin-top 26px;
+			float left;
+			color $footer-text-color;
+			font-size 11px;
+			width 151px;
+			line-height 16px;
 		}
-	}
-	&__creation{
-		margin-top 14px;
-		color $footer-text-color;
-	}
-}
-
-.copyright-panel {
-	height 90px;
-	&__copyright {
-		margin-top 26px;
-		float left;
-		color $footer-text-color;
-		font-size 11px;
-		width 151px;
-		line-height 16px;
-	}
-	&-footer-nav {
-		list-style-type none;
-		padding 0;
-		margin 26px 20px 0 0;
-		float right;
-		font-size 11px;
-		li {
-			display inline-block;
-			a {
-				text-decoration none;
-				color $footer-text-color;
+		&-footer-nav {
+			list-style-type none;
+			padding 0;
+			margin 26px 0 0 0;
+			float right;
+			font-size 11px;
+			li {
+				display inline-block;
+				a {
+					text-decoration none;
+					color $footer-text-color;
+				}
 			}
-		}
-		li:not([class *= "_last"]) {
-			&:after {
-				content ' / ';
-				color $footer-text-color;
+			li:not([class *= "_last"]) {
+				&:after {
+					content ' / ';
+					color $footer-text-color;
+				}
 			}
 		}
 	}
