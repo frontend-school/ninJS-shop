@@ -1,34 +1,45 @@
-.nav__position
-		margin: 0 auto
-		display: flex
-		position: relative
+.nav__position {
+	height: 90px
+	margin: 0 auto
+	display: flex
+	position: relative
+}
 		
-.menu-block__item_description::before
-		content: ''
-		transform: rotate(30deg)
-		border: 4px solid #000
-		width: auto
+.menu-block__item_description::before {
+	content: ''
+	position: absolute
+	border: 4px solid #000
+	width: 97%
+	margin-left: -50%
+	margin-top: -9%
+}
 		
-.menu-block
-	margin-left: -40px	
+		
+.menu-block {
+	margin-left: -40px
+	margin-top: 1%	
 	cursor: pointer
 	
-	&__item
+	&__item {
 		display: inline-block
 		position: relative
 		width: 188px
 
-		&_description
+		&_description {
 			color: #aaaaaa
 			text-align: center
 			font-size: 10px
+		}
+	}
+}
 				
-.menu-block__item_description:hover::before
+.menu-block__item_description:hover::before {
 	border: 4px solid #57c5a0
-	position: relative
+}
 	
-.menu-block__item:hover > .menu-block__item_description
+.menu-block__item:hover > .menu-block__item_description {
 	color: #ffffff
+}
 
 @media screen and (max-width: 800px) {
 	.menu-block__item {
