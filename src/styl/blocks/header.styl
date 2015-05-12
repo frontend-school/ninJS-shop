@@ -1,4 +1,16 @@
 .header {
+  background-color: $black;
+
+  &__wrapper {
+    width: 960px;
+    margin: 0 auto;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
 
   &__logo {
     width: 156px;

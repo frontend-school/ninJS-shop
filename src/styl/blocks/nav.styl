@@ -1,5 +1,17 @@
 .navigation {
   height: 60px;
+  background-color: $white;
+
+  &__wrapper {
+    width: 960px;
+    margin: 0 auto;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
 
   &-menu {
     margin: 0;

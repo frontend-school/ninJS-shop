@@ -1,5 +1,7 @@
 {{#each items}}
-    <li class="product-item {{#if sale}}product-item_on-sale {{/if}} {{#unless available}}product-item_out-of-stock{{/unless}}">
+    <li class="product-item">
+        {{#if sale}}<div class="product-item_on-sale">on sale</div>{{/if}}
+        {{#unless available}}<div class="product-item_out-of-stock">out of stock</div>{{/unless}}
         <div class="action-buttons__outer">
             <ul class="action-buttons">
                 <li class="action-buttons__item action-buttons__item_view"></li>
