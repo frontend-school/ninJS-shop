@@ -9,33 +9,14 @@ $lines-to-show = 3
   padding: 15px 0px 15px 0px;
   font-size: 12px;
 
-  &-sheeping {
-    width: 220px;
-    height: 195px;
-    margin: 0 10px 10px 0px;
-    position: relative;
-    float: left;
-    background-color: #DFDBD4;
-    box-sizing: border-box;
-    padding: 10px 10px 10px 10px;
-    overflow: hidden;
+  &-block {
+
 
     &__description{
       ellipsys($font-size,$line-height,6)
 
     }
 
-  }
-
-  &-testimonials {
-    width: 220px;
-    height: 195px;
-    margin: 0 10px 10px 10px;
-    position: relative;
-    float: left;
-    background-color: #DFDBD4;
-    box-sizing: border-box;
-    padding: 10px 10px 10px 10px;
 
     &__title {
       margin-bottom: 15px;
@@ -47,26 +28,6 @@ $lines-to-show = 3
       padding-top:10px;
     }
 
-
-
-    &__description {
-      ellipsys($font-size,$line-height,6)
-     /* height: 120px;
-      overflow: hidden;*/
-    }
-  }
-
-
-  &-blognews {
-    width: 480px;
-    height: 195px;
-    margin: 0px 0px 0px 10px;
-    position: relative;
-    float: right;
-    background-color: #DFDBD4;
-    box-sizing: border-box;
-    padding: 10px 10px 10px 10px;
-    overflow: hidden;
 
 
     &-item {
@@ -90,6 +51,31 @@ $lines-to-show = 3
         padding:5px 5px 5px 5px;
       }
     }
+
+    &_small {
+      width: 220px;
+      height: 195px;
+      margin: 0 20px 20px 0px;
+      position: relative;
+      float: left;
+      background-color: #DFDBD4;
+      box-sizing: border-box;
+      padding: 10px 10px 10px 10px;
+      overflow: hidden;
+    }
+
+     &_big {
+       width: 480px;
+       height: 195px;
+       //margin: 0px 0px 0px 10px;
+       position: relative;
+       float: right;
+       background-color: #DFDBD4;
+       box-sizing: border-box;
+       padding: 10px 10px 10px 10px;
+       overflow: hidden;
+     }
   }
+
 }
 
