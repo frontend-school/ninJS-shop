@@ -1,93 +1,43 @@
 /** About Block**/
+
+$font-size = 12px
+$line-height = 1.4
+$lines-to-show = 3
+
 .about {
-  .grid-container{
-    border-top: 1px solid $grey;
-    padding: 15px 0px 15px 0px;
-   // padding: 15px;
-  }
-  background-color: $creamy;
-  font-size: 12px
+  border-top: 1px solid $grey;
+  padding: 15px 0px 15px 0px;
+  font-size: 12px;
 
-  &-sheeping {
-    width: 220px;
-    height: 195px;
-    margin: 0 10px 10px 0px;
-    position: relative;
-    float: left;
-    background-color: #DFDBD4;
-    box-sizing: border-box;
-    padding: 10px 10px 10px 10px;
-  }
+  &-block {
 
-  &-testimonials {
-    width: 220px;
-    height: 195px;
-    margin: 0 10px 10px 10px;
-    position: relative;
-    float: left;
-    background-color: #DFDBD4;
-    box-sizing: border-box;
-    padding: 10px 10px 10px 10px;
+
+    &__description{
+      ellipsys($font-size,$line-height,6)
+
+    }
+
 
     &__title {
-      margin-bottom: 0px;
-    }
-    &__ellipsis {
-      overflow: hidden;
-      width: 95%;
-      height: 60%;
-      padding-bottom: 5px;
+      margin-bottom: 15px;
+
     }
 
-    &__ellipsis:before {
-      content: "";
-      float: left;
-      width: 5px;
-      height: 119px
+    &__author {
+      font-style: italic;
+      padding-top:10px;
     }
 
-    &__ellipsis > *:first-child {
-      float: right;
-      width: 100%;
-      margin-left: -5px;
-    }
 
-    &__ellipsis:after {
-      content: "\02026";
-      box-sizing: content-box;
-      -webkit-box-sizing: content-box;
-      -moz-box-sizing: content-box;
-      float: right;
-      position: relative;
-      top: -25px;
-      left: 100%;
-      width: 30px;
-      margin-left: -30px;
-      padding-right: 5px;
-      text-align: right;
-    }
-
-    &__description {
-      height: 120px;
-      overflow: hidden;
-    }
-  }
-
-
-  &-blognews {
-    width: 480px;
-    height: 195px;
-    margin: 0px 0px 0px 10px;
-    position: relative;
-    float: right;
-    background-color: #DFDBD4;
-    box-sizing: border-box;
-    padding: 10px 10px 10px 10px;
 
     &-item {
-
+      display: inline-block;
+      margin-bottom:10px;
+      height: 50px;
+      overflow:hidden;
       &__title {
         font-size:12px;
+        margin:0 0 5px 0;
       }
 
       &__date {
@@ -101,6 +51,31 @@
         padding:5px 5px 5px 5px;
       }
     }
+
+    &_small {
+      width: 220px;
+      height: 195px;
+      margin: 0 20px 20px 0px;
+      position: relative;
+      float: left;
+      background-color: #DFDBD4;
+      box-sizing: border-box;
+      padding: 10px 10px 10px 10px;
+      overflow: hidden;
+    }
+
+     &_big {
+       width: 480px;
+       height: 195px;
+       //margin: 0px 0px 0px 10px;
+       position: relative;
+       float: right;
+       background-color: #DFDBD4;
+       box-sizing: border-box;
+       padding: 10px 10px 10px 10px;
+       overflow: hidden;
+     }
   }
+
 }
 

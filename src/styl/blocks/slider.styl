@@ -1,0 +1,78 @@
+.cover {
+	display: block
+	position: relative
+	font-color: #242424
+	
+	&__image {
+		width: 50%
+		height: 100%
+		float: left
+	}
+	
+	&__right-side {
+		width: 50%
+		height: 100%
+		float: right
+		margin-right: -8%
+	
+		&_content {
+			margin-right: 50%
+			margin-top: 7%
+		}
+	}
+}	
+
+.price {
+	min-width: 25%
+	max-width: 30%
+	height: 70px
+	padding: 0 5px
+	background-color: #57c5a0
+
+	&__value {
+		color: white
+		text-align: center
+		padding-top: 30px
+	}
+}	
+
+.action-menu {
+	margin-left: -19%
+
+	&__icon {
+		display: inline-block
+		cursor: pointer
+		background-image: url('../img/top_unit/spritesheet.png')
+		background-color: #faf9f9
+		width: 40px
+		height: 40px
+		margin-left: 4px
+		
+		&_view {
+			background-position: -5px -55px
+		}
+		
+		&_wishlist {
+			background-position: -55px -55px
+		}
+		
+		&_share {
+			background-position: -55px -5px
+		}
+		
+		&_buy {
+			background-position: -5px -5px
+		}
+		
+		&:hover {
+			box-shadow: 0 0 1px 1px #57c5a0
+		}
+	}
+}	
+			
+@media screen and (max-width: 800px) {
+	.cover__right-side {
+		position:absolute
+		margin-left: 10%
+	}
+}

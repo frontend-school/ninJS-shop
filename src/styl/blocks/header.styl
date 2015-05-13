@@ -1,11 +1,35 @@
 .header {
+  background-color: $black;
+  height: 45px;
 
-  &__logo {
+  &__wrapper {
+    width: 960px;
+    margin: 0 auto;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  &-logo {
     width: 156px;
-    height: 20px;
+    height: 45px;
     float: left;
-    margin-top: 12px;
-    background: url("../img/header/logo.png") no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    &__image {
+      vertical-align: middle;
+    }
   }
 
   &__search {
@@ -18,6 +42,7 @@
   }
 
   &-auth {
+    height: 45px;
     padding: 0 10px;
     float: right;
     border-left: 1px solid $grey2;
@@ -25,7 +50,13 @@
     color: $grey2;
     font-size: 14px;
     text-align: center;
-    line-height: 45px;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
 
     &__link {
       color: $grey2;

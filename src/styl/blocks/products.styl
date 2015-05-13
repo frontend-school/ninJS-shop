@@ -21,20 +21,32 @@
       cursor: pointer;
     }
   }
+
+  &-container {
+    margin: 0 0 0 -30px;
+    padding: 0;
+    list-style-type: none;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+    }
+  }
 }
 
 .product {
   &-item {
     width: 300px;
     height: 270px;
-    margin: 0 30px 20px 0;
+    margin: 0 0 30px 30px;
     position: relative;
     float: left;
     text-align: center;
     background-color: $white;
 
-    &:nth-child(3n) {
-      margin-right: 0;
+    &-state_on-sale {
+
     }
 
     &__image {
@@ -50,8 +62,11 @@
       background: $white;
 
       &__price {
-        width: 25%;
+        min-width: 25%;
+        max-width: 30%;
         height: 70px;
+        padding: 0 5px;
+        box-sizing: border-box;
         position: relative;
         bottom: 20px;
         left: 5%;
@@ -62,6 +77,9 @@
         font-weight: bold;
         background-color: $green;
         color: $white;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        z-index: 2;
       }
 
       &__name {
@@ -77,38 +95,30 @@
     }
 
     &_on-sale {
-      &:after {
-        content: "on sale";
-        display: block;
-        width: 70px;
-        height: 70px;
-        position: absolute;
-        top: 0;
-        right: 5%;
-        font-size: 14px;
-        line-height: 70px;
-        text-transform: uppercase;
-        color: $white;
-        background-color: $black;
-      }
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 0;
+      right: 5%;
+      font-size: 14px;
+      line-height: 70px;
+      text-transform: uppercase;
+      color: $white;
+      background-color: $black;
     }
 
     &_out-of-stock {
-      &:after {
-        content: "out of stock";
-        display: block;
-        width: 70px;
-        height: 70px;
-        position: absolute;
-        top: 0;
-        right: 5%;
-        font-size: 14px;
-        text-transform: uppercase;
-        color: $white;
-        background-color: #f27e4b;
-        padding-top: 19px;
-        box-sizing: border-box;
-      }
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 0;
+      right: 5%;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: $white;
+      background-color: #f27e4b;
+      padding-top: 19px;
+      box-sizing: border-box;
     }
   }
 }

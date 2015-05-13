@@ -1,183 +1,168 @@
 .footer {
-	position relative;
-	bottom 0;
-	width 100%;
-	min-width 940px;
-	background-color $colorDarkBackground;
-	&-widgets {
-		width 57.176%;
-		min-width 940px;
-		height 246px;
-		margin 0 auto;
-		padding 52px 10px 0 10px;
-		max-height 100%;
-	}
-}
-
-.widget {
-	margin-left 40px;
-	max-height 100%;
-	width 260px;
-	float left;
-	color $footer-text-color;
-	text-align justify;
-	line-height 16px;
-	font-size 13px;
-	&__title {
-		color $footer-title-color;
-		text-transform uppercase;
-		font-size 14px;
-		margin-bottom 24px;
-	}
-	&-text{
-		&__content{
+	background-color: $darkest-grey;
+	&-widget-panel {
+		border-bottom 1px solid rgb(28,28,28);
+		&-wrapper {
+			width 940px;
+			height 246px;
+			margin 0 auto;
+			padding 52px 10px 0 10px;
+			max-height 100%;
 		}
-	}
-	&-twitter {
-	}
-}
-
-.twitter {
-	&-content{}
-}
-
-.content {
-	&-article {
-	}
-}
-
-.article {
-	&__content{
-		margin-top 17px;
-		a {
-			text-decoration none;
-			color $twitter-widget-link-color;
-		}
-	}
-	&__creation{
-		margin-top 14px;
-		color #fff;
-	}
-}
-
-.social-panel {
-	width 57.176%;
-	min-width 940px;
-	height 117px;
-	margin 0 auto;
-	padding-left 10px;
-	padding-right 10px;
-	border-top 1px solid rgb(28,28,28);
-}
-
-.email-field {
-	width 251px;
-	height 36px;
-	margin-left 40px;
-	margin-top 38px;
-	float left;
-	&-form {
-		&__input {
+		&-widget {
+			margin-left 40px;
+			max-height 100%;
+			width 260px;
 			float left;
-			border none;
-			width 200px;
-			height 36px;
-			background-color #2E2E2E;
 			color $footer-text-color;
-			padding 0 0 0 15px;
-		}
-		&__button {
-			padding 0;
-			border none;
-			background-color rgb(125,125,125);
-			background-position center;
-			width 36px;
-			height 36px;
-			background-image url('../img/footer/arrow-icon.png');
-			background-repeat no-repeat;
-			&:hover {
-				cursor pointer;
+			text-align justify;
+			line-height 16px;
+			font-size 13px;
+			&__title {
+				color $footer-title-color;
+				text-transform uppercase;
+				font-size 14px;
+				margin-bottom 24px;
+			}
+			&-text{
+				&__content{
+				}
+			}
+			&-twitter {
+				&-content{
+					&-article {
+						&__content{
+							margin-top 17px;
+							a {
+								text-decoration none;
+								color $twitter-widget-link-color;
+							}
+						}
+						&__creation{
+							margin-top 14px;
+							color $footer-text-color;
+						}
+					}
+				}
 			}
 		}
 	}
-}
-
-.social-button {
-	margin-top 38px;
-	margin-right 80px;
-	float right;
-	&-list {
-		padding 0;
-		margin 0;
-		&-item {
-			display inline-block;
-			&__button {
-				display block;
+	&-social-panel {
+		&-wrapper {
+			width 940px;
+			height 117px;
+			margin 0 auto;
+			padding-left 10px;
+			padding-right 10px;
+		}
+		&-email-field {
+			width 251px;
+			height 36px;
+			margin-left 40px;
+			margin-top 38px;
+			float left;
+			&-form {
+				&__input {
+					float left;
+					border none;
+					width 200px;
+					height 36px;
+					background-color #2E2E2E;
+					color $footer-title-color;
+					font-size 80%;
+					padding 0 0 0 15px;
+				}
+				&__button {
+					padding 0;
+					border none;
+					background-color rgb(125,125,125);
+					background-position center;
+					width 36px;
+					height 36px;
+					background-image url('../img/footer/arrow-icon.png');
+					background-repeat no-repeat;
+					&:hover {
+						cursor pointer;
+					}
+				}
+			}
+		}
+		&-social-button {
+			margin-top 38px;
+			margin-right 40px;
+			float right;
+			&-list {
 				padding 0;
-				border none;
-				background-color #2E2E2E;
-				background-position center;
-				background-repeat no-repeat;
-				width 36px;
-				height 36px;
-				&_fb {
-					background-image url('../img/footer/fb-icon.png');
-				}
-				&_twitter {
-					background-image url('../img/footer/twitter-icon.png');
-				}
-				&_google {
-					background-image url('../img/footer/google-icon.png');
-				}
-				&_linkedin {
-					background-image url('../img/footer/linkedin-icon.png');
-				}
-				&_flickr {
-					background-image url('../img/footer/flickr-icon.png');
-				}
-				&:hover {
-					cursor pointer;
+				margin 0;
+				&-item {
+					display inline-block;
+					margin-left 4px;
+					&__button {
+						display block;
+						padding 0;
+						border none;
+						background-color #2E2E2E;
+						background-position center;
+						background-repeat no-repeat;
+						width 36px;
+						height 36px;
+						background-image url('../img/footer/social-button-sprite.png');
+						&_fb {
+							background-position 0 0;
+						}
+						&_twitter {
+							background-position -36px 0;
+						}
+						&_google {
+							background-position -72px 0;
+						}
+						&_linkedin {
+							background-position -108px 0;
+						}
+						&_flickr {
+							background-position -142px 0;
+						}
+						&:hover {
+							cursor pointer;
+						}
+					}
 				}
 			}
 		}
 	}
-}
-
-.copyright-panel {
-	min-width 940px;
-	height 90px;
-	padding-left 10px;
-	padding-right 10px;
-	background-color #2E2E2E;
-	&-wrapper {
-		min-width 940px;
-		width 940px;
-		margin 0 auto;
-	}
-}
-
-.copyright {
-	margin-top 26px;
-	float left;
-	color $footer-text-color;
-	font-size 11px;
-	width 151px;
-	line-height 16px;
-}
-
-.footer-nav {
-	list-style-type none;
-	padding 0;
-	margin 26px 20px 0 0;
-	float right;
-	font-size 11px;
-	li {
-		display inline-block;
-		a {
-			text-decoration none;
+	&-copyright-panel {
+		background-color $dark-grey;
+		&-wrapper {
+			width 940px;
+			height 90px;
+			margin 0 auto;
+		}
+		&__copyright {
+			margin-top 26px;
+			float left;
 			color $footer-text-color;
-			&:after {
-				content: '/';
+			font-size 11px;
+			width 151px;
+			line-height 16px;
+		}
+		&-footer-nav {
+			list-style-type none;
+			padding 0;
+			margin 26px 0 0 0;
+			float right;
+			font-size 11px;
+			li {
+				display inline-block;
+				a {
+					text-decoration none;
+					color $footer-text-color;
+				}
+			}
+			li:not([class *= "_last"]) {
+				&:after {
+					content ' / ';
+					color $footer-text-color;
+				}
 			}
 		}
 	}
