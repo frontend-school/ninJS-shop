@@ -3,7 +3,7 @@ module.exports = {
         DEFAULT: 'home'
     },
     SELECTORS: {
-        BLOG_NEWS: '.about-blognews',
+        BLOG_NEWS: '.about-block_big',
         PRODUCTS: '.products-container',
         TEXT_WIDGET: '.footer-widget-panel-widget-text'
     },
