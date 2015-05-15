@@ -3,23 +3,37 @@ module.exports = {
         DEFAULT: 'home'
     },
     SELECTORS: {
-        BLOG_NEWS: '.about-blognews',
+        MAIN: '.main',
+        ABOUT: '.about',
         PRODUCTS: '.products-container',
-        TEXT_WIDGET: '.footer-widget-panel-widget-text'
+        PRODUCTS_HEADER: '.products-header',
+        ADD_TO_BASKET: '.action-buttons__item_buy',
+        BASKET: '.basket',
+        BASKET_CONTAINER: '.basket-container',
+        BASKET_ITEM: '.basket-container-item',
+        BASKET_ITEM_QUANTITY: '.basket-container-item-details__quantity',
+        REMOVE_FROM_BASKET: '.basket-container-item__remove',
+        BASKET_COUNTER: '.navigation__counter_in-cart',
+        BASKET_TOGGLE: '.basket-toggle',
+        FILTER_CHECKBOX: '.filters__checkbox'
     },
     ACTIONS: {
-        GET_NEWS: 'app/get-news',
-        NEWS_RECEIVED: 'app/API:news-received',
-        RENDER_NEWS_BLOCK: 'app/render-news-block',
+        ROUTE_CHANGED: 'app/router:route-changed',
+        SWITCH_PAGE: 'app/router:switch-page',
+        NEW_QUERY: 'app/router:new-query',
+
+        SWITCH_LAYOUT: 'app/layout/switch-main-layout',
+
         GET_PRODUCTS: 'app/get-products',
         PRODUCTS_RECEIVED: 'app/API:products-received',
-        RENDER_PRODUCTS: 'app/render-products-block',
-        GET_PRODUCT: 'app/get-product',
-        PRODUCT_RECEIVED: 'app/API:product-received',
-        RENDER_PRODUCT: 'app/render-product-block',
-        GET_TEXT_WIDGET: 'app/get-text-widget',
-        TEXT_WIDGET_RECEIVED: 'app/API:text-widget-received',
-        RENDER_TEXT_WIDGET: 'app/render-text-widget',
-        GET_SLIDE: 'app/get-slide/:slideId'
+        SHOW_PRODUCTS: 'app/layout/run-products',
+        ADD_TO_BASKET: 'app/products:add-to-basket',
+
+        SHOW_FILTERS: 'app/show_filters',
+        FILTER_CHANGED: 'app/filters:filter-changed',
+
+        SHOW_NEWS: 'app/show-news',
+        GET_NEWS: 'app/about:get-news',
+        NEWS_RECEIVED: 'app/API:news-received'
     }
 };

@@ -1,10 +1,8 @@
-var PubSub = function () {
+var subToken = 0;
+var events = {};
 
-    var subToken = 0;
-    var events = {};
-
-    this.publish = function (event, obj) {
-
+module.exports = {
+    publish: function (event, obj) {
         if (!events[event]) {
             return false;
         }
@@ -12,11 +10,9 @@ var PubSub = function () {
         events[event].forEach(function (item) {
             item.func(obj);
         });
+    },
 
-    };
-
-    this.subscribe = function (event, callback) {
-
+    subscribe: function (event, callback) {
         if (!events[event]) {
             events[event] = [];
         }
@@ -28,13 +24,13 @@ var PubSub = function () {
             func: callback
         });
 
-        return token;
-    };
+        if (this._subscriptions) {
+            this._subscriptions.push(token);
+        }
+    },
 
-    this.unsubscribe = function (token) {
-
+    unsubscribe: function (token) {
         for (var m in events) {
-
             if (events[m]) {
                 for (var i = 0, l = events[m].length; i < l; i++) {
                     if (events[m][i].token === token) {
@@ -43,17 +39,27 @@ var PubSub = function () {
                 }
             }
         }
+    },
 
-    };
+    unsubscribeThis: function() {
+        var self = this;
 
-    this.extend = function (obj) {
-        if (typeof obj !== 'undefined') {
-            obj.publish = this.publish;
-            obj.subscribe = this.subscribe;
-            obj.unsubscribe = this.unsubscribe;
+        if (this._subscriptions) {
+            this._subscriptions.forEach(function(token) {
+                self.unsubscribe(token);
+            });
         }
-    };
 
+
+    },
+
+    extend: function(obj) {
+        for (var n in this) {
+            if (this.hasOwnProperty(n) && !obj[n]) {
+                obj[n] = this[n];
+            }
+        }
+
+        return obj;
+    }
 };
-
-module.exports = new PubSub();
