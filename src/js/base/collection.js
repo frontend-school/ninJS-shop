@@ -1,8 +1,30 @@
 module.exports = {
 
-    _collection: [],
-    _query: {},
+    extend: function (obj) {
 
+        var collection = new Collection();
+
+        for (var n in obj) {
+
+            if (obj.hasOwnProperty(n)) {
+                collection[n] = obj[n];
+            }
+
+        }
+
+        return collection;
+
+    }
+};
+
+function Collection() {
+
+    this._collection = [];
+    this._query = {};
+
+}
+
+Collection.prototype = {
 
     setQuery: function(query) {
         //save query and run it after update
@@ -51,17 +73,6 @@ module.exports = {
 
     get: function() {
         return this._collection;
-    },
-
-
-    extend: function(obj) {
-        for (var n in this) {
-            if (this.hasOwnProperty(n) && !obj[n]) {
-                obj[n] = this[n];
-            }
-        }
-
-        return obj;
     }
 
 };

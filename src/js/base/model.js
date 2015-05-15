@@ -1,5 +1,30 @@
 module.exports = {
 
+    extend: function (obj) {
+
+        var model = new Model();
+
+        for (var n in obj) {
+
+            if (obj.hasOwnProperty(n)) {
+                model[n] = obj[n];
+            }
+
+        }
+
+        return model;
+
+    }
+};
+
+function Model() {
+
+    this._model = {};
+
+}
+
+Model.prototype = {
+
     _model: {},
 
 

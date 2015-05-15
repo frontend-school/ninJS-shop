@@ -3,7 +3,6 @@ var productsModule,
     view = require('./view.js'),
     baseController = require('./../../../base/controller.js');
 
-
 module.exports = productsModule = baseController.extend({
 
     init: function() {
