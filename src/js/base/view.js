@@ -1,7 +1,28 @@
-var PS = require('../vendor/pubsub.js');
+module.exports = {
+
+    extend: function (obj) {
+
+        var view = new View();
+
+        for (var n in obj) {
+
+            if (obj.hasOwnProperty(n)) {
+                view[n] = obj[n];
+            }
+
+        }
+
+        return view;
+
+    }
+};
+
+function View() {
+
+}
 
 
-module.exports = PS.extend({
+View.prototype = {
 
     render: function (model) {
         $(this.parent).html(this.template(model));
@@ -17,4 +38,4 @@ module.exports = PS.extend({
         $(this.parent).empty();
     }
 
-});
+};
