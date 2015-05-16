@@ -1,7 +1,7 @@
 var signals = require('signals'),
     crossroads = require('crossroads'),
     hasher =  require('hasher'),
-    PS = require('./vendor/pubsub.js');
+    PS = require('./pubsub.js');
 
 var router,
     _activePage,
@@ -13,7 +13,7 @@ module.exports = router = PS.extend({
 
         this.subscribe(CONST.ACTIONS.FILTER_CHANGED, switchHash);
 
-        crossroads.addRoute('/{page}/:?query:', handleRouteChange);
+        crossroads.addRoute('/{page.components}/:?query:', handleRouteChange);
 
         //set default hash
         if (hasher.getURL() === hasher.getBaseURL()) {

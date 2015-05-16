@@ -1,9 +1,7 @@
 var basketController,
     collection = require('./collection.js'),
     view = require('./view.js'),
-    baseController = require('../base/controller.js'),
-    Storage = require('../localStorage/localStr.js'),
-    storage = new Storage();
+    baseController = require('../../base/controller.js');
 
 
 module.exports = basketController = baseController.extend({

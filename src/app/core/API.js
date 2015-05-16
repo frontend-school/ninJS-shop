@@ -1,4 +1,4 @@
-var PS = require('../vendor/pubsub.js'),
+var PS = require('./pubsub.js'),
     Q = require('q');
 
 var API = function () {

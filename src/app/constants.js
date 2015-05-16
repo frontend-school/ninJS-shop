@@ -19,10 +19,10 @@ module.exports = {
     },
     ACTIONS: {
         ROUTE_CHANGED: 'app/router:route-changed',
-        SWITCH_PAGE: 'app/router:switch-page',
+        SWITCH_PAGE: 'app/router:switch-page.modules',
         NEW_QUERY: 'app/router:new-query',
 
-        SWITCH_LAYOUT: 'app/layout/switch-main-layout',
+        SWITCH_LAYOUT: 'app/layout/switch-page.components-layout',
 
         GET_PRODUCTS: 'app/get-products',
         PRODUCTS_RECEIVED: 'app/API:products-received',

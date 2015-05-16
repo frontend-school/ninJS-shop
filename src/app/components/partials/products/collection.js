@@ -1,4 +1,4 @@
-var baseCollection = require('./../../../base/collection.js');
+var baseCollection = require('../../base/collection.js');
 
 
 

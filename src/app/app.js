@@ -1,20 +1,23 @@
-var router = require('./router.js'),
-    API = require('./API/API.js'),
+var router = require('./core/router.js'),
+    API = require('./core/API.js'),
     api = new API(),
-    basket = require('./basket/controller.js'),
-    main = require('./main/layout/controller.js'),
-    products = require('./main/modules/products/controller.js'),
-    filters = require('./main/modules/filters/controller.js'),
-    about = require('./main/modules/about/controller.js'),
-    PS = require('./vendor/pubsub.js');
+    PS = require('./core/pubsub.js'),
+    basket = require('./components/shared/basket/controller.js'),
+    layout = require('./components/shared/layout/controller.js'),
+    products = require('./components/partials/products/controller.js'),
+    filters = require('./components//partials/filters/controller.js'),
+    about = require('./components/partials/about/controller.js');
 
 var app,
-    coreModules = [main, api, basket, router],
-    pageModules = {
-        home: [products, about],
-        products: [products, filters]
+    coreModules = [api, router],
+    components = {
+        shared: [layout, basket],
+        partials: {
+            home: [products, about],
+            products: [products, filters]
+        }
     },
-    activePageModules = [],
+    activePartials = [],
     query;
 
 
@@ -24,6 +27,7 @@ module.exports = app = PS.extend({
         this.subscribe(CONST.ACTIONS.SWITCH_PAGE, switchPage);
         this.subscribe(CONST.ACTIONS.NEW_QUERY, handleQuery);
 
+        register(components.shared);
         register(coreModules);
     }
 
@@ -32,14 +36,14 @@ module.exports = app = PS.extend({
 
 function switchPage(route) {
 
-    if (pageModules[ route.page ])  {
+    if (components.partials[ route.page ])  {
 
         query = route.query || {};
         query.view = route.page;
 
-        deregister(activePageModules);
-        activePageModules = pageModules[ route.page ];
-        register( activePageModules );
+        deregister(activePartials);
+        activePartials = components.partials[ route.page ];
+        register( activePartials );
 
         PS.publish(CONST.ACTIONS.SWITCH_LAYOUT, route.page);
         PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, query);

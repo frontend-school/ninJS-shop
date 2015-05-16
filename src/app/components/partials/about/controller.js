@@ -1,7 +1,7 @@
 var productsModule,
     collection = require('./collection.js'),
     view = require('./view.js'),
-    baseController = require('./../../../base/controller.js');
+    baseController = require('../../base/controller.js');
 
 
 module.exports = productsModule = baseController.extend({

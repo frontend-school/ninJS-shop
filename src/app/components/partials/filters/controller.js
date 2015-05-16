@@ -1,7 +1,7 @@
 var filtersController,
     model = require('./model.js'),
     view = require('./view.js'),
-    baseController = require('./../../../base/controller.js');
+    baseController = require('../../base/controller.js');
 
 
 module.exports = filtersController = baseController.extend({
