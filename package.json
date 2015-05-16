@@ -4,7 +4,7 @@
   "description": "shop application",
   "scripts": {
     "start": "node server",
-    "postinstall": "gulp default"
+    "postinstall": "gulp build"
   },
   "repository": {
     "type": "git",
