@@ -46,13 +46,6 @@ var API = function () {
         });
     };
 
-    api.getTextWidget = function () {
-        _ajaxGet('./data/textWidget.json')
-            .then(function (textWidget) {
-            api.publish(CONST.ACTIONS.TEXT_WIDGET_RECEIVED, textWidget);
-        });
-    };
-
     api.getHeroUnitProducts = function (slideId) {
         var content =_ajaxGet('./data/slides.json');
 
