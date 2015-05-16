@@ -10,8 +10,18 @@
     <script src="vendor/jqzoom.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            /* simple call */
             $('.jqzoom').jqzoom();
+
+            var topMargin = 0;
+            $('.product-page-gallery-thumblist-arrow_down').click(function() {
+                topMargin -= 100;
+                $('.product-page-gallery-thumblist').css({'margin-top': topMargin+'px'});
+            });
+
+            $('.product-page-gallery-thumblist-arrow_up').click(function() {
+                topMargin += 100;
+                $('.product-page-gallery-thumblist').css({'margin-top': topMargin+'px'});
+            });
 
         });
     </script>

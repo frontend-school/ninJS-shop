@@ -26,11 +26,19 @@
     float: left;
     width: 430px;
 
+
     &-thumblist {
       list-style-type: none;
       float: left;
       margin: 0;
       padding: 0;
+
+      &-outer {
+        position: relative;
+        float: left;
+        height: 320px;
+        overflow: hidden;
+      }
 
       &-item {
 
@@ -39,6 +47,25 @@
           width: 100px;
           margin-bottom: 3px;
           border: 1px solid $grey;
+        }
+      }
+
+      &-arrow {
+        position: absolute;
+        left: 37px;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &_up {
+          top: 0;
+          background: $darkest-grey url('../img/product-page/up_arrow.png') center no-repeat;
+        }
+
+        &_down {
+          bottom: 0;
+          background: $darkest-grey url('../img/product-page/down_arrow.png') center no-repeat;
         }
       }
     }
