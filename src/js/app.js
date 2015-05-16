@@ -1,50 +1,82 @@
-window.CONST = require('./constants.js');
-window.Handlebars = require('handlebars');
-window.fs = require('fs');
-
-var PS = require('./vendor/pubsub.js'),
+var router = require('./router.js'),
     API = require('./API/API.js'),
-    Router = require('./router.js'),
-    BlogNewsController = require('./blognews/controller.js'),
-    ProductsController = require('./products/controller.js'),
-    TextWidgetController = require('./textWidget/controller.js');
+    api = new API(),
+    basket = require('./basket/controller.js'),
+    main = require('./main/layout/controller.js'),
+    products = require('./main/modules/products/controller.js'),
+    filters = require('./main/modules/filters/controller.js'),
+    about = require('./main/modules/about/controller.js'),
+    PS = require('./vendor/pubsub.js');
 
-var App = function() {
+var app,
+    coreModules = [main, api, basket, router],
+    pageModules = {
+        home: [products, about],
+        products: [products, filters]
+    },
+    activePageModules = [],
+    query;
 
-    var app = {},
-        _router = new Router(),
-        _api = new API(),
-        _blognews = new BlogNewsController(),
-        _products = new ProductsController(),
-        _textWidget = new TextWidgetController();
 
-    PS.extend(app);
+module.exports = app = PS.extend({
 
-    app.init = function() {
-        app.subscribe(CONST.ACTIONS.NEWS_RECEIVED, function(news) {
-            app.publish(CONST.ACTIONS.RENDER_NEWS_BLOCK, news);
-        });
+    init: function() {
+        this.subscribe(CONST.ACTIONS.SWITCH_PAGE, switchPage);
+        this.subscribe(CONST.ACTIONS.NEW_QUERY, handleQuery);
 
-        app.subscribe(CONST.ACTIONS.PRODUCTS_RECEIVED, function(products) {
-            app.publish(CONST.ACTIONS.RENDER_PRODUCTS, products);
-        });
+        register(coreModules);
+    }
 
-        app.subscribe(CONST.ACTIONS.TEXT_WIDGET_RECEIVED, function(textWidget) {
-            app.publish(CONST.ACTIONS.RENDER_TEXT_WIDGET, textWidget);
-        });
-
-        _products.init();
-        _blognews.init();
-        _textWidget.init();
-        _api.init();
-        _router.init();
-    };
-
-    return app;
-};
-
-window.addEventListener('load', function() {
-    var app = new App();
-
-    app.init();
 });
+
+
+function switchPage(route) {
+
+    if (pageModules[ route.page ])  {
+
+        query = route.query || {};
+        query.view = route.page;
+
+        deregister(activePageModules);
+        activePageModules = pageModules[ route.page ];
+        register( activePageModules );
+
+        PS.publish(CONST.ACTIONS.SWITCH_LAYOUT, route.page);
+        PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, query);
+        PS.publish(CONST.ACTIONS.SHOW_FILTERS, query);
+        PS.publish(CONST.ACTIONS.SHOW_NEWS);
+
+    } else {
+
+        //show 404
+
+    }
+}
+
+
+function handleQuery(route) {
+
+    query = route.query || {};
+    query.view = route.page;
+
+    PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, query);
+
+}
+
+
+function register(modules) {
+
+    modules.forEach(function(module) {
+        module.init();
+    });
+
+}
+
+
+function deregister(modules) {
+
+    modules.forEach(function(module) {
+        module.remove();
+    });
+
+}

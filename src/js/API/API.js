@@ -22,7 +22,7 @@ var API = function () {
 
 
     api.getProducts = function () {
-        _ajaxGet('./data/products.json')
+        _ajaxGet('/api/products')
             .then(function (products) {
             api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, products);
         });
