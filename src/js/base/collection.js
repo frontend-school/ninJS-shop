@@ -39,7 +39,7 @@ Collection.prototype = {
 
     remove: function(id) {
         this._collection = this._collection.filter(function(model) {
-            return model.id !== id;
+            return model._id !== id;
         });
     },
 

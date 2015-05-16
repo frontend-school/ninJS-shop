@@ -55,7 +55,7 @@ function addListener(itemView, product) {
     itemView.find(CONST.SELECTORS.REMOVE_FROM_BASKET).on('click', function() {
 
         itemView.remove();
-        collection.remove(product.id);
+        collection.remove(product._id);
 
         updateCounter();
         if (collection.length() === 0) {
