@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/frontend-school/ninJS-shop/issues"
   },
-  "devDependencies": {
+  "dependencies": {
     "body-parser": "^1.12.4",
     "brfs": "^1.4.0",
     "browser-sync": "^2.5.0",
