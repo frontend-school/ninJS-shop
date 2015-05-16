@@ -20,7 +20,7 @@ module.exports = basketController = baseController.extend({
 
 
 function addToBasket(product) {
-    var basketItem = collection.getById(product.id);
+    var basketItem = collection.getById(product._id);
 
     if (!basketItem) {
 
