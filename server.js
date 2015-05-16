@@ -36,6 +36,6 @@ app.get('/', function(req, res) {
     //res.render('pages/index');
 });
 // Start the server
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 3000;
 app.listen(port);
 console.log(port + ' is listening port');
