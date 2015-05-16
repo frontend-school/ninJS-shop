@@ -1,4 +1,16 @@
 .products {
+  background-color: $creamy;
+
+  &-wrapper {
+    width: 960px;
+    margin: 0 auto;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
 
   &-header {
     height: 80px;

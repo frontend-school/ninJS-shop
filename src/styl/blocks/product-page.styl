@@ -1,0 +1,114 @@
+.product-page {
+  background-color: $creamy;
+
+  &-wrapper {
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 50px;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  &-main-info-container {
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  &-gallery {
+    float: left;
+    width: 430px;
+
+    &-thumblist {
+      list-style-type: none;
+      float: left;
+      margin: 0;
+      padding: 0;
+
+      &-item {
+
+        &-image {
+          display: block;
+          width: 100px;
+          margin-bottom: 3px;
+          border: 1px solid $grey;
+        }
+      }
+    }
+
+    &-big-image {
+      float: left;
+      max-width: 400px;
+      border: 1px solid $grey;
+      margin-left: 3px;
+
+      &-img {
+        display: block;
+        width: 310px;
+      }
+
+    }
+
+  }
+
+  &__title {
+    margin: 0 0 15px 0;
+    font-size: 28px;
+    font-weight: normal;
+    text-shadow: 0 1px $white;
+    color: $dark-grey;
+  }
+
+  &__price {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: $green;
+    text-shadow: 0 1px $grey;
+  }
+
+  &-actions {
+
+    &__buy {
+      padding: 10px 20px;
+      outline: none;
+      border: 1px solid $black;
+      border-radius: 2px;
+      background-color: $black;
+      font-size: 16px;
+      text-transform: capitalize;
+      color: $white;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        border: 1px solid $green;
+        background-color: $green;
+      }
+    }
+
+    &__login {
+      margin-left: 15px;
+      border-bottom: 1px dashed $grey;
+      color: $darkest-grey;
+      cursor: pointer;
+    }
+
+
+  }
+
+  &-predescription {
+    color: #555;
+    text-shadow: 0 1px $white;
+  }
+
+  &-description {
+    color: #555;
+    text-shadow: 0 1px $white;
+  }
+}
