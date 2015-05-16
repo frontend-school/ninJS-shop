@@ -61,7 +61,7 @@ Collection.prototype = {
 
     getById: function(id) {
         return this._collection.filter(function(model) {
-            return model.id === id;
+            return model._id === id;
         })[0];
     },
 

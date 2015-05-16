@@ -34,7 +34,8 @@ var gulp = require('gulp'),
         }
     };
 
-gulp.task('default', ['build','serve', 'watch']);
+gulp.task('default', ['build', 'watch']);
+gulp.task('serve', ['build', 'serve', 'watch']);
 gulp.task('build', ['clean','bower','data','html','styl','img','js','hint']);
 
 
