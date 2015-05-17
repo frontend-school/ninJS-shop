@@ -1,88 +1,87 @@
 .basket
+  z-index 10
   display block
-  width 300px
-  max-height 500px
   position absolute
   right 0
-  background: #ecece8
-  box-shadow 11px 9px 34px -15px rgba(0,0,0,0.75);
+  width 300px
+  max-height 500px
   opacity 1
+  background #ecece8
+  box-shadow 11px 9px 34px -15px rgba(0,0,0,0.75)
   transition opacity 0.2s
-  z-index 10
 
   &-header
-    background #fff
     height 60px
-    border-left 1px solid $grey
-    line-height 60px
     padding-left 10px
+    border-left 1px solid $grey
+    background #fff
+    line-height 60px
 
   &-container
-    padding 0
-    margin-right 5px
+    list-style-type none
     max-height 300px
+    margin-right 5px
+    padding 0
     border-left 1px solid $grey
     overflow-x hidden
     overflow-y auto
-    list-style-type none
 
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
+    &::-webkit-scrollbar
+      width 8px
 
-    &::-webkit-scrollbar-thumb {
-      border-radius: 3px;
-      background: rgba(0,0,0,0.1);
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    }
+    &::-webkit-scrollbar-thumb
+      border-radius 3px
+      -webkit-box-shadow inset 0 0 6px rgba(0,0,0,0.3)
+      background rgba(0,0,0,0.1)
 
-    &::-webkit-scrollbar-thumb:window-inactive {
-      background: rgba(0,0,0,0.2);
-    }
+    &::-webkit-scrollbar-thumb:window-inactive
+      background rgba(0,0,0,0.2)
 
 
     &-item
       position: relative
-      min-height 100px
       margin 10px 5px 10px 10px
+      min-height 100px
       background #fff
 
       &__image
+        float left
         width 70px
         height 70px
         padding 15px
-        float left
 
       &-details
-        padding 10px 20px 30px 0
         margin-left 100px
+        padding 10px 20px 30px 0
 
         &__quantity
+          float left
           width 32px
           border none
-          float: left;
 
         &__price
-          text-overflow: ellipsis;
-          max-width: 100px;
-          white-space: nowrap;
-          overflow: hidden;
-          float: left;
+          float left
+          max-width 100px
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
 
       &__remove
         cursor pointer
         position absolute
-        visibility hidden
         top 2px
         right 2px
+        height 15px
+        width 15px
+        visibility hidden
+        opacity 0
         border-radius 50%
-        height: 15px;
-        width: 15px;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 10px;
         background $grey
+        text-align center
+        vertical-align middle
+        line-height 10px
         color white
+        transition opacity .2s
 
         &:hover
           background $grey2
@@ -90,15 +89,17 @@
     :hover
       .basket-container-item__remove
         visibility visible
+        opacity 1
 
   &-footer
     position: relative
-    height 60px
+    height 35px
+    padding-top 15px
     background: $colorDarkBackground
     text-align center
+    background $dark-grey
 
     &__checkout
-      center()
       padding 10px
       background-color $colorTheme
       text-align: center
@@ -111,7 +112,7 @@
         background-color #fff
         color black
 
-.hide
+.hidden
   display none
   opacity 0
   transition opacity 1s

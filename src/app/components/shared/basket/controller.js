@@ -71,5 +71,5 @@ function updateCounter() {
 
 
 function toggleBasket() {
-    $(CONST.SELECTORS.BASKET).toggleClass('hide');
+    $(CONST.SELECTORS.BASKET).toggleClass('hidden');
 }
