@@ -54,19 +54,38 @@
         float left
 
       &-details
-        padding 10px
+        padding 10px 20px 30px 0
         margin-left 100px
 
         &__quantity
           width 32px
           border none
+          float: left;
+
+        &__price
+          text-overflow: ellipsis;
+          max-width: 100px;
+          white-space: nowrap;
+          overflow: hidden;
+          float: left;
 
       &__remove
         cursor pointer
         position absolute
         visibility hidden
-        top 0
-        right 5px
+        top 2px
+        right 2px
+        border-radius 50%
+        height: 15px;
+        width: 15px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 10px;
+        background $grey
+        color white
+
+        &:hover
+          background $grey2
 
     :hover
       .basket-container-item__remove
