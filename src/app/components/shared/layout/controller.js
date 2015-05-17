@@ -8,8 +8,6 @@ module.exports = baseController.extend({
 
         this.subscribe(CONST.ACTIONS.SWITCH_LAYOUT, function(layout) {
 
-            console.log('sw');
-
             view.template = view.templates[ layout ];
             view.render();
 
