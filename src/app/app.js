@@ -1,6 +1,5 @@
 var router = require('./core/router.js'),
-    API = require('./core/API.js'),
-    api = new API(),
+    api = require('./core/API.js'),
     PS = require('./core/pubsub.js'),
     basket = require('./components/shared/basket/controller.js'),
     layout = require('./components/shared/layout/controller.js'),
@@ -26,7 +25,7 @@ module.exports = app = PS.extend({
 
     init: function() {
         this.subscribe(CONST.ACTIONS.SWITCH_PAGE, switchPage);
-        this.subscribe(CONST.ACTIONS.NEW_QUERY, handleQuery);
+        this.subscribe(CONST.ACTIONS.NEW_QUERY, handleNewQuery);
 
         register(components.shared);
         register(coreModules);
@@ -39,16 +38,13 @@ function switchPage(route) {
 
     if (components.partials[ route.page ])  {
 
-        query = route.query || {};
-        query.view = route.page;
-
         deregister(activePartials);
         activePartials = components.partials[ route.page ];
         register( activePartials );
 
         PS.publish(CONST.ACTIONS.SWITCH_LAYOUT, route.page);
-        PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, query);
-        PS.publish(CONST.ACTIONS.SHOW_FILTERS, query);
+        PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, route.query);
+        PS.publish(CONST.ACTIONS.SHOW_FILTERS, route.query);
         PS.publish(CONST.ACTIONS.SHOW_NEWS);
         PS.publish(CONST.ACTIONS.SHOW_TEXT_WIDGET);
 
@@ -60,12 +56,10 @@ function switchPage(route) {
 }
 
 
-function handleQuery(route) {
+function handleNewQuery(route) {
 
-    query = route.query || {};
-    query.view = route.page;
-
-    PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, query);
+    //for now products section is the only one responding to queries
+    PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, route.query);
 
 }
 
