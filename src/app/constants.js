@@ -4,7 +4,7 @@ module.exports = {
     },
     SELECTORS: {
         MAIN: '.main',
-        ABOUT: '.about',
+        ABOUT: '.about-wrapper',
         PRODUCTS: '.products-container',
         PRODUCTS_HEADER: '.products-header',
         ADD_TO_BASKET: '.action-buttons__item_buy',
