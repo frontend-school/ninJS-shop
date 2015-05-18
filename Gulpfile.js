@@ -15,14 +15,14 @@ var gulp = require('gulp'),
         src: {
             root: './src',
             html_index: './src/index.html',
-            html_blocks: './src/html/*.html',
-            styl: './src/styl/**',
-            styl_main: './src/styl/main.styl',
-            js: './src/js/**',
-            js_app: './src/js/index.js',
-            img: './src/img/**',
+            html_blocks: './src/assets/html/*.html',
+            styl: './src/assets/styl/**',
+            styl_main: './src/assets/styl/main.styl',
+            js: './src/app/**',
+            js_app: './src/app/index.js',
+            img: './src/assets/img/**',
             bower: './bower_components/**',
-            data: './src/data/**'
+            data: './src/assets/data/**'
         },
         dist: {
             root: './dist',
@@ -34,8 +34,14 @@ var gulp = require('gulp'),
         }
     };
 
+<<<<<<< HEAD
 gulp.task('default', ['build','serve', 'watch']);
 gulp.task('build', ['clean', 'bower','data','html','styl','img','js','hint']);
+=======
+gulp.task('default', ['build', 'watch']);
+gulp.task('serve', ['build', 'serve', 'watch']);
+gulp.task('build', ['clean','bower','data','html','styl','img','js','hint']);
+>>>>>>> b83f9e450a6e183b43643b158afa778ad4b234c2
 
 
 gulp.task('bower', function() {
@@ -68,7 +74,7 @@ gulp.task('styl', function() {
 });
 
 gulp.task('hint', function() {
-    return gulp.src('./src/js/*.js')
+    return gulp.src('./src/app/**.js')
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'));
 });
