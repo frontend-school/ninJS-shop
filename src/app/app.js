@@ -1,6 +1,5 @@
 var router = require('./core/router.js'),
-    API = require('./core/API.js'),
-    api = new API(),
+    api = require('./core/API.js'),
     PS = require('./core/pubsub.js'),
     basket = require('./components/shared/basket/controller.js'),
     layout = require('./components/shared/layout/controller.js'),
