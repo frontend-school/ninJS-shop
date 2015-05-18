@@ -48,6 +48,8 @@ function switchHash(filter) {
 
 function handleRouteChange(page, query) {
 
+    query = query || {};
+
     if (page !== _activePage) {
 
         router.publish(CONST.ACTIONS.SWITCH_PAGE, {
