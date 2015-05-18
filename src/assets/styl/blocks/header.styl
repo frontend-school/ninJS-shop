@@ -1,27 +1,27 @@
 .header {
-  background-color: $black;
   height: 45px;
+  background-color: $black;
 
-  &__wrapper {
+  &-wrapper {
     width: 960px;
     margin: 0 auto;
 
     &:after {
-      content: "";
+      content: '';
       display: table;
       clear: both;
     }
   }
 
   &-logo {
+    display: inline-block;
+    float: left;
     width: 156px;
     height: 45px;
-    float: left;
-    display: inline-block;
     vertical-align: middle;
 
     &:before {
-      content: "";
+      content: '';
       display: inline-block;
       height: 100%;
       vertical-align: middle;
@@ -33,34 +33,35 @@
   }
 
   &__search {
+    float: right;
     width: 14px;
     height: 14px;
-    float: right;
     margin: 15px 20px 0 0;
-    background: url("../img/header/search-icon.png") no-repeat;
+    background: url('../img/header/search-icon.png') no-repeat;
     cursor: pointer;
   }
 
   &-auth {
+    float: right;
+    max-width: 250px;
     height: 45px;
     padding: 0 10px;
-    float: right;
     border-left: 1px solid $grey2;
     border-right: 1px solid $grey2;
-    color: $grey2;
     font-size: 14px;
     text-align: center;
+    color: $grey2;
 
     &:before {
-      content: "";
+      content: '';
       display: inline-block;
       height: 100%;
       vertical-align: middle;
     }
 
     &__link {
-      color: $grey2;
       text-decoration: none;
+      color: $grey2;
 
       &:hover {
         color: $grey;

@@ -4,7 +4,7 @@ module.exports = {
     },
     SELECTORS: {
         MAIN: '.main',
-        ABOUT: '.about',
+        ABOUT: '.about-wrapper',
         PRODUCTS: '.products-container',
         PRODUCTS_HEADER: '.products-header',
         ADD_TO_BASKET: '.action-buttons__item_buy',
@@ -28,6 +28,11 @@ module.exports = {
         GET_PRODUCTS: 'app/get-products',
         PRODUCTS_RECEIVED: 'app/API:products-received',
         SHOW_PRODUCTS: 'app/layout/run-products',
+
+        GET_PRODUCT: 'app/get-product',
+        PRODUCT_RECEIVED: 'app/API:product-received',
+        SHOW_PRODUCT: 'app/layout/run-product',
+
         ADD_TO_BASKET: 'app/products:add-to-basket',
 
         SHOW_FILTERS: 'app/show_filters',
