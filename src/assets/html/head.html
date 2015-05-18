@@ -6,6 +6,24 @@
     <link href="css/jqzoom.css" rel="stylesheet">
     <script src="vendor/zepto/zepto.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="vendor/jquery-1.6.js"></script>
+    <script src="vendor/jqzoom.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.jqzoom').jqzoom();
 
+            var topMargin = 0;
+            $('.product-page-gallery-thumblist-arrow_down').click(function() {
+                topMargin -= 100;
+                $('.product-page-gallery-thumblist').css({'margin-top': topMargin+'px'});
+            });
+
+            $('.product-page-gallery-thumblist-arrow_up').click(function() {
+                topMargin += 100;
+                $('.product-page-gallery-thumblist').css({'margin-top': topMargin+'px'});
+            });
+
+        });
+    </script>
     <title>ninJS shop</title>
 </head>
