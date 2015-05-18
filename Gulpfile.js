@@ -38,7 +38,6 @@ gulp.task('default', ['build', 'watch']);
 gulp.task('serve', ['build', 'serve', 'watch']);
 gulp.task('build', ['clean','bower','data','html','styl','img','js','hint']);
 
-
 gulp.task('bower', function() {
     gulp.src(paths.src.bower)
         .pipe(gulp.dest(paths.dist.vendor));
