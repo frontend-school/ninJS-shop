@@ -15,7 +15,10 @@ exports.postProducts = function(req, res) {
 
     product.save(function(err) {
         if (err)
+        {
             res.send(err);
+        }
+
 
         res.json({ message: 'New product added to the  site!' });
     });
