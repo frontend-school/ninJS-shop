@@ -6,12 +6,13 @@ var router = require('./core/router.js'),
     layout = require('./components/shared/layout/controller.js'),
     products = require('./components/partials/products/controller.js'),
     filters = require('./components//partials/filters/controller.js'),
-    about = require('./components/partials/about/controller.js');
+    about = require('./components/partials/about/controller.js'),
+    textWidget = require('./components/shared/textWidget/controller.js');
 
 var app,
     coreModules = [api, router],
     components = {
-        shared: [layout, basket],
+        shared: [layout, basket, textWidget],
         partials: {
             home: [products, about],
             products: [products, filters]
@@ -49,6 +50,7 @@ function switchPage(route) {
         PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, query);
         PS.publish(CONST.ACTIONS.SHOW_FILTERS, query);
         PS.publish(CONST.ACTIONS.SHOW_NEWS);
+        PS.publish(CONST.ACTIONS.SHOW_TEXT_WIDGET);
 
     } else {
 

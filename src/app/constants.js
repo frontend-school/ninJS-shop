@@ -15,7 +15,8 @@ module.exports = {
         REMOVE_FROM_BASKET: '.basket-container-item__remove',
         BASKET_COUNTER: '.navigation__counter_in-cart',
         BASKET_TOGGLE: '.basket-toggle',
-        FILTER_CHECKBOX: '.filters__checkbox'
+        FILTER_CHECKBOX: '.filters__checkbox',
+        TEXT_WIDGET: '.footer-widget-panel-widget-text'
     },
     ACTIONS: {
         ROUTE_CHANGED: 'app/router:route-changed',
@@ -34,6 +35,10 @@ module.exports = {
 
         SHOW_NEWS: 'app/show-news',
         GET_NEWS: 'app/about:get-news',
-        NEWS_RECEIVED: 'app/API:news-received'
+        NEWS_RECEIVED: 'app/API:news-received',
+
+        GET_TEXT_WIDGET: 'app/footer:get-text-widget',
+        TEXT_WIDGET_RECEIVED: 'app/API:text-widget-received',
+        SHOW_TEXT_WIDGET: 'app/show-text-widget'
     }
 };
