@@ -153,14 +153,18 @@
 			font-size 11px;
 			li {
 				display inline-block;
+              &:after {
+                content ' / ';
+                color $footer-text-color;
+              }
 				a {
 					text-decoration none;
 					color $footer-text-color;
 				}
 			}
-			li:not([class *= "_last"]) {
+			li:last-child {
 				&:after {
-					content ' / ';
+					content '';
 					color $footer-text-color;
 				}
 			}
