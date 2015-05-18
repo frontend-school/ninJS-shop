@@ -1,6 +1,17 @@
 .specials
   padding 25px 0
-  background-color $colorDarkBackground
+  background-color: $darkest-grey;
+
+  &-wrapper {
+    width: 960px;
+    margin: 0 auto;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
 
   &-list
     list-style-type none

@@ -8,6 +8,18 @@ $lines-to-show = 3
   border-top: 1px solid $grey;
   padding: 15px 0px 15px 0px;
   font-size: 12px;
+  background-color: $creamy;
+
+  &__wrapper {
+    width: 960px;
+    margin: 0 auto;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
 
   &-block {
 

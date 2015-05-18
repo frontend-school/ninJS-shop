@@ -34,15 +34,9 @@ var gulp = require('gulp'),
         }
     };
 
-<<<<<<< HEAD
-gulp.task('default', ['build','serve', 'watch']);
-gulp.task('build', ['clean', 'bower','data','html','styl','img','js','hint']);
-=======
 gulp.task('default', ['build', 'watch']);
 gulp.task('serve', ['build', 'serve', 'watch']);
 gulp.task('build', ['clean','bower','data','html','styl','img','js','hint']);
->>>>>>> b83f9e450a6e183b43643b158afa778ad4b234c2
-
 
 gulp.task('bower', function() {
     gulp.src(paths.src.bower)
