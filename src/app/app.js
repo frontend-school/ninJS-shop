@@ -17,8 +17,7 @@ var app,
             products: [products, filters]
         }
     },
-    activePartials = [],
-    query;
+    activePartials = [];
 
 
 module.exports = app = PS.extend({
