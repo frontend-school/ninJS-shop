@@ -23,9 +23,12 @@ module.exports = productsModule = baseController.extend({
 });
 
 
-function queryUpdate(query) {
+function queryUpdate(route) {
 
-    collection.setQuery(query);
+    route.query.page = route.page;
+
+    collection.setQuery(route.query);
+
     productsModule.publish(CONST.ACTIONS.GET_PRODUCTS);
 
 }

@@ -25,7 +25,7 @@ module.exports = baseCollection.extend({
             }
         }
 
-        this._collection = this._collection.slice(0, (this._query.view === 'home') ? 6 : 12);
+        this._collection = this._collection.slice(0, (this._query.page === 'home') ? 6 : 12);
     }
 
 });
