@@ -1,0 +1,1 @@
+var Customer = require('./customer');

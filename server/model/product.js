@@ -24,6 +24,17 @@ var mongoose = require('mongoose'),
         },
         sale: {
             type: Boolean
+        },
+        reviews: {
+            date: {
+                type: Date
+            },
+            text: {
+                type: String
+            },
+            id_customer: {
+                type: String
+            }
         }
     });
 

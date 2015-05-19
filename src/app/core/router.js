@@ -13,7 +13,7 @@ module.exports = router = PS.extend({
 
         this.subscribe(CONST.ACTIONS.FILTER_CHANGED, switchHash);
 
-        crossroads.addRoute('/{page.components}/:?query:', handleRouteChange);
+        crossroads.addRoute('/{page}/:?query:', handleRouteChange);
 
         //set default hash
         if (hasher.getURL() === hasher.getBaseURL()) {
@@ -47,6 +47,8 @@ function switchHash(filter) {
 
 
 function handleRouteChange(page, query) {
+
+    query = query || {};
 
     if (page !== _activePage) {
 
