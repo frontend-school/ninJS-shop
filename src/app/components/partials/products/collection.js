@@ -5,12 +5,12 @@ var baseCollection = require('../../base/collection.js'),
 
 module.exports = baseCollection.extend({
 
-    handleQuery: function() {
+    handleQuery: function(query) {
 
         viewCollection = this._collection;
 
-        for (var n in this._query) {
-            if (this._query.hasOwnProperty(n)) {
+        for (var n in query) {
+            if (query.hasOwnProperty(n)) {
 
                 switch (n) {
                     case 'sale_only':
@@ -28,7 +28,7 @@ module.exports = baseCollection.extend({
             }
         }
 
-        viewCollection =  viewCollection.slice(0, (this._query.page === 'home') ? 6 : 12);
+        viewCollection =  viewCollection.slice(0, (query.page === 'home') ? 6 : 12);
 
         return viewCollection;
     }

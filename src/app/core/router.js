@@ -49,6 +49,7 @@ function switchHash(filter) {
 function handleRouteChange(page, query) {
 
     query = query || {};
+    query.page = page;
 
     if (page !== _activePage) {
 

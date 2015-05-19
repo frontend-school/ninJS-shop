@@ -58,6 +58,10 @@ Collection.prototype = {
         return this._collection.length;
     },
 
+    isEmpty: function() {
+        return this._collection.length === 0;
+    },
+
 
     getById: function(id) {
         return this._collection.filter(function(model) {
