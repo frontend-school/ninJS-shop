@@ -11,6 +11,10 @@
       display: table;
       clear: both;
     }
+
+    @media screen and (max-width: 768px) {
+
+    }
   }
 
   &-header {
@@ -40,11 +44,17 @@
     padding: 0;
     list-style-type: none;
 
-    &:after {
-      content: "";
-      display: inline-block;
-      width: 100%;
+    @media screen and (max-width: 620px) {
+      margin-left: 0;
     }
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+
+
   }
 }
 
@@ -58,9 +68,11 @@
     text-align: center;
     background-color: $white;
 
-    &-state_on-sale {
-
+    @media screen and (max-width: 620px) {
+      width: 45%;
+      margin-left: 0;
     }
+
 
     &__image {
       margin-top: 10px;
