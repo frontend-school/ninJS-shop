@@ -1,4 +1,5 @@
-var baseCollection = require('../../base/collection.js');
+var baseCollection = require('../../base/collection.js'),
+    viewCollection;
 
 
 
@@ -6,18 +7,20 @@ module.exports = baseCollection.extend({
 
     handleQuery: function() {
 
+        viewCollection = this._collection;
+
         for (var n in this._query) {
             if (this._query.hasOwnProperty(n)) {
 
                 switch (n) {
                     case 'sale_only':
-                        this._collection = this._collection.filter(function(product) {
+                        viewCollection = viewCollection.filter(function(product) {
                             return !!product.sale;
                         });
                         break;
 
                     case 'priced_first':
-                        this._collection.sort(function(a, b) {
+                        viewCollection.sort(function(a, b) {
                             return a.price - b.price;
                         });
                         break;
@@ -25,7 +28,9 @@ module.exports = baseCollection.extend({
             }
         }
 
-        this._collection = this._collection.slice(0, (this._query.page === 'home') ? 6 : 12);
+        viewCollection =  viewCollection.slice(0, (this._query.page === 'home') ? 6 : 12);
+
+        return viewCollection;
     }
 
 });

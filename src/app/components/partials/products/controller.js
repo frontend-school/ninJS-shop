@@ -29,19 +29,24 @@ function queryUpdate(route) {
 
     collection.setQuery(route.query);
 
-    productsModule.publish(CONST.ACTIONS.GET_PRODUCTS);
+    if (collection.length() === 0) {
+        productsModule.publish(CONST.ACTIONS.GET_PRODUCTS);
+    } else {
+        updateModule();
+    }
 
 }
 
 
 function updateModule(data) {
 
+    if (data) {
+        collection.populate(data);
+    }
+
     view.remove();
 
-    collection.populate(data);
-    collection.handleQuery();
-
-    collection.get().forEach(function(model) {
+    collection.handleQuery().forEach(function(model) {
 
         view.append(model);
 
