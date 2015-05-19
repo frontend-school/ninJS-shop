@@ -47,8 +47,11 @@
     "node": "0.12.x"
   },
   "devDependencies": {
+    "bcrypt-nodejs": "^0.0.3",
     "express-session": "^1.11.2",
     "passport": "^0.2.1",
-    "passport-facebook": "^2.0.0"
+    "passport-accesstoken": "^0.1.0",
+    "passport-facebook": "^2.0.0",
+    "passport-http": "^0.2.2"
   }
 }
