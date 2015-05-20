@@ -7,7 +7,7 @@ module.exports = baseCollection.extend({
 
     handleQuery: function(query) {
 
-        viewCollection = this._collection;
+        viewCollection = this._collection.slice();
 
         for (var n in query) {
             if (query.hasOwnProperty(n)) {
@@ -24,6 +24,17 @@ module.exports = baseCollection.extend({
                             return a.price - b.price;
                         });
                         break;
+
+                    case 'must_have':
+                        viewCollection = viewCollection.filter(function(product) {
+
+                            return product.categories.some(function(cat) {
+                                return cat === 'must_have';
+                            });
+                        });
+                        break;
+
+
                 }
             }
         }

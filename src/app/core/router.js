@@ -38,7 +38,10 @@ function switchHash(filter) {
 
     for (var n in filter) {
         if (filter.hasOwnProperty(n) && filter[n]) {
-            query += '&' + n;
+
+                query += '&' + n;
+
+
         }
     }
 

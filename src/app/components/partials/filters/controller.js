@@ -35,9 +35,11 @@ function displayFilters(query) {
 
     view.render(model.get());
 
-    $(CONST.SELECTORS.FILTER_CHECKBOX).on('click', function() {
+    $(CONST.SELECTORS.FILTER_ITEM).on('click', function() {
 
-        model.set(this.value, this.checked);
+        $(this).toggleClass('checked');
+
+        model.set(this.dataset.filter, $(this).hasClass('checked'));
 
         filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
 
