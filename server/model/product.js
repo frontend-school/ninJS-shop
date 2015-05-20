@@ -10,6 +10,9 @@ var mongoose = require('mongoose'),
         description: {
             type: String
         },
+        categories: {
+            type: Array
+        },
         colors: {
             type: Array
         },

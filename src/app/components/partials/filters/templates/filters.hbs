@@ -1,5 +1,28 @@
-<div class="products-header__title">Choose your shoes</div>
-<div class="filters">
-    <input {{#if sale_only}}checked{{/if}} type="checkbox" class="filters__checkbox filters__checkbox_sale" value="sale_only">on sale
-    <input {{#if priced_first}}checked{{/if}} type="checkbox" class="filters__checkbox filters__checkbox_cheaper_first" value="priced_first">low-priced first
-</div>
+
+    
+    <div class="filters-group">
+        <h4 class="filters-group__title">Special offers</h4>
+        <ul class="filters-group-list">
+            <li class="filters-group-list-item">
+                <input {{#if sale_only}}checked{{/if}} type="checkbox" class="filters-group-list-item__checkbox filters-group-list-item__checkbox_sale" value="sale_only">on sale
+            </li>
+            <li class="filters-group-list-item">
+                <input {{#if priced_first}}checked{{/if}} type="checkbox" class="filters-group-list-item__checkbox filters-group-list-item__checkbox_cheaper_first" value="priced_first">low-priced first
+            </li>
+        </ul>
+        <div class="filters-group-specials">
+             </div>
+    </div>
+    
+    <div class="filters-group">
+        <h4 class="filters-group__title">Style</h4>
+        <ul class="filters-group-list">
+            <li class="filters-group-list-item"><a href="#" class="filters-group-list-item__name">Ballet Flats</a></li>
+            <li class="filters-group-list-item"><a href="#" class="filters-group-list-item__name">Mary Jane</a></li>
+            <li class="filters-group-list-item"><a href="#" class="filters-group-list-item__name">Pumps</a></li>
+            <li class="filters-group-list-item"><a href="#" class="filters-group-list-item__name">Sandal</a></li>
+            <li class="filters-group-list-item"><a href="#" class="filters-group-list-item__name">Slide</a></li>
+        </ul>
+    </div>
+
+    
