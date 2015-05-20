@@ -22,7 +22,7 @@ var mongoose = require('mongoose'),
     });
 
 // Execute before each user.save() call
-Customer.pre('save', function(callback) {
+/*Customer.pre('save', function(callback) {
     var user = this;
 
     // Break out if the password hasn't changed
@@ -44,7 +44,7 @@ Customer.pre('save', function(callback) {
             callback();
         });
     });
-});
+});*/
 
 Customer.methods.verifyPassword = function(password, cb) {
     bcrypt.compare(password, this.password, function(err, isMatch) {

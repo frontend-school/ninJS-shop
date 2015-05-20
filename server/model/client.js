@@ -11,8 +11,7 @@ var mongoose = require('mongoose'),
             required: true
         },
         id: {
-            type: String,
-            unique: true
+            type: String
         },
         email: {
             type: String
