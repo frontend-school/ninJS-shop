@@ -38,7 +38,10 @@ function switchHash(filter) {
 
     for (var n in filter) {
         if (filter.hasOwnProperty(n) && filter[n]) {
-            query += '&' + n;
+
+                query += '&' + n;
+
+
         }
     }
 
@@ -49,6 +52,7 @@ function switchHash(filter) {
 function handleRouteChange(page, query) {
 
     query = query || {};
+    query.page = page;
 
     if (page !== _activePage) {
 

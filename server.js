@@ -6,7 +6,8 @@ var express = require('express'),
     session = require('express-session'),
     CONFIG = require('./server/configuration/secret_config'),
     productController = require('./server/controller/product'),
-    authController = require('./server/controller/auth');
+    authController = require('./server/controller/auth'),
+    userController = require('./server/controller/customer');
 
 // Connect to remote mongo db
 mongoose.connect(CONFIG.DB_REMOTE.DB_NINJS_MONGO_URI);
@@ -53,7 +54,16 @@ app.get('/', function(req, res) {
 
     res.render('index.html');
 });
+router.route('/api/login')
+    .post(userController.apiLogin);
+router.route('/api/signup')
+    .post(userController.apiSignup);
 
+/*
+app.post('/authenticate', function(req, res) {
+
+});
+*/
 
 // route for facebook authentication and login
 app.get('/auth/facebook', authController.isFBAuthenticated);

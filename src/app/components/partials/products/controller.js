@@ -1,15 +1,15 @@
 var productsModule,
     collection = require('./collection.js'),
     view = require('./view.js'),
-    baseController = require('../../base/controller.js');
+    baseController = require('../../base/controller.js'),
+    Q = require('q');
 
 module.exports = productsModule = baseController.extend({
 
     init: function() {
 
         this._subscriptions = [];
-        this.subscribe(CONST.ACTIONS.SHOW_PRODUCTS, queryUpdate);
-        this.subscribe(CONST.ACTIONS.PRODUCTS_RECEIVED, updateModule);
+        this.subscribe(CONST.ACTIONS.SHOW_PRODUCTS, showProducts);
 
     },
 
@@ -22,23 +22,38 @@ module.exports = productsModule = baseController.extend({
 
 });
 
+function showProducts(query) {
 
-function queryUpdate(query) {
+    if (collection.isEmpty()) {
+        var deferred = new Q.defer();
 
-    collection.setQuery(query);
-    productsModule.publish(CONST.ACTIONS.GET_PRODUCTS);
+        productsModule.publish(CONST.ACTIONS.GET_PRODUCTS);
+
+        productsModule.subscribe(CONST.ACTIONS.PRODUCTS_RECEIVED, function(data) {
+
+            deferred.resolve(data);
+
+        });
+
+        deferred.promise.then(function(data) {
+
+            collection.populate(data);
+            renderQueriedProducts(query);
+
+        });
+
+    } else {
+        renderQueriedProducts(query);
+    }
 
 }
 
 
-function updateModule(data) {
+function renderQueriedProducts(query) {
 
     view.remove();
 
-    collection.populate(data);
-    collection.handleQuery();
-
-    collection.get().forEach(function(model) {
+    collection.handleQuery(query).forEach(function(model) {
 
         view.append(model);
 

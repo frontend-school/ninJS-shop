@@ -1,5 +1,47 @@
-<div class="products-header__title">Choose your shoes</div>
-<div class="filters">
-    <input {{#if sale_only}}checked{{/if}} type="checkbox" class="filters__checkbox filters__checkbox_sale" value="sale_only">on sale
-    <input {{#if priced_first}}checked{{/if}} type="checkbox" class="filters__checkbox filters__checkbox_cheaper_first" value="priced_first">low-priced first
-</div>
+
+    
+    <div class="filters-group">
+        <h4 class="filters-group__title">Special offers</h4>
+        <ul class="filters-group-list">
+            <li class="filters-group-list-item">
+                <span class="filters-group-list-item__name  {{#if sale_only}}checked{{/if}}" data-filter="sale_only">on sale</span>
+            </li>
+            <li class="filters-group-list-item">
+                <span  class="filters-group-list-item__name {{#if must_have}}checked{{/if}}" data-filter="must_have">must have</span>
+            </li>
+        </ul>
+        <div class="filters-group-specials">
+             </div>
+    </div>
+    
+    <div class="filters-group">
+        <h4 class="filters-group__title">Style</h4>
+        <ul class="filters-group-list">
+            <li class="filters-group-list-item">
+                <span class="filters-group-list-item__name  {{#if ballet_flats}}checked{{/if}}" data-filter="ballet_flats">Ballet Flats</span>
+            </li>
+            <li class="filters-group-list-item">
+                <span  class="filters-group-list-item__name {{#if mary_jane}}checked{{/if}}" data-filter="mary_jane">Mary Jane</span>
+            </li>
+            <li class="filters-group-list-item">
+                <span class="filters-group-list-item__name  {{#if pumps}}checked{{/if}}" data-filter="pumps">Pumps</span>
+            </li>
+            <li class="filters-group-list-item">
+                <span  class="filters-group-list-item__name {{#if sandal}}checked{{/if}}" data-filter="sandal">Sandal</span>
+            </li>
+            <li class="filters-group-list-item">
+                <span  class="filters-group-list-item__name {{#if slide}}checked{{/if}}" data-filter="slide">Slide</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="filters-group">
+        <h4 class="filters-group__title">Price</h4>
+        <ul class="filters-group-list">
+            <li class="filters-group-list-item">
+                <span  class="filters-group-list-item__name {{#if priced_first}}checked{{/if}}" data-filter="priced_first">low-priced first</span>
+            </li>
+        </ul>
+    </div>
+
+    

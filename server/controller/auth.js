@@ -19,8 +19,6 @@ var passport = require('passport'),
         });
     });
 
-
-
     // =========================================================================
     // FACEBOOK ================================================================
     // =========================================================================
@@ -67,7 +65,6 @@ var passport = require('passport'),
                                         throw err;
                                     }
 
-
                                     var newClient = new Client({
                                         name: 'fb',
                                         id : profile.id,
@@ -80,10 +77,7 @@ var passport = require('passport'),
                                         if (err){
                                             throw err;
                                         }
-                                        // if successful, return the new client
-                                        // return done(null, newClient);
                                     });
-
 
                                     // if successful, return the new user
                                     return done(null, addedUser);

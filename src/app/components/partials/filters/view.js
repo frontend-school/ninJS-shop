@@ -4,7 +4,7 @@ var source = fs.readFileSync(__dirname + '/src/app/components/partials/filters/t
 
 module.exports = baseView.extend({
 
-    parent: CONST.SELECTORS.PRODUCTS_HEADER,
+    parent: CONST.SELECTORS.FILTERS,
 
     template: Handlebars.compile(source)
 
