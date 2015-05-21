@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "bower": "^1.4.1",
-    "brfs": "^1.4.0",
+    "brfs": "0.0.8",
     "browser-sync": "^2.5.0",
     "browserify": "^9.0.8",
     "crossroads": "^0.12.0",
