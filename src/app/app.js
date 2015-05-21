@@ -6,12 +6,13 @@ var router = require('./core/router.js'),
     products = require('./components/partials/products/controller.js'),
     filters = require('./components//partials/filters/controller.js'),
     about = require('./components/partials/about/controller.js'),
-    textWidget = require('./components/shared/textWidget/controller.js');
+    textWidget = require('./components/shared/textWidget/controller.js'),
+    authorization = require('./components/shared/authorization/controller.js');
 
 var app,
     coreModules = [api, router],
     components = {
-        shared: [layout, basket, textWidget],
+        shared: [layout, basket, textWidget, authorization],
         partials: {
             home: [products, about],
             products: [products, filters]
@@ -46,6 +47,7 @@ function switchPage(route) {
         PS.publish(CONST.ACTIONS.SHOW_FILTERS, route.query);
         PS.publish(CONST.ACTIONS.SHOW_NEWS);
         PS.publish(CONST.ACTIONS.SHOW_TEXT_WIDGET);
+        PS.publish(CONST.ACTIONS.SWITCH_AUTH, 'unAuth');
 
     } else {
 
@@ -53,7 +55,6 @@ function switchPage(route) {
 
     }
 }
-
 
 function handleNewQuery(route) {
 

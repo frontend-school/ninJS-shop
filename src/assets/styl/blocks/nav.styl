@@ -2,6 +2,10 @@
   height: 60px;
   background-color: $white;
 
+  @media screen and (max-width: 768px) {
+    height: 45px;
+  }
+
   &-wrapper {
     width: 960px;
     margin: 0 auto;
@@ -10,6 +14,15 @@
       content: "";
       display: table;
       clear: both;
+    }
+
+    @media screen and (max-width: 960px) {
+      width: 768px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 90%;
+      height: 45px;
     }
   }
 
@@ -37,6 +50,10 @@
         &:hover {
           box-shadow: inset 0 0 1px 1px $green;
         }
+
+        @media screen and (max-width: 768px) {
+          line-height: 45px;
+        }
       }
     }
   }
@@ -48,9 +65,7 @@
     padding: 0;
     list-style: none;
 
-    & li:first-child {
-      border-left: 1px solid $grey;
-    }
+
 
     &-item {
       float: left;
@@ -58,6 +73,10 @@
       line-height: 60px;
       text-align: center;
       border-right: 1px solid $grey;
+
+      &:first-child {
+        border-left: 1px solid $grey;
+      }
 
       &:hover {
         cursor: pointer;
@@ -79,6 +98,10 @@
         &_wishlist {
           background-position: 0 0;
         }
+      }
+
+      @media screen and (max-width: 768px) {
+        line-height: 45px;
       }
     }
   }

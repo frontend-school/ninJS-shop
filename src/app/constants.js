@@ -18,7 +18,10 @@ module.exports = {
         FILTERS: '.filters',
         FILTER_ITEM: '.filters-group-list-item__name',
 
-        TEXT_WIDGET: '.footer-widget-panel-widget-text'
+        TEXT_WIDGET: '.footer-widget-panel-widget-text',
+
+        POP_UP_PARENT: '.header-auth',
+        LOG_IN_BUTTON: '.header-auth__link'
     },
     ACTIONS: {
         ROUTE_CHANGED: 'app/router:route-changed',
@@ -46,6 +49,8 @@ module.exports = {
 
         GET_TEXT_WIDGET: 'app/footer:get-text-widget',
         TEXT_WIDGET_RECEIVED: 'app/API:text-widget-received',
-        SHOW_TEXT_WIDGET: 'app/show-text-widget'
+        SHOW_TEXT_WIDGET: 'app/show-text-widget',
+
+        SWITCH_AUTH: 'app/switch-auth'
     }
 };
