@@ -6,7 +6,6 @@ module.exports = {
         MAIN: '.main',
         ABOUT: '.about-wrapper',
         PRODUCTS: '.products-container',
-        PRODUCTS_HEADER: '.products-header',
         ADD_TO_BASKET: '.action-buttons__item_buy',
         BASKET: '.basket',
         BASKET_CONTAINER: '.basket-container',
@@ -15,8 +14,12 @@ module.exports = {
         REMOVE_FROM_BASKET: '.basket-container-item__remove',
         BASKET_COUNTER: '.navigation__counter_in-cart',
         BASKET_TOGGLE: '.basket-toggle',
-        FILTER_CHECKBOX: '.filters__checkbox',
+
+        FILTERS: '.filters',
+        FILTER_ITEM: '.filters-group-list-item__name',
+
         TEXT_WIDGET: '.footer-widget-panel-widget-text',
+
         POP_UP_PARENT: '.header-auth',
         LOG_IN_BUTTON: '.header-auth__link'
     },

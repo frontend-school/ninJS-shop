@@ -1,10 +1,6 @@
 .slider-nav {
   background-color: $dark-grey;
 
-  @media screen and (max-width: 620px) {
-	display: none;
-  }
-
   &-wrapper {
     width: 960px;
     margin: 0 auto;
@@ -14,55 +10,54 @@
       display: table;
       clear: both;
     }
+
+    @media screen and (max-width: 960px) {
+      width: 90%;
+    }
+
   }
 }
 
-
 .nav__position {
-	height: 90px
-	margin: 0 auto
-	display: flex
-	position: relative
+  position: relative;
+  margin: 0 auto;
+  height: 90px;
 }
-		
-.menu-block__item_description::before {
-	content: ''
-	position: absolute
-	border: 4px solid #000
-	width: 97%
-	margin-left: -50%
-	margin-top: -9%
+
+.menu-block__item_description:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: $black;
 }
-		
-		
+
 .menu-block {
-	margin-left: -40px
-	margin-top: 1%	
-	cursor: pointer
-	
-	&__item {
-		display: inline-block
-		position: relative
-		width: 188px
+  margin: 0 0 0 -1%;
+  padding: 0;
+  cursor: pointer;
 
-		&_description {
-			color: #aaaaaa
-			text-align: center
-			font-size: 10px
-		}
-	}
+  &__item {
+    display: inline-block;
+    position: relative;
+    margin: 5px 0 0 1%;
+    width: 19%;
+    vertical-align: top;
+
+    &_description {
+      color: #aaa;
+      text-align: center;
+      font-size: 10px;
+    }
+  }
 }
-				
+
 .menu-block__item_description:hover::before {
-	border: 4px solid #57c5a0
-}
-	
-.menu-block__item:hover > .menu-block__item_description {
-	color: #ffffff
+  background-color: $green;
 }
 
-@media screen and (max-width: 800px) {
-	.menu-block__item {
-		margin-left: 10%
-	}
+.menu-block__item:hover > .menu-block__item_description {
+  color: #fff;
 }
