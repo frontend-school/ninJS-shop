@@ -59,11 +59,26 @@ router.route('/api/login')
 router.route('/api/signup')
     .post(userController.apiSignup);
 
-/*
-app.post('/authenticate', function(req, res) {
+router.route('/api/me')
+    .get(userController.ensureAuthorized, function(req, res) {
+        res.json({
+            data: "OK"
+        });
+        /*    User.findOne({token: req.token}, function(err, user) {
+         if (err) {
+         res.json({
+         type: false,
+         data: "Error occured: " + err
+         });
+         } else {
+         res.json({
+         type: true,
+         data: user
+         });
+         }
+         });*/
+    });
 
-});
-*/
 
 // route for facebook authentication and login
 app.get('/auth/facebook', authController.isFBAuthenticated);
