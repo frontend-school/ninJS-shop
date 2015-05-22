@@ -9,7 +9,6 @@ module.exports = api = PS.extend({
         this.subscribe(CONST.ACTIONS.GET_NEWS, getNews);
         this.subscribe(CONST.ACTIONS.GET_PRODUCTS, getProducts);
         this.subscribe(CONST.ACTIONS.GET_TEXT_WIDGET, getTextWidgetData);
-
     }
 
 });
