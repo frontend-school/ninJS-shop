@@ -42,8 +42,10 @@ function switchPage(route) {
         activePartials = components.partials[ route.page ];
         register( activePartials );
 
+
+
         PS.publish(CONST.ACTIONS.SWITCH_LAYOUT, route.page);
-        PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, route.query);
+        PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, route);
         PS.publish(CONST.ACTIONS.SHOW_FILTERS, route.query);
         PS.publish(CONST.ACTIONS.SHOW_NEWS);
         PS.publish(CONST.ACTIONS.SHOW_TEXT_WIDGET);
@@ -59,7 +61,7 @@ function switchPage(route) {
 function handleNewQuery(route) {
 
     //for now products section is the only one responding to queries
-    PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, route.query);
+    PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, route);
 
 }
 

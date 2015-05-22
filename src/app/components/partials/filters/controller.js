@@ -8,8 +8,6 @@ module.exports = filtersController = baseController.extend({
 
     init: function() {
 
-        model.setDefaults();
-
         this._subscriptions = [];
         this.subscribe(CONST.ACTIONS.SHOW_FILTERS, displayFilters);
 
@@ -26,23 +24,44 @@ module.exports = filtersController = baseController.extend({
 
 function displayFilters(query) {
 
+
     // update model from hash
-    for (var n in query) {
-        if (query.hasOwnProperty(n)) {
-            model.set(n, query[n] || true);
+    if (model.isEmpty()) {
+
+        for (var n in query) {
+            if (query.hasOwnProperty(n)) {
+                model.put(n, query[n] || true);
+            }
         }
+
     }
 
     view.render(model.get());
 
+    $(CONST.SELECTORS.FILTERS_GROUP).on('click', function() {
+
+        $(this).toggleClass('filters-group_active').siblings().removeClass('filters-group_active');
+
+    });
+
     $(CONST.SELECTORS.FILTER_ITEM).on('click', function() {
 
-        $(this).toggleClass('checked');
+        var filterKey = $(this).parent().data('filter'),
+            filterValue = $(this).data('filter_value');
 
-        model.set(this.dataset.filter, $(this).hasClass('checked'));
+        if (model.getByKey(filterKey) === filterValue) {
+
+            model.remove(filterKey);
+
+        } else {
+
+            model.put( filterKey, filterValue );
+
+        }
+
+        setTimeout(displayFilters, 1);
 
         filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
-
     });
 
 }
