@@ -55,5 +55,22 @@
       padding 5px
       activeButton()
 
+  &-buttons
+    list-reset()
+    float right
+
+    &__item
+      cursor pointer
+      display inline-block
+      width 100px
+      margin-left 20px
+      padding 5px
+      background white
+      text-align center
+
+      &:hover
+        background $green
+        color white
+
 .selected
   activeButton()

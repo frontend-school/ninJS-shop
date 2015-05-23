@@ -24,26 +24,6 @@
         {{/if}}
     </div>
 
-    <div class="filters-group">
-        <div class="filters-group-wrapper">
-        <span class="filters-group-wrapper__title {{#if offer}} active {{/if}}">Special offers</span>
-
-        <ul class="filters-group-wrapper-list" data-filter="offer">
-            <li class="filters-group-wrapper-list-item {{#iff offer "sale"}} selected {{/iff}}" data-filter_value="sale">
-                on sale
-            </li>
-            <li class="filters-group-wrapper-list-item {{#iff offer "must_have"}} selected {{/iff}}" data-filter_value="must_have">
-                must have
-            </li>
-        </ul>
-        <div class="filters-group-specials">
-        </div>
-        </div>
-
-        {{#if offer}}
-            <div class="filters-group__selected" data-filter="offer" data-filter_value="{{offer}}">  {{offer}}  </div>
-        {{/if}}
-    </div>
 
 
     <div class="filters-group">
@@ -103,3 +83,15 @@
             <div class="filters-group__selected" data-filter="style" data-filter_value="{{style}}">  {{style}}  </div>
         {{/if}}
     </div>
+
+
+
+
+    <ul class="filters-buttons" data-filter="offer">
+        <li class="filters-buttons__item {{#iff offer "sale"}} selected {{/iff}}" data-filter_value="sale">
+            on sale
+        </li
+        ><li class="filters-buttons__item {{#iff offer "must_have"}} selected {{/iff}}" data-filter_value="must_have">
+            must have
+        </li>
+    </ul>

@@ -28,10 +28,7 @@ function displayFilters(query) {
 
         model.reset();
 
-    }
-
-    // update model from hash
-    if (model.isEmpty()) {
+    } else if (model.isEmpty()) {
 
         for (var n in query) {
             if (query.hasOwnProperty(n)) {
@@ -42,31 +39,40 @@ function displayFilters(query) {
 
     view.render(model.get());
 
-    $(CONST.SELECTORS.FILTER_ITEM).on('click', function() {
+    addListeners();
 
-        var filterKey = $(this).parent().data('filter'),
-            filterValue = $(this).data('filter_value');
+}
 
-        if (model.getByKey(filterKey) === filterValue) {
 
-            model.remove(filterKey);
+function addListeners() {
 
-        } else {
+    $(CONST.SELECTORS.FILTER_ITEM).on('click', selectFilter);
+    $(CONST.SELECTORS.FILTERS_SELECTED).on('click', removeFilter);
 
-            model.put( filterKey, filterValue );
+}
 
-        }
 
-        filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
-    });
+function selectFilter() {
 
-    $(CONST.SELECTORS.FILTERS_SELECTED).on('click', function() {
+    var filterKey = $(this).parent().data('filter'),
+        filterValue = $(this).data('filter_value');
 
-        var filterKey = $(this).data('filter');
-
+    if (model.getByKey(filterKey) === filterValue) {
         model.remove(filterKey);
+    } else {
+        model.put( filterKey, filterValue );
+    }
 
-        filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
-    });
+    filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
+}
+
+
+function removeFilter() {
+
+    var filterKey = $(this).data('filter');
+
+    model.remove(filterKey);
+
+    filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
 
 }
