@@ -4,6 +4,7 @@ var router = require('./core/router.js'),
     basket = require('./components/shared/basket/controller.js'),
     layout = require('./components/shared/layout/controller.js'),
     products = require('./components/partials/products/controller.js'),
+    singleProduct = require('./components/partials/single-product/controller.js'),
     filters = require('./components//partials/filters/controller.js'),
     about = require('./components/partials/about/controller.js'),
     textWidget = require('./components/shared/textWidget/controller.js');
@@ -14,7 +15,8 @@ var app,
         shared: [layout, basket, textWidget],
         partials: {
             home: [products, about],
-            products: [products, filters]
+            products: [products, filters],
+            single: [singleProduct]
         }
     },
     activePartials = [];
@@ -46,6 +48,7 @@ function switchPage(route) {
         PS.publish(CONST.ACTIONS.SHOW_FILTERS, route.query);
         PS.publish(CONST.ACTIONS.SHOW_NEWS);
         PS.publish(CONST.ACTIONS.SHOW_TEXT_WIDGET);
+        PS.publish(CONST.ACTIONS.SHOW_SINGLE_PRODUCT);
 
     } else {
 

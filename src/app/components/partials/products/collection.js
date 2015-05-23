@@ -1,8 +1,6 @@
 var baseCollection = require('../../base/collection.js'),
     viewCollection;
 
-
-
 module.exports = baseCollection.extend({
 
     handleQuery: function(query) {
