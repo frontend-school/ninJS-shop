@@ -35,6 +35,12 @@ Model.prototype = {
         }
     },
 
+    put: function(key, value) {
+
+        this._model[key] = value;
+
+    },
+
 
     setDefaults: function() {
         var def = this._defaults;
@@ -49,13 +55,32 @@ Model.prototype = {
     },
 
 
+    remove: function(key) {
+
+        delete this._model[key];
+
+    },
+
+
     get: function() {
         return this._model;
+    },
+
+    getByKey: function(key) {
+        return this._model[key];
     },
 
 
     hasKey: function(key) {
         return this._model.hasOwnProperty(key);
+    },
+
+    isEmpty: function() {
+        return Object.getOwnPropertyNames(this._model).length === 0;
+    },
+
+    reset: function() {
+        this._model = this._defaults || {};
     },
 
 

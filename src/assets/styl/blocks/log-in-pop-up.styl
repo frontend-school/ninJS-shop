@@ -1,0 +1,63 @@
+.log-in {
+  &-popup {
+    background-color: rgba(122, 122, 122, 0.5);
+    width: 100%;
+    min-height: 400%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    &:hover {
+      cursor: pointer;
+    }
+    &-content {
+      margin: 100px auto;
+      width: 300px;
+      height: 150px;
+      padding: 10px;
+      background-color: #c5c5c5;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #000;
+      & .log-in-form {
+        & .name-field .input {
+          border none;
+          width 200px;
+          height 36px;
+          background-color #2E2E2E;
+          padding 0 0 0 15px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px #000;
+          margin 15px 14% 8px 14%;
+          color aqua;
+          font-size: 110%;
+        }
+        & .password-field .input {
+          border none;
+          width 200px;
+          height 36px;
+          background-color #2E2E2E;
+          padding 0 0 0 15px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px #000;
+          margin 8px 14% 8px 14%;
+          color aqua;
+          font-size: 110%;
+        }
+        & .submit-button {
+          &:hover {
+            cursor: pointer;
+          }
+          margin 8px 30% 8px 32%;
+          box-shadow: inset 1px 1px 10px #fff;
+          background-color #2E2E2E;
+          width 100px;
+          height 30px;
+          border-radius 5px;
+          border: none;
+          color: aqua;
+        }
+      }
+    }
+  }
+}

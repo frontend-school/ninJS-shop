@@ -22,7 +22,7 @@ module.exports = productsModule = baseController.extend({
 
 });
 
-function showProducts(query) {
+function showProducts(route) {
 
     if (collection.isEmpty()) {
         var deferred = new Q.defer();
@@ -38,29 +38,43 @@ function showProducts(query) {
         deferred.promise.then(function(data) {
 
             collection.populate(data);
-            renderQueriedProducts(query);
+            renderQueriedProducts(route);
 
         });
 
     } else {
-        renderQueriedProducts(query);
+        renderQueriedProducts(route);
     }
 
 }
 
 
-function renderQueriedProducts(query) {
+function renderQueriedProducts(route) {
 
     view.remove();
 
-    collection.handleQuery(query).forEach(function(model) {
+    var viewCollection = collection.handleQuery(route);
 
-        view.append(model);
+    if (viewCollection.length > 0) {
 
-        $(CONST.SELECTORS.PRODUCTS).find(CONST.SELECTORS.ADD_TO_BASKET).last().on('click', function() {
+        viewCollection.forEach(function(model) {
+
+            view.append(model);
+
+            $(CONST.SELECTORS.PRODUCTS).find(CONST.SELECTORS.ADD_TO_BASKET).last().on('click', function() {
                 productsModule.publish(CONST.ACTIONS.ADD_TO_BASKET, model);
             });
 
-    });
+        });
+
+    } else {
+
+        view.render({
+            nothing_found: true
+        });
+
+    }
+
+
 
 }

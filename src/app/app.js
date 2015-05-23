@@ -7,12 +7,13 @@ var router = require('./core/router.js'),
     singleProduct = require('./components/partials/single-product/controller.js'),
     filters = require('./components//partials/filters/controller.js'),
     about = require('./components/partials/about/controller.js'),
-    textWidget = require('./components/shared/textWidget/controller.js');
+    textWidget = require('./components/shared/textWidget/controller.js'),
+    authorization = require('./components/shared/authorization/controller.js');
 
 var app,
     coreModules = [api, router],
     components = {
-        shared: [layout, basket, textWidget],
+        shared: [layout, basket, textWidget, authorization],
         partials: {
             home: [products, about],
             products: [products, filters],
@@ -43,12 +44,15 @@ function switchPage(route) {
         activePartials = components.partials[ route.page ];
         register( activePartials );
 
+
+
         PS.publish(CONST.ACTIONS.SWITCH_LAYOUT, route.page);
-        PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, route.query);
+        PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, route);
         PS.publish(CONST.ACTIONS.SHOW_FILTERS, route.query);
         PS.publish(CONST.ACTIONS.SHOW_NEWS);
         PS.publish(CONST.ACTIONS.SHOW_TEXT_WIDGET);
         PS.publish(CONST.ACTIONS.SHOW_SINGLE_PRODUCT);
+        PS.publish(CONST.ACTIONS.SWITCH_AUTH, 'unAuth');
 
     } else {
 
@@ -57,11 +61,10 @@ function switchPage(route) {
     }
 }
 
-
 function handleNewQuery(route) {
 
     //for now products section is the only one responding to queries
-    PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, route.query);
+    PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, route);
 
 }
 
