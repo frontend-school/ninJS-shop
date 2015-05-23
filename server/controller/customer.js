@@ -1,23 +1,41 @@
 var User = require('../model/customer'),
     Client = require('../model/client'),
-    jwt = require('jsonwebtoken');
+    clientController = require('../controller/client'),
+    AUTHSERVERMESSAGE = require('../server_messages/auth'),
+    jwt = require('jsonwebtoken'),
+    Q = require('q');
+
+var createUser = exports.createUser = function(user){
+    var deferred = new Q.defer();
+       user.save(function(err, user) {
+           if (err){
+               deferred.reject(err);
+           }
+           else {
+               deferred.resolve(user);
+           }
+       });
+    return deferred.promise;
+};
+
 
 exports.apiLogin = function(req, res){
 
     User.findOne({email: req.body.email, password: req.body.password}, function(err, user) {
         if (err) {
+            console.log(err);
             res.json({
                 type: false,
-                data: "Error occured: " + err
+                message: AUTHSERVERMESSAGE.AUTH.internal_error
             });
         } else {
             if (user) {
-
                 Client.findOne({customerID: user._id,name: 'ninjs-shop'}, function(err, client) {
                     if (err) {
+                        console.log(err);
                         res.json({
                             type: false,
-                            data: "Error occured: " + err
+                            message: AUTHSERVERMESSAGE.AUTH.internal_error
                         });
                     } else {
                         var responseModel = {
@@ -48,15 +66,16 @@ exports.apiLogin = function(req, res){
 exports.apiSignup = function (req, res) {
     User.findOne({email: req.body.email, password: req.body.password}, function(err, user) {
         if (err) {
+            console.log(err);
             res.json({
                 type: false,
-                data: "Error occured: " + err
+                message: AUTHSERVERMESSAGE.AUTH.internal_error
             });
         } else {
             if (user) {
                 res.json({
                     type: false,
-                    data: "User already exists!"
+                    data: AUTHSERVERMESSAGE.AUTH.user_exists
                 });
             } else {
                 var userModel = new User();
@@ -64,7 +83,41 @@ exports.apiSignup = function (req, res) {
                 userModel.password = req.body.password;
                 userModel.name = req.body.name;
 
-                userModel.save(function(err, user) {
+                createUser(userModel).then(function(user){
+                    var newClient = new Client({
+                        name: 'ninjs-shop',
+                        email: user.email,
+                        token: jwt.sign(user, 'secret_key'),  //Secret key must be in env var
+                        customerID : user._id
+                    });
+                    clientController.createClient(newClient)
+                        .then(function(client){
+                            res.json({
+                                type:true,
+                                data: {
+                                    email: user.email,
+                                    customerID : user._id,
+                                    name: user.name
+                                },
+                                token: client.token
+                            });
+                        }.catch(function(err){
+                                console.log(err);
+                                res.json({
+                                    type: false,
+                                    message: AUTHSERVERMESSAGE.AUTH.internal_error
+                                });
+                            })
+
+                    );
+      /*              newClient.save(function(err, client) {
+                        if (err){
+                            throw err;
+                        }
+
+                    });*/
+                });
+               /* userModel.save(function(err, user) {
                     if (err) {
                         throw err;
                     }
@@ -92,8 +145,23 @@ exports.apiSignup = function (req, res) {
                     });
 
 
-                });
+                });*/
             }
         }
     });
+};
+
+exports.ensureAuthorized = function(req, res, next){
+    var bearerToken;
+    var bearerHeader = req.headers.authorization;
+    if (typeof bearerHeader !== 'undefined') {
+        var bearer = bearerHeader.split(" ");
+        bearerToken = bearer[1];
+        var headerToken = new Buffer(bearer[1], 'base64').toString('ascii').split(" ");
+        req.email = headerToken[0];
+        req.token = headerToken[1];
+        next();
+    } else {
+        res.send(403);
+    }
 };

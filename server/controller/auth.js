@@ -159,3 +159,4 @@ var passport = require('passport'),
 
 exports.isFBAuthenticated = passport.authenticate('facebook', { scope : 'email' });
 exports.isBasicAuthenticated = passport.authenticate('basic', { session : false });
+

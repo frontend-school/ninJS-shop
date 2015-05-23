@@ -6,6 +6,7 @@ module.exports = {
         MAIN: '.main',
         ABOUT: '.about-wrapper',
         PRODUCTS: '.products-container',
+        SINGLE_PRODUCT: '.product-page-wrapper',
         ADD_TO_BASKET: '.action-buttons__item_buy',
         BASKET: '.basket',
         BASKET_CONTAINER: '.basket-container',
@@ -36,9 +37,9 @@ module.exports = {
         PRODUCTS_RECEIVED: 'app/API:products-received',
         SHOW_PRODUCTS: 'app/layout/run-products',
 
-        GET_PRODUCT: 'app/get-product',
+        GET_SINGLE_PRODUCT: 'app/get-product',
         PRODUCT_RECEIVED: 'app/API:product-received',
-        SHOW_PRODUCT: 'app/layout/run-product',
+        SHOW_SINGLE_PRODUCT: 'app/layout/run-product',
 
         ADD_TO_BASKET: 'app/products:add-to-basket',
 

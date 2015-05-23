@@ -3,8 +3,6 @@ var baseCollection = require('../../base/collection.js'),
     filters,
     query;
 
-
-
 module.exports = baseCollection.extend({
 
     handleQuery: function(route) {
