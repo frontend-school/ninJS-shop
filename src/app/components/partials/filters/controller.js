@@ -24,6 +24,11 @@ module.exports = filtersController = baseController.extend({
 
 function displayFilters(query) {
 
+    if (query === undefined) {
+
+        model.reset();
+
+    }
 
     // update model from hash
     if (model.isEmpty()) {
@@ -33,16 +38,9 @@ function displayFilters(query) {
                 model.put(n, query[n] || true);
             }
         }
-
     }
 
     view.render(model.get());
-
-    $(CONST.SELECTORS.FILTERS_GROUP).on('click', function() {
-
-        $(this).toggleClass('filters-group_active').siblings().removeClass('filters-group_active');
-
-    });
 
     $(CONST.SELECTORS.FILTER_ITEM).on('click', function() {
 
@@ -59,7 +57,14 @@ function displayFilters(query) {
 
         }
 
-        setTimeout(displayFilters, 1);
+        filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
+    });
+
+    $(CONST.SELECTORS.FILTERS_SELECTED).on('click', function() {
+
+        var filterKey = $(this).data('filter');
+
+        model.remove(filterKey);
 
         filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
     });

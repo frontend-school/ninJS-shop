@@ -16,9 +16,9 @@ module.exports = {
         BASKET_TOGGLE: '.basket-toggle',
 
         FILTERS: '.filters',
-        FILTERS_GROUP: '.filters-group',
-        FILTER_ITEM: '.filters-group-list-item',
-        FILTERS_SELECTED: '.filters-selected',
+        FILTERS_GROUP: '.filters-group-wrapper',
+        FILTER_ITEM: '.filters-group-wrapper-list-item',
+        FILTERS_SELECTED: '.filters-group__selected',
 
         TEXT_WIDGET: '.footer-widget-panel-widget-text',
 

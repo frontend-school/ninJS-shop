@@ -60,7 +60,7 @@ function switchPage(route) {
 
 function handleNewQuery(route) {
 
-    //for now products section is the only one responding to queries
+    PS.publish(CONST.ACTIONS.SHOW_FILTERS, route.query);
     PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, route);
 
 }
