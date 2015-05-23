@@ -20,12 +20,9 @@ module.exports = baseCollection.extend({
                     } else {
                         filters[n]( query[n] );
                     }
-
                 }
             }
         }
-
-        viewCollection =  viewCollection.slice(0, (route.page === 'home') ? 6 : 12);
 
         return viewCollection;
     }

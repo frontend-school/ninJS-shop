@@ -24,12 +24,9 @@ module.exports = filtersController = baseController.extend({
 
 function displayFilters(query) {
 
-    if (query === undefined) {
+    model.reset();
 
-        model.reset();
-
-    } else if (model.isEmpty()) {
-
+    if (query !== undefined) {
         for (var n in query) {
             if (query.hasOwnProperty(n)) {
                 model.put(n, query[n] || true);
@@ -63,6 +60,8 @@ function selectFilter() {
         model.put( filterKey, filterValue );
     }
 
+    model.remove('page');
+
     filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
 }
 
@@ -72,6 +71,7 @@ function removeFilter() {
     var filterKey = $(this).data('filter');
 
     model.remove(filterKey);
+    model.remove('page');
 
     filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
 

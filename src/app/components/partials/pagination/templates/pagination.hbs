@@ -1,0 +1,8 @@
+
+    <span>Page</span>
+    {{#each data}}
+        <span class="pagination-page {{#if this}} pagination-page_active {{/if}}" data-page="{{@key}}">
+            {{@key}}
+        </span>
+    {{/each}}
+

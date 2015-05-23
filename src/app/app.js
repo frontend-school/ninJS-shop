@@ -4,6 +4,7 @@ var router = require('./core/router.js'),
     basket = require('./components/shared/basket/controller.js'),
     layout = require('./components/shared/layout/controller.js'),
     products = require('./components/partials/products/controller.js'),
+    pagination = require('./components/partials/pagination/controller.js'),
     singleProduct = require('./components/partials/single-product/controller.js'),
     filters = require('./components//partials/filters/controller.js'),
     about = require('./components/partials/about/controller.js'),
@@ -16,7 +17,7 @@ var app,
         shared: [layout, basket, textWidget, authorization],
         partials: {
             home: [products, about],
-            products: [products, filters],
+            products: [products, filters, pagination],
             single: [singleProduct]
         }
     },
