@@ -36,7 +36,7 @@ module.exports = {
         PRODUCTS_RECEIVED: 'app/API:products-received',
         SHOW_PRODUCTS: 'app/layout/run-products',
 
-        GET_PRODUCT: 'app/get-product',
+        GET_PRODUCT: 'app/get-product', //duplicate
         PRODUCT_RECEIVED: 'app/API:product-received',
         SHOW_PRODUCT: 'app/layout/run-product',
 
@@ -53,6 +53,10 @@ module.exports = {
         TEXT_WIDGET_RECEIVED: 'app/API:text-widget-received',
         SHOW_TEXT_WIDGET: 'app/show-text-widget',
 
-        SWITCH_AUTH: 'app/switch-auth'
+        SWITCH_AUTH: 'app/switch-auth',
+
+        GET_SLIDES: 'app/get-slides',
+        SLIDES_RECEIVED: 'app/API:slides-received',
+        SHOW_SLIDES: 'app/run-slides'
     }
 };

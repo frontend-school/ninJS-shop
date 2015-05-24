@@ -9,6 +9,7 @@ module.exports = api = PS.extend({
         this.subscribe(CONST.ACTIONS.GET_NEWS, getNews);
         this.subscribe(CONST.ACTIONS.GET_PRODUCTS, getProducts);
         this.subscribe(CONST.ACTIONS.GET_TEXT_WIDGET, getTextWidgetData);
+        this.subscribe(CONST.ACTIONS.GET_SLIDES, getHeroUnitProducts);
     }
 
 });
@@ -49,20 +50,25 @@ function getTextWidgetData() {
 }
 
 
-function getHeroUnitProducts(slideId) {
-    var content = _ajaxGet('./data/slides.json');
+function getHeroUnitProducts() {
+    console.log('getHeroUnitProducts');
+    _ajaxGet('../data/slides.json')
+        .then(function (slides) {
+            api.publish(CONST.ACTIONS.SLIDES_RECEIVED, slides);
+        });
 
-    var slideFilter = function () {
-        for (var i = 0; i < content.length; i++) {
-            if (content[i].id == slideId) {
-                return content[i];
-            }
-        }
-    };
+    // var content = _ajaxGet('./data/slides.json');
 
-    api.publish(CONST.ACTIONS.GET_SLIDE, slideFilter());
+    // var slideFilter = function () {
+    //     for (var i = 0; i < content.length; i++) {
+    //         if (content[i].id == slideId) {
+    //             return content[i];
+    //         }
+    //     }
+    // };
+
+    // api.publish(CONST.ACTIONS.GET_SLIDE, slides);
 }
-
 
 function _ajaxGet(path) {
     var deferred = new Q.defer();

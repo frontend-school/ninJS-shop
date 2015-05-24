@@ -2,7 +2,6 @@ var baseView = require('../../base/view.js'),
     home = fs.readFileSync(__dirname + '/src/app/components/shared/layout/templates/home_page.hbs', {encoding: 'utf-8'}),
     products = fs.readFileSync(__dirname + '/src/app/components/shared/layout/templates/products_page.hbs', {encoding: 'utf-8'});
 
-
 module.exports = baseView.extend({
 
     parent: CONST.SELECTORS.MAIN,
