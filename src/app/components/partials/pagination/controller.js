@@ -35,7 +35,7 @@ function showPagination(data) {
         hbsData[i] = Number(query.page) === i;
     }
 
-    if (number === 1) {
+    if (number < 2) {
         viewPagination.remove();
     } else {
         viewPagination.render({

@@ -1,8 +1,9 @@
 var productsModule,
     collection = require('./collection.js'),
-    viewProducts = require('./view-products.js'),
+    view = require('./view.js'),
     baseController = require('../../base/controller.js'),
-    Q = require('q');
+    Q = require('q'),
+    storage = require('../../../core/localStr.js');
 
 module.exports = productsModule = baseController.extend({
 
@@ -16,73 +17,71 @@ module.exports = productsModule = baseController.extend({
     remove: function() {
 
         this.unsubscribeThis();
-        viewProducts.remove();
+        view.remove();
 
     }
 
 });
 
+
+
 function showProducts(route) {
 
-    if (collection.isEmpty()) {
-        var deferred = new Q.defer();
+    updateCollection().then(function() {
 
-        productsModule.publish(CONST.ACTIONS.GET_PRODUCTS);
+        queryCollection(route);
+        renderProducts();
 
-        productsModule.subscribe(CONST.ACTIONS.PRODUCTS_RECEIVED, function(data) {
-
-            deferred.resolve(data);
-
-        });
-
-        deferred.promise.then(function(data) {
-
-            collection.populate(data);
-            renderQueriedProducts(route);
-
-        });
-
-    } else {
-        renderQueriedProducts(route);
-    }
+    });
 
 }
 
 
-function renderQueriedProducts(route) {
+function updateCollection() {
 
-    viewProducts.remove();
+    var deferred = new Q.defer();
 
-    var viewCollection = collection.handleQuery(route);
+    if ( !storage.isKey('products') ) {
 
-    if (viewCollection.length) {
+        productsModule.publish(CONST.ACTIONS.GET_PRODUCTS);
+        productsModule.subscribe(CONST.ACTIONS.PRODUCTS_RECEIVED, function(data) {
 
-        var numberOfPages = Math.ceil(viewCollection.length / CONST.PRODUCTS_PER_PAGE);
+            storage.saveObj('products', data);
+            collection.populate(storage.retrieveObj('products'));
 
-        productsModule.publish(CONST.ACTIONS.SHOW_PAGINATION, {
-            query: route.query,
-            numberOfPages: numberOfPages
+            deferred.resolve();
         });
 
-        if (route.query && route.query.page) {
+    } else {
 
-            viewCollection =  viewCollection.slice(
-                CONST.PRODUCTS_PER_PAGE * (route.query.page - 1),
-                CONST.PRODUCTS_PER_PAGE * (route.query.page)
-            );
+        collection.populate(storage.retrieveObj('products'));
+        deferred.resolve();
+    }
 
-        } else {
+    return deferred.promise;
+}
 
-            viewCollection =  viewCollection.slice(
-                0,
-                (route.page === 'home') ? 6 : CONST.PRODUCTS_PER_PAGE
-            );
 
-        }
+function queryCollection(route) {
 
-        viewCollection.forEach(function(model) {
+    var numberOfPages = collection.handleQuery(route);
 
-            viewProducts.append(model);
+    productsModule.publish(CONST.ACTIONS.SHOW_PAGINATION, {
+        query: route.query,
+        numberOfPages: numberOfPages
+    });
+}
+
+
+function renderProducts() {
+
+    view.remove();
+
+    if ( collection.length() ) {
+
+        collection.get().forEach(function(model) {
+
+            view.append(model);
 
             $(CONST.SELECTORS.PRODUCTS).find(CONST.SELECTORS.ADD_TO_BASKET).last().on('click', function() {
                 productsModule.publish(CONST.ACTIONS.ADD_TO_BASKET, model);
@@ -92,9 +91,8 @@ function renderQueriedProducts(route) {
 
     } else {
 
-        viewProducts.render({
+        view.render({
             nothing_found: true
         });
-
     }
 }

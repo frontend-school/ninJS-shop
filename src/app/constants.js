@@ -62,5 +62,5 @@ module.exports = {
         SWITCH_AUTH: 'app/switch-auth'
     },
 
-    PRODUCTS_PER_PAGE: 12
+    PRODUCTS_PER_PAGE: 3
 };
