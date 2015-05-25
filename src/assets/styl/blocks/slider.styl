@@ -1,18 +1,21 @@
-.slider {
-  background-image: url("../img/top_unit/bg.png");
-  background-size: 100% 100%;
-  width: 960px;
-  overflow: hidden;
-
-  @media screen and (max-width: 620px) {
+.background {
+	background-image: url("../img/top_unit/bg.png");
+	background-size: 100% 100%;
+	
+	@media screen and (max-width: 620px) {
 	display: none;
   }
+	
+}
+
+.slider {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
 
   &-wrapper {
-  	height: 540px;
     width: 9999px;
-    // margin: 0 auto;
-    transition: left 400ms linear;
+    transition: left 600ms linear;
     position: relative;
 
     &:after {
@@ -26,7 +29,7 @@
 .slide {
 	float: left;
 	width: 960px;
-	height: 540px;
+	height: 460px;
 	position: relative;
 	overflow: hidden;
 }
@@ -102,10 +105,6 @@
 			box-shadow: 0 0 1px 1px #57c5a0
 		}
 	}
-}
-
-.active {
-	box-shadow: 0 0 1px 1px #57c5a0;
 }	
 			
 @media screen and (max-width: 768px) {

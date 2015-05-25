@@ -17,42 +17,41 @@ module.exports = layoutModule = baseController.extend({
             slider = new Slider( ".slider" );
 
         });
-
     }
-
 });
 
 function showSlider() {
 	console.log('show slider');
 	layoutModule.publish(CONST.ACTIONS.GET_SLIDES);
 	layoutModule.subscribe(CONST.ACTIONS.SLIDES_RECEIVED, function(slides){
-		console.log(slides);
-		var json = JSON.parse(slides),
-			source = $('.slider-wrapper').html(),
-			template = Handlebars.compile(source),
-			html = template(slides);
-		console.log(JSON.parse(slides));
+		// console.log(slides);
+		var json = JSON.parse(slides);
+			// source = $('.slider-wrapper').html(),
+			// template = Handlebars.compile(source),
+			// html = template(slides);
+		// console.log(JSON.parse(slides));
 		view.append(html);
 	});
 }
 
-function Slider() {
+function Slider(element) {
+	this.el = document.querySelector(element);
 	this.init();
-}	
+}
 
 Slider.prototype = {
 	init: function() {
-		this.links = document.querySelectorAll( "#menu-nav li" );
-		this.wrapper = document.querySelector( ".slider-wrapper" );
+		this.links = document.querySelectorAll( "#js-menu li");
+		this.wrapper = document.querySelector( ".slider-wrapper");
 		this.setLinks();
 	},
+
 	setLinks: function() {
-	
 		for( var i = 0; i < this.links.length; ++i ) {
 			var link = this.links[i];
 			this.slide(link);
 		}
-		setFirstSlide(this.links[0]);
+		this.setFirstSlide(this.links[0]);
 	},
 
 	setFirstSlide: function(slide){
@@ -74,7 +73,7 @@ Slider.prototype = {
 	// 	caption.classList.add( "visible" );	
 	// },
 	
-	slide: function( element ) {
+	slide: function(element) {
 		var self = this;
 		element.addEventListener( "click", function() {
 			var button = this,
@@ -82,21 +81,19 @@ Slider.prototype = {
 				currentSlide = self.el.querySelector( ".slide:nth-child(" + index + ")" );
 			self.setCurrentLink(button);
 			self.wrapper.style.left = "-" + currentSlide.offsetLeft + "px";
-			// self.animate( currentSlide );
-			
+			// self.animate( currentSlide );		
 		}, false);
 	},
 	setCurrentLink: function(link) {
 		var parent = link.parentNode,
 			buttons = parent.querySelectorAll( "li" );
-		
-		link.classList.add("active");
-		
+		console.log(buttons);
+		link.classList.add("current");
 		for( var j = 0; j < buttons.length; ++j ) {
 			var cur = buttons[j];
 			if( cur !== link ) {
-				cur.classList.remove("active");
+				cur.classList.remove("current");
 			}
 		}
-	}	
+	}
 };
