@@ -12,6 +12,7 @@ module.exports = router = PS.extend({
     init: function() {
 
         this.subscribe(CONST.ACTIONS.FILTER_CHANGED, switchQuery);
+        this.subscribe(CONST.ACTIONS.SWITCH_TO_SINGLE_PRODUCT, switchToSingle);
 
         crossroads.addRoute('/{page}/:?query:', handleRouteChange);
 
@@ -41,6 +42,16 @@ function switchQuery(filter) {
     hasher.setHash(_activePage + matchRoute.interpolate({
         query: filter
     }));
+
+}
+
+function switchToSingle(id) {
+
+    hasher.setHash('single' + matchRoute.interpolate({
+            query: {
+                id: id
+            }
+        }));
 
 }
 
