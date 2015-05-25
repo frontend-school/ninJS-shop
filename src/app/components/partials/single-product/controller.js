@@ -27,8 +27,11 @@ function getProduct(query) {
 
 function renderProduct(product) {
     view.render(product);
-    console.log(product);
     $('.product-page-gallery-big-image').zoom();
+
+    $('.product-page-actions__buy').on('click', function() {
+        singleProductModule.publish(CONST.ACTIONS.ADD_TO_BASKET, product);
+    });
 
 }
 
