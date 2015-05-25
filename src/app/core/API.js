@@ -24,13 +24,9 @@ function getProducts() {
 
 
 function getProductById(productId) {
-    _ajaxGet('./api/products/' + productId)
-        .then(function (products) {
-            var filteredProduct = products.filter(function (product) {
-                return product.id == productId;
-            });
-
-            api.publish(CONST.ACTIONS.SINGLE_PRODUCT_RECEIVED, filteredProduct);
+    _ajaxGet('/api/product/' + productId)
+        .then(function (product) {
+            api.publish(CONST.ACTIONS.SINGLE_PRODUCT_RECEIVED, product);
         });
 }
 

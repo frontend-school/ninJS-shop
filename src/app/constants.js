@@ -6,6 +6,7 @@ module.exports = {
         MAIN: '.main',
         ABOUT: '.about-wrapper',
         PRODUCTS: '.products-container',
+        PRODUCT_ITEM: '.product-item',
         SINGLE_PRODUCT: '.product-page-wrapper',
         ADD_TO_BASKET: '.action-buttons__item_buy',
         BASKET: '.basket',
@@ -33,6 +34,7 @@ module.exports = {
         ROUTE_CHANGED: 'app/router:route-changed',
         SWITCH_PAGE: 'app/router:switch-page.modules',
         NEW_QUERY: 'app/router:new-query',
+        SWITCH_TO_SINGLE_PRODUCT: 'app/products:open-single-product',
 
         SWITCH_LAYOUT: 'app/layout/switch-page.components-layout',
 

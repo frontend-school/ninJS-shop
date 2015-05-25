@@ -85,6 +85,13 @@ function renderProducts() {
 
             $(CONST.SELECTORS.PRODUCTS).find(CONST.SELECTORS.ADD_TO_BASKET).last().on('click', function() {
                 productsModule.publish(CONST.ACTIONS.ADD_TO_BASKET, model);
+
+                event.stopPropagation();
+            });
+
+            $(CONST.SELECTORS.PRODUCTS).find(CONST.SELECTORS.PRODUCT_ITEM).last().on('click', function() {
+
+                productsModule.publish(CONST.ACTIONS.SWITCH_TO_SINGLE_PRODUCT, model._id);
             });
 
         });
