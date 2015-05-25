@@ -49,6 +49,9 @@ router.route('/api/products')
     .post(productController.postProducts)
     .get(productController.getProducts);
 
+router.route('/api/product/:id')
+    .get(productController.getProductById);
+
 //
 app.get('/', function(req, res) {
 

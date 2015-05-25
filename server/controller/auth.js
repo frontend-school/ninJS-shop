@@ -27,7 +27,7 @@ var passport = require('passport'),
             // pull in our app id and secret from our auth.js file
             clientID        : CONFIG.FB_AUTH.FB_API_KEY,
             clientSecret    : CONFIG.FB_AUTH.FB_API_SECRET,
-            callbackURL     : CONFIG.FB_AUTH.FB_CALLBACK_URL
+            callbackURL     : CONFIG.FB_AUTH.FB_CALLBACK_URL,
         },
 
         // facebook will send back the token and profile
