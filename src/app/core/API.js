@@ -24,7 +24,7 @@ function getProducts() {
 
 
 function getProductById(productId) {
-    _ajaxGet('./data/products.json')
+    _ajaxGet('./api/products/' + productId)
         .then(function (products) {
             var filteredProduct = products.filter(function (product) {
                 return product.id == productId;

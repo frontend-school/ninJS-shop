@@ -18,8 +18,6 @@
   "devDependencies": {
     "normalize.css": "~3.0.3",
     "zepto": "~1.1.6"
-  },
-  "dependencies": {
     "jquery-zoom": "~1.7.14"
   }
 }
