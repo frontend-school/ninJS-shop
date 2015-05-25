@@ -9,6 +9,18 @@ list-reset()
   padding 0
   line-height normal
 
+activeButton()
+  background $green
+  color white
+
+  &:hover
+    background: $grey2
+
+    &:after
+      content "x"
+      position absolute
+      right 5px
+
 ellipsys($font-size,$line-height,$lines-to-show){
   // display: block; /* Fallback for non-webkit */
   display: -webkit-box;

@@ -24,44 +24,55 @@ module.exports = filtersController = baseController.extend({
 
 function displayFilters(query) {
 
+    model.reset();
 
-    // update model from hash
-    if (model.isEmpty()) {
-
+    if (query !== undefined) {
         for (var n in query) {
             if (query.hasOwnProperty(n)) {
                 model.put(n, query[n] || true);
             }
         }
-
     }
 
     view.render(model.get());
 
-    $(CONST.SELECTORS.FILTERS_GROUP).on('click', function() {
+    addListeners();
 
-        $(this).toggleClass('filters-group_active').siblings().removeClass('filters-group_active');
+}
 
-    });
 
-    $(CONST.SELECTORS.FILTER_ITEM).on('click', function() {
+function addListeners() {
 
-        var filterKey = $(this).parent().data('filter'),
-            filterValue = $(this).data('filter_value');
+    $(CONST.SELECTORS.FILTER_ITEM).on('click', selectFilter);
+    $(CONST.SELECTORS.FILTERS_SELECTED).on('click', removeFilter);
 
-        if (model.getByKey(filterKey) === filterValue) {
+}
 
-            model.remove(filterKey);
 
-        } else {
+function selectFilter() {
 
-            model.put( filterKey, filterValue );
+    var filterKey = $(this).parent().data('filter'),
+        filterValue = $(this).data('filter_value');
 
-        }
+    if (model.getByKey(filterKey) === filterValue) {
+        model.remove(filterKey);
+    } else {
+        model.put( filterKey, filterValue );
+    }
 
-        setTimeout(displayFilters, 1);
+    model.remove('page');
 
-        filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
-    });
+    filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
+}
+
+
+function removeFilter() {
+
+    var filterKey = $(this).data('filter');
+
+    model.remove(filterKey);
+    model.remove('page');
+
+    filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
 
 }

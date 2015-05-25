@@ -8,6 +8,7 @@ module.exports = api = PS.extend({
 
         this.subscribe(CONST.ACTIONS.GET_NEWS, getNews);
         this.subscribe(CONST.ACTIONS.GET_PRODUCTS, getProducts);
+        this.subscribe(CONST.ACTIONS.GET_SINGLE_PRODUCT, getProductById);
         this.subscribe(CONST.ACTIONS.GET_TEXT_WIDGET, getTextWidgetData);
         this.subscribe(CONST.ACTIONS.GET_SLIDES, getHeroUnitProducts);
     }
@@ -24,13 +25,9 @@ function getProducts() {
 
 
 function getProductById(productId) {
-    _ajaxGet('./data/products.json')
-        .then(function (products) {
-            var filteredProduct = products.filter(function (product) {
-                return product.id == productId;
-            });
-
-            api.publish(CONST.ACTIONS.PRODUCT_RECEIVED, filteredProduct);
+    _ajaxGet('/api/product/' + productId)
+        .then(function (product) {
+            api.publish(CONST.ACTIONS.SINGLE_PRODUCT_RECEIVED, product);
         });
 }
 
