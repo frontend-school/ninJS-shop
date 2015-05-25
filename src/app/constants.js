@@ -17,9 +17,12 @@ module.exports = {
         BASKET_TOGGLE: '.basket-toggle',
 
         FILTERS: '.filters',
-        FILTERS_GROUP: '.filters-group',
-        FILTER_ITEM: '.filters-group-list-item',
-        FILTERS_SELECTED: '.filters-selected',
+        FILTERS_GROUP: '.filters-group-wrapper',
+        FILTER_ITEM: '.filters-group-wrapper-list-item, .filters-buttons__item',
+        FILTERS_SELECTED: '.filters-group__selected',
+
+        PAGINATION: '.pagination',
+        PAGINATION_PAGE: '.pagination-page',
 
         TEXT_WIDGET: '.footer-widget-panel-widget-text',
 
@@ -36,6 +39,8 @@ module.exports = {
         GET_PRODUCTS: 'app/get-products',
         PRODUCTS_RECEIVED: 'app/API:products-received',
         SHOW_PRODUCTS: 'app/layout/run-products',
+
+        SHOW_PAGINATION: 'app/products:show-pagination',
 
         GET_SINGLE_PRODUCT: 'app/get-product',
         PRODUCT_RECEIVED: 'app/API:product-received',
@@ -55,5 +60,7 @@ module.exports = {
         SHOW_TEXT_WIDGET: 'app/show-text-widget',
 
         SWITCH_AUTH: 'app/switch-auth'
-    }
+    },
+
+    PRODUCTS_PER_PAGE: 3
 };

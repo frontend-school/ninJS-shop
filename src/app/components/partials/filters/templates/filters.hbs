@@ -1,52 +1,55 @@
 
 
     <div class="filters-group">
-        <span class="filters-group__title {{#if sort}} active {{/if}}" >Sort by</span>
-
-
-        <ul class="filters-group-list" data-filter="sort">
-            <li class="filters-group-list-item {{#iff sort "price_asc"}} selected {{/iff}}" data-filter_value="price_asc">
+        <div class="filters-group-wrapper">
+            
+        <span class="filters-group-wrapper__title {{#if sort}} active {{/if}}" >Sort by</span>
+            
+        <ul class="filters-group-wrapper-list" data-filter="sort">
+            <li class="filters-group-wrapper-list-item {{#iff sort "price_asc"}} selected {{/iff}}" data-filter_value="price_asc">
                 price: lower first
             </li>
-            <li class="filters-group-list-item  {{#iff sort "price_des"}} selected {{/iff}}" data-filter_value="price_des">
+            <li class="filters-group-wrapper-list-item  {{#iff sort "price_des"}} selected {{/iff}}" data-filter_value="price_des">
                 price: higher first
             </li>
         </ul>
-    </div>
-
-    <div class="filters-group">
-        <span class="filters-group__title {{#if offer}} active {{/if}}">Special offers</span>
-
-        <ul class="filters-group-list" data-filter="offer">
-            <li class="filters-group-list-item {{#iff offer "sale"}} selected {{/iff}}" data-filter_value="sale">
-                on sale
-            </li>
-            <li class="filters-group-list-item {{#iff offer "must_have"}} selected {{/iff}}" data-filter_value="must_have">
-                must have
-            </li>
-        </ul>
-        <div class="filters-group-specials">
+            
         </div>
+
+        {{#if sort}}
+            <div class="filters-group__selected" data-filter="sort" data-filter_value="{{sort}}">
+                {{#iff sort "price_asc"}} price: lower first {{/iff}}
+                {{#iff sort "price_des"}} price: higher first {{/iff}}
+            </div>
+        {{/if}}
     </div>
 
 
-    <div class="filters-group">
-        <span class="filters-group__title {{#if color}} active {{/if}}">Color</span>
 
-        <ul class="filters-group-list" data-filter="color">
-            <li class="filters-group-list-item {{#iff color "beige"}} selected {{/iff}}" data-filter_value="beige">
+    <div class="filters-group">
+        <div class="filters-group-wrapper">
+        <span class="filters-group-wrapper__title {{#if color}} active {{/if}}">Color</span>
+
+        <ul class="filters-group-wrapper-list" data-filter="color">
+            <li class="filters-group-wrapper-list-item {{#iff color "beige"}} selected {{/iff}}" data-filter_value="beige">
                 Beige
             </li>
-            <li class="filters-group-list-item {{#iff color "black"}} selected {{/iff}}" data-filter_value="black">
+            <li class="filters-group-wrapper-list-item {{#iff color "black"}} selected {{/iff}}" data-filter_value="black">
                 Black
             </li>
-            <li class="filters-group-list-item {{#iff color "pink"}} selected {{/iff}}" data-filter_value="pink">
+            <li class="filters-group-wrapper-list-item {{#iff color "pink"}} selected {{/iff}}" data-filter_value="pink">
                 Pink
             </li>
-            <li class="filters-group-list-item {{#iff color "orange"}} selected {{/iff}}" data-filter_value="orange">
+            <li class="filters-group-wrapper-list-item {{#iff color "orange"}} selected {{/iff}}" data-filter_value="orange">
                 Orange
             </li>
         </ul>
+            
+        </div>
+
+        {{#if color}}
+            <div class="filters-group__selected" data-filter="color" data-filter_value="{{color}}">  {{color}}  </div>
+        {{/if}}
     </div>
 
 
@@ -54,23 +57,41 @@
 
 
     <div class="filters-group">
-        <span class="filters-group__title {{#if style}} active {{/if}}">Style</span>
+        <div class="filters-group-wrapper">
+        <div class="filters-group-wrapper__title {{#if style}} active {{/if}}">Style</div>
 
-        <ul class="filters-group-list" data-filter="style">
-            <li class="filters-group-list-item {{#iff style "ballet_flats"}} selected {{/iff}}" data-filter_value="ballet_flats">
+        <ul class="filters-group-wrapper-list" data-filter="style">
+            <li class="filters-group-wrapper-list-item {{#iff style "ballet_flats"}} selected {{/iff}}" data-filter_value="Ballet Flats">
                 Ballet Flats
             </li>
-            <li class="filters-group-list-item {{#iff style "mary_jane"}} selected {{/iff}}" data-filter_value="mary_jane">
+            <li class="filters-group-wrapper-list-item {{#iff style "mary_jane"}} selected {{/iff}}" data-filter_value="mary_jane">
                 Mary Jane
             </li>
-            <li class="filters-group-list-item {{#iff style "pumps"}} selected {{/iff}}" data-filter_value="pumps">
+            <li class="filters-group-wrapper-list-item {{#iff style "pumps"}} selected {{/iff}}" data-filter_value="pumps">
                 Pumps
             </li>
-            <li class="filters-group-list-item {{#iff style "sandals"}} selected {{/iff}}" data-filter_value="sandals">
+            <li class="filters-group-wrapper-list-item {{#iff style "sandals"}} selected {{/iff}}" data-filter_value="sandals">
                 Sandal
             </li>
-            <li class="filters-group-list-item {{#iff style "slides"}} selected {{/iff}}" data-filter_value="slides">
+            <li class="filters-group-wrapper-list-item {{#iff style "slides"}} selected {{/iff}}" data-filter_value="slides">
                 Slide
             </li>
         </ul>
+        </div>
+
+        {{#if style}}
+            <div class="filters-group__selected" data-filter="style" data-filter_value="{{style}}">  {{style}}  </div>
+        {{/if}}
     </div>
+
+
+
+
+    <ul class="filters-buttons" data-filter="offer">
+        <li class="filters-buttons__item {{#iff offer "sale"}} selected {{/iff}}" data-filter_value="sale">
+            on sale
+        </li
+        ><li class="filters-buttons__item {{#iff offer "must_have"}} selected {{/iff}}" data-filter_value="must_have">
+            must have
+        </li>
+    </ul>
