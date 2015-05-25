@@ -22,5 +22,6 @@ module.exports = productModule = baseController.extend({
 
 function showProduct(query) {
     view.render();
+    $('.product-page-gallery-big-image').zoom();
 }
 

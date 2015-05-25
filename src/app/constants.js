@@ -43,7 +43,7 @@ module.exports = {
         SHOW_PAGINATION: 'app/products:show-pagination',
 
         GET_SINGLE_PRODUCT: 'app/get-product',
-        PRODUCT_RECEIVED: 'app/API:product-received',
+        SINGLE_PRODUCT_RECEIVED: 'app/API:product-received',
         SHOW_SINGLE_PRODUCT: 'app/layout/run-product',
 
         ADD_TO_BASKET: 'app/products:add-to-basket',

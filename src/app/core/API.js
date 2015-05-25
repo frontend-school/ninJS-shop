@@ -8,6 +8,7 @@ module.exports = api = PS.extend({
 
         this.subscribe(CONST.ACTIONS.GET_NEWS, getNews);
         this.subscribe(CONST.ACTIONS.GET_PRODUCTS, getProducts);
+        this.subscribe(CONST.ACTIONS.GET_SINGLE_PRODUCT, getProductById);
         this.subscribe(CONST.ACTIONS.GET_TEXT_WIDGET, getTextWidgetData);
     }
 
@@ -29,7 +30,7 @@ function getProductById(productId) {
                 return product.id == productId;
             });
 
-            api.publish(CONST.ACTIONS.PRODUCT_RECEIVED, filteredProduct);
+            api.publish(CONST.ACTIONS.SINGLE_PRODUCT_RECEIVED, filteredProduct);
         });
 }
 
