@@ -47,7 +47,7 @@ function switchPage(route) {
         PS.publish(CONST.ACTIONS.SHOW_FILTERS, route.query);
         PS.publish(CONST.ACTIONS.SHOW_NEWS);
         PS.publish(CONST.ACTIONS.SHOW_TEXT_WIDGET);
-        PS.publish(CONST.ACTIONS.SWITCH_AUTH, 'unAuth');
+        PS.publish(CONST.ACTIONS.SHOW_AUTH);
 
     } else {
 

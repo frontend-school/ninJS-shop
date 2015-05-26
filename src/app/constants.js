@@ -21,7 +21,8 @@ module.exports = {
         TEXT_WIDGET: '.footer-widget-panel-widget-text',
 
         POP_UP_PARENT: '.header-auth',
-        LOG_IN_BUTTON: '.header-auth__link'
+        LOG_IN_BUTTON: '.header-auth__link',
+        OUTER_LOGIN: '*'
     },
     ACTIONS: {
         ROUTE_CHANGED: 'app/router:route-changed',
@@ -51,6 +52,6 @@ module.exports = {
         TEXT_WIDGET_RECEIVED: 'app/API:text-widget-received',
         SHOW_TEXT_WIDGET: 'app/show-text-widget',
 
-        SWITCH_AUTH: 'app/switch-auth'
+        SHOW_AUTH: 'app/show-auth'
     }
 };
