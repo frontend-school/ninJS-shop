@@ -8,8 +8,6 @@ module.exports = filtersController = baseController.extend({
 
     init: function() {
 
-        model.setDefaults();
-
         this._subscriptions = [];
         this.subscribe(CONST.ACTIONS.SHOW_FILTERS, displayFilters);
 
@@ -26,23 +24,55 @@ module.exports = filtersController = baseController.extend({
 
 function displayFilters(query) {
 
-    // update model from hash
-    for (var n in query) {
-        if (query.hasOwnProperty(n)) {
-            model.set(n, query[n] || true);
+    model.reset();
+
+    if (query !== undefined) {
+        for (var n in query) {
+            if (query.hasOwnProperty(n)) {
+                model.put(n, query[n] || true);
+            }
         }
     }
 
     view.render(model.get());
 
-    $(CONST.SELECTORS.FILTER_ITEM).on('click', function() {
+    addListeners();
 
-        $(this).toggleClass('checked');
+}
 
-        model.set(this.dataset.filter, $(this).hasClass('checked'));
 
-        filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
+function addListeners() {
 
-    });
+    $(CONST.SELECTORS.FILTER_ITEM).on('click', selectFilter);
+    $(CONST.SELECTORS.FILTERS_SELECTED).on('click', removeFilter);
+
+}
+
+
+function selectFilter() {
+
+    var filterKey = $(this).parent().data('filter'),
+        filterValue = $(this).data('filter_value');
+
+    if (model.getByKey(filterKey) === filterValue) {
+        model.remove(filterKey);
+    } else {
+        model.put( filterKey, filterValue );
+    }
+
+    model.remove('page');
+
+    filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
+}
+
+
+function removeFilter() {
+
+    var filterKey = $(this).data('filter');
+
+    model.remove(filterKey);
+    model.remove('page');
+
+    filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
 
 }

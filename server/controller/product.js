@@ -35,6 +35,16 @@ exports.getProducts = function(req, res) {
     });
 };
 
+exports.getProductById = function(req, res) {
+    Product.findById(req.params.id, function (err, product) {
+        if (err)
+            res.send(err);
+
+        res.json(product);
+    });
+
+};
+
 /*
 var addProducts = [{
     body: {

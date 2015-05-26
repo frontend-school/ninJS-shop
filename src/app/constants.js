@@ -6,6 +6,8 @@ module.exports = {
         MAIN: '.main',
         ABOUT: '.about-wrapper',
         PRODUCTS: '.products-container',
+        PRODUCT_ITEM: '.product-item',
+        SINGLE_PRODUCT: '.product-page-wrapper',
         ADD_TO_BASKET: '.action-buttons__item_buy',
         BASKET: '.basket',
         BASKET_CONTAINER: '.basket-container',
@@ -16,7 +18,12 @@ module.exports = {
         BASKET_TOGGLE: '.basket-toggle',
 
         FILTERS: '.filters',
-        FILTER_ITEM: '.filters-group-list-item__name',
+        FILTERS_GROUP: '.filters-group-wrapper',
+        FILTER_ITEM: '.filters-group-wrapper-list-item, .filters-buttons__item',
+        FILTERS_SELECTED: '.filters-group__selected',
+
+        PAGINATION: '.pagination',
+        PAGINATION_PAGE: '.pagination-page',
 
         TEXT_WIDGET: '.footer-widget-panel-widget-text',
 
@@ -28,6 +35,7 @@ module.exports = {
         ROUTE_CHANGED: 'app/router:route-changed',
         SWITCH_PAGE: 'app/router:switch-page.modules',
         NEW_QUERY: 'app/router:new-query',
+        SWITCH_TO_SINGLE_PRODUCT: 'app/products:open-single-product',
 
         SWITCH_LAYOUT: 'app/layout/switch-page.components-layout',
 
@@ -35,9 +43,11 @@ module.exports = {
         PRODUCTS_RECEIVED: 'app/API:products-received',
         SHOW_PRODUCTS: 'app/layout/run-products',
 
-        GET_PRODUCT: 'app/get-product',
-        PRODUCT_RECEIVED: 'app/API:product-received',
-        SHOW_PRODUCT: 'app/layout/run-product',
+        SHOW_PAGINATION: 'app/products:show-pagination',
+
+        GET_SINGLE_PRODUCT: 'app/get-product',
+        SINGLE_PRODUCT_RECEIVED: 'app/API:product-received',
+        SHOW_SINGLE_PRODUCT: 'app/layout/run-product',
 
         ADD_TO_BASKET: 'app/products:add-to-basket',
 
@@ -52,6 +62,8 @@ module.exports = {
         TEXT_WIDGET_RECEIVED: 'app/API:text-widget-received',
         SHOW_TEXT_WIDGET: 'app/show-text-widget',
 
-        SHOW_AUTH: 'app/show-auth'
-    }
+        SWITCH_AUTH: 'app/switch-auth'
+    },
+
+    PRODUCTS_PER_PAGE: 9
 };

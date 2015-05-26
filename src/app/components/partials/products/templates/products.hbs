@@ -1,3 +1,9 @@
+{{#if nothing_found}}
+
+    <p> ain't no stuff here </p>
+
+{{else}}
+
 
     <li class="product-item">
         {{#if sale}}<div class="product-item_on-sale">on sale</div>{{/if}}
@@ -16,3 +22,6 @@
             <div class="product-item-info__name">{{name}}</div>
         </div>
     </li>
+
+
+{{/if}}

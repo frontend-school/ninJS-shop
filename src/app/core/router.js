@@ -5,13 +5,14 @@ var signals = require('signals'),
 
 var router,
     _activePage,
-    query;
+    matchRoute;
 
 module.exports = router = PS.extend({
 
     init: function() {
 
-        this.subscribe(CONST.ACTIONS.FILTER_CHANGED, switchHash);
+        this.subscribe(CONST.ACTIONS.FILTER_CHANGED, switchQuery);
+        this.subscribe(CONST.ACTIONS.SWITCH_TO_SINGLE_PRODUCT, switchToSingle);
 
         crossroads.addRoute('/{page}/:?query:', handleRouteChange);
 
@@ -24,35 +25,38 @@ module.exports = router = PS.extend({
         hasher.changed.add(parseHash);
 
         hasher.init();
+
+        matchRoute = crossroads.addRoute(':?query:');
     }
 });
 
 
 function parseHash(newHash, oldHash){
     crossroads.parse(newHash);
+
 }
 
 
-function switchHash(filter) {
-    query = '?';
+function switchQuery(filter) {
 
-    for (var n in filter) {
-        if (filter.hasOwnProperty(n) && filter[n]) {
+    hasher.setHash(_activePage + matchRoute.interpolate({
+        query: filter
+    }));
 
-                query += '&' + n;
+}
 
+function switchToSingle(id) {
 
-        }
-    }
+    hasher.setHash('single' + matchRoute.interpolate({
+            query: {
+                id: id
+            }
+        }));
 
-    hasher.setHash(_activePage + query);
 }
 
 
 function handleRouteChange(page, query) {
-
-    query = query || {};
-    query.page = page;
 
     if (page !== _activePage) {
 

@@ -1,24 +1,76 @@
 .filters
-  top 100%
-  width 100%
-  height 150px
+  float: right;
+  margin-top: 25px;
+  height: 40px;
 
 
   &-group
-    float left
-    width 200px
-    height 150px
+    position relative
+    float right
+    margin-left 20px
+    width 100px
 
-    &__title
-      margin 5px
+    &-wrapper
 
-    &-list
-      list-reset()
+      &:hover
+        .filters-group-wrapper-list
+          display block
 
-      &-item a
-        text-decoration none
-        color black
+      &__title
+        display block
+        margin 0
+        width: 100px;
+        background white
+        line-height: 30px;
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
 
+      &-list
+        list-reset()
+        display none
+        z-index 10
+        top 100%
+        left 0
+        min-width 100px
+        background white
+        box-shadow 11px 9px 34px -15px rgba(0,0,0,0.75)
 
-.checked
-  font-weight 900
+        &-item
+          cursor pointer
+          position: relative
+          padding 5px
+          border-top 1px solid $creamy
+
+          &:hover
+            background $green
+            color white
+
+    &__selected
+      z-index -1
+      position absolute
+      top 30px
+      cursor: pointer;
+      width: 90px;
+      padding 5px
+      activeButton()
+
+  &-buttons
+    list-reset()
+    float right
+
+    &__item
+      cursor pointer
+      display inline-block
+      width 100px
+      margin-left 20px
+      padding 5px
+      background white
+      text-align center
+
+      &:hover
+        background $green
+        color white
+
+.selected
+  activeButton()

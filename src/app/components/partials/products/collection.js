@@ -1,47 +1,50 @@
-var baseCollection = require('../../base/collection.js'),
-    viewCollection;
-
-
+var baseCollection = require('../../base/collection.js');
 
 module.exports = baseCollection.extend({
 
-    handleQuery: function(query) {
-
-        viewCollection = this._collection.slice();
+    handleQuery: function(route) {
+        var query = route.query;
 
         for (var n in query) {
             if (query.hasOwnProperty(n)) {
-
                 switch (n) {
-                    case 'sale_only':
-                        viewCollection = viewCollection.filter(function(product) {
-                            return !!product.sale;
-                        });
+                    case "color":
+                        this.filter('colors', query[n]);
                         break;
-
-                    case 'priced_first':
-                        viewCollection.sort(function(a, b) {
-                            return a.price - b.price;
-                        });
+                    case "style":
+                        this.filter('categories', query[n]);
                         break;
-
-                    case 'must_have':
-                        viewCollection = viewCollection.filter(function(product) {
-
-                            return product.categories.some(function(cat) {
-                                return cat === 'must_have';
-                            });
-                        });
+                    case "offer":
+                        switch (query[n]) {
+                            case "must_have":
+                                this.filter('categories', query[n]);
+                                break;
+                            case "sale":
+                                this.filter('sale', true);
+                                break;
+                        }
                         break;
-
-
+                    case "sort":
+                        this.sort( 'price', query.sort === 'price_des' );
+                        break;
                 }
             }
         }
 
-        viewCollection =  viewCollection.slice(0, (query.page === 'home') ? 6 : 12);
+        var numberOfPages = Math.ceil(this.length() / CONST.PRODUCTS_PER_PAGE);
 
-        return viewCollection;
+        if (route.query && route.query.page) {
+            this._collection =  this._collection.slice(
+                CONST.PRODUCTS_PER_PAGE * (route.query.page - 1),
+                CONST.PRODUCTS_PER_PAGE * (route.query.page)
+            );
+        } else {
+            this._collection =  this._collection.slice(
+                0,
+                (route.page === 'home') ? 6 : CONST.PRODUCTS_PER_PAGE
+            );
+        }
+
+        return numberOfPages;
     }
-
 });

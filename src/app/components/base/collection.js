@@ -26,14 +26,10 @@ function Collection() {
 
 Collection.prototype = {
 
-    setQuery: function(query) {
-        //save query and run it after update
-        this._query = query;
-    },
-
-
     add: function(model) {
         this._collection.push(model);
+
+        return this;
     },
 
 
@@ -41,11 +37,39 @@ Collection.prototype = {
         this._collection = this._collection.filter(function(model) {
             return model._id !== id;
         });
+
+        return this;
     },
 
 
     populate: function(receivedData) {
         this._collection = receivedData;
+
+        return this;
+    },
+
+    filter: function(key, value) {
+
+        this._collection = this._collection.filter(function(model) {
+            if (Array.isArray(model[key])) {
+                return model[key].some(function(val) {
+                    return val === value;
+                });
+            } else {
+                return model[key] === value;
+            }
+        });
+
+        return this;
+    },
+
+    sort: function(key, reverse) {
+
+        this._collection.sort(function(a,b) {
+            return reverse ? b[key] - a[key] : a[key] - b[key];
+        });
+
+        return this;
     },
 
 
