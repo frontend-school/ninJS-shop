@@ -28,7 +28,8 @@ module.exports = {
         TEXT_WIDGET: '.footer-widget-panel-widget-text',
 
         POP_UP_PARENT: '.header-auth',
-        LOG_IN_BUTTON: '.header-auth__link'
+        LOG_IN_BUTTON: '.header-auth__link',
+        OUTER_LOGIN: '*'
     },
     ACTIONS: {
         ROUTE_CHANGED: 'app/router:route-changed',
