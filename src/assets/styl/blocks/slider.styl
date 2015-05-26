@@ -1,14 +1,22 @@
-.slider {
-  background-image: url("../img/top_unit/bg.png");
-  background-size: 100% 100%;
-
-  @media screen and (max-width: 620px) {
+.background {
+	background-image: url("../img/top_unit/bg.png");
+	background-size: 100% 100%;
+	
+	@media screen and (max-width: 620px) {
 	display: none;
   }
+	
+}
+
+.slider {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
 
   &-wrapper {
-    width: 960px;
-    margin: 0 auto;
+    width: 9999px;
+    transition: left 600ms linear;
+    position: relative;
 
     &:after {
       content: "";
@@ -16,6 +24,14 @@
       clear: both;
     }
   }
+}
+
+.slide {
+	float: left;
+	width: 960px;
+	height: 460px;
+	position: relative;
+	overflow: hidden;
 }
 
 .cover {

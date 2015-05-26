@@ -10,6 +10,7 @@ module.exports = api = PS.extend({
         this.subscribe(CONST.ACTIONS.GET_PRODUCTS, getProducts);
         this.subscribe(CONST.ACTIONS.GET_SINGLE_PRODUCT, getProductById);
         this.subscribe(CONST.ACTIONS.GET_TEXT_WIDGET, getTextWidgetData);
+        this.subscribe(CONST.ACTIONS.GET_SLIDES, getHeroUnitProducts);
     }
 
 });
@@ -46,20 +47,25 @@ function getTextWidgetData() {
 }
 
 
-function getHeroUnitProducts(slideId) {
+function getHeroUnitProducts() {
+    console.log('getHeroUnitProducts');
+    _ajaxGet('../data/slides.json')
+        .then(function (slides) {
+            api.publish(CONST.ACTIONS.SLIDES_RECEIVED, slides);
+        });
+
     var content = _ajaxGet('./data/slides.json');
 
-    var slideFilter = function () {
-        for (var i = 0; i < content.length; i++) {
-            if (content[i].id == slideId) {
-                return content[i];
-            }
-        }
-    };
+    // var slideFilter = function () {
+    //     for (var i = 0; i < content.length; i++) {
+    //         if (content[i].id == slideId) {
+    //             return content[i];
+    //         }
+    //     }
+    // };
 
-    api.publish(CONST.ACTIONS.GET_SLIDE, slideFilter());
+    // api.publish(CONST.ACTIONS.GET_SLIDE, slides);
 }
-
 
 function _ajaxGet(path) {
     var deferred = new Q.defer();

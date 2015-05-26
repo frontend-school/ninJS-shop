@@ -1,42 +1,44 @@
-[
-	{
-		"id": 1,
-		"name": "Pink Shoes",
-		"feature": "2013 Collection",
-		"description": "Nunc non fermentum nunc. Sed ante ut eget leo tempor consequat sit amet eu orci. Donec dignissim dolor eget...",
-		"price": 145.99,
-		"image":"img/slides/top_1.png",
-	},
-	{
-		"id": 2,
-		"name": "Ann Field",
-		"feature": "Limited Edition",
-		"description": "Ann Field’s award winning collages and bright illustrations are universally recognized to inspire.",
-		"price": 199.99,
-		"image":"img/slides/top_2.png",
-	},
-	{
-		"id": 3,
-		"name": "Prada",
-		"feature": "Summer is coming",
-		"description": "Beautifully structured in a dome silhouette, this petite satchel features luxe metallic Saffiano calf leather and an optional strap for wearing crossbody.",
-		"price": 349.99,
-		"image":"img/slides/top_3.png",
-	},
-	{
-		"id": 4,
-		"name": "Casadei",
-		"feature": "All colors avaliable",
-		"description": "Iconic 'Blade' pointed toe pump in white supple nappa with silver laminated leather piping.",
-		"price": 899.49,
-		"image":"img/slides/top_4.png",
-	},
-	{
-		"id": 5,
-		"name": "Mellow Yellow",
-		"feature": "Free delivery",
-		"description": "Sandale plate multibrides en cuir verni blanc. Brides en cuir verni blanc. Double fermetures à boucles argentées" ,
-		"price": 89.99,
-		"image":"img/slides/top_5.png",
-	},
-]
+{
+	"slides": [
+		{
+			"id": 1,
+			"name": "Pink Shoes",
+			"feature": "2013 Collection",
+			"description": "Nunc non fermentum nunc. Sed ante ut eget leo tempor consequat sit amet eu orci. Donec dignissim dolor eget...",
+			"price": 145.99,
+			"image":"img/slides/top_1.png"
+		},
+		{
+			"id": 2,
+			"name": "Ann Field",
+			"feature": "Limited Edition",
+			"description": "Ann Field’s award winning collages and bright illustrations are universally recognized to inspire.",
+			"price": 199.99,
+			"image":"img/slides/top_2.png"
+		}, 
+		{
+			"id": 3,
+			"name": "Prada",
+			"feature": "Summer is coming",
+			"description": "Beautifully structured in a dome silhouette, this petite satchel features luxe metallic Saffiano calf leather and an optional strap for wearing crossbody.",
+			"price": 349.99,
+			"image":"img/slides/top_3.png"
+		},
+		{
+			"id": 4,
+			"name": "Casadei",
+			"feature": "All colors avaliable",
+			"description": "Iconic 'Blade' pointed toe pump in white supple nappa with silver laminated leather piping.",
+			"price": 899.49,
+			"image":"img/slides/top_4.png"
+		},
+		{
+			"id": 5,
+			"name": "Mellow Yellow",
+			"feature": "Free delivery",
+			"description": "Sandale plate multibrides en cuir verni blanc. Brides en cuir verni blanc. Double fermetures à boucles argentées" ,
+			"price": 89.99,
+			"image":"img/slides/top_5.png"
+		}
+	]
+}	

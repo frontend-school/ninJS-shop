@@ -8,17 +8,28 @@ module.exports = authModule = baseController.extend({
 
     init: function () {
         this._subscriptions = [];
-        this.subscribe(CONST.ACTIONS.SWITCH_AUTH, function (auth) {
-            view.template = view.templates[ auth ];
-            view.render();
+        this.subscribe(CONST.ACTIONS.SHOW_AUTH, function () {
+            view.remove();
+            updateView();
+            addListeners();
         });
     },
 
     remove: function () {
-
         this.unsubscribeThis();
         view.remove();
-
     }
 
 });
+
+function updateView() {
+    view.template = view.templates[model.status];
+    view.render();
+}
+
+function addListeners() {
+    $(CONST.SELECTORS.LOG_IN_BUTTON).on('click', function () {
+        model.status = 'logIn';
+        updateView();
+    });
+}

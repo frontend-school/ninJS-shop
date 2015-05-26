@@ -28,7 +28,8 @@ module.exports = {
         TEXT_WIDGET: '.footer-widget-panel-widget-text',
 
         POP_UP_PARENT: '.header-auth',
-        LOG_IN_BUTTON: '.header-auth__link'
+        LOG_IN_BUTTON: '.header-auth__link',
+        OUTER_LOGIN: '*'
     },
     ACTIONS: {
         ROUTE_CHANGED: 'app/router:route-changed',
@@ -60,6 +61,10 @@ module.exports = {
         GET_TEXT_WIDGET: 'app/footer:get-text-widget',
         TEXT_WIDGET_RECEIVED: 'app/API:text-widget-received',
         SHOW_TEXT_WIDGET: 'app/show-text-widget',
+
+        GET_SLIDES: 'app/get-slides',
+        SLIDES_RECEIVED: 'app/API:slides-received',
+        SHOW_SLIDES: 'app/run-slides',
 
         SWITCH_AUTH: 'app/switch-auth'
     },
