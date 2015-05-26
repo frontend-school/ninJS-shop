@@ -1,5 +1,5 @@
 var layoutModule,
-	slider,
+	// slider,
 	view = require('./view.js'),
     baseController = require('../../base/controller.js');
 
@@ -13,8 +13,8 @@ module.exports = layoutModule = baseController.extend({
 
             view.template = view.templates[ layout ];
             view.render();
-            showSlider();
-            slider = new Slider( ".slider" );
+            // showSlider();
+            // slider = new Slider( ".slider" );
 
         });
     }
@@ -36,11 +36,11 @@ function showSlider() {
 
 function Slider(element) {
 	this.el = document.querySelector(element);
-	this.init();
+	this.sliderInit();
 }
 
 Slider.prototype = {
-	init: function() {
+	sliderInit: function() {
 		this.links = document.querySelectorAll( "#js-menu li");
 		this.wrapper = document.querySelector( ".slider-wrapper");
 		this.setLinks();
@@ -87,7 +87,6 @@ Slider.prototype = {
 	setCurrentLink: function(link) {
 		var parent = link.parentNode,
 			buttons = parent.querySelectorAll( "li" );
-		console.log(buttons);
 		link.classList.add("current");
 		for( var j = 0; j < buttons.length; ++j ) {
 			var cur = buttons[j];

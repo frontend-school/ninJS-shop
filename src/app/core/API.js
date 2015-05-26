@@ -54,7 +54,7 @@ function getHeroUnitProducts() {
             api.publish(CONST.ACTIONS.SLIDES_RECEIVED, slides);
         });
 
-    // var content = _ajaxGet('./data/slides.json');
+    var content = _ajaxGet('./data/slides.json');
 
     // var slideFilter = function () {
     //     for (var i = 0; i < content.length; i++) {
