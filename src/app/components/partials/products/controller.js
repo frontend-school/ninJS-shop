@@ -83,7 +83,7 @@ function renderProducts() {
 
             view.append(model);
 
-            $(CONST.SELECTORS.PRODUCTS).find(CONST.SELECTORS.ADD_TO_BASKET).last().on('click', function() {
+            $(CONST.SELECTORS.PRODUCTS).find(CONST.SELECTORS.ADD_TO_BASKET).last().on('click', function(event) {
                 productsModule.publish(CONST.ACTIONS.ADD_TO_BASKET, model);
 
                 event.stopPropagation();
