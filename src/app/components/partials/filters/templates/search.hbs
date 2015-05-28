@@ -1,0 +1,5 @@
+<div class="search-container">
+    <span class="search-container__close {{#unless s}} search-container__close_hidden {{/unless}}"> x </span>
+    <input type="text" class="search-container__input" placeholder="Find your shoes" data-filter="s"
+        {{#if s}} value="{{s}}" {{/if}}/>
+</div>

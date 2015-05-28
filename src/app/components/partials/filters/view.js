@@ -1,12 +1,33 @@
-var source = fs.readFileSync(__dirname + '/src/app/components/partials/filters/templates/filters.hbs', {encoding: 'utf-8'}),
+var filters = fs.readFileSync(__dirname + '/src/app/components/partials/filters/templates/filters.hbs', {encoding: 'utf-8'}),
+    search = fs.readFileSync(__dirname + '/src/app/components/partials/filters/templates/search.hbs', {encoding: 'utf-8'}),
     baseView = require('../../base/view.js');
 
 
 module.exports = baseView.extend({
 
-    parent: CONST.SELECTORS.FILTERS,
+    parents: {
+        filters: CONST.SELECTORS.FILTERS,
+        search: CONST.SELECTORS.SEARCH
+    },
 
-    template: Handlebars.compile(source)
+    templates: {
+        filters: Handlebars.compile(filters),
+        search: Handlebars.compile(search)
+
+    },
+
+    renderFilters: function(model) {
+        this.parent = this.parents['filters'];
+        this.template = this.templates['filters'];
+        this.render(model);
+    },
+
+    renderSearch: function(model) {
+        this.parent = this.parents['search'];
+        this.template = this.templates['search'];
+        this.render(model);
+    }
+
 
 });
 

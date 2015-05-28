@@ -64,7 +64,7 @@ function switchPage(route) {
 
 function handleNewQuery(route) {
 
-    PS.publish(CONST.ACTIONS.SHOW_FILTERS, route.query);
+    PS.publish(CONST.ACTIONS.CHANGE_FILTERS, route.query);
     PS.publish(CONST.ACTIONS.SHOW_PRODUCTS, route);
 
 }

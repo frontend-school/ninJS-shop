@@ -72,6 +72,18 @@ Collection.prototype = {
         return this;
     },
 
+    search: function(keys) {
+
+        this._collection = this._collection.filter(function(model) {
+
+            return keys.toLowerCase().split(' ').every(function(key) {
+                return model.name.toLowerCase().indexOf(key) !== -1;
+            });
+
+        });
+
+    },
+
 
     handleQuery: function() {
         //re-write it to handle specific queries

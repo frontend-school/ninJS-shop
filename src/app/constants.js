@@ -6,6 +6,7 @@ module.exports = {
         MAIN: '.main',
         ABOUT: '.about-wrapper',
         PRODUCTS: '.products-container',
+        SEARCH: '.search',
         PRODUCT_ITEM: '.product-item',
         SINGLE_PRODUCT: '.product-page-wrapper',
         ADD_TO_BASKET: '.action-buttons__item_buy',
@@ -21,6 +22,8 @@ module.exports = {
         FILTERS_GROUP: '.filters-group-wrapper',
         FILTER_ITEM: '.filters-group-wrapper-list-item, .filters-buttons__item',
         FILTERS_SELECTED: '.filters-group__selected',
+        FILTERS_SEARCH: '.search-container__input',
+        FILTERS_SEARCH_CLOSE: '.search-container__close',
 
         PAGINATION: '.pagination',
         PAGINATION_PAGE: '.pagination-page',
@@ -53,6 +56,7 @@ module.exports = {
 
         SHOW_FILTERS: 'app/show_filters',
         FILTER_CHANGED: 'app/filters:filter-changed',
+        CHANGE_FILTERS: 'app:change-filers',
 
         SHOW_NEWS: 'app/show-news',
         GET_NEWS: 'app/about:get-news',

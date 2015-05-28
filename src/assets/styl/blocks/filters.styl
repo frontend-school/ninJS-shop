@@ -1,7 +1,7 @@
 .filters
-  float: right;
-  margin-top: 25px;
-  height: 40px;
+  float right
+  margin-top 25px
+  height 40px
 
 
   &-group
@@ -71,6 +71,40 @@
       &:hover
         background $green
         color white
+
+.search
+  float left
+  margin-top 25px
+
+  &-container
+    position relative
+
+    &__input
+      width 300px
+      padding 5px
+      border none
+
+      &:focus
+        outline none
+        border-bottom 2px solid $green
+
+    &__close
+      cursor pointer
+      display block
+      position absolute
+      right 2px
+      top 2px
+      width 30px
+      height 26px
+      background $green
+      text-align center
+      color white
+
+      &:hover
+        background $grey2
+
+      &_hidden
+        display none
 
 .selected
   activeButton()

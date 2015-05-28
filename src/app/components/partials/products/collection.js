@@ -27,6 +27,10 @@ module.exports = baseCollection.extend({
                     case "sort":
                         this.sort( 'price', query.sort === 'price_des' );
                         break;
+                    case "s":
+                        this.search(query[n]);
+                        console.log(this._collection);
+                        break;
                 }
             }
         }
