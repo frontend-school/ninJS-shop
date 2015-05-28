@@ -29,7 +29,6 @@ module.exports = baseCollection.extend({
                         break;
                     case "s":
                         this.search(query[n]);
-                        console.log(this._collection);
                         break;
                 }
             }
