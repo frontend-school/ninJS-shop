@@ -63,9 +63,11 @@ router.route('/api/signup')
     .post(userController.apiSignup);
 
 router.route('/api/bookmark')
-    .get()
+    .get(userController.ensureAuthorized,userController.getBookmarked)
     .post(userController.ensureAuthorized,userController.postBookmarked);
 
+//for test purpose
+// MUST be deleted
 router.route('/api/me')
     .get(userController.ensureAuthorized, function(req, res) {
         res.json({

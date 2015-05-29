@@ -70,6 +70,21 @@ var addProductToBookmarked = exports.addProductToBookmarked = function(userID, p
     return deferred.promise;
 };
 
+var getBookmarkedProduct = exports.getBookmarkedProduct = function(userID) {
+    var deferred = new Q.defer();
+
+    User.findOne({_id: userID},'bookmarked',function(err,userBookmarks){
+        if(err){
+            deferred.reject(err);
+        }
+        else {
+            deferred.resolve(userBookmarks);
+        }
+    });
+
+    return deferred.promise;
+};
+
 
 exports.apiLogin = function(req, res){
 
@@ -162,42 +177,9 @@ exports.apiSignup = function (req, res) {
                             })
 
                     );
-      /*              newClient.save(function(err, client) {
-                        if (err){
-                            throw err;
-                        }
 
-                    });*/
                 });
-               /* userModel.save(function(err, user) {
-                    if (err) {
-                        throw err;
-                    }
 
-                    var newClient = new Client({
-                        name: 'ninjs-shop',
-                        email: user.email,
-                        token: jwt.sign(user, 'secret_key'),  //Secret key must be in env var
-                        customerID : user._id
-                    });
-
-                    newClient.save(function(err, client) {
-                        if (err){
-                            throw err;
-                        }
-                        res.json({
-                            type:true,
-                            data: {
-                                email: user.email,
-                                customerID : user._id,
-                                name: user.name
-                            },
-                            token: client.token
-                        });
-                    });
-
-
-                });*/
             }
         }
     });
@@ -245,12 +227,22 @@ exports.postBookmarked = function(req, res) {
                 message: "product failed to bookmarked"
             });
         });
-/*    getUserByID(req.id)
-        .then(function(user){
+};
 
+exports.getBookmarked = function(req, res) {
+
+    getBookmarkedProduct(req.userID)
+        .then(function(userBookmarks){
+            res.json({
+                type:true,
+                bookmarkList: userBookmarks.bookmarked
+            });
+        })
+        .catch(function(){
+            res.json({
+                type:false,
+                message: "failed to get bookmarks"
+            });
         });
-    getUserByEmail(req.email)
-        .then(function(user){
 
-        });*/
 };

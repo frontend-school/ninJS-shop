@@ -1,6 +1,7 @@
 module.exports={
 
     // Please, be a good guy. DON'T touch it.
+    // MUST PUT IT ON ENV var
     'DB_REMOTE':{
         'DB_NINJS_MONGO_URI' : 'mongodb://ninjs:ninjs1234@ds063240.mongolab.com:63240/ninjsshop',
         'DB_NAME' : 'ninjsshop',
