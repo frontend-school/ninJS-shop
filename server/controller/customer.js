@@ -19,6 +19,58 @@ var createUser = exports.createUser = function(user){
 };
 
 
+/*
+* return User model by email
+* */
+var getUserByEmail = exports.getUserByEmail = function(email) {
+    var deferred = new Q.defer();
+
+    User.findOne({email: email},function(err, user) {
+        if(err) {
+            deferred.reject(err);
+        }
+        else {
+            deferred.resolve(user);
+        }
+    });
+    return deferred.promise;
+};
+
+/*
+ * return User model by id
+ * */
+var getUserByID = exports.getUserByID = function(userID) {
+    var deferred = new Q.defer();
+
+    User.findOne({id: userID},function(err, user) {
+        if(err) {
+            deferred.reject(err);
+        }
+        else {
+            deferred.resolve(user);
+        }
+    });
+    return deferred.promise;
+};
+
+var addProductToBookmarked = exports.addProductToBookmarked = function(userID, productID) {
+    var deferred = new Q.defer();
+
+    User.findOneAndUpdate({_id:userID},
+        {$push: {bookmarked: productID}},
+        {safe: true, upsert: true},
+        function(err, user){
+            if(err) {
+                deferred.reject(err);
+            }
+            else {
+                deferred.resolve(user);
+            }
+        });
+    return deferred.promise;
+};
+
+
 exports.apiLogin = function(req, res){
 
     User.findOne({email: req.body.email, password: req.body.password}, function(err, user) {
@@ -156,12 +208,49 @@ exports.ensureAuthorized = function(req, res, next){
     var bearerHeader = req.headers.authorization;
     if (typeof bearerHeader !== 'undefined') {
         var bearer = bearerHeader.split(" ");
-        bearerToken = bearer[1];
         var headerToken = new Buffer(bearer[1], 'base64').toString('ascii').split(" ");
-        req.email = headerToken[0];
-        req.token = headerToken[1];
-        next();
+        clientController.getClientByEmailAndToken(headerToken[0],headerToken[1])
+            .then(function(client){
+                if(client){
+                    req.email = headerToken[0];
+                    req.token = headerToken[1];
+                    req.userID = client.customerID;
+                    next();
+                }
+                else {
+                    res.json({
+                        type:false,
+                        message: AUTHSERVERMESSAGE.SERVER.token_client_mismatch
+                    });
+                }
+            });
+
     } else {
         res.send(403);
     }
+};
+
+
+exports.postBookmarked = function(req, res) {
+    addProductToBookmarked(req.userID, req.body.productID)
+        .then(function(){
+            res.json({
+                type:true,
+                message: "product successfully bookmarked"
+            });
+        })
+        .catch(function(){
+            res.json({
+                type:false,
+                message: "product failed to bookmarked"
+            });
+        });
+/*    getUserByID(req.id)
+        .then(function(user){
+
+        });
+    getUserByEmail(req.email)
+        .then(function(user){
+
+        });*/
 };

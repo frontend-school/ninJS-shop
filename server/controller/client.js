@@ -15,3 +15,19 @@ exports.createClient = function(client){
     return defered.promise;
 
 };
+/*
+* get client by email and token
+* if match return client
+* */
+exports.getClientByEmailAndToken = function(email, token){
+    var deferred = new Q.defer();
+    Client.findOne({email:email, token: token}, function(err,client){
+        if(err) {
+            deferred.reject(err);
+        }
+        else {
+            deferred.resolve(client);
+        }
+    });
+    return deferred.promise;
+};

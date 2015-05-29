@@ -62,6 +62,10 @@ router.route('/api/login')
 router.route('/api/signup')
     .post(userController.apiSignup);
 
+router.route('/api/bookmark')
+    .get()
+    .post(userController.ensureAuthorized,userController.postBookmarked);
+
 router.route('/api/me')
     .get(userController.ensureAuthorized, function(req, res) {
         res.json({
