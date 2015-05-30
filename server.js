@@ -66,27 +66,7 @@ router.route('/api/bookmark')
     .get(userController.ensureAuthorized,userController.getBookmarked)
     .post(userController.ensureAuthorized,userController.postBookmarked);
 
-//for test purpose
-// MUST be deleted
-router.route('/api/me')
-    .get(userController.ensureAuthorized, function(req, res) {
-        res.json({
-            data: "OK"
-        });
-        /*    User.findOne({token: req.token}, function(err, user) {
-         if (err) {
-         res.json({
-         type: false,
-         data: "Error occured: " + err
-         });
-         } else {
-         res.json({
-         type: true,
-         data: user
-         });
-         }
-         });*/
-    });
+
 
 
 // route for facebook authentication and login
@@ -105,7 +85,10 @@ app.get('/auth/facebook/callback',
         res.redirect('/users/' + req.user.username);
     });
 
-
+// error path handling
+app.get('*', function(req,res) {
+    res.send("Page not found", 404);
+});
 // Start the server
 var port = process.env.PORT || 3000;
 app.listen(port);
