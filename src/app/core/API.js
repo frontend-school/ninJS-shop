@@ -19,7 +19,7 @@ module.exports = api = PS.extend({
 function getProducts() {
     _ajaxGet('/api/products')
         .then(function (products) {
-            api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, products);
+            api.publish(CONST.ACTIONS.PRODUCTS_RECEIVED, products.data);
         });
 }
 
@@ -27,7 +27,7 @@ function getProducts() {
 function getProductById(productId) {
     _ajaxGet('/api/product/' + productId)
         .then(function (product) {
-            api.publish(CONST.ACTIONS.SINGLE_PRODUCT_RECEIVED, product);
+            api.publish(CONST.ACTIONS.SINGLE_PRODUCT_RECEIVED, product.data);
         });
 }
 

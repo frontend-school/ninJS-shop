@@ -1,7 +1,7 @@
 var User = require('../model/customer'),
     Client = require('../model/client'),
     clientController = require('../controller/client'),
-    AUTHSERVERMESSAGE = require('../server_messages/auth'),
+    AUTHSERVERMESSAGE = require('../server_messages/messages'),
     jwt = require('jsonwebtoken'),
     Q = require('q');
 
@@ -142,7 +142,7 @@ exports.apiSignup = function (req, res) {
             if (user) {
                 res.json({
                     type: false,
-                    data: AUTHSERVERMESSAGE.AUTH.user_exists
+                    message: AUTHSERVERMESSAGE.AUTH.user_exists
                 });
             } else {
                 var userModel = new User();
@@ -159,6 +159,7 @@ exports.apiSignup = function (req, res) {
                     });
                     clientController.createClient(newClient)
                         .then(function(client){
+
                             res.json({
                                 type:true,
                                 data: {

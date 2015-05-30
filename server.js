@@ -52,16 +52,17 @@ router.route('/api/products')
 router.route('/api/product/:id')
     .get(productController.getProductById);
 
-//
+// main index handler
 app.get('/', function(req, res) {
 
     res.render('index.html');
 });
+// Create endpoint handler for auth
 router.route('/api/login')
     .post(userController.apiLogin);
 router.route('/api/signup')
     .post(userController.apiSignup);
-
+// Create endpoint handlers for bookmark products
 router.route('/api/bookmark')
     .get(userController.ensureAuthorized,userController.getBookmarked)
     .post(userController.ensureAuthorized,userController.postBookmarked);

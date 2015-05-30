@@ -11,7 +11,13 @@ module.exports={
 
     SERVER:{
         "token_client_mismatch": "The token and client mismatch"
+    },
+
+    PRODUCT: {
+        "product_added_success": "Product successfully added",
+        "product_failed": "Something went wrong. Please try again later."
     }
+
 
 
 

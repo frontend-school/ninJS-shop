@@ -1,8 +1,25 @@
 
-var Product = require('../model/product'), add;
+var Product = require('../model/product'),
+    SERVERMESSAGE = require('../server_messages/messages'),
+    Q = require('q');
+
+// insert product into db
+var insertProduct = exports.insertProduct = function(product){
+    var deferred = new Q.defer();
+    product.save(function(err, product) {
+        if (err){
+            deferred.reject(err);
+        }
+        else {
+            deferred.resolve(product);
+        }
+    });
+
+    return deferred.promise;
+};
 
 // Create endpoint /api/products for POST
-exports.postProducts = add = function(req, res) {
+exports.postProducts = function(req, res) {
     var product = new Product({
         name: req.body.name,
         description: req.body.description,
@@ -14,35 +31,90 @@ exports.postProducts = add = function(req, res) {
         sale: req.body.sale
     });
 
-    product.save(function(err) {
-        if (err)
-        {
-            res.send(err);
-        }
+    insertProduct(product)
+        .then(function(product){
+            res.json({
+                type: true,
+                data: product,
+                message: SERVERMESSAGE.PRODUCT.product_added_success
+            });
+        })
+        .catch(function(err){
+            console.log(err);
+            res.json({
+                type: false,
+                message: SERVERMESSAGE.PRODUCT.product_failed
+            });
+        });
 
-
-        res.json({ message: 'New product added to the  site!' });
-    });
 };
+
+// get all product from DB
+var getAllProducts = exports.getAllProducts = function(){
+    var deferred = Q.defer();
+    Product.find(function(err, products) {
+        if (err){
+            deferred.reject(err);
+        }
+        else {
+            deferred.resolve(products);
+        }
+    });
+
+    return deferred.promise;
+};
+
+// get Product by ID from DB
+var getProductByID = exports.getProductByID = function(id){
+    var deferred = Q.defer();
+    Product.findById(id, function (err, product) {
+        if(err){
+            deferred.reject(err);
+        }
+        else {
+            deferred.resolve(product);
+        }
+    });
+    return deferred.promise;
+};
+
 
 // Create endpoint /api/product for GET
 exports.getProducts = function(req, res) {
-    Product.find(function(err, products) {
-        if (err)
-            res.send(err);
 
-        res.json(products);
-    });
+        getAllProducts()
+            .then(function(products){
+                res.json({
+                    type: true,
+                    data: products
+                });
+            })
+            .catch(function(err){
+                console.log(err);
+                res.json({
+                    type: false,
+                    message: SERVERMESSAGE.PRODUCT.product_failed
+                });
+            });
+
+
 };
-
+// Create endpoint /api/products:id for GET
 exports.getProductById = function(req, res) {
-    Product.findById(req.params.id, function (err, product) {
-        if (err)
-            res.send(err);
-
-        res.json(product);
-    });
-
+    getProductByID(req.params.id)
+        .then(function(product){
+            res.json({
+                type: true,
+                data: product
+            });
+        })
+        .catch(function(err){
+            console.log(err);
+            res.json({
+                type: false,
+                message: SERVERMESSAGE.PRODUCT.product_failed
+            });
+        });
 };
 
 /*
