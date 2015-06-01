@@ -4,7 +4,8 @@
   "description": "shop application",
   "scripts": {
     "start": "node server",
-    "postinstall": "bower install && gulp build"
+    "postinstall": "bower install && gulp build",
+    "test": "gulp tdd"
   },
   "repository": {
     "type": "git",
