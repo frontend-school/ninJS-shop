@@ -1,4 +1,6 @@
-var source = fs.readFileSync(__dirname + '/src/app/components/partials/pagination/templates/pagination.hbs', {encoding: 'utf-8'}),
+var fs = require('fs'),
+    Handlebars = require('handlebars'),
+    source = fs.readFileSync(__dirname + '/templates/pagination.hbs', {encoding: 'utf-8'}),
     baseView = require('../../base/view.js');
 
 

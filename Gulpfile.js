@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     source = require('vinyl-source-stream'),
     brfs = require('gulp-brfs'),
+    karma = require('karma').server,
 
     paths = {
         src: {
@@ -74,10 +75,14 @@ gulp.task('hint', function() {
 });
 
 gulp.task('js', function() {
-    browserify(paths.src.js_app)
+    browserify({
+        basedir: './src/app',
+        entries: './index.js',
+        transform: ['brfs'],
+        debug: true
+    })
         .bundle()
         .pipe(source('app.js'))
-        .pipe(brfs())
         .pipe(gulp.dest('./dist/js'));
 });
 
@@ -109,4 +114,24 @@ gulp.task('watch', function(){
 
 gulp.task('clean', function (cb) {
     del.sync(paths.dist.root, cb);
+});
+
+
+/**
+ * Run test once and exit
+ */
+gulp.task('test', function (done) {
+    karma.start({
+        configFile: __dirname + '/test/karma.conf.js',
+        singleRun: true
+    }, done);
+});
+
+/**
+ * Watch for file changes and re-run tests on each change
+ */
+gulp.task('tdd', function (done) {
+    karma.start({
+        configFile: __dirname + '/test/karma.conf.js'
+    }, done);
 });

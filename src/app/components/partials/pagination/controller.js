@@ -1,5 +1,5 @@
 var paginationController,
-    viewPagination = require('./view-pagination.js'),
+    viewPagination = require('./view.js'),
     baseController = require('../../base/controller.js');
 
 module.exports = paginationController = baseController.extend({

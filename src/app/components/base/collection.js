@@ -20,7 +20,6 @@ module.exports = {
 function Collection() {
 
     this._collection = [];
-    this._query = {};
 
 }
 

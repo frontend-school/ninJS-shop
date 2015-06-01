@@ -1,6 +1,16 @@
 var subToken = 0;
 var events = {};
 
+function PS() {
+
+    return {
+        publish: _publish
+    };
+
+    function _publish() {}
+
+}
+
 module.exports = {
     publish: function (event, obj) {
         if (!events[event]) {

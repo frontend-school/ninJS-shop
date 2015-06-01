@@ -1,7 +1,9 @@
-var baseView = require('../../base/view.js'),
-    home = fs.readFileSync(__dirname + '/src/app/components/shared/layout/templates/home_page.hbs', {encoding: 'utf-8'}),
-    products = fs.readFileSync(__dirname + '/src/app/components/shared/layout/templates/products_page.hbs', {encoding: 'utf-8'}),
-    single = fs.readFileSync(__dirname + '/src/app/components/shared/layout/templates/single.hbs', {encoding: 'utf-8'});
+var fs = require('fs'),
+    Handlebars = require('handlebars'),
+    baseView = require('../../base/view.js'),
+    home = fs.readFileSync(__dirname + '/templates/home_page.hbs', {encoding: 'utf-8'}),
+    products = fs.readFileSync(__dirname + '/templates/products_page.hbs', {encoding: 'utf-8'}),
+    single = fs.readFileSync(__dirname + '/templates/single.hbs', {encoding: 'utf-8'});
 
 module.exports = baseView.extend({
 

@@ -104,13 +104,13 @@ function removeFilter() {
 
 
 function search() {
-
-    if ( $(this).val() ) {
-        model.put( $(this).data('filter'), $(this).val() );
-        $(this).siblings().first().removeClass('search-container__close_hidden');
+    var $this = $(this);
+    if ( $this.val() ) {
+        model.put( $this.data('filter'), $this.val() );
+        $this.siblings().first().removeClass('search-container__close_hidden');
     } else {
-        model.remove( $(this).data('filter') );
-        $(this).siblings().first().addClass('search-container__close_hidden');
+        model.remove( $this.data('filter') );
+        $this.siblings().first().addClass('search-container__close_hidden');
     }
 
     filtersController.publish(CONST.ACTIONS.FILTER_CHANGED, model.get());
@@ -122,6 +122,6 @@ function clearSearchInput() {
 
     $(CONST.SELECTORS.FILTERS_SEARCH).val('');
     search.call($(CONST.SELECTORS.FILTERS_SEARCH));
-    $(CONST.SELECTORS.FILTERS_SEARCH_CLOSE).addClass('search-container__close_hidden');
+    $(CONST.SELECTORS.FILTERS_SEARCH_CLOSE).addClass();
 
 }

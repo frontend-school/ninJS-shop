@@ -36,7 +36,6 @@ function showProducts(route) {
 
 }
 
-
 function updateCollection() {
 
     var deferred = new Q.defer();

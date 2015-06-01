@@ -1,5 +1,7 @@
-var filters = fs.readFileSync(__dirname + '/src/app/components/partials/filters/templates/filters.hbs', {encoding: 'utf-8'}),
-    search = fs.readFileSync(__dirname + '/src/app/components/partials/filters/templates/search.hbs', {encoding: 'utf-8'}),
+var fs = require('fs'),
+    Handlebars = require('handlebars'),
+    filters = fs.readFileSync(__dirname + '/templates/filters.hbs', {encoding: 'utf-8'}),
+    search = fs.readFileSync(__dirname + '/templates/search.hbs', {encoding: 'utf-8'}),
     baseView = require('../../base/view.js');
 
 
