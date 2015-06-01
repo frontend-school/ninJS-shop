@@ -1,7 +1,7 @@
 var index = require('../../src/app/index.js');
 var app = require('../../src/app/app.js');
 
-describe('greeter', function () {
+describe('example', function () {
 
     beforeEach(function() {
 

@@ -1,8 +1,6 @@
 module.exports = function(config){
   config.set({
 
-
-
     files : [
       './unit/**/*.js'
     ],
