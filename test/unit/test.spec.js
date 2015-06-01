@@ -3,10 +3,16 @@ var app = require('../../src/app/app.js');
 
 describe('greeter', function () {
 
-    console.log(app);
+    beforeEach(function() {
 
-    it('should say Hello to the World', function () {
-        expect(true).toEqual(true);
+        spyOn(app, 'init');
+
+        app.init();
+
+    });
+
+    it('track that app has been inited', function () {
+        expect(app.init).toHaveBeenCalled();
     });
 
 });
