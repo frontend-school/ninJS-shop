@@ -23,6 +23,7 @@ module.exports = paginationController = baseController.extend({
 
 
 function showPagination(data) {
+
     var number = data.numberOfPages,
         query = data.query || {
                 page: 1

@@ -1,42 +1,23 @@
-var baseCollection = require('../../base/collection.js');
+var baseCollection = require('../../base/collection.js'),
+    filtersMap;
 
 module.exports = baseCollection.extend({
 
     handleQuery: function(route) {
-        var query = route.query;
+        var query = route.query,
+            numberOfPages;
 
         for (var n in query) {
             if (query.hasOwnProperty(n)) {
-                switch (n) {
-                    case "color":
-                        this.filter('colors', query[n]);
-                        break;
-                    case "style":
-                        this.filter('categories', query[n]);
-                        break;
-                    case "offer":
-                        switch (query[n]) {
-                            case "must_have":
-                                this.filter('categories', query[n]);
-                                break;
-                            case "sale":
-                                this.filter('sale', true);
-                                break;
-                        }
-                        break;
-                    case "sort":
-                        this.sort( 'price', query.sort === 'price_des' );
-                        break;
-                    case "s":
-                        this.search(query[n]);
-                        break;
+                if (filtersMap[n]) {
+                    filtersMap[n].call(this, (query[n]));
                 }
             }
         }
 
-        var numberOfPages = Math.ceil(this.length() / CONST.PRODUCTS_PER_PAGE);
+        numberOfPages = Math.ceil(this.length() / CONST.PRODUCTS_PER_PAGE);
 
-        if (route.query && route.query.page) {
+        if (query && query.page) {
             this._collection =  this._collection.slice(
                 CONST.PRODUCTS_PER_PAGE * (route.query.page - 1),
                 CONST.PRODUCTS_PER_PAGE * (route.query.page)
@@ -51,3 +32,26 @@ module.exports = baseCollection.extend({
         return numberOfPages;
     }
 });
+
+
+filtersMap = {
+    "color": function(val) {
+        this.filter('colors', val);
+    },
+    "style": function(val) {
+        this.filter('categories', val);
+    },
+    "offer": function (val) {
+        if (val === "must_have") {
+            this.filter('categories', val);
+        } else if (val === "sale") {
+            this.filter('sale', true);
+        }
+    },
+    "sort": function(val) {
+        this.sort( 'price', val === 'price_des' );
+    },
+    "s": function(val) {
+        this.search(val);
+    }
+};

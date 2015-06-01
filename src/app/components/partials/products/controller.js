@@ -10,7 +10,7 @@ module.exports = productsModule = baseController.extend({
     init: function() {
 
         this._subscriptions = [];
-        this.subscribe(CONST.ACTIONS.SHOW_PRODUCTS, showProducts);
+        this.subscribe(CONST.ACTIONS.SHOW_PRODUCTS, updateModule);
 
     },
 
@@ -25,7 +25,7 @@ module.exports = productsModule = baseController.extend({
 
 
 
-function showProducts(route) {
+function updateModule(route) {
 
     updateCollection().then(function() {
 
@@ -79,19 +79,9 @@ function renderProducts() {
     if ( collection.length() ) {
 
         collection.get().forEach(function(model) {
-
             view.append(model);
 
-            $(CONST.SELECTORS.PRODUCTS).find(CONST.SELECTORS.ADD_TO_BASKET).last().on('click', function(event) {
-                productsModule.publish(CONST.ACTIONS.ADD_TO_BASKET, model);
-
-                event.stopPropagation();
-            });
-
-            $(CONST.SELECTORS.PRODUCTS).find(CONST.SELECTORS.PRODUCT_ITEM).last().on('click', function() {
-
-                productsModule.publish(CONST.ACTIONS.SWITCH_TO_SINGLE_PRODUCT, model._id);
-            });
+            addListeners( model );
 
         });
 
@@ -101,4 +91,16 @@ function renderProducts() {
             nothing_found: true
         });
     }
+}
+
+
+function addListeners(model) {
+    $(CONST.SELECTORS.PRODUCTS).find(CONST.SELECTORS.ADD_TO_BASKET).last().on('click', function(event) {
+        productsModule.publish(CONST.ACTIONS.ADD_TO_BASKET, model);
+        event.stopPropagation();
+    });
+
+    $(CONST.SELECTORS.PRODUCTS).find(CONST.SELECTORS.PRODUCT_ITEM).last().on('click', function() {
+        productsModule.publish(CONST.ACTIONS.SWITCH_TO_SINGLE_PRODUCT, model._id);
+    });
 }
