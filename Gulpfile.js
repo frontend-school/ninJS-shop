@@ -78,7 +78,7 @@ gulp.task('js', function() {
     browserify({
         basedir: './src/app',
         entries: './index.js',
-        transform: ['brfs'],
+        transform: ['../../node_modules/brfs'],
         debug: true
     })
         .bundle()
