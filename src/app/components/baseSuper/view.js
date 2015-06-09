@@ -44,11 +44,8 @@ View.prototype = {
         var view = this;
 
         this.listeners.forEach(function(listener) {
-            $(listener.target).on(listener.event, view.scope[listener.callback]);
+            $(listener.target).on(listener.event, view.handlers[listener.handler]);
         });
 
     }
-
-
-
 };

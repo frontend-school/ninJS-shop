@@ -18,16 +18,41 @@ module.exports = baseView.extend({
 
     },
 
+    listenersGroups: {
+        filter: [{
+                target: CONST.SELECTORS.FILTER_ITEM,
+                event: 'click',
+                handler: 'selectFilter'
+            },
+            {
+                target: CONST.SELECTORS.FILTERS_SELECTED,
+                event: 'click',
+                handler: 'removeFilter'
+            }],
+        search: [{
+                target: CONST.SELECTORS.FILTERS_SEARCH,
+                event: 'input',
+                handler: 'search'
+            },
+            {
+                target: CONST.SELECTORS.FILTERS_SEARCH_CLOSE,
+                event: 'click',
+                handler: 'clearSearchInput'
+            }]
+    },
+
     renderFilters: function(model) {
         this.parent = this.parents['filters'];
         this.template = this.templates['filters'];
-        this.render(model);
+        this.listeners = this.listenersGroups['filter'];
+        this.superRender(model);
     },
 
     renderSearch: function(model) {
         this.parent = this.parents['search'];
         this.template = this.templates['search'];
-        this.render(model);
+        this.listeners = this.listenersGroups['search'];
+        this.superRender(model);
     }
 
 

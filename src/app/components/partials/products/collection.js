@@ -1,7 +1,6 @@
-var baseCollection = require('../../base/collection.js'),
-    filtersMap;
+var filtersMap;
 
-module.exports = baseCollection.extend({
+module.exports = {
 
     handleQuery: function(route) {
         var query = route.query,
@@ -31,7 +30,7 @@ module.exports = baseCollection.extend({
 
         return numberOfPages;
     }
-});
+};
 
 
 filtersMap = {
